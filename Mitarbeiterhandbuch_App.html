@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mitarbeiterhandbuch — A Great Hair Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brown: #9c6b3f;
+    --brown-dark: #7a5330;
+    --ink: #211c17;
+    --ink-mid: #4a433c;
+    --ink-light: #9a8f7f;
+    --cream: #faf7f0;
+    --rule: #ddd0bb;
+    --chip-bg: #f3ead9;
+    --border: #ecdfc4;
+    --nav-w: 280px;
+    --header-h: 56px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100dvh;
+  }
+
+  /* ── HEADER ─────────────────────────────── */
+  .header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    height: var(--header-h);
+    background: var(--cream);
+    border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; gap: 14px; padding: 0 20px;
+  }
+  .header-menu-btn {
+    background: none; border: none; cursor: pointer; padding: 6px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .header-menu-btn span {
+    display: block; width: 20px; height: 2px; background: var(--ink); border-radius: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .header-eyebrow {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown);
+  }
+  .header-title {
+    font-family: 'Newsreader', serif; font-style: italic; font-size: 15px;
+    color: var(--ink); flex: 1;
+  }
+  .header-logo {
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light);
+    white-space: nowrap;
+  }
+
+  /* ── SIDEBAR ─────────────────────────────── */
+  .overlay {
+    position: fixed; inset: 0; z-index: 300; background: rgba(33,28,23,0.35);
+    opacity: 0; pointer-events: none; transition: opacity 0.25s;
+  }
+  .overlay.open { opacity: 1; pointer-events: all; }
+
+  .sidebar {
+    position: fixed; top: 0; bottom: 0; left: 0; z-index: 400;
+    width: var(--nav-w);
+    background: var(--cream); border-right: 1px solid var(--rule);
+    display: flex; flex-direction: column;
+    transform: translateX(-100%); transition: transform 0.28s cubic-bezier(.4,0,.2,1);
+    overflow: hidden;
+  }
+  .sidebar.open { transform: translateX(0); }
+
+  .sidebar-header {
+    padding: 18px 20px 14px; border-bottom: 1px solid var(--rule); flex-shrink: 0;
+  }
+  .sidebar-eyebrow {
+    font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--brown); margin-bottom: 4px;
+  }
+  .sidebar-title {
+    font-family: 'Newsreader', serif; font-weight: 500; font-size: 19px; color: var(--ink);
+  }
+
+  .sidebar-nav {
+    flex: 1; overflow-y: auto; padding: 10px 0;
+  }
+  .sidebar-nav::-webkit-scrollbar { width: 4px; }
+  .sidebar-nav::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 2px; }
+
+  .nav-item {
+    display: flex; align-items: baseline; gap: 12px;
+    padding: 8px 20px; cursor: pointer; border: none; background: none;
+    width: 100%; text-align: left; transition: background 0.12s;
+  }
+  .nav-item:hover { background: var(--chip-bg); }
+  .nav-item.active { background: var(--chip-bg); }
+  .nav-item-num {
+    font-family: 'Newsreader', serif; font-style: italic; color: var(--brown);
+    font-size: 13px; min-width: 22px; flex-shrink: 0;
+  }
+  .nav-item-label {
+    font-size: 13px; color: var(--ink); line-height: 1.4;
+  }
+
+  .sidebar-footer {
+    padding: 14px 20px; border-top: 1px solid var(--rule); flex-shrink: 0;
+  }
+  .sidebar-footer p {
+    font-size: 11px; color: var(--ink-light); line-height: 1.5;
+  }
+  .sidebar-footer a { color: var(--brown); text-decoration: none; }
+
+  /* ── MAIN ─────────────────────────────────── */
+  .main {
+    padding-top: var(--header-h);
+    max-width: 720px; margin: 0 auto;
+  }
+
+  /* ── COVER ─────────────────────────────────── */
+  .cover {
+    padding: 52px 28px 48px; display: flex; flex-direction: column; gap: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cover-eyebrow {
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--brown); margin-bottom: 22px;
+  }
+  .cover-h1 {
+    font-family: 'Newsreader', serif; font-weight: 500; font-size: clamp(40px, 8vw, 60px);
+    line-height: 1.06; color: var(--ink); margin-bottom: 18px;
+  }
+  .cover-sub {
+    font-family: 'Newsreader', serif; font-style: italic;
+    font-size: clamp(16px, 3.5vw, 20px); color: var(--ink-mid); line-height: 1.55;
+    margin-bottom: 36px; max-width: 540px;
+  }
+  .cover-sig {
+    border-top: 1px solid var(--rule); padding-top: 20px;
+  }
+  .cover-sig-quote {
+    font-family: 'Newsreader', serif; font-style: italic; font-size: 16px;
+    color: var(--ink); margin-bottom: 4px;
+  }
+  .cover-sig-name {
+    font-size: 12.5px; color: var(--ink-mid); letter-spacing: 0.02em;
+  }
+
+  /* ── SECTION ─────────────────────────────── */
+  .section {
+    padding: 40px 28px; border-bottom: 1px solid var(--rule); display: none;
+  }
+  .section.active { display: block; }
+  .section-cover { display: block; } /* always show cover */
+
+  .section-tag {
+    font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--brown); margin-bottom: 12px;
+  }
+  .section-h2 {
+    font-family: 'Newsreader', serif; font-weight: 500;
+    font-size: clamp(22px, 5vw, 30px); color: var(--ink);
+    display: flex; align-items: baseline; gap: 12px; margin-bottom: 5px;
+  }
+  .section-num {
+    font-style: italic; color: var(--brown); flex-shrink: 0;
+  }
+  .section-rule { height: 1px; background: var(--rule); margin-bottom: 22px; }
+
+  .section-subtitle {
+    font-size: 12.5px; color: var(--ink-light); margin-bottom: 20px;
+  }
+
+  .section-h3 {
+    font-family: 'Newsreader', serif; font-style: italic; font-weight: 500;
+    font-size: 17px; color: var(--ink); margin: 0 0 14px;
+  }
+  .section-h3-spacer { margin-top: 24px; }
+
+  /* items */
+  .item {
+    display: flex; gap: 11px; margin-bottom: 13px;
+    font-size: 14px; line-height: 1.68; color: var(--ink);
+    align-items: flex-start;
+  }
+  .item:last-child { margin-bottom: 0; }
+  .item-num {
+    color: var(--brown); font-weight: 700; min-width: 36px; flex-shrink: 0;
+    background: var(--chip-bg); padding: 2px 8px; border-radius: 4px;
+    font-size: 13px; white-space: nowrap; line-height: 1.6;
+  }
+  .item-num-wide { min-width: 44px; }
+  .item-text { flex: 1; }
+
+  /* box */
+  .box {
+    background: var(--chip-bg); border: 1px solid var(--border);
+    border-radius: 3px; padding: 16px 20px; margin: 16px 0;
+    break-inside: avoid;
+  }
+  .box .item { margin-bottom: 8px; }
+  .box-list {
+    list-style: none; padding-left: 47px; display: flex; flex-direction: column; gap: 7px;
+    margin-top: 8px;
+  }
+  .box-list li {
+    font-size: 14px; color: var(--ink); line-height: 1.55; padding-left: 18px; position: relative;
+  }
+  .box-list li::before {
+    content: '✓'; position: absolute; left: 0; color: var(--brown); font-weight: 700;
+  }
+
+  /* quote */
+  .quote-line {
+    font-family: 'Newsreader', serif; font-style: italic;
+    font-size: 16px; color: var(--brown); margin: 14px 0 4px 47px;
+  }
+
+  /* checklist */
+  .plain-list {
+    list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px;
+  }
+  .plain-list li {
+    font-size: 14px; color: var(--ink); line-height: 1.6;
+    padding-left: 26px; position: relative;
+  }
+  .plain-list li::before {
+    content: '✓'; position: absolute; left: 0; color: var(--brown); font-weight: 700;
+  }
+
+  /* mantra */
+  .mantra {
+    font-family: 'Newsreader', serif; font-style: italic;
+    font-size: clamp(15px, 3.5vw, 18px); color: var(--brown);
+    max-width: 540px; margin: 22px 0 36px; line-height: 1.5;
+  }
+
+  /* closing statement */
+  .closing {
+    text-align: center; padding: 36px 0 10px;
+    border-top: 1px solid var(--rule); margin-top: 10px;
+  }
+  .closing p {
+    font-family: 'Newsreader', serif; font-style: italic; font-weight: 500;
+    font-size: clamp(16px, 4vw, 21px); color: var(--brown);
+  }
+
+  /* ── WELCOME ───────────────────────────────── */
+  .welcome-text {
+    font-size: 14.5px; line-height: 1.78; color: var(--ink);
+    max-width: 600px; margin-bottom: 15px;
+  }
+  .welcome-sig { margin-top: 28px; }
+  .welcome-sig-name {
+    font-family: 'Newsreader', serif; font-size: 17px; color: var(--ink);
+  }
+  .welcome-sig-role { font-size: 12.5px; color: var(--ink-mid); margin-top: 2px; }
+
+  /* ── TOC ───────────────────────────────────── */
+  .toc-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  @media (max-width: 480px) { .toc-grid { grid-template-columns: 1fr; } }
+  .toc-item {
+    display: flex; gap: 12px; padding: 8px 0;
+    border-bottom: 1px solid var(--border); cursor: pointer;
+    background: none; border-left: none; border-right: none; border-top: none;
+    text-align: left; width: 100%; transition: background 0.12s;
+  }
+  .toc-item:hover { background: var(--chip-bg); padding-left: 6px; }
+  .toc-item-num {
+    font-family: 'Newsreader', serif; font-style: italic; color: var(--brown);
+    min-width: 22px; font-size: 13.5px; flex-shrink: 0;
+  }
+  .toc-item-label { font-size: 13.5px; color: var(--ink); }
+
+  /* ── BACK PAGE ─────────────────────────────── */
+  .backpage {
+    text-align: center; padding: 52px 28px 48px;
+  }
+  .backpage-eyebrow {
+    font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--brown); margin-bottom: 16px;
+  }
+  .backpage-name {
+    font-family: 'Newsreader', serif; font-size: 18px; color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .backpage-info { font-size: 13px; color: var(--ink-mid); margin-bottom: 26px; }
+  .backpage-hours {
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    padding: 16px 0; margin-bottom: 26px;
+  }
+  .backpage-hours p { font-size: 13px; color: var(--ink); margin-bottom: 3px; }
+  .backpage-hours .closed { color: var(--ink-light); }
+  .backpage-mantra {
+    font-family: 'Newsreader', serif; font-style: italic;
+    font-size: 19px; color: var(--brown);
+  }
+
+  /* ── BOTTOM NAV ─────────────────────────────── */
+  .bottom-nav {
+    display: flex; gap: 10px; padding: 20px 28px 32px; align-items: center;
+  }
+  .btn-nav {
+    padding: 9px 18px; border-radius: 3px; border: 1px solid var(--rule);
+    background: var(--cream); color: var(--ink); font-family: 'Manrope', sans-serif;
+    font-size: 13px; cursor: pointer; transition: background 0.12s, border-color 0.12s;
+  }
+  .btn-nav:hover { background: var(--chip-bg); border-color: var(--border); }
+  .btn-nav.primary {
+    background: var(--brown); color: #fff; border-color: var(--brown);
+    font-weight: 600;
+  }
+  .btn-nav.primary:hover { background: var(--brown-dark); border-color: var(--brown-dark); }
+  .btn-nav:disabled { opacity: 0.35; cursor: default; }
+  .btn-spacer { flex: 1; }
+
+  /* ── RESPONSIVE ─────────────────────────────── */
+  @media (min-width: 900px) {
+    .header-menu-btn { display: none; }
+    .sidebar {
+      transform: none; position: fixed;
+      top: 0; bottom: 0; left: 0;
+    }
+    .overlay { display: none; }
+    .main { margin-left: var(--nav-w); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <button class="header-menu-btn" id="menuBtn" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div>
+    <div class="header-eyebrow">A Great Hair Day</div>
+    <div class="header-title">Mitarbeiterhandbuch</div>
+  </div>
+  <div class="header-logo">Mirjam Walenta</div>
+</header>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-eyebrow">A Great Hair Day</div>
+    <div class="sidebar-title">Mitarbeiter&shy;handbuch</div>
+  </div>
+  <div class="sidebar-nav" id="sidebarNav">
+    <button class="nav-item active" data-section="cover">
+      <span class="nav-item-num">·</span>
+      <span class="nav-item-label">Cover &amp; Vorwort</span>
+    </button>
+    <button class="nav-item" data-section="toc">
+      <span class="nav-item-num">·</span>
+      <span class="nav-item-label">Inhaltsverzeichnis</span>
+    </button>
+    <button class="nav-item" data-section="s01">
+      <span class="nav-item-num">01</span>
+      <span class="nav-item-label">Kundenempfang</span>
+    </button>
+    <button class="nav-item" data-section="s02">
+      <span class="nav-item-num">02</span>
+      <span class="nav-item-label">Kunden-Einstiegsgespräch</span>
+    </button>
+    <button class="nav-item" data-section="s03">
+      <span class="nav-item-num">03</span>
+      <span class="nav-item-label">Kunden-Beratungsgespräch</span>
+    </button>
+    <button class="nav-item" data-section="s04">
+      <span class="nav-item-num">04</span>
+      <span class="nav-item-label">Die Haarwäsche</span>
+    </button>
+    <button class="nav-item" data-section="s05">
+      <span class="nav-item-num">05</span>
+      <span class="nav-item-label">Haar- und Kopfhautpflege</span>
+    </button>
+    <button class="nav-item" data-section="s06">
+      <span class="nav-item-num">06</span>
+      <span class="nav-item-label">Neukundenbetreuung</span>
+    </button>
+    <button class="nav-item" data-section="s07">
+      <span class="nav-item-num">07</span>
+      <span class="nav-item-label">Service</span>
+    </button>
+    <button class="nav-item" data-section="s08">
+      <span class="nav-item-num">08</span>
+      <span class="nav-item-label">Haare schneiden</span>
+    </button>
+    <button class="nav-item" data-section="s09">
+      <span class="nav-item-num">09</span>
+      <span class="nav-item-label">Styling / Finish</span>
+    </button>
+    <button class="nav-item" data-section="s10">
+      <span class="nav-item-num">10</span>
+      <span class="nav-item-label">Farbbehandlung</span>
+    </button>
+    <button class="nav-item" data-section="s11">
+      <span class="nav-item-num">11</span>
+      <span class="nav-item-label">Dauerwelle-Behandlung</span>
+    </button>
+    <button class="nav-item" data-section="s12">
+      <span class="nav-item-num">12</span>
+      <span class="nav-item-label">Telefongesprächsführung</span>
+    </button>
+    <button class="nav-item" data-section="s13">
+      <span class="nav-item-num">13</span>
+      <span class="nav-item-label">Terminvereinbarung</span>
+    </button>
+    <button class="nav-item" data-section="s14">
+      <span class="nav-item-num">14</span>
+      <span class="nav-item-label">Kassenabwicklung</span>
+    </button>
+    <button class="nav-item" data-section="s15">
+      <span class="nav-item-num">15</span>
+      <span class="nav-item-label">Gäste-Verabschiedung</span>
+    </button>
+    <button class="nav-item" data-section="s16">
+      <span class="nav-item-num">16</span>
+      <span class="nav-item-label">Reklamationen</span>
+    </button>
+    <button class="nav-item" data-section="s17">
+      <span class="nav-item-num">17</span>
+      <span class="nav-item-label">Beschwerden</span>
+    </button>
+    <button class="nav-item" data-section="s18">
+      <span class="nav-item-num">18</span>
+      <span class="nav-item-label">Unser Auftreten – das Äußere</span>
+    </button>
+    <button class="nav-item" data-section="s19">
+      <span class="nav-item-num">19</span>
+      <span class="nav-item-label">Unser Auftreten – Limbic Check</span>
+    </button>
+    <button class="nav-item" data-section="s20">
+      <span class="nav-item-num">20</span>
+      <span class="nav-item-label">Unser Teamkodex</span>
+    </button>
+    <button class="nav-item" data-section="back">
+      <span class="nav-item-num">·</span>
+      <span class="nav-item-label">Salon-Info</span>
+    </button>
+  </div>
+  <div class="sidebar-footer">
+    <p>Rechte Wienzeile 47 · 1050 Wien<br>
+    <a href="mailto:walenta@greathairday.at">walenta@greathairday.at</a></p>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- COVER + WELCOME -->
+  <div class="section section-cover" id="sec-cover">
+    <div class="cover">
+      <div class="cover-eyebrow">A Great Hair Day · Rechte Wienzeile 47, Wien</div>
+      <h1 class="cover-h1">Mitarbeiter&shy;handbuch</h1>
+      <p class="cover-sub">Unser gemeinsames Fundament — wie wir arbeiten, wie wir miteinander umgehen und was unsere Gäste von uns erwarten dürfen.</p>
+      <div class="cover-sig">
+        <p class="cover-sig-quote">„Bei uns musst du dich nicht erklären."</p>
+        <p class="cover-sig-name">Mirjam Walenta — Friseurmeisterin &amp; Inhaberin</p>
+      </div>
+    </div>
+
+    <div class="section" style="display:block; border-bottom:none;">
+      <div class="section-tag">Vorwort</div>
+      <h2 class="section-h2" style="display:block; margin-bottom:22px;">Herzlich willkommen in unserem Team.</h2>
+      <p class="welcome-text">Seit 1993 bin ich Teil dieses Salons, seit 2016 führe ich ihn als Inhaberin. Über 30 Jahre an ein und demselben Ort – das ist keine Selbstverständlichkeit, sondern eine bewusste Entscheidung. Eine Entscheidung für echte Beziehungen, für Qualität, für Menschen, die sich bei uns nicht erklären müssen.</p>
+      <p class="welcome-text">Dieses Handbuch ist unser gemeinsames Fundament. Es beschreibt, wie wir arbeiten, wie wir miteinander umgehen und was unsere Kund:innen von uns erwarten dürfen. Es ersetzt nicht dein Gespür – aber es gibt uns eine gemeinsame Sprache.</p>
+      <p class="mantra">Unser Mantra: Bei uns musst du dich nicht erklären.</p>
+      <div class="welcome-sig">
+        <p class="welcome-sig-name">Mirjam Walenta</p>
+        <p class="welcome-sig-role">Friseurmeisterin &amp; Inhaberin</p>
+      </div>
+    </div>
+    <div class="bottom-nav">
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('toc')">Zum Inhalt →</button>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="section" id="sec-toc">
+    <div class="section-tag">Übersicht</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:22px;">Inhalt</h2>
+    <div class="toc-grid">
+      <button class="toc-item" onclick="goTo('s01')"><span class="toc-item-num">01</span><span class="toc-item-label">Kundenempfang</span></button>
+      <button class="toc-item" onclick="goTo('s02')"><span class="toc-item-num">02</span><span class="toc-item-label">Kunden-Einstiegsgespräch</span></button>
+      <button class="toc-item" onclick="goTo('s03')"><span class="toc-item-num">03</span><span class="toc-item-label">Kunden-Beratungsgespräch</span></button>
+      <button class="toc-item" onclick="goTo('s04')"><span class="toc-item-num">04</span><span class="toc-item-label">Die Haarwäsche</span></button>
+      <button class="toc-item" onclick="goTo('s05')"><span class="toc-item-num">05</span><span class="toc-item-label">Haar- und Kopfhautpflege</span></button>
+      <button class="toc-item" onclick="goTo('s06')"><span class="toc-item-num">06</span><span class="toc-item-label">Neukundenbetreuung</span></button>
+      <button class="toc-item" onclick="goTo('s07')"><span class="toc-item-num">07</span><span class="toc-item-label">Service</span></button>
+      <button class="toc-item" onclick="goTo('s08')"><span class="toc-item-num">08</span><span class="toc-item-label">Haare schneiden</span></button>
+      <button class="toc-item" onclick="goTo('s09')"><span class="toc-item-num">09</span><span class="toc-item-label">Styling / Finish</span></button>
+      <button class="toc-item" onclick="goTo('s10')"><span class="toc-item-num">10</span><span class="toc-item-label">Farbbehandlung</span></button>
+      <button class="toc-item" onclick="goTo('s11')"><span class="toc-item-num">11</span><span class="toc-item-label">Dauerwelle-Behandlung</span></button>
+      <button class="toc-item" onclick="goTo('s12')"><span class="toc-item-num">12</span><span class="toc-item-label">Telefongesprächsführung</span></button>
+      <button class="toc-item" onclick="goTo('s13')"><span class="toc-item-num">13</span><span class="toc-item-label">Terminvereinbarung</span></button>
+      <button class="toc-item" onclick="goTo('s14')"><span class="toc-item-num">14</span><span class="toc-item-label">Kassenabwicklung</span></button>
+      <button class="toc-item" onclick="goTo('s15')"><span class="toc-item-num">15</span><span class="toc-item-label">Gäste-Verabschiedung</span></button>
+      <button class="toc-item" onclick="goTo('s16')"><span class="toc-item-num">16</span><span class="toc-item-label">Reklamationen</span></button>
+      <button class="toc-item" onclick="goTo('s17')"><span class="toc-item-num">17</span><span class="toc-item-label">Beschwerden</span></button>
+      <button class="toc-item" onclick="goTo('s18')"><span class="toc-item-num">18</span><span class="toc-item-label">Auftreten – das Äußere</span></button>
+      <button class="toc-item" onclick="goTo('s19')"><span class="toc-item-num">19</span><span class="toc-item-label">Auftreten – Limbic Check</span></button>
+      <button class="toc-item" onclick="goTo('s20')"><span class="toc-item-num">20</span><span class="toc-item-label">Unser Teamkodex</span></button>
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('cover')">← Zurück</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s01')">Kapitel 01 →</button>
+    </div>
+  </div>
+
+  <!-- 01 KUNDENEMPFANG -->
+  <div class="section" id="sec-s01">
+    <h2 class="section-h2"><span class="section-num">01</span> Kundenempfang</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">1.1</span><span class="item-text">Jeder eintretende Gast wird sofort von der nächststehenden Person gegrüßt (Augenkontakt), nach seinem Wunsch gefragt und bekommt einen Platz angeboten.</span></div>
+    <div class="item"><span class="item-num">1.2</span><span class="item-text">Kund:innen werden mit ihrem Namen angesprochen.</span></div>
+    <div class="item"><span class="item-num">1.3</span><span class="item-text">Wir freuen uns über jeden Gast – und zeigen das auch.</span></div>
+    <div class="item"><span class="item-num">1.4</span><span class="item-text">Die zuständige Person weiß, wer nach dem Terminplan als Nächstes kommen müsste.</span></div>
+    <div class="item"><span class="item-num">1.5</span><span class="item-text">Dem Gast wird sofort ein Behandlungs- bzw. Beratungsplatz angeboten.</span></div>
+    <div class="item"><span class="item-num">1.6</span><span class="item-text">Die Behandlung beginnt erst nach einer Beratung oder persönlichen Kontaktaufnahme durch die zuständige Person.</span></div>
+    <div class="item"><span class="item-num">1.7</span><span class="item-text">Wartenden Gästen werden Serviceleistungen angeboten (z. B. Augenbrauen-Service, Maniküre).</span></div>
+    <div class="item"><span class="item-num">1.8</span><span class="item-text">Die zuständige Person wird sofort über das Eintreffen ihres Gastes informiert.</span></div>
+    <div class="item"><span class="item-num">1.9</span><span class="item-text">Sauberer Umhang, Handtücher, Kamm und Bürste liegen für jeden Gast bereit.</span></div>
+    <div class="item"><span class="item-num">1.10</span><span class="item-text">Bei unerwartet längerer Wartezeit wird der Gast so präzise wie möglich informiert.</span></div>
+    <div class="item"><span class="item-num">1.11</span><span class="item-text">Spontangästen wird der schnellstmögliche Behandlungstermin angeboten.</span></div>
+    <div class="box">
+      <div class="item"><span class="item-num">1.12</span><span class="item-text">Neukund:innen:</span></div>
+      <ul class="box-list">
+        <li>Neukundenzettel ausfüllen lassen</li>
+        <li>Frisurenmappen überreichen</li>
+        <li>Nachfragen, welche Zeitschriften gelesen werden möchten</li>
+        <li>Getränke anbieten</li>
+      </ul>
+    </div>
+    <div class="item"><span class="item-num">1.13</span><span class="item-text">Bei Neukund:innen stellt sich die Stylistin/der Stylist vor und spricht den Gast im Laufe der Behandlung mit seinem Namen an.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('toc')">← Inhalt</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s02')">02 →</button>
+    </div>
+  </div>
+
+  <!-- 02 KUNDEN-EINSTIEGSGESPRÄCH -->
+  <div class="section" id="sec-s02">
+    <h2 class="section-h2"><span class="section-num">02</span> Kunden-Einstiegsgespräch</h2>
+    <div class="section-rule"></div>
+    <div class="box">
+      <div class="item"><span class="item-num">2.1</span><span class="item-text">Informationsmaterial bereithalten:</span></div>
+      <ul class="box-list">
+        <li>Ausgefüllter Neukundenzettel</li>
+        <li>Frisurenmappen</li>
+        <li>Farbkarte</li>
+      </ul>
+    </div>
+    <div class="item"><span class="item-num">2.2</span><span class="item-text">Lächeln, persönliche Begrüßung, eventuell Handschlag, Sitzposition einnehmen (Augenhöhe/Herzseite). Gäste mit Namen ansprechen!</span></div>
+    <div class="box">
+      <div class="item"><span class="item-num">2.3</span><span class="item-text">Fragen zu Schnitt, Farbe, Frisur:</span></div>
+      <ul class="box-list">
+        <li>Was darf/kann ich für Sie tun?</li>
+        <li>Wie sind Sie derzeit mit Ihrem Schnitt/Farbe/Frisur zufrieden?</li>
+        <li>Was wollen Sie auf keinen Fall?</li>
+      </ul>
+    </div>
+    <div class="item"><span class="item-num">2.4</span><span class="item-text">Genaues Abklären des Frisurenwunsches anhand von Bildern (lang? kurz? Farbe?). Bestätigung des Kundenwunsches im Detail oder Vorschläge machen. Über Vor- und Nachteile aufklären.</span></div>
+    <div class="box">
+      <div class="item"><span class="item-num">2.5</span><span class="item-text">Feststellungen + Kostenvoranschlag (wenn gewünscht):</span></div>
+      <ul class="box-list">
+        <li>Diese besprochene Behandlung dauert …</li>
+        <li>Die Dienstleistung kostet detailliert …</li>
+        <li>Der Gesamtpreis der Dienstleistungen beträgt …</li>
+      </ul>
+    </div>
+    <div class="item"><span class="item-num">2.6</span><span class="item-text">Sind Sie damit einverstanden? – Wenn die Bestätigung des Gastes kommt, kann die Dienstleistung beginnen. Verweigert der Gast, frage ich nach dem Grund.</span></div>
+    <div class="box">
+      <div class="item"><span class="item-num">2.7</span><span class="item-text">Dann feststellen:</span></div>
+      <ul class="box-list">
+        <li>Was braucht der Gast unbedingt?</li>
+        <li>Wo kann ich einsparen (Zeit/Geld)?</li>
+      </ul>
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s01')">← 01</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s03')">03 →</button>
+    </div>
+  </div>
+
+  <!-- 03 KUNDEN-BERATUNGSGESPRÄCH -->
+  <div class="section" id="sec-s03">
+    <h2 class="section-h2"><span class="section-num">03</span> Kunden-Beratungsgespräch</h2>
+    <div class="section-rule"></div>
+    <p class="section-subtitle">Fragen zu: 1. Pflege · 2. Schnitt + Frisur · 3. Farbe · 4. Umformung</p>
+    <h3 class="section-h3">3/1 · Pflege — Haar- und Kopfhautanalyse</h3>
+    <div class="item"><span class="item-num item-num-wide">3/1.1</span><span class="item-text">Zustand der Haare ermitteln: natur, getönt, gefärbt, blondiert, glatt, gewellt, gesund, trocken, brüchig, strapaziert?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/1.2</span><span class="item-text">Zustand der Kopfhaut ermitteln: normal, fettend, trocken, gerötet (sensibel), Schuppen?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/1.3</span><span class="item-text">Auf Basis dieser Feststellungen wird Shampoo und Pflege festgelegt. Grundsätzlich wird zweimal gewaschen.</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/1.4</span><span class="item-text">Bei Herrengästen mit kurzem, frisch gewaschenem Haar ist die Frage erlaubt: Haben Sie die Haare erst vor Kurzem gewaschen? Würde ein Waschgang reichen, oder möchten Sie zweimal gewaschen werden?</span></div>
+    <h3 class="section-h3 section-h3-spacer">3/2 · Schnitt + Frisur — W-Fragen</h3>
+    <div class="item"><span class="item-num item-num-wide">3/2.1</span><span class="item-text">Was stört Sie derzeit (am meisten) an Ihrer Frisur / Ihrem Haarschnitt?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/2.2</span><span class="item-text">Was hätten Sie gerne geändert?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/2.3</span><span class="item-text">Welche Haarlänge hätten Sie gerne? (kürzer, gleiche Länge oder wachsen lassen)</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/2.4</span><span class="item-text">Wie soll die Frisur aussehen? (natürlich, mit Volumen, länger haltbar, glatt oder lockig …)</span></div>
+    <h3 class="section-h3 section-h3-spacer">3/3 · Farbe</h3>
+    <div class="item"><span class="item-num item-num-wide">3/3.1</span><span class="item-text">Wie sind Sie derzeit mit Ihrer Farbe zufrieden?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/3.2</span><span class="item-text">Farbwunsch? Wie soll Ihre Farbe aussehen?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/3.3</span><span class="item-text">Wann wurde die letzte Farbveränderung gemacht?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/3.4</span><span class="item-text">Welche Pflegeprodukte benutzen Sie zu Hause und wie oft?</span></div>
+    <h3 class="section-h3 section-h3-spacer">3/4 · Umformung (Stütz- oder Dauerwelle)</h3>
+    <div class="item"><span class="item-num item-num-wide">3/4.1</span><span class="item-text">Welche Erfahrungen haben Sie bisher mit einer Umformung gemacht?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/4.2</span><span class="item-text">Wann haben Sie sich zuletzt eine Umformung machen lassen?</span></div>
+    <div class="item"><span class="item-num item-num-wide">3/4.3</span><span class="item-text">Welche Pflegeprodukte benutzen Sie zu Hause und wie oft?</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s02')">← 02</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s04')">04 →</button>
+    </div>
+  </div>
+
+  <!-- 04 DIE HAARWÄSCHE -->
+  <div class="section" id="sec-s04">
+    <h2 class="section-h2"><span class="section-num">04</span> Die Haarwäsche</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">4.1</span><span class="item-text">Die Haarwäsche soll für unsere Gäste einen besonders angenehmen Erlebniswert haben. Wichtig!</span></div>
+    <div class="item"><span class="item-num">4.2</span><span class="item-text">Der Handlungsablauf erfolgt nach interner Schulung.</span></div>
+    <div class="item"><span class="item-num">4.3</span><span class="item-text">Das Durchbürsten vor der Haarwäsche und der Turban nach der Haarwäsche ist Pflicht.</span></div>
+    <div class="item"><span class="item-num">4.4</span><span class="item-text">Vor dem Waschen wird dem Gast kurz gesagt, mit welchem Produkt gewaschen wird.</span></div>
+    <div class="item"><span class="item-num">4.5</span><span class="item-text">Dem Gast wird eine Entspannungsphase während der Haarwäsche ermöglicht. Fragen Sie nur zu Beginn, ob Druck und Temperatur angenehm sind – und weisen Sie darauf hin, dass er/sie sich jederzeit melden darf.</span></div>
+    <div class="item"><span class="item-num">4.6</span><span class="item-text">Nach der Haarwäsche wird dem Gast das verwendete Produkt genauestens erklärt. Bei Neukund:innen Shampoo- und Pflegeprodukte hinstellen.</span></div>
+    <div class="box">
+      <div class="item"><span class="item-num">4.7</span><span class="item-text">Nach der Haarwäsche wird ein Kundenlaufzettel geschrieben und alle Dienstleistungen eingetragen:</span></div>
+      <ul class="box-list">
+        <li>Gast nach Vor- und Zunamen fragen</li>
+        <li>Adresse, E-Mail und Telefonnummer überprüfen</li>
+        <li>Wenn nötig, Neuerungen ausfüllen lassen</li>
+      </ul>
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s03')">← 03</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s05')">05 →</button>
+    </div>
+  </div>
+
+  <!-- 05 HAAR- UND KOPFHAUTPFLEGE -->
+  <div class="section" id="sec-s05">
+    <h2 class="section-h2"><span class="section-num">05</span> Haar- und Kopfhautpflege</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">5.1</span><span class="item-text">Wir betreiben aktive Haar- und Kopfhautpflege und fördern das Pflegeverhalten unserer Gäste durch aktuelle Information und Beratung im Salon.</span></div>
+    <div class="item"><span class="item-num">5.2</span><span class="item-text">Wir bieten Entspannungskopfmassagen an.</span></div>
+    <div class="item"><span class="item-num">5.3</span><span class="item-text">Alle Pflegeprodukte, die wir im Salon einsetzen, empfehlen wir auch zur Heimbehandlung.</span></div>
+    <div class="item"><span class="item-num">5.4</span><span class="item-text">Bei Farb- und Dauerwellbehandlungen ist Pflege Pflicht!</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s04')">← 04</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s06')">06 →</button>
+    </div>
+  </div>
+
+  <!-- 06 NEUKUNDENBETREUUNG -->
+  <div class="section" id="sec-s06">
+    <h2 class="section-h2"><span class="section-num">06</span> Neukundenbetreuung</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">6.1</span><span class="item-text">Wir geben jedem Gast das Gefühl, ein willkommener Mensch in unserem Salon zu sein.</span></div>
+    <div class="item"><span class="item-num">6.2</span><span class="item-text">Nach dem Empfang bitten wir die Neukund:innen, den Neukundenzettel auszufüllen und aus der Frisurenmappe mit Lesezeichen (zwei Farben) Frisuren auszusuchen, die ihnen gefallen bzw. nicht gefallen.</span></div>
+    <div class="item"><span class="item-num">6.3</span><span class="item-text">Der zuständigen Person Bescheid geben.</span></div>
+    <div class="item"><span class="item-num">6.4</span><span class="item-text">Die Stylistin/der Stylist berät nach unserem Beratungssystem (siehe Kapitel 2 und 3).</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s05')">← 05</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s07')">07 →</button>
+    </div>
+  </div>
+
+  <!-- 07 SERVICE -->
+  <div class="section" id="sec-s07">
+    <h2 class="section-h2"><span class="section-num">07</span> Service</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">7.1</span><span class="item-text">Mit unserer aufmerksamen Betreuung sichern wir einen hohen Erlebniswert unserer Dienstleistung.</span></div>
+    <div class="item"><span class="item-num">7.2</span><span class="item-text">Unterbrechungen der Arbeit werden erklärt und gegebenenfalls entschuldigt!</span></div>
+    <div class="item"><span class="item-num">7.3</span><span class="item-text">Die menschliche Zuwendung gegenüber allen Gästen – unabhängig von Alter, Geschlecht, Nationalität und sozialer Schicht – ist selbstverständlich!</span></div>
+    <div class="item"><span class="item-num">7.4</span><span class="item-text">Für notwendige Einwirkungs- und sonstige Wartezeiten stehen folgende Serviceleistungen zur Verfügung: Kaffee, Getränke, Lektüre, …</span></div>
+    <div class="item"><span class="item-num">7.5</span><span class="item-text">Jede Stylistin/jeder Stylist respektiert das Bedürfnis des Gastes nach Sprechen oder Schweigen.</span></div>
+    <div class="item"><span class="item-num">7.6</span><span class="item-text">Die gereinigte Ablage wird für den Gast freigehalten. Handtaschen aufhängen.</span></div>
+    <div class="item"><span class="item-num">7.7</span><span class="item-text">Wir bieten unseren Gästen als Service Parkscheine an.</span></div>
+    <div class="item"><span class="item-num">7.8</span><span class="item-text">Wir erklären unseren Gästen genau, wie sie selbst zu einem guten Frisurenergebnis kommen.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s06')">← 06</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s08')">08 →</button>
+    </div>
+  </div>
+
+  <!-- 08 HAARE SCHNEIDEN -->
+  <div class="section" id="sec-s08">
+    <h2 class="section-h2"><span class="section-num">08</span> Haare schneiden</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">8.1</span><span class="item-text">Die Beratung wird nach unserem Beratungssystem und mit Hilfe von Frisurenmappen durchgeführt.</span></div>
+    <div class="item"><span class="item-num">8.2</span><span class="item-text">Der Haarschnitt wird nach den von uns erlernten Techniken durchgeführt.</span></div>
+    <div class="item"><span class="item-num">8.3</span><span class="item-text">Während des Haarschnitts werden Schnitthaare regelmäßig mit dem Nackenpinsel von Gesicht und Nacken entfernt.</span></div>
+    <div class="item"><span class="item-num">8.4</span><span class="item-text">Mindestens einmal jährlich bringen wir unsere Kenntnisse durch interne oder externe Schulungen auf den neuesten Stand.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s07')">← 07</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s09')">09 →</button>
+    </div>
+  </div>
+
+  <!-- 09 STYLING / FINISH -->
+  <div class="section" id="sec-s09">
+    <h2 class="section-h2"><span class="section-num">09</span> Styling / Finish</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">9.1</span><span class="item-text">Wir klären ab, welches Styling der Gast von uns erwartet.</span></div>
+    <div class="item"><span class="item-num">9.2</span><span class="item-text">Vor dem Finish den Kundenwunsch herausfinden: klassisch, trendig, lockig, glatt, haltbar oder locker unfrisiert …</span></div>
+    <div class="item"><span class="item-num">9.3</span><span class="item-text">Alle Styling-Möglichkeiten, natürlich auch Aufsteckfrisuren, müssen von allen Stylist:innen beherrscht werden.</span></div>
+    <div class="box">
+      <div class="item"><span class="item-num">9.4</span><span class="item-text">Wir zeigen dem Gast nach dem Finish den Spiegel von allen Seiten und klären ab, ob er/sie mit dem Ergebnis zufrieden ist. Wichtige Fragen:</span></div>
+      <ul class="box-list">
+        <li>Sind Sie mit dem Ergebnis (Schnitt, Farbe, Styling, …) zufrieden?</li>
+        <li>Haben Sie es sich so vorgestellt?</li>
+      </ul>
+    </div>
+    <div class="item"><span class="item-num">9.5</span><span class="item-text">Stylingvariationen, Tipps und Heimpflege für zu Hause anbieten. Wir empfehlen die Produkte, die wir verwendet haben.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s08')">← 08</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s10')">10 →</button>
+    </div>
+  </div>
+
+  <!-- 10 FARBBEHANDLUNG -->
+  <div class="section" id="sec-s10">
+    <h2 class="section-h2"><span class="section-num">10</span> Farbbehandlung</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">10.1</span><span class="item-text">Wir empfehlen unseren Gästen zum Schutz Umkleidemäntel.</span></div>
+    <div class="item"><span class="item-num">10.2</span><span class="item-text">Die fachlichen Möglichkeiten und Grenzen sind bekannt und werden dem Gast unaufgefordert mitgeteilt.</span></div>
+    <div class="item"><span class="item-num">10.3</span><span class="item-text">Der Behandlungsablauf erfolgt durch interne Schulungen.</span></div>
+    <div class="item"><span class="item-num">10.4</span><span class="item-text">Schutzhandschuhe tragen.</span></div>
+    <div class="item"><span class="item-num">10.5</span><span class="item-text">Produkteinsatz erfolgt nach exakter Gebrauchsanweisung der Hersteller (Mischverhältnisse, Einwirkzeit, …).</span></div>
+    <div class="item"><span class="item-num">10.6</span><span class="item-text">Bei Stammgästen Karteikarte verwenden, bei Neugästen Karteikarte anlegen.</span></div>
+    <div class="item"><span class="item-num">10.7</span><span class="item-text">Wir verwenden nach jeder chemischen Behandlung Intensivpflege.</span></div>
+    <div class="item"><span class="item-num">10.8</span><span class="item-text">Der Gast erhält genaue Informationen über die Heimpflege.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s09')">← 09</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s11')">11 →</button>
+    </div>
+  </div>
+
+  <!-- 11 DAUERWELLE-BEHANDLUNG -->
+  <div class="section" id="sec-s11">
+    <h2 class="section-h2"><span class="section-num">11</span> Dauerwelle-Behandlung</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">11.1</span><span class="item-text">Einmal Waschen mit SP-Deep Cleanser.</span></div>
+    <div class="item"><span class="item-num">11.2</span><span class="item-text">Der Behandlungsablauf erfolgt durch interne Schulungen.</span></div>
+    <div class="item"><span class="item-num">11.3</span><span class="item-text">Produkteinsatz erfolgt nach exakter Gebrauchsanweisung der Hersteller (Einwirkzeit, etc.).</span></div>
+    <div class="item"><span class="item-num">11.4</span><span class="item-text">Schutzhandschuhe tragen.</span></div>
+    <div class="item"><span class="item-num">11.5</span><span class="item-text">Wenn notwendig, Vorbehandlung verwenden.</span></div>
+    <div class="item"><span class="item-num">11.6</span><span class="item-text">Es ist unbedingt zu beachten, dass die Haut auf keinen Fall mit Wellflüssigkeit in Berührung kommt.</span></div>
+    <div class="item"><span class="item-num">11.7</span><span class="item-text">Fixiervorgang genauestens ausführen.</span></div>
+    <div class="item"><span class="item-num">11.8</span><span class="item-text">Wir schneiden die Haare in der Regel nach der Dauerwelle.</span></div>
+    <div class="item"><span class="item-num">11.9</span><span class="item-text">Nach der Dauerwellenbehandlung ist Pflege Pflicht!</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s10')">← 10</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s12')">12 →</button>
+    </div>
+  </div>
+
+  <!-- 12 TELEFONGESPRÄCHSFÜHRUNG -->
+  <div class="section" id="sec-s12">
+    <h2 class="section-h2"><span class="section-num">12</span> Telefongesprächsführung</h2>
+    <div class="section-rule"></div>
+    <div class="box">
+      <div class="item"><span class="item-num">12.1</span><span class="item-text">Jede Person im Salon benutzt eine festgelegte Begrüßungsformel beim Telefonieren:</span></div>
+      <p class="quote-line">„Mirjam Walenta – A Great Hair Day, guten Tag – [Name] am Apparat"</p>
+      <ul class="box-list">
+        <li>Lächeln – hört man an der Stimme!</li>
+        <li>Laut, deutlich, freundlich und nicht zu schnell sprechen</li>
+        <li>Gäste mit dem Namen ansprechen</li>
+      </ul>
+    </div>
+    <div class="item"><span class="item-num">12.2</span><span class="item-text">Gäste fragen, ob eine bestimmte Stylistin/ein bestimmter Stylist gewünscht wird und welche Dienstleistungen sie haben möchten – bei Damen Haarlänge erfragen.</span></div>
+    <div class="item"><span class="item-num">12.3</span><span class="item-text">„Wollen Sie auch eine Haarfarbe oder Strähnen?" (Kopfmassage, Maniküre, etc.)</span></div>
+    <div class="item"><span class="item-num">12.4</span><span class="item-text">Bei Neugästen einen Vermerk im Terminblock (NK) machen. Wenn Stammgast die Stylistin/den Stylisten wechselt, beide informieren.</span></div>
+    <div class="item"><span class="item-num">12.5</span><span class="item-text">Abschließend den Anmeldetermin wiederholen! Was, wann, bei wem! „Danke, wir freuen uns auf Ihr Kommen" oder „Danke schön, bis bald!"</span></div>
+    <div class="item"><span class="item-num">12.6</span><span class="item-text">Wichtig: Warten, bis der Gast den Hörer aufgelegt hat.</span></div>
+    <div class="item"><span class="item-num">12.7</span><span class="item-text">Bei telefonischer Terminänderung wird die Stylistin/der Stylist sofort informiert.</span></div>
+    <div class="item"><span class="item-num">12.8</span><span class="item-text">Bei Terminabsagen unbedingt Ersatztermin anbieten, wenn möglich gleich fixieren. Wenn nicht möglich: Namen und Telefonnummer notieren und Stylist:in sofort informieren.</span></div>
+    <div class="item"><span class="item-num">12.9</span><span class="item-text">Ans Telefon geht die Person, die am nächsten steht und gerade nicht wäscht, schneidet oder Farbe aufträgt. Abheben vor dem 3. Läuten.</span></div>
+    <div class="item"><span class="item-num">12.10</span><span class="item-text">Für Rückrufe bei Neugästen oder wichtigen Informationen unbedingt Notizen machen.</span></div>
+    <div class="item"><span class="item-num">12.11</span><span class="item-text">Wir rufen nicht erschienene Gäste an.</span></div>
+    <div class="item"><span class="item-num">12.12</span><span class="item-text">Beschwerden am Telefon führt die betroffene Person persönlich.</span></div>
+    <div class="item"><span class="item-num">12.13</span><span class="item-text">Bei Beschwerden und Beratungswünschen wird keine Ferndiagnose am Telefon gemacht.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s11')">← 11</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s13')">13 →</button>
+    </div>
+  </div>
+
+  <!-- 13 TERMINVEREINBARUNG -->
+  <div class="section" id="sec-s13">
+    <h2 class="section-h2"><span class="section-num">13</span> Terminvereinbarung</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">13.1</span><span class="item-text">Wir ersuchen, zuerst schwache Termine anzubieten: Vormittag, Dienstag oder Mittwoch. Stark nachgefragte Termine möglichst lange freihalten: Nachmittags, Montag, Donnerstag, Freitag, Samstag.</span></div>
+    <div class="item"><span class="item-num">13.2</span><span class="item-text">Gäste ohne Terminreservierung NICHT wegschicken! Platz nehmen lassen. Schnellstmöglichen Termin anbieten, Wartezeit erklären – aber versichern, der nächste freie Termin ist reserviert.</span></div>
+    <div class="item"><span class="item-num">13.3</span><span class="item-text">Die Terminvereinbarung wird von allen Teammitgliedern durchgeführt und vorher trainiert.</span></div>
+    <div class="item"><span class="item-num">13.4</span><span class="item-text">Wir bieten während des Gästebesuchs einen neuen Termin für die nächste Behandlung an.</span></div>
+    <div class="item"><span class="item-num">13.5</span><span class="item-text">Bei einem nicht erschienenen Gast wird versucht, diesen noch am selben Tag zu erreichen. Wir bieten auf jeden Fall freundlichst einen Ersatztermin an.</span></div>
+    <div class="item"><span class="item-num">13.6</span><span class="item-text">Kurzfristige Terminabsagen werden freundlichst bedauert, wir bedanken uns für die Absage und bieten gleich einen neuen Termin an.</span></div>
+    <div class="item"><span class="item-num">13.7</span><span class="item-text">Wenn ein Teammitglied überraschend verhindert ist, organisieren wir den Terminplan um und informieren die betroffenen Gäste.</span></div>
+    <div class="item"><span class="item-num">13.8</span><span class="item-text">Wir achten darauf, dass der Name des Gastes richtig und leserlich geschrieben wird.</span></div>
+    <div class="item"><span class="item-num">13.9</span><span class="item-text">Bei Leerläufen „spontan" Gäste anrufen.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s12')">← 12</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s14')">14 →</button>
+    </div>
+  </div>
+
+  <!-- 14 KASSENABWICKLUNG -->
+  <div class="section" id="sec-s14">
+    <h2 class="section-h2"><span class="section-num">14</span> Kassenabwicklung</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">14.1</span><span class="item-text">Die Stylistin/der Stylist kontrolliert, ob alle Dienstleistungen im Computer angeführt sind.</span></div>
+    <div class="item"><span class="item-num">14.2</span><span class="item-text">Betrag zweimal kontrollieren! Verantwortlich = Stylist:in.</span></div>
+    <div class="item"><span class="item-num">14.3</span><span class="item-text">Neugäste unbedingt fragen, ob sie eine Rechnung möchten.</span></div>
+    <div class="item"><span class="item-num">14.4</span><span class="item-text">Folgetermin anbieten.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s13')">← 13</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s15')">15 →</button>
+    </div>
+  </div>
+
+  <!-- 15 GÄSTE-VERABSCHIEDUNG -->
+  <div class="section" id="sec-s15">
+    <h2 class="section-h2"><span class="section-num">15</span> Gäste-Verabschiedung</h2>
+    <div class="section-rule"></div>
+    <div class="box">
+      <div class="item"><span class="item-num">15.1</span><span class="item-text">Wir nutzen die Verabschiedung als letzte Möglichkeit, die Zufriedenheit des Gastes zu ermitteln. Teamkolleg:innen loben:</span></div>
+      <ul class="box-list">
+        <li>Der neue Look passt Ihnen sehr gut</li>
+        <li>Die Strähnen (Farbe) lassen den Schnitt noch besser zur Geltung kommen</li>
+        <li>Sie sehen toll aus</li>
+        <li>Viel Spaß mit der neuen Frisur, Farbe, Schnitt …</li>
+      </ul>
+    </div>
+    <div class="item"><span class="item-num">15.2</span><span class="item-text">Die zuständige Person begleitet den Gast an die Rezeption und verabschiedet sich per Handschlag.</span></div>
+    <div class="item"><span class="item-num">15.3</span><span class="item-text">Auf Wunsch wird ein Taxi gerufen.</span></div>
+    <div class="item"><span class="item-num">15.4</span><span class="item-text">Dem Gast wird in den Mantel geholfen und die Türe geöffnet.</span></div>
+    <div class="item"><span class="item-num">15.5</span><span class="item-text">Wir behandeln Gäste bei der Verabschiedung mit höchster Aufmerksamkeit – das ist entscheidend für Zufriedenheit und die Bereitschaft zum nächsten Besuch.</span></div>
+    <div class="item"><span class="item-num">15.6</span><span class="item-text">Die zuständige Friseurin/der zuständige Friseur und möglichst auch die Salonleitung bedanken sich für den Besuch.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s14')">← 14</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s16')">16 →</button>
+    </div>
+  </div>
+
+  <!-- 16 REKLAMATIONEN -->
+  <div class="section" id="sec-s16">
+    <h2 class="section-h2"><span class="section-num">16</span> Reklamationen</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">16.1</span><span class="item-text">Zunächst wird Bedauern darüber geäußert, dass der Gast nicht zufrieden ist.</span></div>
+    <div class="item"><span class="item-num">16.2</span><span class="item-text">Gäste aufmerksam zuhören, nicht unterbrechen.</span></div>
+    <div class="item"><span class="item-num">16.3</span><span class="item-text">Bei einfachen Reklamationen bieten wir eine sofortige Korrektur an.</span></div>
+    <div class="item"><span class="item-num">16.4</span><span class="item-text">Bei schwerwiegenderen Reklamationen ziehen wir die Salonleitung hinzu.</span></div>
+    <div class="item"><span class="item-num">16.5</span><span class="item-text">Bei telefonischen Reklamationen bitten wir den Gast in den Salon.</span></div>
+    <div class="item"><span class="item-num">16.6</span><span class="item-text">Alle Reklamationen werden systematisch von derjenigen Person erfasst, bearbeitet und erledigt bzw. weitergeleitet, an die die Reklamation herangetragen wurde.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s15')">← 15</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s17')">17 →</button>
+    </div>
+  </div>
+
+  <!-- 17 BESCHWERDEN -->
+  <div class="section" id="sec-s17">
+    <h2 class="section-h2"><span class="section-num">17</span> Beschwerden</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">17.1</span><span class="item-text">Alle Teammitglieder sehen Beschwerden als aktuelle und konkrete Chance an, die Gästezufriedenheit als wichtiges Ziel zu erhöhen.</span></div>
+    <div class="item"><span class="item-num">17.2</span><span class="item-text">Gäste aufmerksam zuhören – alles sagen lassen.</span></div>
+    <div class="item"><span class="item-num">17.3</span><span class="item-text">Wenn uns ein Gast sagt, dass er/sie unzufrieden ist, äußern wir – völlig unabhängig von der Ursachenforschung – Bedauern und versprechen, uns ernsthaft zu bemühen, ihn/sie zufrieden zu stellen.</span></div>
+    <div class="item"><span class="item-num">17.4</span><span class="item-text">Wer Beschwerden verursacht hat, macht auch Verbesserungsvorschläge, wie das Problem in Zukunft vermieden werden kann.</span></div>
+    <div class="item"><span class="item-num">17.5</span><span class="item-text">Die Person, die die Beschwerde angenommen hat, leitet sie an diejenige weiter, die die Beschwerde ausgelöst hat.</span></div>
+    <div class="item"><span class="item-num">17.6</span><span class="item-text">Wir analysieren unsere Beschwerden regelmäßig, um Schwachpunkte zu erkennen und zu beheben.</span></div>
+    <div class="item"><span class="item-num">17.7</span><span class="item-text">Die Zufriedenheit der Gäste mit der Abwicklung ihrer Beschwerden überprüfen wir durch Befragen. Deshalb ist Nachfragen während der Dienstleistung so wichtig!</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s16')">← 16</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s18')">18 →</button>
+    </div>
+  </div>
+
+  <!-- 18 UNSER AUFTRETEN – DAS ÄUSSERE -->
+  <div class="section" id="sec-s18">
+    <h2 class="section-h2"><span class="section-num">18</span> Unser Auftreten – das Äußere</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">18.1</span><span class="item-text">Jedes Teammitglied macht einen sauberen, gepflegten Gesamteindruck. Das Äußere ist dem Stil des Salons angepasst. Bekleidung: schwarz, grau, weiß.</span></div>
+    <div class="item"><span class="item-num">18.2</span><span class="item-text">Haarschnitt und Haarfarbe der Teammitglieder sind ansprechend und trendig.</span></div>
+    <div class="item"><span class="item-num">18.3</span><span class="item-text">Alle Teammitglieder kommen frisiert und gepflegt ins Geschäft. Make-up wird bei Bedarf untertags aufgefrischt.</span></div>
+    <div class="item"><span class="item-num">18.4</span><span class="item-text">Alle Teammitglieder tragen ein Namensschild.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s17')">← 17</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s19')">19 →</button>
+    </div>
+  </div>
+
+  <!-- 19 LIMBIC CHECK -->
+  <div class="section" id="sec-s19">
+    <h2 class="section-h2"><span class="section-num">19</span> Unser Auftreten – Limbic Check</h2>
+    <div class="section-rule"></div>
+    <div class="item"><span class="item-num">19.1</span><span class="item-text">Jedes Teammitglied duftet angenehm oder neutral.</span></div>
+    <div class="item"><span class="item-num">19.2</span><span class="item-text">Die Sprache ist dem Stil des Salons angepasst.</span></div>
+    <div class="item"><span class="item-num">19.3</span><span class="item-text">Die Körpersprache ist offen und einladend.</span></div>
+    <div class="item"><span class="item-num">19.4</span><span class="item-text">Alle Teammitglieder sind flink und routiniert und verlieren nicht die Übersicht.</span></div>
+    <div class="item"><span class="item-num">19.5</span><span class="item-text">Die Mienen der Teammitglieder sind freundlich – und wir haben sichtlich Spaß an der Arbeit.</span></div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s18')">← 18</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('s20')">20 →</button>
+    </div>
+  </div>
+
+  <!-- 20 TEAMKODEX -->
+  <div class="section" id="sec-s20">
+    <h2 class="section-h2"><span class="section-num">20</span> Unser Teamkodex</h2>
+    <div class="section-rule"></div>
+    <p style="font-family:'Newsreader',serif; font-style:italic; font-size:16px; color:var(--ink-mid); margin-bottom:20px;">Teil des Teams bei Mirjam Walenta — A Great Hair Day zu sein bedeutet:</p>
+    <ul class="plain-list">
+      <li>Den Gästen durch angenehme Atmosphäre ein Entspannungs- und Genusserlebnis zu bieten.</li>
+      <li>Miteinander, nicht gegeneinander. Wir freuen uns, wenn Gäste – statt den Salon zu wechseln – im Salon wechseln.</li>
+      <li>Neugäste wie Stammgäste – Stammgäste wie Neugäste behandeln.</li>
+      <li>Sauberkeit und Hygiene als selbstverständlichen Standard leben.</li>
+      <li>Neue Dienstleistungen trainieren und am Gast anwenden.</li>
+      <li>Sich nach unserem Ausbildungs- und Behandlungskonzept richten.</li>
+      <li>Über In- und Ausland aktuell informiert sein (Mode, Kultur, Wirtschaft, Sport …). Morgenzeitung lesen!</li>
+      <li>Modisch frisiert, gekleidet, Make-up, Haarfarbe und Haarschnitt stets gepflegt.</li>
+      <li>Lächeln! Eigene Launen keinen freien Lauf lassen.</li>
+      <li>Äußere und innere Optik des Salons auf jeweilige Aktivitäten abstimmen.</li>
+      <li>Totale Fachkenntnisse der besten bewährten und neuen Produkte im Salon und auf dem Markt.</li>
+      <li>Dem Gast nichts verkaufen, sondern den Nutzen erklären.</li>
+      <li>Gäste als tatsächlichen Arbeitgeber sehen.</li>
+      <li>Zuhören können – wir können zuhören!</li>
+      <li>Spontan-Service und Verwöhnungsservice bieten.</li>
+      <li>Wir stehen dem Umweltschutz aufgeschlossen gegenüber.</li>
+    </ul>
+    <div class="closing">
+      <p>Einer für alle – alle für einen!</p>
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s19')">← 19</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" onclick="goTo('back')">Salon-Info →</button>
+    </div>
+  </div>
+
+  <!-- BACKPAGE -->
+  <div class="section" id="sec-back">
+    <div class="backpage">
+      <div class="backpage-eyebrow">A Great Hair Day</div>
+      <p class="backpage-name">Rechte Wienzeile 47 · 1050 Wien</p>
+      <p class="backpage-info">Tel +43 1 586 31 30 · <a href="mailto:walenta@greathairday.at" style="color:var(--brown);">walenta@greathairday.at</a> · www.greathairday.at</p>
+      <div class="backpage-hours">
+        <p>Di + Mi: 9:00 – 18:00 Uhr · Do + Fr: 9:00 – 19:00 Uhr · Sa: 8:00 – 14:00 Uhr</p>
+        <p class="closed">Montag: Ruhetag</p>
+      </div>
+      <p class="backpage-mantra">Bei uns musst du dich nicht erklären.</p>
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('s20')">← 20</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav" onclick="goTo('cover')">↑ Zum Anfang</button>
+    </div>
+  </div>
+
+</main>
+
+<script>
+const ORDER = ['cover','toc','s01','s02','s03','s04','s05','s06','s07','s08','s09','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20','back'];
+
+function goTo(id) {
+  // hide all
+  document.querySelectorAll('.section').forEach(el => {
+    if (el.id !== 'sec-cover') el.classList.remove('active');
+  });
+  document.getElementById('sec-cover').style.display = 'none';
+
+  if (id === 'cover') {
+    document.getElementById('sec-cover').style.display = 'block';
+  } else {
+    const el = document.getElementById('sec-' + id);
+    if (el) el.classList.add('active');
+  }
+
+  // update nav
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.section === id);
+  });
+
+  // close sidebar on mobile
+  if (window.innerWidth < 900) closeSidebar();
+
+  window.scrollTo(0, 0);
+}
+
+// Sidebar
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+const menuBtn = document.getElementById('menuBtn');
+
+function openSidebar() {
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+}
+function closeSidebar() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+}
+
+menuBtn.addEventListener('click', () => {
+  sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+});
+overlay.addEventListener('click', closeSidebar);
+
+// Nav items
+document.querySelectorAll('.nav-item').forEach(btn => {
+  btn.addEventListener('click', () => goTo(btn.dataset.section));
+});
+
+// Init
+goTo('cover');
+</script>
+</body>
+</html>
