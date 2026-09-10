@@ -1345,14 +1345,61 @@ async function wbLadeListe() {
     meineEl.innerHTML = '<div class="section-h3 section-h3-spacer">Meine Entwürfe &amp; Vorschläge</div>' +
       eigeneOffen.map(wbKarteHtml).join('');
   }
-  wbRenderListe(_wbListe.filter(a => a.status === 'freigegeben'));
+  wbRenderListe(_wbListe.filter(a => a.status === 'freigegeben'), []);
   wbBindKarten();
 }
 
-function wbRenderListe(artikel) {
+// Die 20 festen Handbuch-Kapitel — damit die Wissensbank-Suche auch sie findet
+const KAPITEL_INDEX = [
+  { id: 's01', num: '01', titel: 'Kundenempfang' },
+  { id: 's02', num: '02', titel: 'Kunden-Einstiegsgespräch' },
+  { id: 's03', num: '03', titel: 'Kunden-Beratungsgespräch' },
+  { id: 's04', num: '04', titel: 'Die Haarwäsche' },
+  { id: 's05', num: '05', titel: 'Haar- und Kopfhautpflege' },
+  { id: 's06', num: '06', titel: 'Neukundenbetreuung' },
+  { id: 's07', num: '07', titel: 'Service' },
+  { id: 's08', num: '08', titel: 'Haare schneiden' },
+  { id: 's09', num: '09', titel: 'Styling / Finish' },
+  { id: 's10', num: '10', titel: 'Farbbehandlung' },
+  { id: 's11', num: '11', titel: 'Dauerwelle-Behandlung' },
+  { id: 's12', num: '12', titel: 'Telefongesprächsführung' },
+  { id: 's13', num: '13', titel: 'Terminvereinbarung' },
+  { id: 's14', num: '14', titel: 'Kassenabwicklung' },
+  { id: 's15', num: '15', titel: 'Gäste-Verabschiedung' },
+  { id: 's16', num: '16', titel: 'Reklamationen' },
+  { id: 's17', num: '17', titel: 'Beschwerden' },
+  { id: 's18', num: '18', titel: 'Unser Auftreten – das Äußere' },
+  { id: 's19', num: '19', titel: 'Unser Auftreten – Limbic Check' },
+  { id: 's20', num: '20', titel: 'Unser Teamkodex' },
+];
+
+function wbSucheKapitel(q) {
+  if (!q) return [];
+  return KAPITEL_INDEX.filter(k => {
+    if (k.titel.toLowerCase().includes(q)) return true;
+    const el = document.getElementById('sec-' + k.id);
+    return el && el.textContent.toLowerCase().includes(q);
+  });
+}
+
+function wbRenderListe(artikel, kapitel) {
+  kapitel = kapitel || [];
   const el = document.getElementById('wbListe');
-  if (!artikel.length) { el.innerHTML = '<p class="wb-empty">Noch keine Artikel — sei die/der Erste!</p>'; return; }
-  el.innerHTML = artikel.map(wbKarteHtml).join('');
+  if (!artikel.length && !kapitel.length) {
+    el.innerHTML = '<p class="wb-empty">Nichts gefunden.</p>';
+    return;
+  }
+  let html = '';
+  if (kapitel.length) {
+    html += '<div class="section-h3">Kapitel im Handbuch</div>' + kapitel.map(k => `<div class="wb-card" data-goto="${esc(k.id)}">
+      <div class="wb-card-titel">${esc(k.num)} ${esc(k.titel)}</div>
+      <div class="wb-card-meta">Handbuch-Kapitel</div>
+    </div>`).join('');
+  }
+  if (kapitel.length && artikel.length) html += '<div class="section-h3 section-h3-spacer">Wissensbank-Artikel</div>';
+  if (artikel.length) html += artikel.map(wbKarteHtml).join('');
+  else if (!kapitel.length) html = '<p class="wb-empty">Noch keine Artikel — sei die/der Erste!</p>';
+  el.innerHTML = html;
 }
 
 function wbKarteHtml(a) {
@@ -1365,16 +1412,20 @@ function wbKarteHtml(a) {
 }
 
 function wbBindKarten() {
-  document.querySelectorAll('#wbListe .wb-card, #wbMeineEntwuerfe .wb-card').forEach(card => {
+  document.querySelectorAll('#wbListe .wb-card[data-id], #wbMeineEntwuerfe .wb-card[data-id]').forEach(card => {
     card.addEventListener('click', () => wbOeffneArtikel(card.dataset.id));
+  });
+  document.querySelectorAll('#wbListe .wb-card[data-goto]').forEach(card => {
+    card.addEventListener('click', () => goTo(card.dataset.goto));
   });
 }
 
 document.getElementById('wbSuche').addEventListener('input', e => {
   const q = e.target.value.trim().toLowerCase();
+  if (!q) { wbRenderListe(_wbListe.filter(a => a.status === 'freigegeben'), []); wbBindKarten(); return; }
   const treffer = _wbListe.filter(a => a.status === 'freigegeben' &&
     (a.titel.toLowerCase().includes(q) || (a.kategorie || '').toLowerCase().includes(q) || a.inhalt.toLowerCase().includes(q)));
-  wbRenderListe(treffer);
+  wbRenderListe(treffer, wbSucheKapitel(q));
   wbBindKarten();
 });
 
