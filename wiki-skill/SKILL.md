@@ -63,7 +63,12 @@ wirkt. Geh deshalb in dieser Reihenfolge vor:
 1. **`wiki.json`** lesen: Firma, Branche, welcher Ordner welchen `typ` und `status` hat,
    Zusatzregeln. Eine Datei, und sie ordnet alles Weitere ein.
 2. **`00_Index/INDEX.md`** lesen: dort steht je Dokument die Kernaussage. Meist siehst du
-   schon hier, welche zwei, drei Dokumente in Frage kommen.
+   schon hier, welche zwei, drei Dokumente in Frage kommen. Klingt die Frage nach einer
+   konkreten Alltagssituation statt nach einem Fachbegriff („kunde kommt zu spät",
+   „telefon klingelt während beratung"), zuerst in
+   **`00_Index/Fragen-und-Situationen.md`** nachsehen: dort ist die Situation direkt auf
+   Kapitel und Punkt-Nummer verlinkt. Steht sie dort unter „Nicht im Wiki geregelt",
+   antworte entsprechend Abschnitt 4 (nicht raten).
 3. Ist der Begriff der Frage unklar oder Alltagssprache („Neukundenzettel“, „Frisurenmappe“ und „Karteikarte“),
    **`00_Index/Glossar.md`** aufschlagen. Auch Dateinamen und die `schlagworte`
    im Kopfblock sind bewusst mit Synonymen gefüllt.

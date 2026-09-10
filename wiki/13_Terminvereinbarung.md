@@ -4,12 +4,24 @@ titel: Terminvereinbarung
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
+version: 1.1
 letzte_pruefung: 2026-09-10
 schlagworte: [Termin, Terminplan, Reservierung]
 ---
 
 # 13 · Terminvereinbarung
+
+### ⚡ Schnellantwort
+
+**Kern:** Schwache Termine zuerst anbieten, Gäste ohne Reservierung nicht wegschicken.
+
+1. Vormittag/Di/Mi zuerst anbieten, Nachmittag/Mo/Do/Fr/Sa möglichst freihalten (13.1).
+2. Ohne Termin da: Platz anbieten, schnellstmöglichen Termin, Wartezeit erklären (13.2).
+3. Nicht erschienen: noch am selben Tag kontaktieren, Ersatztermin anbieten (13.5).
+
+Details: siehe 13.1–13.9 unten.
+
+---
 
 13.1 Wir ersuchen, zuerst schwache Termine anzubieten: Vormittag, Dienstag oder Mittwoch. Stark nachgefragte Termine möglichst lange freihalten: Nachmittags, Montag, Donnerstag, Freitag, Samstag.
 

@@ -4,12 +4,29 @@ titel: Dauerwelle-Behandlung
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
+version: 1.1
 letzte_pruefung: 2026-09-10
 schlagworte: [Dauerwelle, Umformung, SP-Deep Cleanser]
 ---
 
 # 11 · Dauerwelle-Behandlung
+
+### ⚖ Entscheidung: Darf ich die Dauerwelle durchführen?
+
+- Wurde das Beratungsgespräch zur Umformung bereits geführt (bisherige Erfahrungen,
+  letzter Zeitpunkt — MH-03, 3/4)? → **Nein:** zuerst Beratungsgespräch führen. →
+  **Ja:** weiter.
+- Sind die Herstellervorgaben bekannt und einhaltbar (11.3)? → **Nein:** erst klären. →
+  **Ja:** durchführen: einmal Waschen mit SP-Deep Cleanser (11.1), Schutzhandschuhe
+  tragen (11.4), Vorbehandlung wenn nötig (11.5), Haut darf nicht mit Wellflüssigkeit in
+  Berührung kommen (11.6), Fixiervorgang genauestens ausführen (11.7); danach Pflege
+  Pflicht (11.9).
+
+> OFFEN: Konkrete Kontraindikationen (z. B. kürzlich gefärbtes oder geschädigtes Haar)
+> sind im Wiki nicht aufgelistet. Bei Unsicherheit: nicht behandeln, sondern
+> Salonleitung fragen.
+
+---
 
 11.1 Einmal Waschen mit SP-Deep Cleanser.
 

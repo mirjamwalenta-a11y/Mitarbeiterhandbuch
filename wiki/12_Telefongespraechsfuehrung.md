@@ -4,12 +4,26 @@ titel: Telefongesprächsführung
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
+version: 1.1
 letzte_pruefung: 2026-09-10
 schlagworte: [Telefon, Begrüßungsformel, Anruf]
 ---
 
 # 12 · Telefongesprächsführung
+
+### ⚡ Schnellantwort
+
+**Kern:** „Mirjam Walenta – A Great Hair Day, guten Tag – [Name] am Apparat" — lächeln,
+laut/deutlich/freundlich, vor dem 3. Läuten abheben.
+
+1. Begrüßungsformel verwenden, Gast mit Namen ansprechen (12.1).
+2. Am Ende Termin wiederholen: was, wann, bei wem (12.5).
+3. Bei Terminabsage: Ersatztermin anbieten, sonst Name/Telefonnummer notieren und
+   Stylist:in sofort informieren (12.8).
+
+Details: siehe 12.1–12.13 unten.
+
+---
 
 12.1 Jede Person im Salon benutzt eine festgelegte Begrüßungsformel beim Telefonieren:
 
