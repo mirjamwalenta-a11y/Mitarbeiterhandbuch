@@ -18,7 +18,7 @@ wie lange jemand schon dabei ist.
 
 | Ordner | Inhalt | Typische Dateien |
 |---|---|---|
-| `00_Index` | Inhaltsverzeichnis, Glossar, Änderungsprotokoll, Testfragen, Laufzettel | `INDEX.md`, `Glossar.md` |
+| `00_Index` | Inhaltsverzeichnis, Fragen/Situationen, Glossar, Änderungsprotokoll, Testfragen, Laufzettel | `INDEX.md`, `Fragen-und-Situationen.md`, `Glossar.md` |
 | `.` (Wiki-Ordner) | Die 20 Kapitel des Mitarbeiterhandbuchs, Vorwort, Salon-Info | `01_Kundenempfang.md` … `20_Teamkodex.md` |
 
 Es gibt hier keine Vorgabe/Praxis-Unterscheidung wie bei anderen Firmen (z. B. Gesetz

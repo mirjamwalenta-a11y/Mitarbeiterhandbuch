@@ -24,6 +24,18 @@ diese Datei nicht als Quelle benutzen.
 | 16 | gibt es einen mitarbeiterrabatt auf produkte | **Nicht im Wiki.** Steht nicht im Handbuch — nicht raten, an Mirjam Walenta verweisen. | – |
 | 17 | wie viel urlaub steht mir zu | **Nicht im Wiki.** Fachfremd (Personalthema) — kein Allgemeinwissen ergänzen, an Mirjam Walenta verweisen. | – |
 
+## Alltags-Fragen-Pool (laufend)
+
+Echte Fragen aus dem Salonalltag, so wie sie tatsächlich gestellt wurden — nicht
+konstruiert wie die Testfragen oben. Nach jeder Cowork-Sitzung mit einer Fachfrage hier
+eine Zeile ergänzen (neueste oben): Wurde die Antwort gefunden, mit welcher Quelle, wie
+lange hat die Suche gedauert. Daraus zeigt sich mit der Zeit, wo das Wiki noch
+Lücken hat (siehe „Nicht im Wiki" in `Fragen-und-Situationen.md`).
+
+| Datum | Frage (so wie gestellt) | Gefunden? | Zeit | Quelle | Bemerkung |
+|---|---|---|---|---|---|
+| _(noch keine Einträge)_ | | | | | |
+
 ## Testszenarien für den Pflegeprozess
 
 - **Kapitel aktualisieren:** Ein Absatz in einem Kapitel (z. B. MH-13 Terminvereinbarung)

@@ -4,12 +4,28 @@ titel: Farbbehandlung
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
+version: 1.1
 letzte_pruefung: 2026-09-10
-schlagworte: [Farbe, Färben, Schutzhandschuhe, Karteikarte]
+schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte]
 ---
 
 # 10 · Farbbehandlung
+
+### ⚖ Entscheidung: Darf ich die Farbe/Blondierung durchführen?
+
+- Ist der Farb-/Blondierungswunsch fachlich möglich (10.2)? → **Nein:** nicht
+  durchführen, Gast unaufgefordert über die fachliche Grenze informieren (10.2).
+  → **Ja:** weiter.
+- Sind die Herstellervorgaben (Mischverhältnis, Einwirkzeit) bekannt und einhaltbar
+  (10.5)? → **Nein:** erst klären, keine Behandlung nach Schätzung. → **Ja:**
+  durchführen: Umkleidemantel anbieten (10.1), Schutzhandschuhe tragen (10.4),
+  Karteikarte führen (10.6), danach Intensivpflege (10.7).
+
+> OFFEN: Konkrete Kontraindikationen (z. B. Unverträglichkeiten, Vorbehandlungen) sind
+> im Wiki nicht aufgelistet. Bei Unsicherheit: nicht behandeln, sondern Salonleitung
+> fragen.
+
+---
 
 10.1 Wir empfehlen unseren Gästen zum Schutz Umkleidemäntel.
 

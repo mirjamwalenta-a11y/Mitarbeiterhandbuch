@@ -26,3 +26,7 @@
 | MH-20 | `20_Teamkodex.md` | freigegeben | 16-Punkte-Kodex, Abschluss: „Einer für alle – alle für einen!" |
 
 Nächste freie Nummer: MH-21 (bei einem neuen Kapitel).
+
+Siehe auch: [`Fragen-und-Situationen.md`](Fragen-und-Situationen.md) — Alltagsfragen und
+typische Situationen mit Verweis auf Kapitel und Punkt-Nummer, ohne Fachinhalt zu
+duplizieren.
