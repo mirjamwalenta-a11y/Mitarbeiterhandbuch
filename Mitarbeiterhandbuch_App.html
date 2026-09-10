@@ -12,6 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://wrxlaltgtgkdomklgrlj.supabase.co; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'self'">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -328,6 +330,100 @@
   .btn-nav:disabled { opacity: 0.35; cursor: default; }
   .btn-spacer { flex: 1; }
 
+  /* ── LOGIN ─────────────────────────────────── */
+  .login-screen {
+    position: fixed; inset: 0; z-index: 1000; background: var(--cream);
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .login-box { width: 100%; max-width: 340px; }
+  .login-eyebrow {
+    font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--brown); margin-bottom: 10px; text-align: center;
+  }
+  .login-title {
+    font-family: 'Newsreader', serif; font-weight: 500; font-size: 26px;
+    color: var(--ink); text-align: center; margin-bottom: 28px;
+  }
+  .login-field { margin-bottom: 14px; }
+  .login-field label {
+    display: block; font-size: 11.5px; color: var(--ink-mid); margin-bottom: 5px;
+  }
+  .login-field input {
+    width: 100%; padding: 10px 12px; border: 1px solid var(--border);
+    border-radius: 4px; background: #fff; font-family: 'Manrope', sans-serif;
+    font-size: 14px; color: var(--ink);
+  }
+  .login-field input:focus { outline: none; border-color: var(--brown); }
+  .login-btn {
+    width: 100%; padding: 11px; border: none; border-radius: 4px;
+    background: var(--brown); color: #fff; font-weight: 600; font-size: 14px;
+    cursor: pointer; margin-top: 6px;
+  }
+  .login-btn:hover { background: var(--brown-dark); }
+  .login-btn:disabled { opacity: 0.5; cursor: default; }
+  .login-err {
+    color: #a83a3a; font-size: 12.5px; margin-top: 12px; text-align: center; display: none;
+  }
+  .login-err.show { display: block; }
+
+  /* ── WISSENSBANK ───────────────────────────── */
+  .wb-toolbar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .wb-toolbar input[type="text"] {
+    flex: 1; min-width: 160px; padding: 9px 12px; border: 1px solid var(--border);
+    border-radius: 4px; background: #fff; font-family: 'Manrope', sans-serif; font-size: 13.5px;
+  }
+  .wb-card {
+    border: 1px solid var(--border); border-radius: 4px; padding: 16px 18px;
+    margin-bottom: 12px; cursor: pointer; background: #fff; transition: border-color .12s;
+  }
+  .wb-card:hover { border-color: var(--brown); }
+  .wb-card-titel {
+    font-family: 'Newsreader', serif; font-weight: 500; font-size: 16.5px; color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .wb-card-meta { font-size: 11.5px; color: var(--ink-light); }
+  .wb-card-kategorie {
+    display: inline-block; background: var(--chip-bg); color: var(--brown);
+    font-size: 10.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 3px; margin-right: 8px;
+  }
+  .wb-empty { color: var(--ink-light); font-size: 13.5px; padding: 20px 0; }
+  .wb-artikel-inhalt {
+    font-size: 14.5px; line-height: 1.75; color: var(--ink); white-space: pre-wrap;
+    margin: 18px 0;
+  }
+  .wb-form-field { margin-bottom: 14px; }
+  .wb-form-field label {
+    display: block; font-size: 11.5px; color: var(--ink-mid); margin-bottom: 5px;
+  }
+  .wb-form-field input, .wb-form-field textarea {
+    width: 100%; padding: 10px 12px; border: 1px solid var(--border);
+    border-radius: 4px; background: #fff; font-family: 'Manrope', sans-serif;
+    font-size: 14px; color: var(--ink); resize: vertical;
+  }
+  .wb-form-field input:focus, .wb-form-field textarea:focus { outline: none; border-color: var(--brown); }
+  .wb-badge-pending {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 17px; height: 17px; padding: 0 4px; border-radius: 9px;
+    background: var(--brown); color: #fff; font-size: 10px; font-weight: 700; margin-left: 6px;
+  }
+  .wb-status-tag {
+    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .03em;
+    text-transform: uppercase; padding: 2px 8px; border-radius: 3px; margin-left: 8px;
+  }
+  .wb-status-eingereicht { background: #f3e3c9; color: #8a5a1e; }
+  .wb-status-entwurf { background: var(--chip-bg); color: var(--ink-light); }
+  .wb-review-actions { display: flex; gap: 8px; margin-top: 14px; }
+  .wb-user-info {
+    padding: 12px 20px; border-top: 1px solid var(--rule); font-size: 12px;
+    color: var(--ink-mid); display: flex; align-items: center; justify-content: space-between;
+    gap: 8px;
+  }
+  .wb-logout-btn {
+    background: none; border: none; color: var(--brown); font-size: 12px;
+    cursor: pointer; font-family: 'Manrope', sans-serif; text-decoration: underline;
+  }
+
   /* ── RESPONSIVE ─────────────────────────────── */
   @media (min-width: 900px) {
     .header-menu-btn { display: none; }
@@ -341,6 +437,24 @@
 </style>
 </head>
 <body>
+
+<!-- LOGIN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-eyebrow">A Great Hair Day</div>
+    <div class="login-title">Mitarbeiter&shy;handbuch</div>
+    <div class="login-field">
+      <label for="loginEmail">E-Mail</label>
+      <input type="email" id="loginEmail" autocomplete="username">
+    </div>
+    <div class="login-field">
+      <label for="loginPw">Passwort</label>
+      <input type="password" id="loginPw" autocomplete="current-password">
+    </div>
+    <button class="login-btn" id="loginBtn">Anmelden</button>
+    <div class="login-err" id="loginErr">Anmeldung fehlgeschlagen. Bitte E-Mail und Passwort prüfen.</div>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header class="header">
@@ -456,6 +570,18 @@
       <span class="nav-item-num">·</span>
       <span class="nav-item-label">Salon-Info</span>
     </button>
+    <button class="nav-item" data-section="wissensbank">
+      <span class="nav-item-num">✦</span>
+      <span class="nav-item-label">Wissensbank</span>
+    </button>
+    <button class="nav-item" data-section="wb-review" id="navWbReview" style="display:none">
+      <span class="nav-item-num">✎</span>
+      <span class="nav-item-label">Ausstehende Vorschläge<span class="wb-badge-pending" id="wbPendingCount" style="display:none">0</span></span>
+    </button>
+  </div>
+  <div class="wb-user-info" id="wbUserInfo" style="display:none">
+    <span id="wbUserName"></span>
+    <button class="wb-logout-btn" id="wbLogoutBtn">Abmelden</button>
   </div>
   <div class="sidebar-footer">
     <p>Rechte Wienzeile 47 · 1050 Wien<br>
@@ -996,10 +1122,66 @@
     </div>
   </div>
 
+  <!-- WISSENSBANK: Liste -->
+  <div class="section" id="sec-wissensbank">
+    <div class="section-tag">Gemeinsam gepflegt</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;">Wissensbank</h2>
+    <p class="section-subtitle">Alles rund um unser Handwerk und unseren Betrieb — von dir und deinem Team befüllt.</p>
+    <div class="wb-toolbar">
+      <input type="text" id="wbSuche" placeholder="Suchen …">
+      <button class="btn-nav primary" id="wbNeuBtn">+ Neuer Artikel</button>
+    </div>
+    <div id="wbMeineEntwuerfe"></div>
+    <div id="wbListe"><p class="wb-empty">Lade …</p></div>
+  </div>
+
+  <!-- WISSENSBANK: Artikel-Ansicht -->
+  <div class="section" id="sec-wb-artikel">
+    <div class="section-tag" id="wbArtikelKategorie">Wissensbank</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;" id="wbArtikelTitel"></h2>
+    <p class="section-subtitle" id="wbArtikelMeta"></p>
+    <div class="wb-artikel-inhalt" id="wbArtikelInhalt"></div>
+    <div class="bottom-nav" id="wbArtikelAktionen">
+      <button class="btn-nav" onclick="goTo('wissensbank')">← Wissensbank</button>
+    </div>
+  </div>
+
+  <!-- WISSENSBANK: Neuer Artikel -->
+  <div class="section" id="sec-wb-neu">
+    <div class="section-tag">Wissensbank</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;">Neuer Artikel</h2>
+    <p class="section-subtitle" id="wbNeuHinweis"></p>
+    <div class="wb-form-field">
+      <label for="wbNeuTitel">Titel</label>
+      <input type="text" id="wbNeuTitel" placeholder="z. B. Balayage-Technik bei feinem Haar">
+    </div>
+    <div class="wb-form-field">
+      <label for="wbNeuKategorie">Kategorie</label>
+      <input type="text" id="wbNeuKategorie" placeholder="z. B. Fachwissen, Betrieb, Produkte …">
+    </div>
+    <div class="wb-form-field">
+      <label for="wbNeuInhalt">Inhalt</label>
+      <textarea id="wbNeuInhalt" rows="10" placeholder="Schreib hier alles rein, was das Team wissen sollte …"></textarea>
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('wissensbank')">Abbrechen</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" id="wbNeuSpeichernBtn">Speichern</button>
+    </div>
+  </div>
+
+  <!-- WISSENSBANK: Ausstehende Vorschläge (nur Inhaberin) -->
+  <div class="section" id="sec-wb-review">
+    <div class="section-tag">Nur für dich sichtbar</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;">Ausstehende Vorschläge</h2>
+    <p class="section-subtitle">Artikel, die dein Team eingereicht hat und die auf deine Freigabe warten.</p>
+    <div id="wbReviewListe"><p class="wb-empty">Lade …</p></div>
+  </div>
+
 </main>
 
 <script>
-const ORDER = ['cover','toc','s01','s02','s03','s04','s05','s06','s07','s08','s09','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20','back'];
+const ORDER = ['cover','toc','s01','s02','s03','s04','s05','s06','s07','s08','s09','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20','back','wissensbank'];
 
 function goTo(id) {
   // hide all
@@ -1024,6 +1206,10 @@ function goTo(id) {
   if (window.innerWidth < 900) closeSidebar();
 
   window.scrollTo(0, 0);
+
+  if (id === 'wissensbank') wbLadeListe();
+  if (id === 'wb-review') wbLadeReview();
+  if (id === 'wb-neu') wbNeuFormular();
 }
 
 // Sidebar
@@ -1050,8 +1236,280 @@ document.querySelectorAll('.nav-item').forEach(btn => {
   btn.addEventListener('click', () => goTo(btn.dataset.section));
 });
 
-// Init
-goTo('cover');
+// ══════════════════════════════════════════════════════════
+// ANMELDUNG (gleicher Supabase-Account wie team.html / lernquiz.html)
+// ══════════════════════════════════════════════════════════
+const SB_URL = 'https://wrxlaltgtgkdomklgrlj.supabase.co';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyeGxhbHRndGdrZG9ta2xncmxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQyNDYwMzYsImV4cCI6MjA5OTgyMjAzNn0.Bw8ch-EJb_cLYTwxHdpjUJWgoCjje3Jc32pB0yiBS8g';
+const sbAuth = supabase.createClient(SB_URL, SB_KEY);
+
+let _me = null; // Zeile aus teamapp_persons: { id, name, email, rolle, aktiv }
+
+async function supa(table, method = 'GET', body = null, filter = '') {
+  const { data: { session } } = await sbAuth.auth.getSession();
+  const isWrite = method !== 'GET';
+  if (isWrite && !session?.access_token) throw new Error('Nicht angemeldet');
+  const token = session?.access_token || SB_KEY;
+  const url = `${SB_URL}/rest/v1/${table}${filter ? '?' + filter : ''}`;
+  const opts = {
+    method,
+    headers: {
+      'apikey': SB_KEY,
+      'Authorization': 'Bearer ' + token,
+      'Content-Type': 'application/json',
+      'Prefer': (method === 'POST' || method === 'PATCH') ? 'return=representation' : '',
+    }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const r = await fetch(url, opts);
+  if (!r.ok) throw new Error(await r.text());
+  const txt = await r.text();
+  return txt ? JSON.parse(txt) : null;
+}
+const supaGet = (table, filter = '') => supa(table, 'GET', null, filter);
+const supaPost = (table, body) => supa(table, 'POST', body, '');
+const supaPatch = (table, filter, body) => supa(table, 'PATCH', body, filter);
+const supaDelete = (table, filter) => supa(table, 'DELETE', null, filter);
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
+
+function zeigeLoginFehler(zeigen) {
+  document.getElementById('loginErr').classList.toggle('show', !!zeigen);
+}
+
+async function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pw = document.getElementById('loginPw').value;
+  zeigeLoginFehler(false);
+  if (!email || !pw) { zeigeLoginFehler(true); return; }
+
+  const btn = document.getElementById('loginBtn');
+  btn.disabled = true; btn.textContent = 'Anmelden …';
+  try {
+    const { error: authErr } = await sbAuth.auth.signInWithPassword({ email, password: pw });
+    if (authErr) { zeigeLoginFehler(true); return; }
+    const rows = await supaGet('teamapp_persons', `email=eq.${encodeURIComponent(email)}`);
+    if (!rows || rows.length === 0 || rows[0].aktiv === false) { zeigeLoginFehler(true); await sbAuth.auth.signOut(); return; }
+    _me = rows[0];
+    sessionStorage.setItem('mh_person', JSON.stringify(_me));
+    nachAnmeldung();
+  } catch (e) {
+    zeigeLoginFehler(true);
+  } finally {
+    btn.disabled = false; btn.textContent = 'Anmelden';
+  }
+}
+
+function nachAnmeldung() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('wbUserInfo').style.display = 'flex';
+  document.getElementById('wbUserName').textContent = _me.name || _me.email;
+  if (_me.rolle === 'inhaberin') {
+    document.getElementById('navWbReview').style.display = 'flex';
+    wbAktualisierePendingBadge();
+  }
+  goTo('cover');
+}
+
+async function doLogout() {
+  await sbAuth.auth.signOut();
+  sessionStorage.removeItem('mh_person');
+  _me = null;
+  window.location.reload();
+}
+
+document.getElementById('loginBtn').addEventListener('click', doLogin);
+document.getElementById('loginPw').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+document.getElementById('wbLogoutBtn').addEventListener('click', doLogout);
+
+// ══════════════════════════════════════════════════════════
+// WISSENSBANK
+// ══════════════════════════════════════════════════════════
+let _wbListe = [];
+
+async function wbLadeListe() {
+  const el = document.getElementById('wbListe');
+  const meineEl = document.getElementById('wbMeineEntwuerfe');
+  el.innerHTML = '<p class="wb-empty">Lade …</p>';
+  meineEl.innerHTML = '';
+  try {
+    _wbListe = await supaGet('wissensbank_artikel', 'select=*&order=erstellt_am.desc');
+  } catch (e) {
+    el.innerHTML = '<p class="wb-empty">Wissensbank konnte nicht geladen werden.</p>';
+    return;
+  }
+  const eigeneOffen = _wbListe.filter(a => a.status !== 'freigegeben' && a.ersteller_email === _me.email);
+  if (eigeneOffen.length) {
+    meineEl.innerHTML = '<div class="section-h3 section-h3-spacer">Meine Entwürfe &amp; Vorschläge</div>' +
+      eigeneOffen.map(wbKarteHtml).join('');
+  }
+  wbRenderListe(_wbListe.filter(a => a.status === 'freigegeben'));
+  wbBindKarten();
+}
+
+function wbRenderListe(artikel) {
+  const el = document.getElementById('wbListe');
+  if (!artikel.length) { el.innerHTML = '<p class="wb-empty">Noch keine Artikel — sei die/der Erste!</p>'; return; }
+  el.innerHTML = artikel.map(wbKarteHtml).join('');
+}
+
+function wbKarteHtml(a) {
+  const statusTag = a.status === 'eingereicht' ? '<span class="wb-status-tag wb-status-eingereicht">Wartet auf Freigabe</span>'
+    : a.status === 'entwurf' ? '<span class="wb-status-tag wb-status-entwurf">Entwurf</span>' : '';
+  return `<div class="wb-card" data-id="${esc(a.id)}">
+    <div class="wb-card-titel">${esc(a.titel)}${statusTag}</div>
+    <div class="wb-card-meta">${a.kategorie ? '<span class="wb-card-kategorie">' + esc(a.kategorie) + '</span>' : ''}${esc(a.ersteller_name || a.ersteller_email)} · ${new Date(a.erstellt_am).toLocaleDateString('de-AT')}</div>
+  </div>`;
+}
+
+function wbBindKarten() {
+  document.querySelectorAll('#wbListe .wb-card, #wbMeineEntwuerfe .wb-card').forEach(card => {
+    card.addEventListener('click', () => wbOeffneArtikel(card.dataset.id));
+  });
+}
+
+document.getElementById('wbSuche').addEventListener('input', e => {
+  const q = e.target.value.trim().toLowerCase();
+  const treffer = _wbListe.filter(a => a.status === 'freigegeben' &&
+    (a.titel.toLowerCase().includes(q) || (a.kategorie || '').toLowerCase().includes(q) || a.inhalt.toLowerCase().includes(q)));
+  wbRenderListe(treffer);
+  wbBindKarten();
+});
+
+function wbOeffneArtikel(id) {
+  const a = _wbListe.find(x => x.id === id);
+  if (!a) return;
+  document.getElementById('wbArtikelKategorie').textContent = a.kategorie || 'Wissensbank';
+  document.getElementById('wbArtikelTitel').textContent = a.titel;
+  document.getElementById('wbArtikelMeta').textContent =
+    `${a.ersteller_name || a.ersteller_email} · ${new Date(a.erstellt_am).toLocaleDateString('de-AT')}`;
+  document.getElementById('wbArtikelInhalt').textContent = a.inhalt;
+
+  const aktionen = document.getElementById('wbArtikelAktionen');
+  aktionen.innerHTML = '<button class="btn-nav" onclick="goTo(\'wissensbank\')">← Wissensbank</button><div class="btn-spacer"></div>';
+  const darfLoeschen = a.ersteller_email === _me.email && a.status !== 'freigegeben' || _me.rolle === 'inhaberin';
+  if (darfLoeschen) {
+    const btn = document.createElement('button');
+    btn.className = 'btn-nav';
+    btn.textContent = '🗑 Löschen';
+    btn.onclick = () => wbLoescheArtikel(a.id);
+    aktionen.appendChild(btn);
+  }
+  goTo('wb-artikel');
+}
+
+async function wbLoescheArtikel(id) {
+  if (!confirm('Diesen Artikel wirklich löschen?')) return;
+  try {
+    await supaDelete('wissensbank_artikel', `id=eq.${id}`);
+    goTo('wissensbank');
+  } catch (e) {
+    alert('Löschen fehlgeschlagen: ' + e.message);
+  }
+}
+
+function wbNeuFormular() {
+  document.getElementById('wbNeuTitel').value = '';
+  document.getElementById('wbNeuKategorie').value = '';
+  document.getElementById('wbNeuInhalt').value = '';
+  document.getElementById('wbNeuHinweis').textContent = _me.rolle === 'inhaberin'
+    ? 'Wird sofort für das ganze Team sichtbar.'
+    : 'Wird als Vorschlag an Mirjam gesendet — sichtbar wird er erst nach ihrer Freigabe.';
+}
+
+document.getElementById('wbNeuBtn').addEventListener('click', () => goTo('wb-neu'));
+
+document.getElementById('wbNeuSpeichernBtn').addEventListener('click', async () => {
+  const titel = document.getElementById('wbNeuTitel').value.trim();
+  const kategorie = document.getElementById('wbNeuKategorie').value.trim();
+  const inhalt = document.getElementById('wbNeuInhalt').value.trim();
+  if (!titel || !inhalt) { alert('Bitte Titel und Inhalt ausfüllen.'); return; }
+  const status = _me.rolle === 'inhaberin' ? 'freigegeben' : 'eingereicht';
+  const btn = document.getElementById('wbNeuSpeichernBtn');
+  btn.disabled = true; btn.textContent = 'Speichert …';
+  try {
+    const body = {
+      titel, kategorie: kategorie || null, inhalt, status,
+      ersteller_email: _me.email, ersteller_name: _me.name,
+    };
+    if (status === 'freigegeben') { body.freigegeben_von = _me.email; body.freigegeben_am = new Date().toISOString(); }
+    await supaPost('wissensbank_artikel', body);
+    goTo('wissensbank');
+  } catch (e) {
+    alert('Speichern fehlgeschlagen: ' + e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = 'Speichern';
+  }
+});
+
+// ── Review (nur Inhaberin) ──────────────────────────────────
+async function wbAktualisierePendingBadge() {
+  if (_me.rolle !== 'inhaberin') return;
+  try {
+    const offen = await supaGet('wissensbank_artikel', 'select=id&status=eq.eingereicht');
+    const badge = document.getElementById('wbPendingCount');
+    if (offen.length > 0) { badge.textContent = offen.length; badge.style.display = 'inline-flex'; }
+    else { badge.style.display = 'none'; }
+  } catch (e) {}
+}
+
+async function wbLadeReview() {
+  const el = document.getElementById('wbReviewListe');
+  el.innerHTML = '<p class="wb-empty">Lade …</p>';
+  try {
+    const offen = await supaGet('wissensbank_artikel', 'select=*&status=eq.eingereicht&order=erstellt_am.asc');
+    if (!offen.length) { el.innerHTML = '<p class="wb-empty">Keine offenen Vorschläge — alles erledigt.</p>'; return; }
+    el.innerHTML = offen.map(a => `
+      <div class="wb-card" style="cursor:default">
+        <div class="wb-card-titel">${esc(a.titel)}</div>
+        <div class="wb-card-meta">${a.kategorie ? '<span class="wb-card-kategorie">' + esc(a.kategorie) + '</span>' : ''}${esc(a.ersteller_name || a.ersteller_email)} · ${new Date(a.erstellt_am).toLocaleDateString('de-AT')}</div>
+        <div class="wb-artikel-inhalt" style="margin:12px 0">${esc(a.inhalt)}</div>
+        <div class="wb-review-actions">
+          <button class="btn-nav primary" onclick="wbFreigeben('${a.id}')">✓ Freigeben</button>
+          <button class="btn-nav" onclick="wbAblehnen('${a.id}')">Ablehnen</button>
+        </div>
+      </div>`).join('');
+  } catch (e) {
+    el.innerHTML = '<p class="wb-empty">Vorschläge konnten nicht geladen werden.</p>';
+  }
+}
+
+async function wbFreigeben(id) {
+  try {
+    await supaPatch('wissensbank_artikel', `id=eq.${id}`, {
+      status: 'freigegeben', freigegeben_von: _me.email, freigegeben_am: new Date().toISOString(),
+    });
+    wbLadeReview();
+    wbAktualisierePendingBadge();
+  } catch (e) {
+    alert('Freigeben fehlgeschlagen: ' + e.message);
+  }
+}
+
+async function wbAblehnen(id) {
+  if (!confirm('Diesen Vorschlag wirklich ablehnen und löschen?')) return;
+  try {
+    await supaDelete('wissensbank_artikel', `id=eq.${id}`);
+    wbLadeReview();
+    wbAktualisierePendingBadge();
+  } catch (e) {
+    alert('Ablehnen fehlgeschlagen: ' + e.message);
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════
+window.addEventListener('DOMContentLoaded', async () => {
+  const { data: { session } } = await sbAuth.auth.getSession();
+  const saved = sessionStorage.getItem('mh_person');
+  if (session && saved) {
+    try { _me = JSON.parse(saved); nachAnmeldung(); return; } catch (e) {}
+  }
+  sessionStorage.removeItem('mh_person');
+});
 </script>
 </body>
 </html>
