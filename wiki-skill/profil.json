@@ -1,0 +1,102 @@
+{
+  "skill_name": "wiki-mitarbeiterhandbuch",
+  "firma": "A Great Hair Day",
+  "branche": "Friseursalon in Wien",
+  "fachgebiete": "Empfang, Beratung, Telefon, Termine, Kasse, Reklamationen, Beschwerden, Auftreten, Teamkodex, Haarwäsche, Farbe, Dauerwelle, Schnitt, Styling",
+  "fragewendungen": ["wie mache ich das", "was gilt bei uns für", "wie läuft es ab"],
+  "fragende": "stehen meist an der Rezeption oder direkt am Kundenplatz",
+  "fragebeispiele_kurz": ["wie melde ich mich am telefon", "was mache ich bei einer reklamation", "wie läuft die dauerwelle ab"],
+  "risiko": "ein Gast falsch behandelt wird oder der Standard im Salon nicht einheitlich gelebt wird",
+  "ordner": [
+    {"pfad": "00_Index/", "beschreibung": "Inhaltsverzeichnis, Glossar, Änderungsprotokoll, Testfragen"},
+    {"pfad": "00_Vorwort.md", "beschreibung": "MH-00: Willkommen, Mantra"},
+    {"pfad": "00_Salon-Info.md", "beschreibung": "MH-INFO: Adresse, Kontakt, Öffnungszeiten"},
+    {"pfad": "01_Kundenempfang.md", "beschreibung": "MH-01, Gästekontakt"},
+    {"pfad": "02_… bis 20_Teamkodex.md", "beschreibung": "MH-02…MH-20: weitere Kapitel, je Gästekontakt oder Beratung (siehe Kopfblock typ)"},
+    {"pfad": "Eingang/", "beschreibung": "Vorschläge für Änderungen; erledigt/ für eingearbeitete"}
+  ],
+  "dateien": {
+    "config": "wiki.json",
+    "index": "00_Index/INDEX.md",
+    "glossar": "00_Index/Glossar.md",
+    "protokoll": "00_Index/Aenderungsprotokoll.md",
+    "testfragen": "00_Index/Testfragen.md",
+    "meta_dateien": ["README.md", "00_Index/Einrichtung.md"],
+    "eingang": "Eingang/",
+    "rohmaterial_ordner": "Eingang"
+  },
+  "synonym_beispiele": ["Neukundenzettel", "Frisurenmappe", "Karteikarte"],
+  "bedingung_beispiele": ["bei kurzem, frisch gewaschenem Herrenhaar", "bei Farb- oder Dauerwellbehandlung"],
+  "bedingung_kurz": "Haartyp, Behandlungsart",
+  "unterscheidung": {
+    "paar": "das Gästekontakt-Kapitel (Umgang, Kommunikation) und das Beratungs-Kapitel (die eigentliche Behandlung)",
+    "a": {
+      "name": "Gästekontakt",
+      "praefix": "MH",
+      "typen": "`gaestekontakt`",
+      "erklaerung": "sagen, wie wir mit Gästen umgehen und kommunizieren"
+    },
+    "b": {
+      "name": "Beratung",
+      "praefix": "MH",
+      "typen": "`beratung`",
+      "erklaerung": "sagen, wie die eigentliche Behandlung abläuft"
+    },
+    "beispiel": "z. B. MH-03 Beratungsgespräch zur Dauerwelle (Gästekontakt), MH-11 Dauerwelle-Behandlung selbst (Beratung)",
+    "folge": "Wer beides vermischt, überspringt entweder das Beratungsgespräch mit dem Gast oder einen Sicherheitsschritt in der Behandlung."
+  },
+  "gleiche_zahl_beispiel": "„zweimal“ bedeutet bei der Haarwäsche (MH-04) etwas anderes als „zweimal“ bei der Kassenkontrolle (MH-14)",
+  "id_aus_dateiname_beispiel": "`01_Kundenempfang.md` ergibt MH-01",
+  "xlsx_hinweis": "",
+  "vorwissen_beispiel": "Friseurhandwerk im Allgemeinen",
+  "zustaendige": "Mirjam Walenta",
+  "rollen": {
+    "pflege": "Mirjam Walenta",
+    "pflege_dativ": "Mirjam Walenta",
+    "pflege_akkusativ": "Mirjam Walenta",
+    "freigabe": "Mirjam Walenta",
+    "freigabe_wann": "bei jeder inhaltlichen Änderung an einem Kapitel",
+    "rhythmus": "bei Bedarf"
+  },
+  "regel_mit_ausnahme_beispiel": "„grundsätzlich zweimal waschen, außer bei kurzem, frisch gewaschenem Herrenhaar auf Wunsch nur einmal“",
+  "detail_beispiel": "Wer nach der Begrüßungsformel am Telefon fragt, braucht den genauen Wortlaut, nicht die ganze Telefonliste aus Kapitel 12.",
+  "quellenzeile_beispiel": "Quellen: MH-12, Punkt 12.1, Gästekontakt · MH-04, Punkt 4.6, Beratung",
+  "beispiele": [
+    {
+      "titel": "",
+      "frage": "wie melde ich mich am telefon",
+      "antwort": "„Mirjam Walenta – A Great Hair Day, guten Tag – [Name] am Apparat.“ Dabei lächeln (hört man an der Stimme), laut, deutlich und freundlich sprechen, nicht zu schnell, Gäste mit Namen ansprechen.\n\nQuellen: MH-12, Punkt 12.1, Gästekontakt"
+    },
+    {
+      "titel": "Kombinierte Frage (Gästekontakt + Beratung)",
+      "frage": "wie ist der behandlungsablauf bei einer dauerwelle",
+      "antwort": "Erst im Beratungsgespräch abklären: bisherige Erfahrungen mit Umformung, wann zuletzt gemacht, welche Pflegeprodukte zu Hause. Dann die Behandlung: einmal Waschen mit SP-Deep Cleanser, Schutzhandschuhe tragen, exakte Herstelleranweisung einhalten, Haut darf nicht mit Wellflüssigkeit in Berührung kommen, Fixiervorgang genau ausführen. Haare werden in der Regel danach geschnitten. Nach der Dauerwelle ist Pflege Pflicht.\n\nQuellen: MH-03, Punkt 3/4, Gästekontakt · MH-11, Punkte 11.1–11.9, Beratung"
+    },
+    {
+      "titel": "Fangfrage — nicht im Handbuch",
+      "frage": "darf ich trinkgeld behalten",
+      "antwort": "Dazu steht nichts in der Wissensdatenbank. Das ist eine Personalfrage — bitte bei Mirjam Walenta nachfragen, nicht raten oder aus Allgemeinwissen ergänzen."
+    }
+  ],
+  "meldung_beispiel": "„der Ablauf beim Empfang hat sich geändert“, „das stimmt bei uns nicht mehr“",
+  "einarbeiten_beispiel": "„aktualisiere MH-13 mit der Neuerung aus dem Eingang“",
+  "status_bei_aenderung": "Bei einer Standardänderung `status` auf `entwurf` setzen,\n   bis Mirjam Walenta freigibt, dann auf `freigegeben`.",
+  "neues_dokument_beispiel": "„leg MH-21 Wimpern-Service an“",
+  "konsistenz_beispiel": "„stimmen die Angaben zur Beratung in MH-02 und MH-03 überein?“",
+  "mehrdeutig_beispiel": "„Auftreten“ kann das Äußere (MH-18) oder den Limbic Check (MH-19) meinen",
+  "vorlagen": {
+    "kopfblock_beispiel": "id: MH-21\ntitel: <Titel>\ntyp: gaestekontakt | beratung\nstatus: entwurf\nverantwortlich: Salonleitung\nversion: 1.0\nletzte_pruefung: JJJJ-MM-TT\nschlagworte: [<Begriff>, <Synonym>]",
+    "typ_werte": "`gaestekontakt`, `beratung` oder `standard` (nur für Vorwort/Info)",
+    "gilt_fuer_erklaerung": "Bei uns nicht verwendet — alle Kapitel gelten für den ganzen Salon, keine Einschränkung nötig.",
+    "id_muster": "`MH-01` bis `MH-20` für die Kapitel, `MH-00` für das Vorwort, `MH-INFO` für die Salon-Info, `MH-21` und höher für neue Kapitel",
+    "offen_beispiel": "Öffnungszeiten an Feiertagen fehlen noch, mit Mirjam abklären.",
+    "vorschlag_dateiname_beispiel": "2026-09_Reklamation-Ablauf.md",
+    "vorschlag_betrifft_beispiel": "MH-16",
+    "rolle_melder_beispiel": "Stylist:in",
+    "vorschlag_quellen_beispiele": "Beobachtung im Salon, Rückmeldung von Gästen, neue Anweisung von Mirjam",
+    "protokoll_zeile_beispiel": "| 2026-09-10 | MH-13 | 1.1 | Terminregel für Feiertage ergänzt | Mirjam Walenta | Mirjam Walenta |"
+  },
+  "bilder": {
+    "vorhanden": false
+  }
+}

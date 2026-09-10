@@ -1,0 +1,15 @@
+{
+  "firma": "A Great Hair Day",
+  "branche": "Friseursalon",
+  "sprache": "de",
+  "ordner": {
+    ".": { "typ": "gaestekontakt|beratung", "status": "aktiv" },
+    "00_Index": { "typ": "index", "status": "aktiv" }
+  },
+  "typen": ["gaestekontakt", "beratung", "standard"],
+  "gesetz_typen": ["gaestekontakt"],
+  "intern_typen": ["beratung"],
+  "hinweis_unterscheidung": "Keine Vorgabe/Praxis-Unterscheidung, sondern zwei fachliche Kategorien: Gaestekontakt (Umgang, Kommunikation, Auftreten) und Beratung (die eigentliche Behandlung). Vorwort und Salon-Info sind unklassifizierte Infotexte (typ: standard).",
+  "bilderindex": null,
+  "zusatzregeln": []
+}
