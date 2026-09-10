@@ -83,8 +83,12 @@ Volltextsuche).
 ## Nicht im Wiki geregelt
 
 Diese Situationen kommen im Alltag vor, sind aber in keinem freigegebenen Kapitel
-festgelegt. Nicht raten oder aus Allgemeinwissen ergänzen — an Mirjam Walenta
-verweisen bzw. als Vorschlag in `Eingang/` melden.
+festgelegt. Nicht raten oder aus Allgemeinwissen ergänzen.
+
+**Sofort:** nicht selbst entscheiden — Salonleitung fragen, bevor dem Gast gegenüber
+etwas zugesagt oder abgelehnt wird.
+**Danach:** die Lücke als Vorschlag in `Eingang/` melden, damit sie geprüft und ins
+Wiki aufgenommen werden kann.
 
 | Situation / Frage | Anmerkung |
 |---|---|

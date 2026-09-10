@@ -2,6 +2,7 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-10 | `00_Index/Fragen-und-Situationen.md` | – | Genereller Weiterleitungssatz über der Tabelle „Nicht im Wiki geregelt" ergänzt: sofort Salonleitung fragen statt selbst entscheiden, danach Lücke in `Eingang/` melden. Ergebnis aus Praxistest V1 (Fälle „Verspätung", „Termin falsch eingetragen", „Produkt nicht verfügbar", „Mitarbeiter:in weiß nicht weiter" hatten bisher keine klare Weiterleitung) | Claude | offen |
 | 2026-09-10 | `00_Index/Fragen-und-Situationen.md` (neu) | – | Neue Datei: Alltagsfragen/Situationen mit Verweis auf bestehende Kapitel, kein neuer Fachinhalt | Claude | offen |
 | 2026-09-10 | MH-16 | 1.1 | Schnellantwort-Block + Entscheidung „selbst korrigieren oder Salonleitung" ergänzt, nur Zusammenfassung/Ordnung bestehender Punkte (16.1–16.6), keine inhaltliche Änderung | Claude | offen |
 | 2026-09-10 | MH-12 | 1.1 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Punkte (12.1–12.13), keine inhaltliche Änderung | Claude | offen |
