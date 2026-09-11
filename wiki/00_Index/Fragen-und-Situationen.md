@@ -63,6 +63,7 @@ Volltextsuche).
 | Gast bringt eigenes Produkt mit | MH-05 | 5.5 |
 | Schnitt-Technik, Schulung | MH-08 | 8.1–8.4 |
 | Styling/Finish, Ergebnis zeigen | MH-09 | 9.1–9.5 |
+| Gast beim Spiegel-Check nicht zufrieden | MH-09, MH-16 | 9.4 → MH-16 |
 | Empfohlenes Produkt nicht verfügbar/ausverkauft | MH-09 | 9.6 |
 | Ablauf Farbbehandlung | MH-10 | 10.1–10.8 |
 | Ablauf Dauerwelle | MH-11 | 11.1–11.9 |
