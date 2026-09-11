@@ -2,9 +2,9 @@
 id: MH-14
 titel: Kassenabwicklung
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.4
+version: 1.5
 letzte_pruefung: 2026-09-11
 schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass, Kartenlesegerät]
 ---
@@ -19,6 +19,9 @@ schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass, Kartenlesegerät]
 
 > OFFEN: Wer im Tagesgeschäft Rabatte freigeben darf und in welcher Höhe, ist im Wiki
 > nicht geregelt.
+
+Eine bei einer Reklamation angebotene Korrektur (MH-16, 16.3) ist keine Rabattfrage —
+die Entscheidung hier gilt nur für Geld zurück oder Preisnachlass.
 
 ---
 
