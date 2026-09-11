@@ -2,11 +2,11 @@
 id: MH-07
 titel: Service
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
-schlagworte: [Service, Wartezeit, Getränke]
+version: 1.1
+letzte_pruefung: 2026-09-11
+schlagworte: [Service, Wartezeit, Getränke, Foto, Social Media]
 ---
 
 # 07 · Service
@@ -26,3 +26,8 @@ schlagworte: [Service, Wartezeit, Getränke]
 7.7 Wir bieten unseren Gästen als Service Parkscheine an.
 
 7.8 Wir erklären unseren Gästen genau, wie sie selbst zu einem guten Frisurenergebnis kommen.
+
+7.9 Fotos/Videos von Gästen für den Social-Media-Auftritt des Salons: nur mit
+ausdrücklicher Einwilligung des Gastes, eingeholt durch die behandelnde
+Stylistin/den Stylisten. Gäste dürfen selbst frei fotografieren/filmen (z. B.
+Selfies).

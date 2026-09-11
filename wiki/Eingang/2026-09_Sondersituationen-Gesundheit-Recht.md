@@ -5,6 +5,10 @@ erstellt_am: 2026-09-11
 quelle: Cowork, Praxistest Testrunden 2 und 4, gemeldet von Mirjam Walenta
 ---
 
+> Erledigt am 2026-09-11, eingearbeitet in MH-10 Version 1.3 (10.9–10.11), MH-11
+> Version 1.3 (11.10–11.11) und MH-07 Version 1.1 (7.9). Alle drei auf status: entwurf
+> — wartet noch auf fachliche Freigabe durch Mirjam Walenta.
+
 # Änderungsvorschlag
 
 Vier bisher unadressierte Sondersituationen mit Gesundheits-, Rechts- oder
@@ -17,51 +21,47 @@ Risiko gegenüber den bisher geklärten Alltagsthemen.
 Aus Testrunde 2. Betrifft v. a. MH-10 (Farbe/Blondierung) und MH-11 (Dauerwelle).
 Weder eine Sofortmaßnahme noch eine Zuständigkeit ist geregelt.
 
-> OFFEN: Welche Sofortmaßnahme gilt (Produkt sofort abwaschen? Behandlung
-> abbrechen?)?
+> GEKLÄRT: Sofortmaßnahme — Produkt sofort abwaschen, Behandlung abbrechen (jetzt
+> 10.9 / 11.10).
 
-> OFFEN: Wer wird informiert/hinzugezogen (Salonleitung? Erste Hilfe? Rettung?)?
+> GEKLÄRT: Wer wird hinzugezogen — Salonleitung, bei sichtbar starker Reaktion
+> zusätzlich Erste Hilfe/Rettung (jetzt 10.9 / 11.10).
 
-> OFFEN: Gibt es eine Dokumentationspflicht (z. B. Vermerk auf der Karteikarte, damit
-> die Reaktion künftig bekannt ist)?
+> Nicht separat geregelt: eine Dokumentationspflicht auf der Karteikarte wurde nicht
+> extra festgelegt — offen für eine spätere Runde, falls gewünscht.
 
 ## 2. Minderjährige:r kommt allein zum Termin
 
 Aus Testrunde 4. Betrifft v. a. chemische Behandlungen (MH-10, MH-11), ggf. auch
 Schnitt (MH-08).
 
-> OFFEN: Ab welchem Alter braucht es eine Einwilligung der Eltern/
-> Erziehungsberechtigten, und für welche Leistungen (nur chemische Behandlungen
-> oder auch Schnitt)?
-
-> OFFEN: Wie wird die Einwilligung eingeholt (schriftlich vorab, telefonisch am
-> Termin selbst)?
-
-> OFFEN: Wer entscheidet im Zweifel, ob behandelt wird — Stylistin/Stylist oder
-> Salonleitung?
+> GEKLÄRT: Keine Einwilligungsfrage, sondern eine feste gesetzliche Altersgrenze —
+> chemische Behandlungen (Farbe, Blondierung, Dauerwelle) werden erst ab 16 Jahren
+> durchgeführt, auch nicht mit Einverständnis der Eltern (jetzt 10.10 / 11.11). Für
+> Schnitt/Styling gilt keine Altersgrenze (unverändert, keine Ergänzung nötig).
 
 ## 3. Schwangerschaft bei Farb-/Chemiewunsch
 
 Aus Testrunde 4. Betrifft MH-10 (Farbe/Blondierung), ggf. MH-11 (Dauerwelle).
 
-> OFFEN: Gibt es eine Einschränkung, oder nur einen verstärkten Hinweis im
-> Beratungsgespräch?
+> GEKLÄRT: Bestimmte Behandlungen werden nicht angeboten — keine Blondierung bzw.
+> keine sehr starke chemische Aufhellung bei schwangeren Gästen, normale Farbe bleibt
+> möglich (jetzt 10.11).
 
-> OFFEN: Wird das im Beratungsgespräch (MH-03) aktiv erfragt, oder nur reagiert,
-> wenn der Gast es von sich aus erwähnt?
+> Nicht separat geregelt: ob dies im Beratungsgespräch (MH-03) aktiv erfragt wird,
+> wurde nicht extra festgelegt — offen für eine spätere Runde, falls gewünscht.
 
 ## 4. Fotos/Video während der Behandlung, insbesondere für Social Media
 
 Aus Testrunde 4. Betrifft potenziell ein neues Kapitel oder einen Zusatz zu MH-07
 (Service) bzw. MH-18/19 (Auftreten).
 
-> OFFEN: Dürfen Gäste während der Behandlung fotografiert/gefilmt werden (durch den
-> Salon, z. B. für den eigenen Social-Media-Auftritt)?
+> GEKLÄRT: Fotos/Videos für den Social-Media-Auftritt des Salons — ja, aber nur mit
+> ausdrücklicher Einwilligung des Gastes, eingeholt durch die behandelnde
+> Stylistin/den Stylisten (jetzt 7.9).
 
-> OFFEN: Wird dafür eine Einwilligung eingeholt, und von wem?
-
-> OFFEN: Dürfen Gäste selbst im Salon fotografieren/filmen (z. B. andere Gäste im
-> Hintergrund)?
+> GEKLÄRT: Gäste dürfen selbst frei fotografieren/filmen (z. B. Selfies), keine
+> Einschränkung (jetzt 7.9).
 
 ## Begründung
 

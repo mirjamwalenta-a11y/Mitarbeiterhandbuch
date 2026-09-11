@@ -2,6 +2,9 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-11 | MH-10 | 1.3 | Punkte 10.9 (allergische Reaktion), 10.10 (Altersgrenze 16 Jahre), 10.11 (Schwangerschaft/Blondierung) ergänzt (aus Eingang/2026-09_Sondersituationen-Gesundheit-Recht.md). Status auf entwurf gesetzt bis Freigabe | Claude | offen |
+| 2026-09-11 | MH-11 | 1.3 | Punkte 11.10 (allergische Reaktion), 11.11 (Altersgrenze 16 Jahre) ergänzt (aus Eingang/2026-09_Sondersituationen-Gesundheit-Recht.md). Status auf entwurf gesetzt bis Freigabe | Claude | offen |
+| 2026-09-11 | MH-07 | 1.1 | Punkt 7.9 ergänzt: Fotos/Videos für Social Media nur mit Einwilligung, Gäste dürfen selbst frei fotografieren (aus Eingang/2026-09_Sondersituationen-Gesundheit-Recht.md). Status auf entwurf gesetzt bis Freigabe | Claude | offen |
 | 2026-09-11 | MH-14 | 1.3 | Punkt 14.5 ergänzt: Rechnungen werden ohne Namen ausgestellt (aus Eingang/2026-09_Rechnung-andere-Firma.md — ursprüngliche Frage dadurch gegenstandslos) | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-05 | 1.1 | Punkt 5.5 ergänzt: Umgang mit gastseitig mitgebrachten Produkten (aus Eingang/2026-09_Gast-eigenes-Produkt.md, OFFEN-Fragen von Mirjam Walenta geklärt) | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-13 | 1.2 | Punkt 13.10 ergänzt: Ablauf bei falsch eingetragenem Termin (aus Eingang/2026-09_Termin-falsch-eingetragen.md, OFFEN-Fragen von Mirjam Walenta geklärt) | Claude | Mirjam Walenta |
