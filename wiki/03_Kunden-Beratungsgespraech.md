@@ -2,14 +2,26 @@
 id: MH-03
 titel: Kunden-Beratungsgespräch
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
+version: 1.1
+letzte_pruefung: 2026-09-11
 schlagworte: [Beratung, W-Fragen, Pflege, Schnitt, Farbe, Umformung]
 ---
 
 # 03 · Kunden-Beratungsgespräch
+
+### ⚡ Schnellantwort
+
+**Kern:** Vier Themenbereiche, je nach Anliegen des Gasts: Pflege, Schnitt/Frisur, Farbe, Umformung.
+
+1. Schnitt/Frisur: W-Fragen zu Störendem, Wunsch, Länge, Stil (3/2.1–3/2.4).
+2. Farbe: aktuelle Zufriedenheit, Wunsch, letzte Veränderung, Heimpflege (3/3.1–3/3.4).
+3. Umformung: bisherige Erfahrung, letzter Zeitpunkt, Heimpflege (3/4.1–3/4.3).
+
+Details: siehe 3/1–3/4 unten.
+
+---
 
 Fragen zu: 1. Pflege · 2. Schnitt + Frisur · 3. Farbe · 4. Umformung
 
