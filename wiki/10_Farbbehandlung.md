@@ -2,9 +2,9 @@
 id: MH-10
 titel: Farbbehandlung
 typ: beratung
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.4
+version: 1.5
 letzte_pruefung: 2026-09-11
 schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte, Allergie, Reaktion, Altersgrenze, Schwangerschaft]
 ---
@@ -45,7 +45,9 @@ schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte, Allerg
 
 10.9 **[PFLICHT]** Kommt es während der Behandlung zu einer allergischen Reaktion
 oder Hautreizung: Produkt sofort abwaschen, Behandlung abbrechen. Salonleitung
-hinzuziehen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung.
+hinzuziehen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung. Die
+Reaktion wird auf der Karteikarte (10.6) vermerkt, damit sie bei künftigen Besuchen
+bekannt ist.
 
 10.10 **[PFLICHT]** Chemische Behandlungen (Farbe, Blondierung) werden laut
 gesetzlicher Vorgabe erst ab 16 Jahren durchgeführt — auch nicht mit Einverständnis
@@ -53,3 +55,5 @@ der Eltern bei jüngeren Gästen.
 
 10.11 **[PFLICHT]** Bei schwangeren Gästen wird keine Blondierung bzw. keine sehr
 starke chemische Aufhellung durchgeführt. Normale Farbbehandlungen bleiben möglich.
+Eine Schwangerschaft wird nicht aktiv erfragt; die Regel gilt, sobald sie dem Gast
+gegenüber bekannt ist oder vom Gast erwähnt wird.

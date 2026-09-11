@@ -27,8 +27,9 @@ Weder eine Sofortmaßnahme noch eine Zuständigkeit ist geregelt.
 > GEKLÄRT: Wer wird hinzugezogen — Salonleitung, bei sichtbar starker Reaktion
 > zusätzlich Erste Hilfe/Rettung (jetzt 10.9 / 11.10).
 
-> Nicht separat geregelt: eine Dokumentationspflicht auf der Karteikarte wurde nicht
-> extra festgelegt — offen für eine spätere Runde, falls gewünscht.
+> GEKLÄRT (Nachtrag 2026-09-11, Kategorie C): Die Reaktion wird immer auf der
+> Karteikarte vermerkt, damit sie bei künftigen Besuchen bekannt ist (jetzt 10.9 /
+> 11.10).
 
 ## 2. Minderjährige:r kommt allein zum Termin
 
@@ -48,8 +49,8 @@ Aus Testrunde 4. Betrifft MH-10 (Farbe/Blondierung), ggf. MH-11 (Dauerwelle).
 > keine sehr starke chemische Aufhellung bei schwangeren Gästen, normale Farbe bleibt
 > möglich (jetzt 10.11).
 
-> Nicht separat geregelt: ob dies im Beratungsgespräch (MH-03) aktiv erfragt wird,
-> wurde nicht extra festgelegt — offen für eine spätere Runde, falls gewünscht.
+> GEKLÄRT (Nachtrag 2026-09-11, Kategorie C): Wird nicht aktiv erfragt, aus
+> Taktgefühl — die Regel gilt, sobald bekannt oder vom Gast erwähnt (jetzt 10.11).
 
 ## 4. Fotos/Video während der Behandlung, insbesondere für Social Media
 
