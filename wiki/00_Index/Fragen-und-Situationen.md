@@ -91,6 +91,7 @@ Volltextsuche).
 | Kleidung, Namensschild | MH-18 | 18.1–18.4 |
 | Körpersprache, Duft, Mimik (Limbic Check) | MH-19 | 19.1–19.5 |
 | Teamkodex, Werte | MH-20 | ganz |
+| Streit zwischen Kolleginnen vor Gästen, Fehlverhalten | MH-20 | Umgang mit Konflikten und Fehlverhalten |
 | Öffnungszeiten, Adresse, Kontakt | MH-INFO | ganz |
 
 ## Nicht im Wiki geregelt

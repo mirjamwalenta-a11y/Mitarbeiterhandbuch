@@ -2,7 +2,7 @@
 id: MH-20
 titel: Unser Teamkodex
 typ: gaestekontakt
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.1
 letzte_pruefung: 2026-09-11
