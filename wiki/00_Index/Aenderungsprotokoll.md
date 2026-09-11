@@ -2,7 +2,7 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
-| 2026-09-11 | MH-09 | 1.2 | Verweis auf MH-16 (Reklamationen) ergänzt, wenn Gast beim Spiegel-Check (9.4) nicht zufrieden ist, aus Testrunde 2. Reine Verknüpfung, keine neue Regel. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
+| 2026-09-11 | MH-09 | 1.2 | Verweis auf MH-16 (Reklamationen) ergänzt, wenn Gast beim Spiegel-Check (9.4) nicht zufrieden ist, aus Testrunde 2. Reine Verknüpfung, keine neue Regel | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-13 | 1.5 | Punkt 13.14 ergänzt: ab 3. unentschuldigtem No-Show in Folge nur noch gegen Anzahlung, aus Testrunde 9 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-18 | 1.1 | Punkt 18.5 ergänzt: Ohrringe/Piercings erlaubt, wenn dezent, aus Testrunde 9 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-02 | 1.1 | Punkt 2.8 ergänzt: reine Beratung ohne Behandlung ganz normal und kostenlos, aus Testrunde 9 | Claude | Mirjam Walenta |
