@@ -5,21 +5,28 @@ erstellt_am: 2026-09-11
 quelle: Cowork, Praxistest V3 (10 Alltagssituationen), gemeldet von Mirjam Walenta
 ---
 
+> Erledigt am 2026-09-11, eingearbeitet in MH-14 Version 1.3 (Punkt 14.5, Status
+> entwurf — wartet noch auf fachliche Freigabe durch Mirjam Walenta).
+>
+> Klärung ergab: Die ursprüngliche Frage ist gegenstandslos, da Rechnungen bei
+> A Great Hair Day grundsätzlich ohne Namen ausgestellt werden — weder Gast- noch
+> Firmenname. Statt einer Regel für „auf welche Firma" wurde diese Klarstellung selbst
+> als 14.5 ergänzt.
+
 # Änderungsvorschlag
 
 MH-14 (Kassenabwicklung) um eine Angabe ergänzen, ob und wie eine Rechnung auf eine
 andere Firma bzw. einen anderen Namen als den Gast selbst ausgestellt werden kann.
 Aktuell regelt 14.3 nur, *ob* eine Rechnung gewünscht wird, nicht *auf wen*.
 
-Offene Punkte, die vor der Übernahme geklärt werden müssten:
+Offene Punkte, geklärt von Mirjam Walenta am 2026-09-11:
 
-> OFFEN: Darf eine Rechnung grundsätzlich auf eine andere Firma/Person ausgestellt
-> werden, oder nur auf den Gast selbst?
+> GEKLÄRT: Darf eine Rechnung grundsätzlich auf eine andere Firma/Person ausgestellt
+> werden? — Frage gegenstandslos: Rechnungen werden generell ohne Namen ausgestellt.
 
-> OFFEN: Braucht es dafür zusätzliche Angaben (Firmenname, Adresse, UID-Nummer)?
+> GEKLÄRT: Braucht es zusätzliche Angaben (Firmenname, Adresse, UID)? — Nein, entfällt.
 
-> OFFEN: Entscheidet die Stylistin/der Stylist das selbst, oder braucht es dafür
-> Rezeption/Salonleitung?
+> GEKLÄRT: Wer entscheidet im Einzelfall? — Entfällt, da kein Namensfeld existiert.
 
 ## Begründung
 
