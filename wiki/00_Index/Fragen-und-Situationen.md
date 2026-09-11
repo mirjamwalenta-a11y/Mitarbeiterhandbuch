@@ -21,6 +21,7 @@ Volltextsuche).
 | Spontangast ohne Termin | MH-13 | 13.2 |
 | Gast erscheint nicht zum Termin (No-Show) | MH-13 | 13.5 |
 | Termin wurde falsch eingetragen | MH-13 | 13.10 |
+| Kopfläuse bei einem Gast festgestellt | MH-01 | 1.14 |
 
 ## Beratung
 

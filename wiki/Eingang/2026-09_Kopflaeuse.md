@@ -5,6 +5,9 @@ erstellt_am: 2026-09-11
 quelle: Cowork, Praxistest V7 (10 Alltagssituationen), gemeldet von Mirjam Walenta
 ---
 
+> Erledigt am 2026-09-11, eingearbeitet in MH-01 Version 1.1 (Punkt 1.14), freigegeben
+> von Mirjam Walenta am 2026-09-11.
+
 # Änderungsvorschlag
 
 Kein Kapitel regelt den Fall, dass bei einer Kundin/einem Kunden Kopfläuse festgestellt
@@ -16,16 +19,15 @@ Hygiene-Thema (siehe auch Testrunde 7: Werkzeug-/Handtuchhygiene allgemein).
 
 Offene Punkte, die vor der Übernahme geklärt werden müssten:
 
-> OFFEN: Wird die Behandlung abgelehnt/abgebrochen, oder unter besonderen
-> Vorkehrungen trotzdem durchgeführt?
+> GEKLÄRT: Behandlung wird abgelehnt bzw. abgebrochen (jetzt 1.14).
 
-> OFFEN: Wie wird das dem Gast gegenüber kommuniziert (Formulierung, wer spricht die
-> Person an)?
+> GEKLÄRT: Die behandelnde Person spricht es direkt und sachlich selbst an, keine
+> Eskalation an die Salonleitung nötig (jetzt 1.14).
 
-> OFFEN: Welche Hygienemaßnahmen folgen danach (Werkzeuge, Umhang, Arbeitsplatz,
-> ggf. andere Gäste in der Nähe)?
+> GEKLÄRT: Werkzeuge sofort desinfizieren/austauschen, Umhang/Handtuch sofort in die
+> Wäsche, Arbeitsplatz zusätzlich reinigen (jetzt 1.14).
 
-> OFFEN: Wer entscheidet im Zweifel — Stylistin/Stylist selbst oder Salonleitung?
+> GEKLÄRT: Stylistin/Stylist entscheidet selbst (jetzt 1.14).
 
 ## Begründung
 
