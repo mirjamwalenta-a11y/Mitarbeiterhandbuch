@@ -2,6 +2,7 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-11 | MH-20 | 1.1 | Abschnitt „Umgang mit Konflikten und Fehlverhalten" ergänzt (Streit vor Gästen sofort unterbrechen, Klärung unter vier Augen, Salonleitung nur bei Bedarf; Fehlverhalten erst ansprechen, bei Wiederholung Salonleitung), aus Testrunden 6+8. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
 | 2026-09-11 | MH-01 | 1.2 | Punkt 1.15 ergänzt: Kämme/Bürsten/Scheren nach jeder Behandlung desinfizieren, aus Testrunde 7 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-10 | 1.4 | Punkt 10.4 präzisiert: pro Gast neue Schutzhandschuhe, aus Testrunde 7 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-11 | 1.4 | Punkt 11.4 präzisiert: pro Gast neue Schutzhandschuhe, aus Testrunde 7 | Claude | Mirjam Walenta |
