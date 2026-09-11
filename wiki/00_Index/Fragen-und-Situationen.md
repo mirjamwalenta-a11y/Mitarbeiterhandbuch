@@ -45,6 +45,8 @@ Volltextsuche).
 | Kurzfristige Terminabsage | MH-13, MH-12 | 13.6 · 12.8 |
 | Nicht erschienener Gast (Nachfassen) | MH-13 | 13.5 |
 | Mitarbeiter:in fällt überraschend aus | MH-13 | 13.7 |
+| Stornogebühr bei Nichterscheinen/Absage | MH-13 | 13.11 |
+| Terminanfrage per WhatsApp | MH-13 | 13.12 |
 
 ## Behandlung
 
