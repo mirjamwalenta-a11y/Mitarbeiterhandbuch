@@ -4,9 +4,9 @@ titel: Dauerwelle-Behandlung
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.2
-letzte_pruefung: 2026-09-10
-schlagworte: [Dauerwelle, Umformung, SP-Deep Cleanser]
+version: 1.3
+letzte_pruefung: 2026-09-11
+schlagworte: [Dauerwelle, Umformung, SP-Deep Cleanser, Allergie, Reaktion, Altersgrenze]
 ---
 
 # 11 · Dauerwelle-Behandlung
@@ -45,3 +45,10 @@ schlagworte: [Dauerwelle, Umformung, SP-Deep Cleanser]
 11.8 **[EMPFOHLEN]** Wir schneiden die Haare in der Regel nach der Dauerwelle.
 
 11.9 **[PFLICHT]** Nach der Dauerwellenbehandlung ist Pflege Pflicht!
+
+11.10 **[PFLICHT]** Kommt es während der Behandlung zu einer allergischen Reaktion
+oder Hautreizung: Produkt sofort abwaschen, Behandlung abbrechen. Salonleitung
+hinzuziehen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung.
+
+11.11 **[PFLICHT]** Die Dauerwelle wird laut gesetzlicher Vorgabe erst ab 16 Jahren
+durchgeführt — auch nicht mit Einverständnis der Eltern bei jüngeren Gästen.

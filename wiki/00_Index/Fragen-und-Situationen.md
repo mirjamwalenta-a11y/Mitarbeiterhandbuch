@@ -16,6 +16,7 @@ Volltextsuche).
 | Neuer Gast kommt herein | MH-01 | 1.1–1.3 |
 | Neukund:in da, was tun | MH-01, MH-06 | 1.12, 1.13 · 6.2 |
 | Gast muss warten (Service anbieten) | MH-01, MH-07 | 1.7, 1.10 · 7.4 |
+| Fotos/Video für Social Media, Gast fotografiert selbst | MH-07 | 7.9 |
 | Unerwartet lange Wartezeit | MH-01 | 1.10 |
 | Spontangast ohne Termin | MH-13 | 13.2 |
 | Gast erscheint nicht zum Termin (No-Show) | MH-13 | 13.5 |
@@ -56,6 +57,9 @@ Volltextsuche).
 | Empfohlenes Produkt nicht verfügbar/ausverkauft | MH-09 | 9.6 |
 | Ablauf Farbbehandlung | MH-10 | 10.1–10.8 |
 | Ablauf Dauerwelle | MH-11 | 11.1–11.9 |
+| Allergische Reaktion/Hautreizung während Farbe oder Dauerwelle | MH-10, MH-11 | 10.9 · 11.10 |
+| Altersgrenze für Farbe/Blondierung/Dauerwelle (Minderjährige) | MH-10, MH-11 | 10.10 · 11.11 |
+| Schwangere Kundin wünscht Farbe/Blondierung | MH-10 | 10.11 |
 
 ## Kasse & Verabschiedung
 
@@ -101,5 +105,5 @@ Wiki aufgenommen werden kann.
 | Preisnachlass / Rabatt (auch Mitarbeiterrabatt) | Nicht geregelt — siehe auch `Entscheidung: Preisnachlass` in MH-14 |
 | Mitarbeiter:in bemerkt einen eigenen Fehler | Nicht als eigenes Thema geregelt |
 | Mitarbeiter:in weiß die Antwort nicht | Kein festgelegter interner Eskalationsweg für Wissenslücken |
-| Konkrete Kontraindikationen bei Farbe/Dauerwelle (Unverträglichkeit, Vorbehandlung) | Siehe `Entscheidung`-Block in MH-10 und MH-11 — als OFFEN markiert |
+| Sonstige Kontraindikationen bei Farbe/Dauerwelle (z. B. kürzlich gefärbtes/geschädigtes Haar) | Allergische Reaktion, Altersgrenze und Schwangerschaft sind geregelt (10.9–10.11, 11.10–11.11); andere Kontraindikationen weiter als OFFEN im `Entscheidung`-Block markiert |
 | Urlaub, Gehalt, sonstige Personalfragen | Fachfremd, nicht Teil des Wikis |

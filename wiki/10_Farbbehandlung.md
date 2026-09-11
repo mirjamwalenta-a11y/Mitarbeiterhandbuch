@@ -4,9 +4,9 @@ titel: Farbbehandlung
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.2
-letzte_pruefung: 2026-09-10
-schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte]
+version: 1.3
+letzte_pruefung: 2026-09-11
+schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte, Allergie, Reaktion, Altersgrenze, Schwangerschaft]
 ---
 
 # 10 · Farbbehandlung
@@ -42,3 +42,14 @@ schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte]
 10.7 **[PFLICHT]** Wir verwenden nach jeder chemischen Behandlung Intensivpflege.
 
 10.8 **[PFLICHT]** Der Gast erhält genaue Informationen über die Heimpflege.
+
+10.9 **[PFLICHT]** Kommt es während der Behandlung zu einer allergischen Reaktion
+oder Hautreizung: Produkt sofort abwaschen, Behandlung abbrechen. Salonleitung
+hinzuziehen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung.
+
+10.10 **[PFLICHT]** Chemische Behandlungen (Farbe, Blondierung) werden laut
+gesetzlicher Vorgabe erst ab 16 Jahren durchgeführt — auch nicht mit Einverständnis
+der Eltern bei jüngeren Gästen.
+
+10.11 **[PFLICHT]** Bei schwangeren Gästen wird keine Blondierung bzw. keine sehr
+starke chemische Aufhellung durchgeführt. Normale Farbbehandlungen bleiben möglich.
