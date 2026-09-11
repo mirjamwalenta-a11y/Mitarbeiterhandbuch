@@ -5,6 +5,9 @@ erstellt_am: 2026-09-11
 quelle: Cowork, Praxistest V3 (10 Alltagssituationen), gemeldet von Mirjam Walenta
 ---
 
+> Erledigt am 2026-09-11, eingearbeitet in MH-05 Version 1.1 (Punkt 5.5), freigegeben
+> von Mirjam Walenta am 2026-09-11.
+
 # Änderungsvorschlag
 
 Kein Kapitel regelt den Fall, dass ein Gast ein eigenes Produkt mitbringt und möchte,
@@ -13,17 +16,18 @@ Betrifft potenziell mehrere Kapitel (u. a. MH-04 Haarwäsche, MH-10 Farbbehandlu
 MH-11 Dauerwelle), da dort überall mit vorgegebenen Salonprodukten nach exakter
 Herstelleranweisung gearbeitet wird (10.5, 11.3).
 
-Offene Punkte, die vor der Übernahme geklärt werden müssten:
+Offene Punkte, geklärt von Mirjam Walenta am 2026-09-11:
 
-> OFFEN: Dürfen gastseitig mitgebrachte Produkte grundsätzlich verwendet werden?
+> GEKLÄRT: Dürfen gastseitig mitgebrachte Produkte verwendet werden? — Nur
+> unbedenkliche Pflegeprodukte (z. B. Shampoo). Chemische Produkte (Farbe, Dauerwelle)
+> generell nein, ausschließlich Salonprodukte nach Herstelleranweisung.
 
-> OFFEN: Falls ja — gilt das für alle Produktarten gleich, oder nur für unbedenkliche
-> (z. B. eigenes Shampoo ja, eigene Farbe/Chemie nein)?
+> GEKLÄRT: Wer entscheidet im Einzelfall? — Bei unbedenklichen Produkten die
+> Stylistin/der Stylist im Ermessen; bei chemischen Produkten entfällt die Frage, da
+> generell ausgeschlossen.
 
-> OFFEN: Wer entscheidet im Einzelfall — Stylistin/Stylist selbst oder Salonleitung?
-
-> OFFEN: Haftungsfrage, falls das mitgebrachte Produkt eine Reaktion auslöst — bisher
-> nirgends angedacht, sollte parallel mitgeklärt werden.
+> Nicht separat geregelt: eine darüber hinausgehende Haftungsklausel wurde nicht für
+> nötig befunden, da chemische Fremdprodukte ohnehin ausgeschlossen sind.
 
 ## Begründung
 

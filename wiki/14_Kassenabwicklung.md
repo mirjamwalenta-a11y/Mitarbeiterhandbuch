@@ -4,8 +4,8 @@ titel: Kassenabwicklung
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.2
-letzte_pruefung: 2026-09-10
+version: 1.3
+letzte_pruefung: 2026-09-11
 schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass]
 ---
 
@@ -29,3 +29,6 @@ schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass]
 14.3 **[PFLICHT]** Neugäste unbedingt fragen, ob sie eine Rechnung möchten.
 
 14.4 **[EMPFOHLEN]** Folgetermin anbieten.
+
+14.5 **[PFLICHT]** Rechnungen werden ohne Namen ausgestellt (weder Gast- noch
+Firmenname).

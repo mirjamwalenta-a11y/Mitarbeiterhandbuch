@@ -2,6 +2,8 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-11 | MH-14 | 1.3 | Punkt 14.5 ergänzt: Rechnungen werden ohne Namen ausgestellt (aus Eingang/2026-09_Rechnung-andere-Firma.md — ursprüngliche Frage dadurch gegenstandslos) | Claude | Mirjam Walenta |
+| 2026-09-11 | MH-05 | 1.1 | Punkt 5.5 ergänzt: Umgang mit gastseitig mitgebrachten Produkten (aus Eingang/2026-09_Gast-eigenes-Produkt.md, OFFEN-Fragen von Mirjam Walenta geklärt) | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-13 | 1.2 | Punkt 13.10 ergänzt: Ablauf bei falsch eingetragenem Termin (aus Eingang/2026-09_Termin-falsch-eingetragen.md, OFFEN-Fragen von Mirjam Walenta geklärt) | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-09 | 1.1 | Punkt 9.6 ergänzt: Ablauf bei nicht verfügbarem Produkt (aus Eingang/2026-09_Produkt-nicht-verfuegbar.md, OFFEN-Fragen von Mirjam Walenta geklärt) | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-10 | 1.2 | Jeder Punkt mit PFLICHT/EMPFOHLEN gekennzeichnet, keine inhaltliche Änderung | Claude | Mirjam Walenta |
