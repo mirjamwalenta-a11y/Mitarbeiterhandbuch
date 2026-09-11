@@ -4,9 +4,9 @@ titel: Terminvereinbarung
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.3
+version: 1.4
 letzte_pruefung: 2026-09-11
-schlagworte: [Termin, Terminplan, Reservierung, Korrektur, Stornogebühr, WhatsApp]
+schlagworte: [Termin, Terminplan, Reservierung, Korrektur, Stornogebühr, WhatsApp, Zusatzleistung]
 ---
 
 # 13 · Terminvereinbarung
@@ -52,3 +52,8 @@ betroffene Stylist wird in jedem Fall informiert (analog 12.7).
 
 13.12 Terminanfragen per WhatsApp werden nach denselben Regeln behandelt wie am
 Telefon (13.1–13.10).
+
+13.13 Wünscht ein Gast während des Termins kurzfristig eine Zusatzleistung: nur
+durchführen, wenn es sich zeitlich ausgeht, ohne den nächsten wartenden Gast zu
+verzögern. Geht sich das nicht aus, höflich ablehnen und die Zusatzleistung für den
+nächsten Besuch vormerken.
