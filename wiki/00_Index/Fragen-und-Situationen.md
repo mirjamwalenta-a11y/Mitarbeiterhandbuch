@@ -19,6 +19,7 @@ Volltextsuche).
 | Unerwartet lange Wartezeit | MH-01 | 1.10 |
 | Spontangast ohne Termin | MH-13 | 13.2 |
 | Gast erscheint nicht zum Termin (No-Show) | MH-13 | 13.5 |
+| Termin wurde falsch eingetragen | MH-13 | 13.10 |
 
 ## Beratung
 
@@ -51,6 +52,7 @@ Volltextsuche).
 | Pflegeempfehlung, Kopfmassage | MH-05 | 5.1–5.4 |
 | Schnitt-Technik, Schulung | MH-08 | 8.1–8.4 |
 | Styling/Finish, Ergebnis zeigen | MH-09 | 9.1–9.5 |
+| Empfohlenes Produkt nicht verfügbar/ausverkauft | MH-09 | 9.6 |
 | Ablauf Farbbehandlung | MH-10 | 10.1–10.8 |
 | Ablauf Dauerwelle | MH-11 | 11.1–11.9 |
 
@@ -94,10 +96,8 @@ Wiki aufgenommen werden kann.
 |---|---|
 | Gast kommt zu spät, erscheint aber noch | Kein Kapitel regelt Verspätung; nur das Nichterscheinen (MH-13, 13.5) |
 | Gast kommt deutlich zu früh | Nicht geregelt |
-| Termin wurde falsch eingetragen | Nicht geregelt |
 | Preisnachlass / Rabatt (auch Mitarbeiterrabatt) | Nicht geregelt — siehe auch `Entscheidung: Preisnachlass` in MH-14 |
 | Mitarbeiter:in bemerkt einen eigenen Fehler | Nicht als eigenes Thema geregelt |
-| Produkt nicht verfügbar/ausverkauft | Nicht geregelt |
 | Mitarbeiter:in weiß die Antwort nicht | Kein festgelegter interner Eskalationsweg für Wissenslücken |
 | Konkrete Kontraindikationen bei Farbe/Dauerwelle (Unverträglichkeit, Vorbehandlung) | Siehe `Entscheidung`-Block in MH-10 und MH-11 — als OFFEN markiert |
 | Urlaub, Gehalt, sonstige Personalfragen | Fachfremd, nicht Teil des Wikis |

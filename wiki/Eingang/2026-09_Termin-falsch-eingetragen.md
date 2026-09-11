@@ -5,8 +5,8 @@ erstellt_am: 2026-09-10
 quelle: Cowork, Praxistest V1 (10 Alltagssituationen), gemeldet von Mirjam Walenta
 ---
 
-> Erledigt am 2026-09-11, eingearbeitet in MH-13 Version 1.2 (Punkt 13.10, Status
-> entwurf — wartet noch auf fachliche Freigabe durch Mirjam Walenta).
+> Erledigt am 2026-09-11, eingearbeitet in MH-13 Version 1.2 (Punkt 13.10), freigegeben
+> von Mirjam Walenta am 2026-09-11.
 
 # Änderungsvorschlag
 
