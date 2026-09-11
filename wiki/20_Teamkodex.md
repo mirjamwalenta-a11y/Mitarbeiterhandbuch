@@ -4,9 +4,9 @@ titel: Unser Teamkodex
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
-schlagworte: [Teamkodex, Werte]
+version: 1.1
+letzte_pruefung: 2026-09-11
+schlagworte: [Teamkodex, Werte, Konflikt, Fehlverhalten]
 ---
 
 # 20 · Unser Teamkodex
@@ -31,3 +31,13 @@ Teil des Teams bei Mirjam Walenta — A Great Hair Day zu sein bedeutet:
 - Wir stehen dem Umweltschutz aufgeschlossen gegenüber.
 
 **Einer für alle – alle für einen!**
+
+## Umgang mit Konflikten und Fehlverhalten
+
+Kommt es zu einem sichtbaren Streit zwischen Kolleginnen/Kollegen vor Gästen: sofort
+unterbrechen, vor Gästen nicht weiter austragen. Die Klärung erfolgt danach unter vier
+Augen zwischen den Beteiligten; nur wenn das nicht gelingt, wird die Salonleitung
+hinzugezogen.
+
+Anderes unangemessenes Verhalten wird zunächst direkt und kollegial angesprochen; erst
+bei Wiederholung oder größerem Fehlverhalten wird die Salonleitung einbezogen.
