@@ -32,6 +32,7 @@ Volltextsuche).
 |---|---|---|
 | Einstiegsgespräch, Kostenvoranschlag | MH-02 | 2.1–2.7 |
 | Gast lehnt Kostenvoranschlag ab | MH-02 | 2.6 |
+| Gast will nur Beratung ohne Behandlung | MH-02 | 2.8 |
 | W-Fragen bei Schnitt/Frisur | MH-03 | 3/2.1–3/2.4 |
 | Beratung zur Farbe | MH-03, MH-10 | 3/3.1–3/3.4 · MH-10 |
 | Beratung zur Dauerwelle/Umformung | MH-03, MH-11 | 3/4.1–3/4.3 · MH-11 |
@@ -51,6 +52,7 @@ Volltextsuche).
 | Stornogebühr bei Nichterscheinen/Absage | MH-13 | 13.11 |
 | Terminanfrage per WhatsApp | MH-13 | 13.12 |
 | Gast wünscht kurzfristig Zusatzleistung, nächster Termin wartet | MH-13 | 13.13 |
+| Gast lässt wiederholt (3x+) Termine ohne Absage platzen | MH-13 | 13.14 |
 
 ## Behandlung
 
@@ -92,6 +94,7 @@ Volltextsuche).
 | Situation / Frage | Kapitel | Fundstelle |
 |---|---|---|
 | Kleidung, Namensschild | MH-18 | 18.1–18.4 |
+| Ohrringe/Piercings erlaubt? | MH-18 | 18.5 |
 | Körpersprache, Duft, Mimik (Limbic Check) | MH-19 | 19.1–19.5 |
 | Teamkodex, Werte | MH-20 | ganz |
 | Streit zwischen Kolleginnen vor Gästen, Fehlverhalten | MH-20 | Umgang mit Konflikten und Fehlverhalten |

@@ -4,9 +4,9 @@ titel: Unser Auftreten – das Äußere
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
-schlagworte: [Kleidung, Auftreten, Namensschild]
+version: 1.1
+letzte_pruefung: 2026-09-11
+schlagworte: [Kleidung, Auftreten, Namensschild, Schmuck, Ohrringe, Piercing]
 ---
 
 # 18 · Unser Auftreten – das Äußere
@@ -18,3 +18,6 @@ schlagworte: [Kleidung, Auftreten, Namensschild]
 18.3 Alle Teammitglieder kommen frisiert und gepflegt ins Geschäft. Make-up wird bei Bedarf untertags aufgefrischt.
 
 18.4 Alle Teammitglieder tragen ein Namensschild.
+
+18.5 Ohrringe und Piercings sind erlaubt, solange sie dezent/unauffällig bleiben und
+zum gepflegten Gesamteindruck (18.1) passen.
