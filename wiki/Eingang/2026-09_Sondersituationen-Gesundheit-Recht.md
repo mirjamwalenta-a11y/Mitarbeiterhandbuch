@@ -6,8 +6,8 @@ quelle: Cowork, Praxistest Testrunden 2 und 4, gemeldet von Mirjam Walenta
 ---
 
 > Erledigt am 2026-09-11, eingearbeitet in MH-10 Version 1.3 (10.9–10.11), MH-11
-> Version 1.3 (11.10–11.11) und MH-07 Version 1.1 (7.9). Alle drei auf status: entwurf
-> — wartet noch auf fachliche Freigabe durch Mirjam Walenta.
+> Version 1.3 (11.10–11.11) und MH-07 Version 1.1 (7.9), freigegeben von Mirjam
+> Walenta am 2026-09-11.
 
 # Änderungsvorschlag
 
