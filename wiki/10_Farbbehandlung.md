@@ -2,7 +2,7 @@
 id: MH-10
 titel: Farbbehandlung
 typ: beratung
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.6
 letzte_pruefung: 2026-09-11
