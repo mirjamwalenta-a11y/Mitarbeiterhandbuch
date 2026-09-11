@@ -2,7 +2,7 @@
 id: MH-11
 titel: Dauerwelle-Behandlung
 typ: beratung
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.5
 letzte_pruefung: 2026-09-11
