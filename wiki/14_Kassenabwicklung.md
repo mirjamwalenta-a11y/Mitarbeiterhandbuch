@@ -2,7 +2,7 @@
 id: MH-14
 titel: Kassenabwicklung
 typ: gaestekontakt
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.6
 letzte_pruefung: 2026-09-11

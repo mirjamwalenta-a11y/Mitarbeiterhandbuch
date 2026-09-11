@@ -2,7 +2,7 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
-| 2026-09-11 | MH-14 | 1.6 | Schnellantwort-Block ergänzt (vor dem bestehenden Entscheidung-Block), nur Zusammenfassung bestehender Punkte, keine inhaltliche Änderung. Kategorie A, Rollout | Claude | offen |
+| 2026-09-11 | MH-14 | 1.6 | Schnellantwort-Block ergänzt (vor dem bestehenden Entscheidung-Block), nur Zusammenfassung bestehender Punkte, keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-01 | 1.3 | Schnellantwort-Block ergänzt, nur Zusammenfassung/Ordnung bestehender Punkte (1.1–1.15), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-10 | 1.5 | 10.9 ergänzt: Reaktion wird auf Karteikarte vermerkt; 10.11 klargestellt: Schwangerschaft wird nicht aktiv erfragt. Kategorie C, beide Detailfragen geklärt | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-11 | 1.5 | 11.10 ergänzt: Reaktion wird auf Karteikarte vermerkt (Verweis MH-10, 10.6). Kategorie C | Claude | Mirjam Walenta |
