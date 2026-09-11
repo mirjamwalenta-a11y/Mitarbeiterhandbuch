@@ -2,9 +2,9 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
-| 2026-09-11 | MH-01 | 1.2 | Punkt 1.15 ergänzt: Kämme/Bürsten/Scheren nach jeder Behandlung desinfizieren, aus Testrunde 7. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
-| 2026-09-11 | MH-10 | 1.4 | Punkt 10.4 präzisiert: pro Gast neue Schutzhandschuhe, aus Testrunde 7. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
-| 2026-09-11 | MH-11 | 1.4 | Punkt 11.4 präzisiert: pro Gast neue Schutzhandschuhe, aus Testrunde 7. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
+| 2026-09-11 | MH-01 | 1.2 | Punkt 1.15 ergänzt: Kämme/Bürsten/Scheren nach jeder Behandlung desinfizieren, aus Testrunde 7 | Claude | Mirjam Walenta |
+| 2026-09-11 | MH-10 | 1.4 | Punkt 10.4 präzisiert: pro Gast neue Schutzhandschuhe, aus Testrunde 7 | Claude | Mirjam Walenta |
+| 2026-09-11 | MH-11 | 1.4 | Punkt 11.4 präzisiert: pro Gast neue Schutzhandschuhe, aus Testrunde 7 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-13 | 1.3 | Punkte 13.11 (keine Stornogebühr) und 13.12 (WhatsApp-Terminanfragen wie Telefon) ergänzt, aus Testrunde 9 | Claude | Mirjam Walenta |
 | 2026-09-11 | `00_Index/Testfragen.md` | – | Alltags-Fragen-Pool mit 90 echten Testeinträgen aus 9 Testrunden gefüllt (Frage, gefunden ja/nein/teilweise, Zeit, Quelle, Bemerkung) | Claude | – |
 | 2026-09-11 | MH-01 | 1.1 | Punkt 1.14 ergänzt: Ablauf bei festgestellten Kopfläusen (Ablehnung, Kommunikation, Hygienemaßnahmen) (aus Eingang/2026-09_Kopflaeuse.md) | Claude | Mirjam Walenta |
