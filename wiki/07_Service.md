@@ -4,9 +4,9 @@ titel: Service
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.1
+version: 1.2
 letzte_pruefung: 2026-09-11
-schlagworte: [Service, Wartezeit, Getränke, Foto, Social Media]
+schlagworte: [Service, Wartezeit, Getränke, Foto, Social Media, Gerätefehler]
 ---
 
 # 07 · Service
@@ -31,3 +31,6 @@ schlagworte: [Service, Wartezeit, Getränke, Foto, Social Media]
 ausdrücklicher Einwilligung des Gastes, eingeholt durch die behandelnde
 Stylistin/den Stylisten. Gäste dürfen selbst frei fotografieren/filmen (z. B.
 Selfies).
+
+7.10 Fällt ein Gerät (z. B. Föhn, Glätteisen) während der Behandlung aus, wird die
+Salonleitung sofort informiert.

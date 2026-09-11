@@ -17,6 +17,7 @@ Volltextsuche).
 | Neukund:in da, was tun | MH-01, MH-06 | 1.12, 1.13 · 6.2 |
 | Gast muss warten (Service anbieten) | MH-01, MH-07 | 1.7, 1.10 · 7.4 |
 | Fotos/Video für Social Media, Gast fotografiert selbst | MH-07 | 7.9 |
+| Gerät (Föhn, Glätteisen) fällt während Behandlung aus | MH-07 | 7.10 |
 | Unerwartet lange Wartezeit | MH-01 | 1.10 |
 | Spontangast ohne Termin | MH-13 | 13.2 |
 | Gast erscheint nicht zum Termin (No-Show) | MH-13 | 13.5 |
@@ -74,6 +75,7 @@ Volltextsuche).
 | Kassieren, Betrag kontrollieren | MH-14 | 14.1, 14.2 |
 | Rechnung gewünscht | MH-14 | 14.3 |
 | Rechnung auf andere Firma/Name ausstellen | MH-14 | 14.5 |
+| Kartenlesegerät funktioniert nicht | MH-14 | 14.6 |
 | Folgetermin anbieten | MH-14, MH-13 | 14.4 · 13.4 |
 | Verabschiedung, Taxi rufen | MH-15 | 15.1–15.6 |
 
