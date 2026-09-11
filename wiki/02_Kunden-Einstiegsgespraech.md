@@ -2,14 +2,26 @@
 id: MH-02
 titel: Kunden-Einstiegsgespräch
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.1
+version: 1.2
 letzte_pruefung: 2026-09-11
 schlagworte: [Einstiegsgespräch, Kostenvoranschlag, Beratung, nur Beratung]
 ---
 
 # 02 · Kunden-Einstiegsgespräch
+
+### ⚡ Schnellantwort
+
+**Kern:** Wunsch abklären, Kostenvoranschlag nur wenn gewünscht, erst nach Zustimmung beginnen.
+
+1. Fragen zu Schnitt/Farbe/Frisur stellen, Wunsch genau abklären (2.3, 2.4).
+2. Kostenvoranschlag nur, wenn der Gast ihn möchte (2.5).
+3. Erst nach Zustimmung des Gastes beginnen; bei Ablehnung nach dem Grund fragen (2.6).
+
+Details: siehe 2.1–2.8 unten.
+
+---
 
 2.1 Informationsmaterial bereithalten:
 - Ausgefüllter Neukundenzettel
