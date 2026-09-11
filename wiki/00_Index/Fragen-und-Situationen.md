@@ -49,6 +49,7 @@ Volltextsuche).
 | Mitarbeiter:in fällt überraschend aus | MH-13 | 13.7 |
 | Stornogebühr bei Nichterscheinen/Absage | MH-13 | 13.11 |
 | Terminanfrage per WhatsApp | MH-13 | 13.12 |
+| Gast wünscht kurzfristig Zusatzleistung, nächster Termin wartet | MH-13 | 13.13 |
 
 ## Behandlung
 
