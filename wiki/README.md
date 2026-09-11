@@ -58,6 +58,20 @@ Regeln:
 5. **Keine personenbezogenen Daten von Kund:innen oder Mitarbeiter:innen.** Rollen
    statt Namen (Ausnahme: die Inhaberin selbst, die im Handbuch namentlich auftritt).
 
+### Kennzeichnung PFLICHT / EMPFOHLEN / ENTSCHEIDUNG
+
+In den Kapiteln mit besonderem Haftungs- oder Freigabebedarf (aktuell MH-10, MH-11,
+MH-14, MH-16) ist jeder nummerierte Punkt gekennzeichnet, damit sofort klar ist, was
+selbst entschieden werden darf:
+
+- **[PFLICHT]** — verpflichtend, keine Abweichung im Alltag.
+- **[EMPFOHLEN]** — Standardvorgehen, im Einzelfall mit gesundem Menschenverstand
+  anpassbar.
+- **[ENTSCHEIDUNG]** — hier nicht selbst entscheiden; der Punkt hängt von der
+  Einschätzung im Entscheidung-Block desselben Kapitels ab.
+
+Andere Kapitel tragen diese Kennzeichnung (noch) nicht.
+
 ## Pflegeprozess
 
 | Schritt | Wer | Wann |

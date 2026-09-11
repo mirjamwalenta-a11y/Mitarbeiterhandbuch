@@ -4,7 +4,7 @@ titel: Reklamationen
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.1
+version: 1.2
 letzte_pruefung: 2026-09-10
 schlagworte: [Reklamation, Korrektur, Beschwerde]
 ---
@@ -35,14 +35,14 @@ Details: siehe 16.1–16.6 unten.
 
 ---
 
-16.1 Zunächst wird Bedauern darüber geäußert, dass der Gast nicht zufrieden ist.
+16.1 **[PFLICHT]** Zunächst wird Bedauern darüber geäußert, dass der Gast nicht zufrieden ist.
 
-16.2 Gäste aufmerksam zuhören, nicht unterbrechen.
+16.2 **[PFLICHT]** Gäste aufmerksam zuhören, nicht unterbrechen.
 
-16.3 Bei einfachen Reklamationen bieten wir eine sofortige Korrektur an.
+16.3 **[ENTSCHEIDUNG]** Bei einfachen Reklamationen bieten wir eine sofortige Korrektur an.
 
-16.4 Bei schwerwiegenderen Reklamationen ziehen wir die Salonleitung hinzu.
+16.4 **[ENTSCHEIDUNG]** Bei schwerwiegenderen Reklamationen ziehen wir die Salonleitung hinzu.
 
-16.5 Bei telefonischen Reklamationen bitten wir den Gast in den Salon.
+16.5 **[PFLICHT]** Bei telefonischen Reklamationen bitten wir den Gast in den Salon.
 
-16.6 Alle Reklamationen werden systematisch von derjenigen Person erfasst, bearbeitet und erledigt bzw. weitergeleitet, an die die Reklamation herangetragen wurde.
+16.6 **[PFLICHT]** Alle Reklamationen werden systematisch von derjenigen Person erfasst, bearbeitet und erledigt bzw. weitergeleitet, an die die Reklamation herangetragen wurde.
