@@ -22,6 +22,8 @@ Volltextsuche).
 | Gast erscheint nicht zum Termin (No-Show) | MH-13 | 13.5 |
 | Termin wurde falsch eingetragen | MH-13 | 13.10 |
 | Kopfläuse bei einem Gast festgestellt | MH-01 | 1.14 |
+| Werkzeuge (Kamm/Bürste/Schere) desinfizieren | MH-01 | 1.15 |
+| Schutzhandschuhe zwischen Kundinnen wechseln | MH-10, MH-11 | 10.4 · 11.4 |
 
 ## Beratung
 

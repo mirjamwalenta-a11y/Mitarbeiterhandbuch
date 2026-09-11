@@ -4,9 +4,9 @@ titel: Kundenempfang
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.1
+version: 1.2
 letzte_pruefung: 2026-09-11
-schlagworte: [Empfang, Begrüßung, Neukund:innen, Wartezeit, Kopfläuse, Hygiene]
+schlagworte: [Empfang, Begrüßung, Neukund:innen, Wartezeit, Kopfläuse, Hygiene, Desinfektion]
 ---
 
 # 01 · Kundenempfang
@@ -46,3 +46,6 @@ abgebrochen. Die behandelnde Person spricht das direkt und sachlich mit dem Gast
 keine Eskalation an die Salonleitung nötig. Anschließend: verwendete Werkzeuge (Kämme,
 Scheren, Bürsten) sofort desinfizieren bzw. austauschen, Umhang/Handtuch sofort in die
 Wäsche geben, Arbeitsplatz zusätzlich reinigen.
+
+1.15 Kämme, Bürsten und Scheren werden nach jeder Behandlung mit einem
+handelsüblichen Desinfektionsmittel für Friseurwerkzeug gereinigt bzw. desinfiziert.

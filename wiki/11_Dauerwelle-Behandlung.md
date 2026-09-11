@@ -4,7 +4,7 @@ titel: Dauerwelle-Behandlung
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.3
+version: 1.4
 letzte_pruefung: 2026-09-11
 schlagworte: [Dauerwelle, Umformung, SP-Deep Cleanser, Allergie, Reaktion, Altersgrenze]
 ---
@@ -34,7 +34,7 @@ schlagworte: [Dauerwelle, Umformung, SP-Deep Cleanser, Allergie, Reaktion, Alter
 
 11.3 **[PFLICHT]** Produkteinsatz erfolgt nach exakter Gebrauchsanweisung der Hersteller (Einwirkzeit, etc.).
 
-11.4 **[PFLICHT]** Schutzhandschuhe tragen.
+11.4 **[PFLICHT]** Schutzhandschuhe tragen; pro Gast werden neue Handschuhe verwendet.
 
 11.5 **[EMPFOHLEN]** Wenn notwendig, Vorbehandlung verwenden.
 

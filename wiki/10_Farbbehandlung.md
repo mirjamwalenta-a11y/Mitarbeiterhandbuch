@@ -4,7 +4,7 @@ titel: Farbbehandlung
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.3
+version: 1.4
 letzte_pruefung: 2026-09-11
 schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte, Allergie, Reaktion, Altersgrenze, Schwangerschaft]
 ---
@@ -33,7 +33,7 @@ schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte, Allerg
 
 10.3 **[PFLICHT]** Der Behandlungsablauf erfolgt durch interne Schulungen.
 
-10.4 **[PFLICHT]** Schutzhandschuhe tragen.
+10.4 **[PFLICHT]** Schutzhandschuhe tragen; pro Gast werden neue Handschuhe verwendet.
 
 10.5 **[PFLICHT]** Produkteinsatz erfolgt nach exakter Gebrauchsanweisung der Hersteller (Mischverhältnisse, Einwirkzeit, …).
 
