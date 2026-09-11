@@ -4,12 +4,25 @@ titel: Farbbehandlung
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.5
+version: 1.6
 letzte_pruefung: 2026-09-11
 schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte, Allergie, Reaktion, Altersgrenze, Schwangerschaft]
 ---
 
 # 10 · Farbbehandlung
+
+### ⚡ Schnellantwort
+
+**Kern:** Fachlich möglich und Herstellervorgaben klar? Dann Schutzhandschuhe,
+Karteikarte, Herstelleranweisung genau einhalten.
+
+1. Altersgrenze 16 Jahre, keine Ausnahme mit Einverständnis der Eltern (10.10).
+2. Schutzhandschuhe, pro Gast neu; Herstelleranweisung exakt einhalten (10.4, 10.5).
+3. Allergische Reaktion: sofort abwaschen, abbrechen, Salonleitung hinzuziehen (10.9).
+
+Details: siehe 10.1–10.11 unten.
+
+---
 
 ### ⚖ Entscheidung: Darf ich die Farbe/Blondierung durchführen?
 
