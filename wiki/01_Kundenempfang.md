@@ -2,14 +2,26 @@
 id: MH-01
 titel: Kundenempfang
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.2
+version: 1.3
 letzte_pruefung: 2026-09-11
 schlagworte: [Empfang, Begrüßung, Neukund:innen, Wartezeit, Kopfläuse, Hygiene, Desinfektion]
 ---
 
 # 01 · Kundenempfang
+
+### ⚡ Schnellantwort
+
+**Kern:** Jeden Gast sofort begrüßen, mit Namen ansprechen, Platz anbieten.
+
+1. Sofort grüßen (Augenkontakt), nach Wunsch fragen, Platz anbieten (1.1).
+2. Neukund:in da: Neukundenzettel, Frisurenmappe, Getränk anbieten (1.12).
+3. Kopfläuse festgestellt: Behandlung ablehnen/abbrechen, direkt ansprechen (1.14).
+
+Details: siehe 1.1–1.15 unten.
+
+---
 
 1.1 Jeder eintretende Gast wird sofort von der nächststehenden Person gegrüßt (Augenkontakt), nach seinem Wunsch gefragt und bekommt einen Platz angeboten.
 
