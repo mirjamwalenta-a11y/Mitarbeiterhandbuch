@@ -2,11 +2,11 @@
 id: MH-01
 titel: Kundenempfang
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
-schlagworte: [Empfang, Begrüßung, Neukund:innen, Wartezeit]
+version: 1.1
+letzte_pruefung: 2026-09-11
+schlagworte: [Empfang, Begrüßung, Neukund:innen, Wartezeit, Kopfläuse, Hygiene]
 ---
 
 # 01 · Kundenempfang
@@ -40,3 +40,9 @@ schlagworte: [Empfang, Begrüßung, Neukund:innen, Wartezeit]
 - Getränke anbieten
 
 1.13 Bei Neukund:innen stellt sich die Stylistin/der Stylist vor und spricht den Gast im Laufe der Behandlung mit seinem Namen an.
+
+1.14 Werden bei einem Gast Kopfläuse festgestellt, wird die Behandlung abgelehnt bzw.
+abgebrochen. Die behandelnde Person spricht das direkt und sachlich mit dem Gast an,
+keine Eskalation an die Salonleitung nötig. Anschließend: verwendete Werkzeuge (Kämme,
+Scheren, Bürsten) sofort desinfizieren bzw. austauschen, Umhang/Handtuch sofort in die
+Wäsche geben, Arbeitsplatz zusätzlich reinigen.
