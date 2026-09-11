@@ -2,11 +2,11 @@
 id: MH-14
 titel: Kassenabwicklung
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.3
+version: 1.4
 letzte_pruefung: 2026-09-11
-schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass]
+schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass, Kartenlesegerät]
 ---
 
 # 14 · Kassenabwicklung
@@ -32,3 +32,6 @@ schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass]
 
 14.5 **[PFLICHT]** Rechnungen werden ohne Namen ausgestellt (weder Gast- noch
 Firmenname).
+
+14.6 **[PFLICHT]** Funktioniert das Kartenlesegerät nicht: Hotline des Anbieters
+anrufen. In der Zwischenzeit dem Gast Barzahlung anbieten.
