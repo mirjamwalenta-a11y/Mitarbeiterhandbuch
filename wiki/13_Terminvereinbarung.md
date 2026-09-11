@@ -2,11 +2,11 @@
 id: MH-13
 titel: Terminvereinbarung
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.2
+version: 1.3
 letzte_pruefung: 2026-09-11
-schlagworte: [Termin, Terminplan, Reservierung, Korrektur]
+schlagworte: [Termin, Terminplan, Reservierung, Korrektur, Stornogebühr, WhatsApp]
 ---
 
 # 13 · Terminvereinbarung
@@ -47,3 +47,8 @@ die es bemerkt, den Eintrag direkt. Ändert sich dadurch Zeit oder zuständige P
 Termins, wird der Gast informiert; bleibt der Termin selbst unverändert (z. B. reiner
 Tippfehler im Namen), ist keine Gast-Information nötig. Die betroffene Stylistin/der
 betroffene Stylist wird in jedem Fall informiert (analog 12.7).
+
+13.11 Bei Nichterscheinen oder Absage wird keine Stornogebühr berechnet.
+
+13.12 Terminanfragen per WhatsApp werden nach denselben Regeln behandelt wie am
+Telefon (13.1–13.10).
