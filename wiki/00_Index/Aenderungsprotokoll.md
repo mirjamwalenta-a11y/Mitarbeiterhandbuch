@@ -2,6 +2,8 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-11 | MH-13 | 1.6 | Punkt 13.7 um Wortlaut ergänzt („Entschuldigen Sie bitte die Wartezeit, ich bin in wenigen Minuten bei Ihnen."), aus Testrunde 8. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
+| 2026-09-11 | MH-07 | 1.3 | Punkt 7.9 erweitert: Einwilligungsregel gilt jetzt für jede externe Verwendung (Social Media, Katalog, Portfolio, Website), aus Testrunde 8. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
 | 2026-09-11 | MH-09 | 1.2 | Verweis auf MH-16 (Reklamationen) ergänzt, wenn Gast beim Spiegel-Check (9.4) nicht zufrieden ist, aus Testrunde 2. Reine Verknüpfung, keine neue Regel | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-13 | 1.5 | Punkt 13.14 ergänzt: ab 3. unentschuldigtem No-Show in Folge nur noch gegen Anzahlung, aus Testrunde 9 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-18 | 1.1 | Punkt 18.5 ergänzt: Ohrringe/Piercings erlaubt, wenn dezent, aus Testrunde 9 | Claude | Mirjam Walenta |

@@ -2,11 +2,11 @@
 id: MH-13
 titel: Terminvereinbarung
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.5
+version: 1.6
 letzte_pruefung: 2026-09-11
-schlagworte: [Termin, Terminplan, Reservierung, Korrektur, Stornogebühr, WhatsApp, Zusatzleistung, No-Show, Anzahlung]
+schlagworte: [Termin, Terminplan, Reservierung, Korrektur, Stornogebühr, WhatsApp, Zusatzleistung, No-Show, Anzahlung, Verspätung]
 ---
 
 # 13 · Terminvereinbarung
@@ -35,7 +35,7 @@ Details: siehe 13.1–13.9 unten.
 
 13.6 Kurzfristige Terminabsagen werden freundlichst bedauert, wir bedanken uns für die Absage und bieten gleich einen neuen Termin an.
 
-13.7 Wenn ein Teammitglied überraschend verhindert ist, organisieren wir den Terminplan um und informieren die betroffenen Gäste.
+13.7 Wenn ein Teammitglied überraschend verhindert ist, organisieren wir den Terminplan um und informieren die betroffenen Gäste. Wortlaut dafür: „Entschuldigen Sie bitte die Wartezeit, ich bin in wenigen Minuten bei Ihnen."
 
 13.8 Wir achten darauf, dass der Name des Gastes richtig und leserlich geschrieben wird.
 
