@@ -2,14 +2,26 @@
 id: MH-09
 titel: Styling / Finish
 typ: beratung
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.2
+version: 1.3
 letzte_pruefung: 2026-09-11
 schlagworte: [Styling, Finish, Spiegel, Produkt nicht verfügbar, Reklamation]
 ---
 
 # 09 · Styling / Finish
+
+### ⚡ Schnellantwort
+
+**Kern:** Spiegel-Check von allen Seiten, ist der Gast nicht zufrieden, gilt der Reklamations-Ablauf.
+
+1. Vor dem Finish den Stylingwunsch abklären (9.1, 9.2).
+2. Nach dem Finish Spiegel von allen Seiten zeigen, Zufriedenheit abfragen (9.4).
+3. Nicht zufrieden: ab hier MH-16 (Reklamationen) anwenden.
+
+Details: siehe 9.1–9.6 unten.
+
+---
 
 9.1 Wir klären ab, welches Styling der Gast von uns erwartet.
 
