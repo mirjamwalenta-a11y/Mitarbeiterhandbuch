@@ -4,9 +4,9 @@ titel: Terminvereinbarung
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.1
-letzte_pruefung: 2026-09-10
-schlagworte: [Termin, Terminplan, Reservierung]
+version: 1.2
+letzte_pruefung: 2026-09-11
+schlagworte: [Termin, Terminplan, Reservierung, Korrektur]
 ---
 
 # 13 · Terminvereinbarung
@@ -40,3 +40,10 @@ Details: siehe 13.1–13.9 unten.
 13.8 Wir achten darauf, dass der Name des Gastes richtig und leserlich geschrieben wird.
 
 13.9 Bei Leerläufen „spontan" Gäste anrufen.
+
+13.10 Wird ein falsch eingetragener Termin bemerkt (falscher Name, falsche Zeit,
+falsche Stylistin/falscher Stylist, doppelt eingetragen o. Ä.), korrigiert die Person,
+die es bemerkt, den Eintrag direkt. Ändert sich dadurch Zeit oder zuständige Person des
+Termins, wird der Gast informiert; bleibt der Termin selbst unverändert (z. B. reiner
+Tippfehler im Namen), ist keine Gast-Information nötig. Die betroffene Stylistin/der
+betroffene Stylist wird in jedem Fall informiert (analog 12.7).
