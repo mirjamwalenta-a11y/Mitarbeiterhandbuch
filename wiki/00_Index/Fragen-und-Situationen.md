@@ -16,7 +16,7 @@ Volltextsuche).
 | Neuer Gast kommt herein | MH-01 | 1.1–1.3 |
 | Neukund:in da, was tun | MH-01, MH-06 | 1.12, 1.13 · 6.2 |
 | Gast muss warten (Service anbieten) | MH-01, MH-07 | 1.7, 1.10 · 7.4 |
-| Fotos/Video für Social Media, Gast fotografiert selbst | MH-07 | 7.9 |
+| Fotos/Video für Social Media, Katalog, Portfolio, Website; Gast fotografiert selbst | MH-07 | 7.9 |
 | Gerät (Föhn, Glätteisen) fällt während Behandlung aus | MH-07 | 7.10 |
 | Unerwartet lange Wartezeit | MH-01 | 1.10 |
 | Spontangast ohne Termin | MH-13 | 13.2 |
