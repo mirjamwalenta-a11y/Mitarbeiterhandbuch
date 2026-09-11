@@ -2,14 +2,26 @@
 id: MH-11
 titel: Dauerwelle-Behandlung
 typ: beratung
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.5
+version: 1.6
 letzte_pruefung: 2026-09-11
 schlagworte: [Dauerwelle, Umformung, SP-Deep Cleanser, Allergie, Reaktion, Altersgrenze]
 ---
 
 # 11 · Dauerwelle-Behandlung
+
+### ⚡ Schnellantwort
+
+**Kern:** Erst Beratungsgespräch, dann einmal Waschen mit SP-Deep Cleanser, Herstellervorgaben genau einhalten.
+
+1. Altersgrenze 16 Jahre, keine Ausnahme mit Einverständnis der Eltern (11.11).
+2. Schutzhandschuhe, pro Gast neu; Haut darf nicht mit Wellflüssigkeit in Berührung kommen (11.4, 11.6).
+3. Allergische Reaktion: sofort abwaschen, abbrechen, Salonleitung hinzuziehen (11.10).
+
+Details: siehe 11.1–11.11 unten.
+
+---
 
 ### ⚖ Entscheidung: Darf ich die Dauerwelle durchführen?
 
