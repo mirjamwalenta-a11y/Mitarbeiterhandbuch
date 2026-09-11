@@ -5,22 +5,27 @@ erstellt_am: 2026-09-10
 quelle: Cowork, Praxistest V1 (10 Alltagssituationen), gemeldet von Mirjam Walenta
 ---
 
+> Erledigt am 2026-09-11, eingearbeitet in MH-09 Version 1.1 (Punkt 9.6, Status
+> entwurf — wartet noch auf fachliche Freigabe durch Mirjam Walenta).
+
 # Änderungsvorschlag
 
 Kein bestehendes Kapitel regelt den Fall, dass ein empfohlenes oder gewünschtes
-Produkt (Pflege-, Styling- oder Farbprodukt) nicht verfügbar bzw. ausverkauft ist. Zu
-prüfen, ob ein kurzer Abschnitt in einem bestehenden Kapitel reicht (z. B. MH-05
-Haar- und Kopfhautpflege oder MH-09 Styling/Finish, wo Produktempfehlungen bereits
-vorkommen) oder ob dafür ein eigenes Kapitel sinnvoll ist.
+Produkt (Pflege-, Styling- oder Farbprodukt) nicht verfügbar bzw. ausverkauft ist.
+Eingearbeitet in MH-09 Styling/Finish (dort, wo Produktempfehlungen bereits vorkommen,
+9.5), nicht in MH-05 und nicht als eigenes Kapitel.
 
-Offene Punkte, die vor der Übernahme geklärt werden müssten:
+Offene Punkte, geklärt von Mirjam Walenta am 2026-09-11:
 
-> OFFEN: Wird dem Gast ein Ersatzprodukt vorgeschlagen, und nach welchem Kriterium?
+> GEKLÄRT: Entscheidet die Stylistin/der Stylist selbst über eine Ersatzlösung, oder
+> braucht es dafür die Salonleitung? — Stylistin/Stylist entscheidet selbst, keine
+> Eskalation nötig.
 
-> OFFEN: Wird das Produkt zurückgelegt oder nachbestellt, und wer ist dafür zuständig?
+> GEKLÄRT: Wird das Produkt zurückgelegt oder nachbestellt? — Ja, notieren und
+> nachbestellen ist Standard.
 
-> OFFEN: Entscheidet die Stylistin/der Stylist selbst über eine Ersatzlösung, oder
-> braucht es dafür die Salonleitung?
+> Nicht separat festgelegt: nach welchem Kriterium das Ersatzprodukt gewählt wird —
+> bleibt fachliche Einschätzung der Stylistin/des Stylisten im Beratungsgespräch.
 
 ## Begründung
 

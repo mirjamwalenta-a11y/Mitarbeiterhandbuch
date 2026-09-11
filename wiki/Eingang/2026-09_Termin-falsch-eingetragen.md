@@ -5,6 +5,9 @@ erstellt_am: 2026-09-10
 quelle: Cowork, Praxistest V1 (10 Alltagssituationen), gemeldet von Mirjam Walenta
 ---
 
+> Erledigt am 2026-09-11, eingearbeitet in MH-13 Version 1.2 (Punkt 13.10, Status
+> entwurf — wartet noch auf fachliche Freigabe durch Mirjam Walenta).
+
 # Änderungsvorschlag
 
 MH-13 (Terminvereinbarung) um einen Ablauf für den Fall ergänzen, dass ein Termin
@@ -13,14 +16,16 @@ Stylist, doppelt eingetragen o. Ä.). Aktuell regelt MH-13 nur den nicht erschie
 Gast (13.5) und die korrekte Neuanlage (13.8), nicht die nachträgliche Korrektur eines
 bereits falsch eingetragenen Termins.
 
-Offene Punkte, die vor der Übernahme geklärt werden müssten:
+Offene Punkte, geklärt von Mirjam Walenta am 2026-09-11:
 
-> OFFEN: Wer korrigiert den Eintrag — jede Person oder nur bestimmte Rollen?
+> GEKLÄRT: Wer korrigiert den Eintrag? — Jede Person, die den Fehler bemerkt.
 
-> OFFEN: Muss der betroffene Gast informiert werden, und von wem?
+> GEKLÄRT: Muss der betroffene Gast informiert werden? — Nur wenn sich Zeit oder
+> zuständige Person des Termins ändern. Bleibt der Termin selbst unverändert (reiner
+> Tippfehler), keine Gast-Information nötig.
 
-> OFFEN: Muss die betroffene Stylistin/der betroffene Stylist informiert werden
-> (analog 12.7 bei telefonischer Terminänderung)?
+> GEKLÄRT: Muss die betroffene Stylistin/der betroffene Stylist informiert werden? —
+> Ja, in jedem Fall (analog 12.7 bei telefonischer Terminänderung).
 
 ## Begründung
 

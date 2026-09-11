@@ -2,11 +2,11 @@
 id: MH-09
 titel: Styling / Finish
 typ: beratung
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
-schlagworte: [Styling, Finish, Spiegel]
+version: 1.1
+letzte_pruefung: 2026-09-11
+schlagworte: [Styling, Finish, Spiegel, Produkt nicht verfügbar]
 ---
 
 # 09 · Styling / Finish
@@ -22,3 +22,7 @@ schlagworte: [Styling, Finish, Spiegel]
 - Haben Sie es sich so vorgestellt?
 
 9.5 Stylingvariationen, Tipps und Heimpflege für zu Hause anbieten. Wir empfehlen die Produkte, die wir verwendet haben.
+
+9.6 Ist ein empfohlenes Produkt nicht verfügbar, entscheidet die Stylistin/der Stylist
+selbst über eine Ersatzlösung. Das fehlende Produkt wird notiert, eine Nachbestellung
+veranlasst.
