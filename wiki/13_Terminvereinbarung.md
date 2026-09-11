@@ -2,11 +2,11 @@
 id: MH-13
 titel: Terminvereinbarung
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.4
+version: 1.5
 letzte_pruefung: 2026-09-11
-schlagworte: [Termin, Terminplan, Reservierung, Korrektur, Stornogebühr, WhatsApp, Zusatzleistung]
+schlagworte: [Termin, Terminplan, Reservierung, Korrektur, Stornogebühr, WhatsApp, Zusatzleistung, No-Show, Anzahlung]
 ---
 
 # 13 · Terminvereinbarung
@@ -57,3 +57,7 @@ Telefon (13.1–13.10).
 durchführen, wenn es sich zeitlich ausgeht, ohne den nächsten wartenden Gast zu
 verzögern. Geht sich das nicht aus, höflich ablehnen und die Zusatzleistung für den
 nächsten Besuch vormerken.
+
+13.14 Lässt ein Gast einen Termin dreimal in Folge ohne Absage platzen, wird der
+nächste Termin für diesen Gast nur noch gegen Anzahlung vergeben (keine Stornogebühr
+im Sinne von 13.11, sondern eine Anzahlung auf die künftige Behandlung).

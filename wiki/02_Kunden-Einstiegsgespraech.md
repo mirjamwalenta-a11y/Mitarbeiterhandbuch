@@ -2,11 +2,11 @@
 id: MH-02
 titel: Kunden-Einstiegsgespräch
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
-schlagworte: [Einstiegsgespräch, Kostenvoranschlag, Beratung]
+version: 1.1
+letzte_pruefung: 2026-09-11
+schlagworte: [Einstiegsgespräch, Kostenvoranschlag, Beratung, nur Beratung]
 ---
 
 # 02 · Kunden-Einstiegsgespräch
@@ -35,3 +35,6 @@ schlagworte: [Einstiegsgespräch, Kostenvoranschlag, Beratung]
 2.7 Dann feststellen:
 - Was braucht der Gast unbedingt?
 - Wo kann ich einsparen (Zeit/Geld)?
+
+2.8 Möchte ein Gast nur eine Beratung ohne anschließende Behandlung, wird diese ganz
+normal und kostenlos durchgeführt wie jede andere Beratung auch.
