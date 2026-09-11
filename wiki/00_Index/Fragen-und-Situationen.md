@@ -50,6 +50,7 @@ Volltextsuche).
 |---|---|---|
 | Ablauf Haarwäsche | MH-04 | 4.1–4.7 |
 | Pflegeempfehlung, Kopfmassage | MH-05 | 5.1–5.4 |
+| Gast bringt eigenes Produkt mit | MH-05 | 5.5 |
 | Schnitt-Technik, Schulung | MH-08 | 8.1–8.4 |
 | Styling/Finish, Ergebnis zeigen | MH-09 | 9.1–9.5 |
 | Empfohlenes Produkt nicht verfügbar/ausverkauft | MH-09 | 9.6 |
@@ -62,6 +63,7 @@ Volltextsuche).
 |---|---|---|
 | Kassieren, Betrag kontrollieren | MH-14 | 14.1, 14.2 |
 | Rechnung gewünscht | MH-14 | 14.3 |
+| Rechnung auf andere Firma/Name ausstellen | MH-14 | 14.5 |
 | Folgetermin anbieten | MH-14, MH-13 | 14.4 · 13.4 |
 | Verabschiedung, Taxi rufen | MH-15 | 15.1–15.6 |
 

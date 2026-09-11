@@ -5,8 +5,8 @@ erstellt_am: 2026-09-11
 quelle: Cowork, Praxistest V3 (10 Alltagssituationen), gemeldet von Mirjam Walenta
 ---
 
-> Erledigt am 2026-09-11, eingearbeitet in MH-14 Version 1.3 (Punkt 14.5, Status
-> entwurf — wartet noch auf fachliche Freigabe durch Mirjam Walenta).
+> Erledigt am 2026-09-11, eingearbeitet in MH-14 Version 1.3 (Punkt 14.5), freigegeben
+> von Mirjam Walenta am 2026-09-11.
 >
 > Klärung ergab: Die ursprüngliche Frage ist gegenstandslos, da Rechnungen bei
 > A Great Hair Day grundsätzlich ohne Namen ausgestellt werden — weder Gast- noch
