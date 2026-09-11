@@ -4,9 +4,9 @@ titel: Reklamationen
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.2
-letzte_pruefung: 2026-09-10
-schlagworte: [Reklamation, Korrektur, Beschwerde]
+version: 1.3
+letzte_pruefung: 2026-09-11
+schlagworte: [Reklamation, Korrektur, Beschwerde, Rabatt, Reaktion]
 ---
 
 # 16 · Reklamationen
@@ -32,6 +32,17 @@ Details: siehe 16.1–16.6 unten.
 
 > OFFEN: Das Kriterium „einfach" vs. „schwerwiegend" ist im Wiki nicht genauer
 > definiert. Im Zweifel: Salonleitung fragen, statt selbst zu entscheiden.
+
+**Korrektur ist kein Rabatt.** Eine sofortige Korrektur (16.3) ist eine erneute bzw.
+angepasste Behandlung, kein Preisnachlass. Möchte der Gast zusätzlich oder stattdessen
+Geld zurück oder einen Nachlass, gilt dafür die eigene Entscheidung in MH-14 (immer
+Salonleitung fragen) — nicht automatisch mit der Korrektur mitgemeint.
+
+**Reklamation und akute Reaktion gleichzeitig:** Tritt während oder nach einer
+Behandlung zugleich eine allergische Reaktion/Hautreizung auf (siehe MH-10, 10.9 bzw.
+MH-11, 11.10), hat das Vorrang vor der Reklamations-Klärung: zuerst abwaschen,
+Behandlung abbrechen, Salonleitung hinzuziehen. Die Reklamation selbst wird danach
+weiterbearbeitet.
 
 ---
 
