@@ -2,14 +2,27 @@
 id: MH-14
 titel: Kassenabwicklung
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.5
+version: 1.6
 letzte_pruefung: 2026-09-11
 schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass, Kartenlesegerät]
 ---
 
 # 14 · Kassenabwicklung
+
+### ⚡ Schnellantwort
+
+**Kern:** Alle Leistungen prüfen, Betrag zweimal kontrollieren — bei Rabattwunsch
+immer Salonleitung fragen.
+
+1. Leistungen im Computer prüfen, Betrag zweimal kontrollieren (14.1, 14.2).
+2. Rabatt/Preisnachlass gewünscht: nie selbst zusagen, Salonleitung fragen.
+3. Kartenlesegerät defekt: Hotline anrufen, zwischenzeitlich Barzahlung anbieten (14.6).
+
+Details: siehe 14.1–14.6 unten.
+
+---
 
 ### ⚖ Entscheidung: Preisnachlass / Rabatt
 
