@@ -2,8 +2,8 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
-| 2026-09-11 | MH-16 | 1.3 | Klarstellungen ergänzt: Korrektur (16.3) ist kein Rabatt, gilt eigene Entscheidung in MH-14; bei gleichzeitiger akuter Reaktion hat diese Vorrang vor der Reklamations-Klärung. Aus Testrunde 6. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
-| 2026-09-11 | MH-14 | 1.5 | Gegen-Verweis ergänzt: Korrektur bei Reklamation ist keine Rabattfrage. Aus Testrunde 6. Status auf entwurf gesetzt bis Freigabe | Claude | offen |
+| 2026-09-11 | MH-16 | 1.3 | Klarstellungen ergänzt: Korrektur (16.3) ist kein Rabatt, gilt eigene Entscheidung in MH-14; bei gleichzeitiger akuter Reaktion hat diese Vorrang vor der Reklamations-Klärung. Aus Testrunde 6 | Claude | Mirjam Walenta |
+| 2026-09-11 | MH-14 | 1.5 | Gegen-Verweis ergänzt: Korrektur bei Reklamation ist keine Rabattfrage. Aus Testrunde 6 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-07 | 1.2 | Punkt 7.10 ergänzt: Gerätefehler während Behandlung → Salonleitung sofort informieren, aus Testrunde 3 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-14 | 1.4 | Punkt 14.6 ergänzt: Kartenlesegerät defekt → Hotline anrufen, zwischenzeitlich Barzahlung anbieten, aus Testrunde 9 | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-13 | 1.4 | Punkt 13.13 ergänzt: kurzfristige Zusatzleistung nur, wenn zeitlich möglich, sonst für nächsten Besuch vormerken, aus Testrunde 3 | Claude | Mirjam Walenta |
