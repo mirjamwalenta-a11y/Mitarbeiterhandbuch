@@ -2,6 +2,7 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-11 | `00_Index/Testfragen.md` | – | Alltags-Fragen-Pool mit 90 echten Testeinträgen aus 9 Testrunden gefüllt (Frage, gefunden ja/nein/teilweise, Zeit, Quelle, Bemerkung) | Claude | – |
 | 2026-09-11 | MH-01 | 1.1 | Punkt 1.14 ergänzt: Ablauf bei festgestellten Kopfläusen (Ablehnung, Kommunikation, Hygienemaßnahmen) (aus Eingang/2026-09_Kopflaeuse.md) | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-10 | 1.3 | Punkte 10.9 (allergische Reaktion), 10.10 (Altersgrenze 16 Jahre), 10.11 (Schwangerschaft/Blondierung) ergänzt (aus Eingang/2026-09_Sondersituationen-Gesundheit-Recht.md) | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-11 | 1.3 | Punkte 11.10 (allergische Reaktion), 11.11 (Altersgrenze 16 Jahre) ergänzt (aus Eingang/2026-09_Sondersituationen-Gesundheit-Recht.md) | Claude | Mirjam Walenta |
