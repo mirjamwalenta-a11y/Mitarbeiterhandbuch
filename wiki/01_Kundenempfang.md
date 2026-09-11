@@ -2,7 +2,7 @@
 id: MH-01
 titel: Kundenempfang
 typ: gaestekontakt
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.3
 letzte_pruefung: 2026-09-11
