@@ -4,12 +4,24 @@ titel: Die Haarwäsche
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
+version: 1.1
+letzte_pruefung: 2026-09-12
 schlagworte: [Haarwäsche, Turban, Kundenlaufzettel]
 ---
 
 # 04 · Die Haarwäsche
+
+### ⚡ Schnellantwort
+
+**Kern:** Durchbürsten und Turban sind Pflicht, Produkt kurz erklären, Entspannung ermöglichen.
+
+1. Vor dem Waschen durchbürsten, Produkt kurz nennen (4.3, 4.4).
+2. Entspannungsphase ermöglichen, nur zu Beginn nach Druck/Temperatur fragen (4.5).
+3. Danach Turban, Produkt genau erklären, Kundenlaufzettel schreiben (4.3, 4.6, 4.7).
+
+Details: siehe 4.1–4.7 unten.
+
+---
 
 4.1 Die Haarwäsche soll für unsere Gäste einen besonders angenehmen Erlebniswert haben. Wichtig!
 
