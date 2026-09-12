@@ -4,12 +4,24 @@ titel: Unser Teamkodex
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.1
-letzte_pruefung: 2026-09-11
+version: 1.2
+letzte_pruefung: 2026-09-12
 schlagworte: [Teamkodex, Werte, Konflikt, Fehlverhalten]
 ---
 
 # 20 · Unser Teamkodex
+
+### ⚡ Schnellantwort
+
+**Kern:** Miteinander statt gegeneinander, Neu- wie Stammgäste gleich behandeln, „Einer für alle – alle für einen!"
+
+1. Streit vor Gästen: sofort unterbrechen, erst unter vier Augen klären.
+2. Anderes Fehlverhalten: direkt und kollegial ansprechen, erst bei Wiederholung Salonleitung.
+3. Alle 16 Werte darunter gelten unverändert als Grundhaltung.
+
+Details: siehe unten.
+
+---
 
 Teil des Teams bei Mirjam Walenta — A Great Hair Day zu sein bedeutet:
 

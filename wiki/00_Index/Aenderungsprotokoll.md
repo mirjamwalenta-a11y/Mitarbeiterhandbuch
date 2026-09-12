@@ -2,6 +2,7 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-12 | MH-20 | 1.2 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Inhalte, keine inhaltliche Änderung. Kategorie A, Rollout — damit letztes von 20 Kapiteln mit Schnellantwort | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-19 | 1.1 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Punkte (19.1–19.5), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-18 | 1.2 | Schnellantwort-Block ergänzt (Namensschild auf Wunsch nicht in der Zusammenfassung), nur Zusammenfassung bestehender Punkte (18.1–18.5), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-07 | 1.4 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Punkte (7.1–7.10), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
