@@ -4,12 +4,24 @@ titel: Beschwerden
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
+version: 1.1
+letzte_pruefung: 2026-09-12
 schlagworte: [Beschwerde, Zufriedenheit]
 ---
 
 # 17 · Beschwerden
+
+### ⚡ Schnellantwort
+
+**Kern:** Zuhören, Bedauern äußern – unabhängig von der Ursache – und ernsthafte Zufriedenstellung versprechen.
+
+1. Aufmerksam zuhören, alles sagen lassen (17.2).
+2. Bedauern äußern, unabhängig von der Ursache (17.3).
+3. Weiterleiten an die verursachende Person, die auch den Verbesserungsvorschlag macht (17.4, 17.5).
+
+Details: siehe 17.1–17.7 unten.
+
+---
 
 17.1 Alle Teammitglieder sehen Beschwerden als aktuelle und konkrete Chance an, die Gästezufriedenheit als wichtiges Ziel zu erhöhen.
 
