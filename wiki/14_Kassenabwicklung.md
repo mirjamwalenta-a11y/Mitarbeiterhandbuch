@@ -4,8 +4,8 @@ titel: Kassenabwicklung
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.6
-letzte_pruefung: 2026-09-11
+version: 1.7
+letzte_pruefung: 2026-09-12
 schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass, Kartenlesegerät]
 ---
 
@@ -30,8 +30,9 @@ Details: siehe 14.1–14.6 unten.
   Wiki keine Regel festgelegt. Selbst entscheiden: **Nein.** Immer: Salonleitung /
   Mirjam Walenta fragen, bevor ein Nachlass zugesagt wird.
 
-> OFFEN: Wer im Tagesgeschäft Rabatte freigeben darf und in welcher Höhe, ist im Wiki
-> nicht geregelt.
+Es gibt keine Grenze, bis zu der Mitarbeiter:innen selbst einen Rabatt geben dürfen —
+jeder Rabatt, unabhängig von der Höhe, wird ausschließlich von der Salonleitung/Mirjam
+Walenta freigegeben.
 
 Eine bei einer Reklamation angebotene Korrektur (MH-16, 16.3) ist keine Rabattfrage —
 die Entscheidung hier gilt nur für Geld zurück oder Preisnachlass.

@@ -4,8 +4,8 @@ titel: Farbbehandlung
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.6
-letzte_pruefung: 2026-09-11
+version: 1.7
+letzte_pruefung: 2026-09-12
 schlagworte: [Farbe, Färben, Blondierung, Schutzhandschuhe, Karteikarte, Allergie, Reaktion, Altersgrenze, Schwangerschaft]
 ---
 
@@ -20,7 +20,7 @@ Karteikarte, Herstelleranweisung genau einhalten.
 2. Schutzhandschuhe, pro Gast neu; Herstelleranweisung exakt einhalten (10.4, 10.5).
 3. Allergische Reaktion: sofort abwaschen, abbrechen, Salonleitung hinzuziehen (10.9).
 
-Details: siehe 10.1–10.11 unten.
+Details: siehe 10.1–10.12 unten.
 
 ---
 
@@ -34,9 +34,7 @@ Details: siehe 10.1–10.11 unten.
   durchführen: Umkleidemantel anbieten (10.1), Schutzhandschuhe tragen (10.4),
   Karteikarte führen (10.6), danach Intensivpflege (10.7).
 
-> OFFEN: Konkrete Kontraindikationen (z. B. Unverträglichkeiten, Vorbehandlungen) sind
-> im Wiki nicht aufgelistet. Bei Unsicherheit: nicht behandeln, sondern Salonleitung
-> fragen.
+Konkrete Warnzeichen: siehe 10.12.
 
 ---
 
@@ -70,3 +68,9 @@ der Eltern bei jüngeren Gästen.
 starke chemische Aufhellung durchgeführt. Normale Farbbehandlungen bleiben möglich.
 Eine Schwangerschaft wird nicht aktiv erfragt; die Regel gilt, sobald sie dem Gast
 gegenüber bekannt ist oder vom Gast erwähnt wird.
+
+10.12 **[PFLICHT]** Behandlung nicht durchführen bzw. abbrechen und Salonleitung
+hinzuziehen bei: offenen Wunden oder starker Reizung der Kopfhaut, einer auf der
+Karteikarte vermerkten bekannten Allergie/Unverträglichkeit, oder stark geschädigtem
+bzw. kürzlich chemisch vorbehandeltem Haar, wenn die Herstelleranweisung das
+ausschließt.

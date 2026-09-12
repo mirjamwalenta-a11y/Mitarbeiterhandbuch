@@ -2,6 +2,10 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-12 | MH-16 | 1.4 | Offenen Punkt zum Kriterium „einfach" vs. „schwerwiegend" geklärt: Beispiele als Richtschnur ergänzt (Nacharbeit/Nachschneiden vs. Geld zurück/wiederholte Beschwerde), OFFEN-Hinweis entfernt | Claude | Mirjam Walenta |
+| 2026-09-12 | MH-14 | 1.7 | Offenen Punkt zur Rabatt-Freigabe geklärt: bestätigt, dass es keine Wertgrenze für Mitarbeiter:innen gibt, jeder Rabatt geht ausnahmslos über die Salonleitung. OFFEN-Hinweis entfernt | Claude | Mirjam Walenta |
+| 2026-09-12 | MH-11 | 1.7 | Offenen Punkt zu Kontraindikationen geklärt: neuer Punkt 11.12 (Warnzeichen: Wunden/Reizung, bekannte Allergie, kürzlich gefärbtes/geschädigtes Haar), OFFEN-Hinweis entfernt | Claude | Mirjam Walenta |
+| 2026-09-12 | MH-10 | 1.7 | Offenen Punkt zu Kontraindikationen geklärt: neuer Punkt 10.12 (Warnzeichen: Wunden/Reizung, bekannte Allergie, geschädigtes/chemisch vorbehandeltes Haar), OFFEN-Hinweis entfernt | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-20 | 1.2 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Inhalte, keine inhaltliche Änderung. Kategorie A, Rollout — damit letztes von 20 Kapiteln mit Schnellantwort | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-19 | 1.1 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Punkte (19.1–19.5), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-18 | 1.2 | Schnellantwort-Block ergänzt (Namensschild auf Wunsch nicht in der Zusammenfassung), nur Zusammenfassung bestehender Punkte (18.1–18.5), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |

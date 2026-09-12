@@ -70,6 +70,7 @@ Volltextsuche).
 | Allergische Reaktion/Hautreizung während Farbe oder Dauerwelle | MH-10, MH-11 | 10.9 · 11.10 |
 | Altersgrenze für Farbe/Blondierung/Dauerwelle (Minderjährige) | MH-10, MH-11 | 10.10 · 11.11 |
 | Schwangere Kundin wünscht Farbe/Blondierung | MH-10 | 10.11 |
+| Warnzeichen/Kontraindikationen bei Farbe oder Dauerwelle (Wunden, bekannte Allergie, geschädigtes Haar) | MH-10, MH-11 | 10.12 · 11.12 |
 
 ## Kasse & Verabschiedung
 
@@ -80,6 +81,7 @@ Volltextsuche).
 | Rechnung auf andere Firma/Name ausstellen | MH-14 | 14.5 |
 | Kartenlesegerät funktioniert nicht | MH-14 | 14.6 |
 | Folgetermin anbieten | MH-14, MH-13 | 14.4 · 13.4 |
+| Preisnachlass / Rabatt (auch Mitarbeiterrabatt) | MH-14 | Entscheidung: Preisnachlass |
 | Verabschiedung, Taxi rufen | MH-15 | 15.1–15.6 |
 
 ## Reklamation & Beschwerde
@@ -115,8 +117,6 @@ Wiki aufgenommen werden kann.
 |---|---|
 | Gast kommt zu spät, erscheint aber noch | Kein Kapitel regelt Verspätung; nur das Nichterscheinen (MH-13, 13.5) |
 | Gast kommt deutlich zu früh | Nicht geregelt |
-| Preisnachlass / Rabatt (auch Mitarbeiterrabatt) | Nicht geregelt — siehe auch `Entscheidung: Preisnachlass` in MH-14 |
 | Mitarbeiter:in bemerkt einen eigenen Fehler | Nicht als eigenes Thema geregelt |
 | Mitarbeiter:in weiß die Antwort nicht | Kein festgelegter interner Eskalationsweg für Wissenslücken |
-| Sonstige Kontraindikationen bei Farbe/Dauerwelle (z. B. kürzlich gefärbtes/geschädigtes Haar) | Allergische Reaktion, Altersgrenze und Schwangerschaft sind geregelt (10.9–10.11, 11.10–11.11); andere Kontraindikationen weiter als OFFEN im `Entscheidung`-Block markiert |
 | Urlaub, Gehalt, sonstige Personalfragen | Fachfremd, nicht Teil des Wikis |
