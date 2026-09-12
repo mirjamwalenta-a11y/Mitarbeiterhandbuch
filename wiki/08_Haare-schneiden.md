@@ -2,7 +2,7 @@
 id: MH-08
 titel: Haare schneiden
 typ: beratung
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.1
 letzte_pruefung: 2026-09-12
