@@ -2,6 +2,7 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-12 | MH-08 | 1.1 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Punkte (8.1–8.4), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | offen |
 | 2026-09-12 | MH-04 | 1.1 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Punkte (4.1–4.7), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-17 | 1.1 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Punkte (17.1–17.7), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
 | 2026-09-11 | MH-15 | 1.1 | Schnellantwort-Block ergänzt, nur Zusammenfassung bestehender Punkte (15.1–15.6), keine inhaltliche Änderung. Kategorie A, Rollout | Claude | Mirjam Walenta |
