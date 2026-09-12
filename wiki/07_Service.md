@@ -2,7 +2,7 @@
 id: MH-07
 titel: Service
 typ: gaestekontakt
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.4
 letzte_pruefung: 2026-09-12
