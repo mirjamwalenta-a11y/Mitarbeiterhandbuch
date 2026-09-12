@@ -4,12 +4,24 @@ titel: Unser Auftreten – Limbic Check
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.0
-letzte_pruefung: 2026-09-10
+version: 1.1
+letzte_pruefung: 2026-09-12
 schlagworte: [Limbic, Körpersprache, Duft]
 ---
 
 # 19 · Unser Auftreten – Limbic Check
+
+### ⚡ Schnellantwort
+
+**Kern:** Angenehmer Duft, offene Körpersprache, freundliche Mimik.
+
+1. Angenehmer oder neutraler Duft (19.1).
+2. Offene, einladende Körpersprache (19.3).
+3. Freundliche Mienen, sichtlich Spaß an der Arbeit (19.5).
+
+Details: siehe 19.1–19.5 unten.
+
+---
 
 19.1 Jedes Teammitglied duftet angenehm oder neutral.
 
