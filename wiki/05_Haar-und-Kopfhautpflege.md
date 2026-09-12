@@ -4,12 +4,24 @@ titel: Haar- und Kopfhautpflege
 typ: beratung
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.1
-letzte_pruefung: 2026-09-11
+version: 1.2
+letzte_pruefung: 2026-09-12
 schlagworte: [Pflege, Kopfhaut, Kopfmassage, eigenes Produkt]
 ---
 
 # 05 · Haar- und Kopfhautpflege
+
+### ⚡ Schnellantwort
+
+**Kern:** Bei Farb-/Dauerwellbehandlungen ist Pflege Pflicht, eigene Produkte nur bei unbedenklichen Pflegeprodukten.
+
+1. Bei Farb-/Dauerwellbehandlungen ist Pflege Pflicht (5.4).
+2. Gast bringt eigenes Produkt mit: unbedenklich (z. B. Shampoo) im Ermessen erlaubt, chemisch nie (5.5).
+3. Salonprodukte auch zur Heimbehandlung empfehlen (5.3).
+
+Details: siehe 5.1–5.5 unten.
+
+---
 
 5.1 Wir betreiben aktive Haar- und Kopfhautpflege und fördern das Pflegeverhalten unserer Gäste durch aktuelle Information und Beratung im Salon.
 
