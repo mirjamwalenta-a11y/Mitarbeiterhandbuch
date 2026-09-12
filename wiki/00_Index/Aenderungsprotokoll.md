@@ -2,6 +2,7 @@
 
 | Datum | Dokument | Version | Änderung | Wer | Freigabe |
 |---|---|---|---|---|---|
+| 2026-09-12 | MH-14 | 1.8 | Zurückgestellte Detailfrage geklärt: neuer Punkt 14.7 für „Preis stimmt nicht mit Erinnerung des Gasts überein" — wie Reklamation behandeln, Betrag anhand Kostenvoranschlag/Computer erklären, keine automatische Rabattfrage | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-16 | 1.4 | Offenen Punkt zum Kriterium „einfach" vs. „schwerwiegend" geklärt: Beispiele als Richtschnur ergänzt (Nacharbeit/Nachschneiden vs. Geld zurück/wiederholte Beschwerde), OFFEN-Hinweis entfernt | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-14 | 1.7 | Offenen Punkt zur Rabatt-Freigabe geklärt: bestätigt, dass es keine Wertgrenze für Mitarbeiter:innen gibt, jeder Rabatt geht ausnahmslos über die Salonleitung. OFFEN-Hinweis entfernt | Claude | Mirjam Walenta |
 | 2026-09-12 | MH-11 | 1.7 | Offenen Punkt zu Kontraindikationen geklärt: neuer Punkt 11.12 (Warnzeichen: Wunden/Reizung, bekannte Allergie, kürzlich gefärbtes/geschädigtes Haar), OFFEN-Hinweis entfernt | Claude | Mirjam Walenta |
