@@ -2,7 +2,7 @@
 id: MH-18
 titel: Unser Auftreten – das Äußere
 typ: gaestekontakt
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.2
 letzte_pruefung: 2026-09-12
