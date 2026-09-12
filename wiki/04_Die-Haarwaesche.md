@@ -2,7 +2,7 @@
 id: MH-04
 titel: Die Haarwäsche
 typ: beratung
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.1
 letzte_pruefung: 2026-09-12
