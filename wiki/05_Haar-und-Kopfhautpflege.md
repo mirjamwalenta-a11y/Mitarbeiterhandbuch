@@ -2,7 +2,7 @@
 id: MH-05
 titel: Haar- und Kopfhautpflege
 typ: beratung
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.2
 letzte_pruefung: 2026-09-12
