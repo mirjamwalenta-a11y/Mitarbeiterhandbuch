@@ -224,6 +224,59 @@
     content: '✓'; position: absolute; left: 0; color: var(--brown); font-weight: 700;
   }
 
+  /* Schnellantwort */
+  .quick-box {
+    border: 1px solid var(--border); border-left: 3px solid var(--brown);
+    border-radius: 3px; background: var(--chip-bg); padding: 16px 20px 18px; margin-bottom: 26px;
+  }
+  .quick-label {
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--brown);
+    font-weight: 700; margin-bottom: 9px;
+  }
+  .quick-kern { font-size: 14px; color: var(--ink); margin-bottom: 11px; line-height: 1.6; }
+  .quick-kern b { color: var(--ink); }
+  .quick-list {
+    list-style: none; margin: 0 0 11px; padding: 0; counter-reset: quick;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .quick-list li {
+    font-size: 13.5px; color: var(--ink); line-height: 1.55; padding-left: 22px;
+    position: relative; counter-increment: quick;
+  }
+  .quick-list li::before {
+    content: counter(quick) '.'; position: absolute; left: 0; color: var(--brown); font-weight: 700;
+  }
+  .quick-details { font-size: 12px; color: var(--ink-light); font-style: italic; margin: 0; }
+
+  /* Entscheidung */
+  .decision-box {
+    border: 1px solid var(--border); border-radius: 3px; padding: 16px 20px;
+    margin: 0 0 26px; background: #fff;
+  }
+  .decision-title {
+    font-family: 'Newsreader', serif; font-style: italic; font-weight: 500; font-size: 15px;
+    color: var(--ink); margin-bottom: 11px;
+  }
+  .decision-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+  .decision-list li {
+    font-size: 13.5px; color: var(--ink); line-height: 1.6; padding-left: 18px; position: relative;
+  }
+  .decision-list li::before { content: '→'; position: absolute; left: 0; color: var(--brown); }
+  .decision-open {
+    margin-top: 12px; font-size: 12.5px; color: var(--ink-mid); font-style: italic;
+    border-top: 1px solid var(--rule); padding-top: 10px;
+  }
+  .decision-note { font-size: 13px; color: var(--ink-mid); line-height: 1.6; margin-bottom: 22px; }
+
+  /* Tags */
+  .tag {
+    display: inline-block; font-size: 9.5px; font-weight: 700; letter-spacing: .05em;
+    text-transform: uppercase; padding: 2px 6px; border-radius: 3px; margin-right: 6px; vertical-align: 1px;
+  }
+  .tag-pflicht { background: #f3e0d9; color: #a15a2c; }
+  .tag-empfohlen { background: #e3ecdf; color: #4d7a4a; }
+  .tag-entscheidung { background: #e7e0f2; color: #6b53a1; }
+
   /* quote */
   .quote-line {
     font-family: 'Newsreader', serif; font-style: italic;
@@ -658,6 +711,16 @@
   <div class="section" id="sec-s01">
     <h2 class="section-h2"><span class="section-num">01</span> Kundenempfang</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Jeden Gast sofort begrüßen, mit Namen ansprechen, Platz anbieten.</p>
+      <ol class="quick-list">
+        <li>Sofort grüßen (Augenkontakt), nach Wunsch fragen, Platz anbieten (1.1).</li>
+        <li>Neukund:in da: Neukundenzettel, Frisurenmappe, Getränk anbieten (1.12).</li>
+        <li>Kopfläuse festgestellt: Behandlung ablehnen/abbrechen, direkt ansprechen (1.14).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 1.1–1.15 unten.</p>
+    </div>
     <div class="item"><span class="item-num">1.1</span><span class="item-text">Jeder eintretende Gast wird sofort von der nächststehenden Person gegrüßt (Augenkontakt), nach seinem Wunsch gefragt und bekommt einen Platz angeboten.</span></div>
     <div class="item"><span class="item-num">1.2</span><span class="item-text">Kund:innen werden mit ihrem Namen angesprochen.</span></div>
     <div class="item"><span class="item-num">1.3</span><span class="item-text">Wir freuen uns über jeden Gast – und zeigen das auch.</span></div>
@@ -679,6 +742,8 @@
       </ul>
     </div>
     <div class="item"><span class="item-num">1.13</span><span class="item-text">Bei Neukund:innen stellt sich die Stylistin/der Stylist vor und spricht den Gast im Laufe der Behandlung mit seinem Namen an.</span></div>
+    <div class="item"><span class="item-num item-num-wide">1.14</span><span class="item-text">Werden bei einem Gast Kopfläuse festgestellt, wird die Behandlung abgelehnt bzw. abgebrochen. Die behandelnde Person spricht das direkt und sachlich mit dem Gast an, keine Eskalation an die Salonleitung nötig. Anschließend: verwendete Werkzeuge (Kämme, Scheren, Bürsten) sofort desinfizieren bzw. austauschen, Umhang/Handtuch sofort in die Wäsche geben, Arbeitsplatz zusätzlich reinigen.</span></div>
+    <div class="item"><span class="item-num item-num-wide">1.15</span><span class="item-text">Kämme, Bürsten und Scheren werden nach jeder Behandlung mit einem handelsüblichen Desinfektionsmittel für Friseurwerkzeug gereinigt bzw. desinfiziert.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('toc')">← Inhalt</button>
       <div class="btn-spacer"></div>
@@ -690,6 +755,16 @@
   <div class="section" id="sec-s02">
     <h2 class="section-h2"><span class="section-num">02</span> Kunden-Einstiegsgespräch</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Wunsch abklären, Kostenvoranschlag nur wenn gewünscht, erst nach Zustimmung beginnen.</p>
+      <ol class="quick-list">
+        <li>Fragen zu Schnitt/Farbe/Frisur stellen, Wunsch genau abklären (2.3, 2.4).</li>
+        <li>Kostenvoranschlag nur, wenn der Gast ihn möchte (2.5).</li>
+        <li>Erst nach Zustimmung des Gastes beginnen; bei Ablehnung nach dem Grund fragen (2.6).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 2.1–2.8 unten.</p>
+    </div>
     <div class="box">
       <div class="item"><span class="item-num">2.1</span><span class="item-text">Informationsmaterial bereithalten:</span></div>
       <ul class="box-list">
@@ -724,6 +799,7 @@
         <li>Wo kann ich einsparen (Zeit/Geld)?</li>
       </ul>
     </div>
+    <div class="item"><span class="item-num">2.8</span><span class="item-text">Möchte ein Gast nur eine Beratung ohne anschließende Behandlung, wird diese ganz normal und kostenlos durchgeführt wie jede andere Beratung auch.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s01')">← 01</button>
       <div class="btn-spacer"></div>
@@ -735,6 +811,16 @@
   <div class="section" id="sec-s03">
     <h2 class="section-h2"><span class="section-num">03</span> Kunden-Beratungsgespräch</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Vier Themenbereiche, je nach Anliegen des Gasts: Pflege, Schnitt/Frisur, Farbe, Umformung.</p>
+      <ol class="quick-list">
+        <li>Schnitt/Frisur: W-Fragen zu Störendem, Wunsch, Länge, Stil (3/2.1–3/2.4).</li>
+        <li>Farbe: aktuelle Zufriedenheit, Wunsch, letzte Veränderung, Heimpflege (3/3.1–3/3.4).</li>
+        <li>Umformung: bisherige Erfahrung, letzter Zeitpunkt, Heimpflege (3/4.1–3/4.3).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 3/1–3/4 unten.</p>
+    </div>
     <p class="section-subtitle">Fragen zu: 1. Pflege · 2. Schnitt + Frisur · 3. Farbe · 4. Umformung</p>
     <h3 class="section-h3">3/1 · Pflege — Haar- und Kopfhautanalyse</h3>
     <div class="item"><span class="item-num item-num-wide">3/1.1</span><span class="item-text">Zustand der Haare ermitteln: natur, getönt, gefärbt, blondiert, glatt, gewellt, gesund, trocken, brüchig, strapaziert?</span></div>
@@ -766,6 +852,16 @@
   <div class="section" id="sec-s04">
     <h2 class="section-h2"><span class="section-num">04</span> Die Haarwäsche</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Durchbürsten und Turban sind Pflicht, Produkt kurz erklären, Entspannung ermöglichen.</p>
+      <ol class="quick-list">
+        <li>Vor dem Waschen durchbürsten, Produkt kurz nennen (4.3, 4.4).</li>
+        <li>Entspannungsphase ermöglichen, nur zu Beginn nach Druck/Temperatur fragen (4.5).</li>
+        <li>Danach Turban, Produkt genau erklären, Kundenlaufzettel schreiben (4.3, 4.6, 4.7).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 4.1–4.7 unten.</p>
+    </div>
     <div class="item"><span class="item-num">4.1</span><span class="item-text">Die Haarwäsche soll für unsere Gäste einen besonders angenehmen Erlebniswert haben. Wichtig!</span></div>
     <div class="item"><span class="item-num">4.2</span><span class="item-text">Der Handlungsablauf erfolgt nach interner Schulung.</span></div>
     <div class="item"><span class="item-num">4.3</span><span class="item-text">Das Durchbürsten vor der Haarwäsche und der Turban nach der Haarwäsche ist Pflicht.</span></div>
@@ -791,10 +887,21 @@
   <div class="section" id="sec-s05">
     <h2 class="section-h2"><span class="section-num">05</span> Haar- und Kopfhautpflege</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Bei Farb-/Dauerwellbehandlungen ist Pflege Pflicht, eigene Produkte nur bei unbedenklichen Pflegeprodukten.</p>
+      <ol class="quick-list">
+        <li>Bei Farb-/Dauerwellbehandlungen ist Pflege Pflicht (5.4).</li>
+        <li>Gast bringt eigenes Produkt mit: unbedenklich (z. B. Shampoo) im Ermessen erlaubt, chemisch nie (5.5).</li>
+        <li>Salonprodukte auch zur Heimbehandlung empfehlen (5.3).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 5.1–5.5 unten.</p>
+    </div>
     <div class="item"><span class="item-num">5.1</span><span class="item-text">Wir betreiben aktive Haar- und Kopfhautpflege und fördern das Pflegeverhalten unserer Gäste durch aktuelle Information und Beratung im Salon.</span></div>
     <div class="item"><span class="item-num">5.2</span><span class="item-text">Wir bieten Entspannungskopfmassagen an.</span></div>
     <div class="item"><span class="item-num">5.3</span><span class="item-text">Alle Pflegeprodukte, die wir im Salon einsetzen, empfehlen wir auch zur Heimbehandlung.</span></div>
     <div class="item"><span class="item-num">5.4</span><span class="item-text">Bei Farb- und Dauerwellbehandlungen ist Pflege Pflicht!</span></div>
+    <div class="item"><span class="item-num item-num-wide">5.5</span><span class="item-text">Bringt ein Gast ein eigenes Produkt mit und möchte, dass es bei der Behandlung verwendet wird: bei unbedenklichen Pflegeprodukten (z. B. Shampoo) entscheidet die Stylistin/der Stylist im Ermessen. Bei chemischen Produkten (Farbe, Dauerwelle) wird ausschließlich mit Salonprodukten nach Herstelleranweisung gearbeitet (siehe MH-10, MH-11) — eigene chemische Produkte werden nicht verwendet.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s04')">← 04</button>
       <div class="btn-spacer"></div>
@@ -806,6 +913,16 @@
   <div class="section" id="sec-s06">
     <h2 class="section-h2"><span class="section-num">06</span> Neukundenbetreuung</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Neukundenzettel und Frisurenmappe ausfüllen lassen, zuständige Person informieren, dann Beratung nach System.</p>
+      <ol class="quick-list">
+        <li>Neukundenzettel ausfüllen lassen, Frisurenmappe zum Aussuchen geben (6.2).</li>
+        <li>Zuständige Person Bescheid geben (6.3).</li>
+        <li>Beratung nach unserem System (MH-02, MH-03) (6.4).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 6.1–6.4 unten.</p>
+    </div>
     <div class="item"><span class="item-num">6.1</span><span class="item-text">Wir geben jedem Gast das Gefühl, ein willkommener Mensch in unserem Salon zu sein.</span></div>
     <div class="item"><span class="item-num">6.2</span><span class="item-text">Nach dem Empfang bitten wir die Neukund:innen, den Neukundenzettel auszufüllen und aus der Frisurenmappe mit Lesezeichen (zwei Farben) Frisuren auszusuchen, die ihnen gefallen bzw. nicht gefallen.</span></div>
     <div class="item"><span class="item-num">6.3</span><span class="item-text">Der zuständigen Person Bescheid geben.</span></div>
@@ -821,6 +938,16 @@
   <div class="section" id="sec-s07">
     <h2 class="section-h2"><span class="section-num">07</span> Service</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Aufmerksame Betreuung für alle Gäste gleich, Wartezeiten mit Service überbrücken, Fotos nur mit Einwilligung.</p>
+      <ol class="quick-list">
+        <li>Serviceleistungen für Warte-/Einwirkzeiten anbieten (7.4).</li>
+        <li>Fotos/Videos für externe Verwendung: nur mit Einwilligung des Gastes (7.9).</li>
+        <li>Gerätefehler während der Behandlung: Salonleitung sofort informieren (7.10).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 7.1–7.10 unten.</p>
+    </div>
     <div class="item"><span class="item-num">7.1</span><span class="item-text">Mit unserer aufmerksamen Betreuung sichern wir einen hohen Erlebniswert unserer Dienstleistung.</span></div>
     <div class="item"><span class="item-num">7.2</span><span class="item-text">Unterbrechungen der Arbeit werden erklärt und gegebenenfalls entschuldigt!</span></div>
     <div class="item"><span class="item-num">7.3</span><span class="item-text">Die menschliche Zuwendung gegenüber allen Gästen – unabhängig von Alter, Geschlecht, Nationalität und sozialer Schicht – ist selbstverständlich!</span></div>
@@ -829,6 +956,8 @@
     <div class="item"><span class="item-num">7.6</span><span class="item-text">Die gereinigte Ablage wird für den Gast freigehalten. Handtaschen aufhängen.</span></div>
     <div class="item"><span class="item-num">7.7</span><span class="item-text">Wir bieten unseren Gästen als Service Parkscheine an.</span></div>
     <div class="item"><span class="item-num">7.8</span><span class="item-text">Wir erklären unseren Gästen genau, wie sie selbst zu einem guten Frisurenergebnis kommen.</span></div>
+    <div class="item"><span class="item-num item-num-wide">7.9</span><span class="item-text">Fotos/Videos von Gästen für jede externe Verwendung des Salons (Social Media, Katalog, Portfolio, Website): nur mit ausdrücklicher Einwilligung des Gastes, eingeholt durch die behandelnde Stylistin/den Stylisten. Gäste dürfen selbst frei fotografieren/filmen (z. B. Selfies).</span></div>
+    <div class="item"><span class="item-num item-num-wide">7.10</span><span class="item-text">Fällt ein Gerät (z. B. Föhn, Glätteisen) während der Behandlung aus, wird die Salonleitung sofort informiert.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s06')">← 06</button>
       <div class="btn-spacer"></div>
@@ -840,6 +969,16 @@
   <div class="section" id="sec-s08">
     <h2 class="section-h2"><span class="section-num">08</span> Haare schneiden</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Beratung mit Frisurenmappe, Schnitt nach erlernten Techniken, Schnitthaare regelmäßig entfernen.</p>
+      <ol class="quick-list">
+        <li>Beratung mit Frisurenmappe (8.1).</li>
+        <li>Schnitt nach erlernten Techniken; Schnitthaare regelmäßig mit Nackenpinsel entfernen (8.2, 8.3).</li>
+        <li>Mindestens jährlich Kenntnisse durch Schulung auffrischen (8.4).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 8.1–8.4 unten.</p>
+    </div>
     <div class="item"><span class="item-num">8.1</span><span class="item-text">Die Beratung wird nach unserem Beratungssystem und mit Hilfe von Frisurenmappen durchgeführt.</span></div>
     <div class="item"><span class="item-num">8.2</span><span class="item-text">Der Haarschnitt wird nach den von uns erlernten Techniken durchgeführt.</span></div>
     <div class="item"><span class="item-num">8.3</span><span class="item-text">Während des Haarschnitts werden Schnitthaare regelmäßig mit dem Nackenpinsel von Gesicht und Nacken entfernt.</span></div>
@@ -855,6 +994,16 @@
   <div class="section" id="sec-s09">
     <h2 class="section-h2"><span class="section-num">09</span> Styling / Finish</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Spiegel-Check von allen Seiten, ist der Gast nicht zufrieden, gilt der Reklamations-Ablauf.</p>
+      <ol class="quick-list">
+        <li>Vor dem Finish den Stylingwunsch abklären (9.1, 9.2).</li>
+        <li>Nach dem Finish Spiegel von allen Seiten zeigen, Zufriedenheit abfragen (9.4).</li>
+        <li>Nicht zufrieden: ab hier MH-16 (Reklamationen) anwenden.</li>
+      </ol>
+      <p class="quick-details">Details: siehe 9.1–9.6 unten.</p>
+    </div>
     <div class="item"><span class="item-num">9.1</span><span class="item-text">Wir klären ab, welches Styling der Gast von uns erwartet.</span></div>
     <div class="item"><span class="item-num">9.2</span><span class="item-text">Vor dem Finish den Kundenwunsch herausfinden: klassisch, trendig, lockig, glatt, haltbar oder locker unfrisiert …</span></div>
     <div class="item"><span class="item-num">9.3</span><span class="item-text">Alle Styling-Möglichkeiten, natürlich auch Aufsteckfrisuren, müssen von allen Stylist:innen beherrscht werden.</span></div>
@@ -865,7 +1014,9 @@
         <li>Haben Sie es sich so vorgestellt?</li>
       </ul>
     </div>
+    <p class="decision-note">Ist der Gast beim Spiegel-Check nicht zufrieden, gilt ab hier der Ablauf aus MH-16 (Reklamationen).</p>
     <div class="item"><span class="item-num">9.5</span><span class="item-text">Stylingvariationen, Tipps und Heimpflege für zu Hause anbieten. Wir empfehlen die Produkte, die wir verwendet haben.</span></div>
+    <div class="item"><span class="item-num">9.6</span><span class="item-text">Ist ein empfohlenes Produkt nicht verfügbar, entscheidet die Stylistin/der Stylist selbst über eine Ersatzlösung. Das fehlende Produkt wird notiert, eine Nachbestellung veranlasst.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s08')">← 08</button>
       <div class="btn-spacer"></div>
@@ -877,14 +1028,35 @@
   <div class="section" id="sec-s10">
     <h2 class="section-h2"><span class="section-num">10</span> Farbbehandlung</h2>
     <div class="section-rule"></div>
-    <div class="item"><span class="item-num">10.1</span><span class="item-text">Wir empfehlen unseren Gästen zum Schutz Umkleidemäntel.</span></div>
-    <div class="item"><span class="item-num">10.2</span><span class="item-text">Die fachlichen Möglichkeiten und Grenzen sind bekannt und werden dem Gast unaufgefordert mitgeteilt.</span></div>
-    <div class="item"><span class="item-num">10.3</span><span class="item-text">Der Behandlungsablauf erfolgt durch interne Schulungen.</span></div>
-    <div class="item"><span class="item-num">10.4</span><span class="item-text">Schutzhandschuhe tragen.</span></div>
-    <div class="item"><span class="item-num">10.5</span><span class="item-text">Produkteinsatz erfolgt nach exakter Gebrauchsanweisung der Hersteller (Mischverhältnisse, Einwirkzeit, …).</span></div>
-    <div class="item"><span class="item-num">10.6</span><span class="item-text">Bei Stammgästen Karteikarte verwenden, bei Neugästen Karteikarte anlegen.</span></div>
-    <div class="item"><span class="item-num">10.7</span><span class="item-text">Wir verwenden nach jeder chemischen Behandlung Intensivpflege.</span></div>
-    <div class="item"><span class="item-num">10.8</span><span class="item-text">Der Gast erhält genaue Informationen über die Heimpflege.</span></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Fachlich möglich und Herstellervorgaben klar? Dann Schutzhandschuhe, Karteikarte, Herstelleranweisung genau einhalten.</p>
+      <ol class="quick-list">
+        <li>Altersgrenze 16 Jahre, keine Ausnahme mit Einverständnis der Eltern (10.10).</li>
+        <li>Schutzhandschuhe, pro Gast neu; Herstelleranweisung exakt einhalten (10.4, 10.5).</li>
+        <li>Allergische Reaktion: sofort abwaschen, abbrechen, Salonleitung hinzuziehen (10.9).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 10.1–10.11 unten.</p>
+    </div>
+    <div class="decision-box">
+      <p class="decision-title">⚖ Entscheidung: Darf ich die Farbe/Blondierung durchführen?</p>
+      <ul class="decision-list">
+        <li>Ist der Farb-/Blondierungswunsch fachlich möglich (10.2)? → <b>Nein:</b> nicht durchführen, Gast unaufgefordert über die fachliche Grenze informieren (10.2). → <b>Ja:</b> weiter.</li>
+        <li>Sind die Herstellervorgaben (Mischverhältnis, Einwirkzeit) bekannt und einhaltbar (10.5)? → <b>Nein:</b> erst klären, keine Behandlung nach Schätzung. → <b>Ja:</b> durchführen: Umkleidemantel anbieten (10.1), Schutzhandschuhe tragen (10.4), Karteikarte führen (10.6), danach Intensivpflege (10.7).</li>
+      </ul>
+      <p class="decision-open">OFFEN: Konkrete Kontraindikationen (z. B. Unverträglichkeiten, Vorbehandlungen) sind im Wiki nicht aufgelistet. Bei Unsicherheit: nicht behandeln, sondern Salonleitung fragen.</p>
+    </div>
+    <div class="item"><span class="item-num">10.1</span><span class="item-text"><span class="tag tag-empfohlen">Empfohlen</span>Wir empfehlen unseren Gästen zum Schutz Umkleidemäntel.</span></div>
+    <div class="item"><span class="item-num">10.2</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Die fachlichen Möglichkeiten und Grenzen sind bekannt und werden dem Gast unaufgefordert mitgeteilt.</span></div>
+    <div class="item"><span class="item-num">10.3</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Der Behandlungsablauf erfolgt durch interne Schulungen.</span></div>
+    <div class="item"><span class="item-num">10.4</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Schutzhandschuhe tragen; pro Gast werden neue Handschuhe verwendet.</span></div>
+    <div class="item"><span class="item-num">10.5</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Produkteinsatz erfolgt nach exakter Gebrauchsanweisung der Hersteller (Mischverhältnisse, Einwirkzeit, …).</span></div>
+    <div class="item"><span class="item-num">10.6</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Bei Stammgästen Karteikarte verwenden, bei Neugästen Karteikarte anlegen.</span></div>
+    <div class="item"><span class="item-num">10.7</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Wir verwenden nach jeder chemischen Behandlung Intensivpflege.</span></div>
+    <div class="item"><span class="item-num">10.8</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Der Gast erhält genaue Informationen über die Heimpflege.</span></div>
+    <div class="item"><span class="item-num item-num-wide">10.9</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Kommt es während der Behandlung zu einer allergischen Reaktion oder Hautreizung: Produkt sofort abwaschen, Behandlung abbrechen. Salonleitung hinzuziehen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung. Die Reaktion wird auf der Karteikarte (10.6) vermerkt, damit sie bei künftigen Besuchen bekannt ist.</span></div>
+    <div class="item"><span class="item-num item-num-wide">10.10</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Chemische Behandlungen (Farbe, Blondierung) werden laut gesetzlicher Vorgabe erst ab 16 Jahren durchgeführt — auch nicht mit Einverständnis der Eltern bei jüngeren Gästen.</span></div>
+    <div class="item"><span class="item-num item-num-wide">10.11</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Bei schwangeren Gästen wird keine Blondierung bzw. keine sehr starke chemische Aufhellung durchgeführt. Normale Farbbehandlungen bleiben möglich. Eine Schwangerschaft wird nicht aktiv erfragt; die Regel gilt, sobald sie dem Gast gegenüber bekannt ist oder vom Gast erwähnt wird.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s09')">← 09</button>
       <div class="btn-spacer"></div>
@@ -896,15 +1068,35 @@
   <div class="section" id="sec-s11">
     <h2 class="section-h2"><span class="section-num">11</span> Dauerwelle-Behandlung</h2>
     <div class="section-rule"></div>
-    <div class="item"><span class="item-num">11.1</span><span class="item-text">Einmal Waschen mit SP-Deep Cleanser.</span></div>
-    <div class="item"><span class="item-num">11.2</span><span class="item-text">Der Behandlungsablauf erfolgt durch interne Schulungen.</span></div>
-    <div class="item"><span class="item-num">11.3</span><span class="item-text">Produkteinsatz erfolgt nach exakter Gebrauchsanweisung der Hersteller (Einwirkzeit, etc.).</span></div>
-    <div class="item"><span class="item-num">11.4</span><span class="item-text">Schutzhandschuhe tragen.</span></div>
-    <div class="item"><span class="item-num">11.5</span><span class="item-text">Wenn notwendig, Vorbehandlung verwenden.</span></div>
-    <div class="item"><span class="item-num">11.6</span><span class="item-text">Es ist unbedingt zu beachten, dass die Haut auf keinen Fall mit Wellflüssigkeit in Berührung kommt.</span></div>
-    <div class="item"><span class="item-num">11.7</span><span class="item-text">Fixiervorgang genauestens ausführen.</span></div>
-    <div class="item"><span class="item-num">11.8</span><span class="item-text">Wir schneiden die Haare in der Regel nach der Dauerwelle.</span></div>
-    <div class="item"><span class="item-num">11.9</span><span class="item-text">Nach der Dauerwellenbehandlung ist Pflege Pflicht!</span></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Erst Beratungsgespräch, dann einmal Waschen mit SP-Deep Cleanser, Herstellervorgaben genau einhalten.</p>
+      <ol class="quick-list">
+        <li>Altersgrenze 16 Jahre, keine Ausnahme mit Einverständnis der Eltern (11.11).</li>
+        <li>Schutzhandschuhe, pro Gast neu; Haut darf nicht mit Wellflüssigkeit in Berührung kommen (11.4, 11.6).</li>
+        <li>Allergische Reaktion: sofort abwaschen, abbrechen, Salonleitung hinzuziehen (11.10).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 11.1–11.11 unten.</p>
+    </div>
+    <div class="decision-box">
+      <p class="decision-title">⚖ Entscheidung: Darf ich die Dauerwelle durchführen?</p>
+      <ul class="decision-list">
+        <li>Wurde das Beratungsgespräch zur Umformung bereits geführt (bisherige Erfahrungen, letzter Zeitpunkt — MH-03, 3/4)? → <b>Nein:</b> zuerst Beratungsgespräch führen. → <b>Ja:</b> weiter.</li>
+        <li>Sind die Herstellervorgaben bekannt und einhaltbar (11.3)? → <b>Nein:</b> erst klären. → <b>Ja:</b> durchführen: einmal Waschen mit SP-Deep Cleanser (11.1), Schutzhandschuhe tragen (11.4), Vorbehandlung wenn nötig (11.5), Haut darf nicht mit Wellflüssigkeit in Berührung kommen (11.6), Fixiervorgang genauestens ausführen (11.7); danach Pflege Pflicht (11.9).</li>
+      </ul>
+      <p class="decision-open">OFFEN: Konkrete Kontraindikationen (z. B. kürzlich gefärbtes oder geschädigtes Haar) sind im Wiki nicht aufgelistet. Bei Unsicherheit: nicht behandeln, sondern Salonleitung fragen.</p>
+    </div>
+    <div class="item"><span class="item-num">11.1</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Einmal Waschen mit SP-Deep Cleanser.</span></div>
+    <div class="item"><span class="item-num">11.2</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Der Behandlungsablauf erfolgt durch interne Schulungen.</span></div>
+    <div class="item"><span class="item-num">11.3</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Produkteinsatz erfolgt nach exakter Gebrauchsanweisung der Hersteller (Einwirkzeit, etc.).</span></div>
+    <div class="item"><span class="item-num">11.4</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Schutzhandschuhe tragen; pro Gast werden neue Handschuhe verwendet.</span></div>
+    <div class="item"><span class="item-num">11.5</span><span class="item-text"><span class="tag tag-empfohlen">Empfohlen</span>Wenn notwendig, Vorbehandlung verwenden.</span></div>
+    <div class="item"><span class="item-num">11.6</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Es ist unbedingt zu beachten, dass die Haut auf keinen Fall mit Wellflüssigkeit in Berührung kommt.</span></div>
+    <div class="item"><span class="item-num">11.7</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Fixiervorgang genauestens ausführen.</span></div>
+    <div class="item"><span class="item-num">11.8</span><span class="item-text"><span class="tag tag-empfohlen">Empfohlen</span>Wir schneiden die Haare in der Regel nach der Dauerwelle.</span></div>
+    <div class="item"><span class="item-num">11.9</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Nach der Dauerwellenbehandlung ist Pflege Pflicht!</span></div>
+    <div class="item"><span class="item-num item-num-wide">11.10</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Kommt es während der Behandlung zu einer allergischen Reaktion oder Hautreizung: Produkt sofort abwaschen, Behandlung abbrechen. Salonleitung hinzuziehen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung. Die Reaktion wird auf der Karteikarte (siehe MH-10, 10.6) vermerkt, damit sie bei künftigen Besuchen bekannt ist.</span></div>
+    <div class="item"><span class="item-num item-num-wide">11.11</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Die Dauerwelle wird laut gesetzlicher Vorgabe erst ab 16 Jahren durchgeführt — auch nicht mit Einverständnis der Eltern bei jüngeren Gästen.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s10')">← 10</button>
       <div class="btn-spacer"></div>
@@ -916,6 +1108,16 @@
   <div class="section" id="sec-s12">
     <h2 class="section-h2"><span class="section-num">12</span> Telefongesprächsführung</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> „Mirjam Walenta – A Great Hair Day, guten Tag – [Name] am Apparat" — lächeln, laut/deutlich/freundlich, vor dem 3. Läuten abheben.</p>
+      <ol class="quick-list">
+        <li>Begrüßungsformel verwenden, Gast mit Namen ansprechen (12.1).</li>
+        <li>Am Ende Termin wiederholen: was, wann, bei wem (12.5).</li>
+        <li>Bei Terminabsage: Ersatztermin anbieten, sonst Name/Telefonnummer notieren und Stylist:in sofort informieren (12.8).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 12.1–12.13 unten.</p>
+    </div>
     <div class="box">
       <div class="item"><span class="item-num">12.1</span><span class="item-text">Jede Person im Salon benutzt eine festgelegte Begrüßungsformel beim Telefonieren:</span></div>
       <p class="quote-line">„Mirjam Walenta – A Great Hair Day, guten Tag – [Name] am Apparat"</p>
@@ -948,15 +1150,30 @@
   <div class="section" id="sec-s13">
     <h2 class="section-h2"><span class="section-num">13</span> Terminvereinbarung</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Schwache Termine zuerst anbieten, Gäste ohne Reservierung nicht wegschicken.</p>
+      <ol class="quick-list">
+        <li>Vormittag/Di/Mi zuerst anbieten, Nachmittag/Mo/Do/Fr/Sa möglichst freihalten (13.1).</li>
+        <li>Ohne Termin da: Platz anbieten, schnellstmöglichen Termin, Wartezeit erklären (13.2).</li>
+        <li>Nicht erschienen: noch am selben Tag kontaktieren, Ersatztermin anbieten (13.5).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 13.1–13.9 unten.</p>
+    </div>
     <div class="item"><span class="item-num">13.1</span><span class="item-text">Wir ersuchen, zuerst schwache Termine anzubieten: Vormittag, Dienstag oder Mittwoch. Stark nachgefragte Termine möglichst lange freihalten: Nachmittags, Montag, Donnerstag, Freitag, Samstag.</span></div>
     <div class="item"><span class="item-num">13.2</span><span class="item-text">Gäste ohne Terminreservierung NICHT wegschicken! Platz nehmen lassen. Schnellstmöglichen Termin anbieten, Wartezeit erklären – aber versichern, der nächste freie Termin ist reserviert.</span></div>
     <div class="item"><span class="item-num">13.3</span><span class="item-text">Die Terminvereinbarung wird von allen Teammitgliedern durchgeführt und vorher trainiert.</span></div>
     <div class="item"><span class="item-num">13.4</span><span class="item-text">Wir bieten während des Gästebesuchs einen neuen Termin für die nächste Behandlung an.</span></div>
     <div class="item"><span class="item-num">13.5</span><span class="item-text">Bei einem nicht erschienenen Gast wird versucht, diesen noch am selben Tag zu erreichen. Wir bieten auf jeden Fall freundlichst einen Ersatztermin an.</span></div>
     <div class="item"><span class="item-num">13.6</span><span class="item-text">Kurzfristige Terminabsagen werden freundlichst bedauert, wir bedanken uns für die Absage und bieten gleich einen neuen Termin an.</span></div>
-    <div class="item"><span class="item-num">13.7</span><span class="item-text">Wenn ein Teammitglied überraschend verhindert ist, organisieren wir den Terminplan um und informieren die betroffenen Gäste.</span></div>
+    <div class="item"><span class="item-num">13.7</span><span class="item-text">Wenn ein Teammitglied überraschend verhindert ist, organisieren wir den Terminplan um und informieren die betroffenen Gäste. Wortlaut dafür: „Entschuldigen Sie bitte die Wartezeit, ich bin in wenigen Minuten bei Ihnen."</span></div>
     <div class="item"><span class="item-num">13.8</span><span class="item-text">Wir achten darauf, dass der Name des Gastes richtig und leserlich geschrieben wird.</span></div>
     <div class="item"><span class="item-num">13.9</span><span class="item-text">Bei Leerläufen „spontan" Gäste anrufen.</span></div>
+    <div class="item"><span class="item-num item-num-wide">13.10</span><span class="item-text">Wird ein falsch eingetragener Termin bemerkt (falscher Name, falsche Zeit, falsche Stylistin/falscher Stylist, doppelt eingetragen o. Ä.), korrigiert die Person, die es bemerkt, den Eintrag direkt. Ändert sich dadurch Zeit oder zuständige Person des Termins, wird der Gast informiert; bleibt der Termin selbst unverändert (z. B. reiner Tippfehler im Namen), ist keine Gast-Information nötig. Die betroffene Stylistin/der betroffene Stylist wird in jedem Fall informiert (analog 12.7).</span></div>
+    <div class="item"><span class="item-num item-num-wide">13.11</span><span class="item-text">Bei Nichterscheinen oder Absage wird keine Stornogebühr berechnet.</span></div>
+    <div class="item"><span class="item-num item-num-wide">13.12</span><span class="item-text">Terminanfragen per WhatsApp werden nach denselben Regeln behandelt wie am Telefon (13.1–13.10).</span></div>
+    <div class="item"><span class="item-num item-num-wide">13.13</span><span class="item-text">Wünscht ein Gast während des Termins kurzfristig eine Zusatzleistung: nur durchführen, wenn es sich zeitlich ausgeht, ohne den nächsten wartenden Gast zu verzögern. Geht sich das nicht aus, höflich ablehnen und die Zusatzleistung für den nächsten Besuch vormerken.</span></div>
+    <div class="item"><span class="item-num item-num-wide">13.14</span><span class="item-text">Lässt ein Gast einen Termin dreimal in Folge ohne Absage platzen, wird der nächste Termin für diesen Gast nur noch gegen Anzahlung vergeben (keine Stornogebühr im Sinne von 13.11, sondern eine Anzahlung auf die künftige Behandlung).</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s12')">← 12</button>
       <div class="btn-spacer"></div>
@@ -968,10 +1185,30 @@
   <div class="section" id="sec-s14">
     <h2 class="section-h2"><span class="section-num">14</span> Kassenabwicklung</h2>
     <div class="section-rule"></div>
-    <div class="item"><span class="item-num">14.1</span><span class="item-text">Die Stylistin/der Stylist kontrolliert, ob alle Dienstleistungen im Computer angeführt sind.</span></div>
-    <div class="item"><span class="item-num">14.2</span><span class="item-text">Betrag zweimal kontrollieren! Verantwortlich = Stylist:in.</span></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Alle Leistungen prüfen, Betrag zweimal kontrollieren — bei Rabattwunsch immer Salonleitung fragen.</p>
+      <ol class="quick-list">
+        <li>Leistungen im Computer prüfen, Betrag zweimal kontrollieren (14.1, 14.2).</li>
+        <li>Rabatt/Preisnachlass gewünscht: nie selbst zusagen, Salonleitung fragen.</li>
+        <li>Kartenlesegerät defekt: Hotline anrufen, zwischenzeitlich Barzahlung anbieten (14.6).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 14.1–14.6 unten.</p>
+    </div>
+    <div class="decision-box">
+      <p class="decision-title">⚖ Entscheidung: Preisnachlass / Rabatt</p>
+      <ul class="decision-list">
+        <li>Gast möchte einen Preisnachlass oder Rabatt (auch Mitarbeiterrabatt)? → Dazu ist im Wiki keine Regel festgelegt. Selbst entscheiden: <b>Nein.</b> Immer: Salonleitung / Mirjam Walenta fragen, bevor ein Nachlass zugesagt wird.</li>
+      </ul>
+      <p class="decision-open">OFFEN: Wer im Tagesgeschäft Rabatte freigeben darf und in welcher Höhe, ist im Wiki nicht geregelt.</p>
+    </div>
+    <p class="decision-note">Eine bei einer Reklamation angebotene Korrektur (MH-16, 16.3) ist keine Rabattfrage — die Entscheidung hier gilt nur für Geld zurück oder Preisnachlass.</p>
+    <div class="item"><span class="item-num">14.1</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Die Stylistin/der Stylist kontrolliert, ob alle Dienstleistungen im Computer angeführt sind.</span></div>
+    <div class="item"><span class="item-num">14.2</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Betrag zweimal kontrollieren! Verantwortlich = Stylist:in.</span></div>
     <div class="item"><span class="item-num">14.3</span><span class="item-text">Neugäste unbedingt fragen, ob sie eine Rechnung möchten.</span></div>
-    <div class="item"><span class="item-num">14.4</span><span class="item-text">Folgetermin anbieten.</span></div>
+    <div class="item"><span class="item-num">14.4</span><span class="item-text"><span class="tag tag-empfohlen">Empfohlen</span>Folgetermin anbieten.</span></div>
+    <div class="item"><span class="item-num">14.5</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Rechnungen werden ohne Namen ausgestellt (weder Gast- noch Firmenname).</span></div>
+    <div class="item"><span class="item-num">14.6</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Funktioniert das Kartenlesegerät nicht: Hotline des Anbieters anrufen. In der Zwischenzeit dem Gast Barzahlung anbieten.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s13')">← 13</button>
       <div class="btn-spacer"></div>
@@ -983,6 +1220,16 @@
   <div class="section" id="sec-s15">
     <h2 class="section-h2"><span class="section-num">15</span> Gäste-Verabschiedung</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Gast loben, zur Rezeption begleiten, per Handschlag verabschieden, für den Besuch bedanken.</p>
+      <ol class="quick-list">
+        <li>Ergebnis loben, Zufriedenheit prüfen (15.1).</li>
+        <li>Zur Rezeption begleiten, Handschlag, in den Mantel helfen, Tür öffnen (15.2, 15.4).</li>
+        <li>Auf Wunsch Taxi rufen (15.3).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 15.1–15.6 unten.</p>
+    </div>
     <div class="box">
       <div class="item"><span class="item-num">15.1</span><span class="item-text">Wir nutzen die Verabschiedung als letzte Möglichkeit, die Zufriedenheit des Gastes zu ermitteln. Teamkolleg:innen loben:</span></div>
       <ul class="box-list">
@@ -1008,12 +1255,32 @@
   <div class="section" id="sec-s16">
     <h2 class="section-h2"><span class="section-num">16</span> Reklamationen</h2>
     <div class="section-rule"></div>
-    <div class="item"><span class="item-num">16.1</span><span class="item-text">Zunächst wird Bedauern darüber geäußert, dass der Gast nicht zufrieden ist.</span></div>
-    <div class="item"><span class="item-num">16.2</span><span class="item-text">Gäste aufmerksam zuhören, nicht unterbrechen.</span></div>
-    <div class="item"><span class="item-num">16.3</span><span class="item-text">Bei einfachen Reklamationen bieten wir eine sofortige Korrektur an.</span></div>
-    <div class="item"><span class="item-num">16.4</span><span class="item-text">Bei schwerwiegenderen Reklamationen ziehen wir die Salonleitung hinzu.</span></div>
-    <div class="item"><span class="item-num">16.5</span><span class="item-text">Bei telefonischen Reklamationen bitten wir den Gast in den Salon.</span></div>
-    <div class="item"><span class="item-num">16.6</span><span class="item-text">Alle Reklamationen werden systematisch von derjenigen Person erfasst, bearbeitet und erledigt bzw. weitergeleitet, an die die Reklamation herangetragen wurde.</span></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Bedauern äußern, zuhören, bei einfachen Fällen sofort korrigieren — bei schwerwiegenden Fällen Salonleitung hinzuziehen.</p>
+      <ol class="quick-list">
+        <li>Zuhören, nicht unterbrechen (16.2).</li>
+        <li>Einfache Reklamation → sofort korrigieren (16.3).</li>
+        <li>Schwerwiegend oder telefonisch → Salonleitung hinzuziehen bzw. Gast in den Salon bitten (16.4, 16.5).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 16.1–16.6 unten.</p>
+    </div>
+    <div class="decision-box">
+      <p class="decision-title">⚖ Entscheidung: Selbst korrigieren oder Salonleitung?</p>
+      <ul class="decision-list">
+        <li>Einfache Reklamation (z. B. kleine Nacharbeit)? → <b>Ja:</b> sofort selbst korrigieren (16.3). → <b>Nein, schwerwiegender:</b> Salonleitung hinzuziehen (16.4).</li>
+        <li>Reklamation kam telefonisch rein? → Gast in den Salon bitten (16.5), dann wie oben entscheiden.</li>
+      </ul>
+      <p class="decision-open">OFFEN: Das Kriterium „einfach" vs. „schwerwiegend" ist im Wiki nicht genauer definiert. Im Zweifel: Salonleitung fragen, statt selbst zu entscheiden.</p>
+    </div>
+    <p class="decision-note"><b>Korrektur ist kein Rabatt.</b> Eine sofortige Korrektur (16.3) ist eine erneute bzw. angepasste Behandlung, kein Preisnachlass. Möchte der Gast zusätzlich oder stattdessen Geld zurück oder einen Nachlass, gilt dafür die eigene Entscheidung in MH-14 (immer Salonleitung fragen) — nicht automatisch mit der Korrektur mitgemeint.</p>
+    <p class="decision-note"><b>Reklamation und akute Reaktion gleichzeitig:</b> Tritt während oder nach einer Behandlung zugleich eine allergische Reaktion/Hautreizung auf (siehe MH-10, 10.9 bzw. MH-11, 11.10), hat das Vorrang vor der Reklamations-Klärung: zuerst abwaschen, Behandlung abbrechen, Salonleitung hinzuziehen. Die Reklamation selbst wird danach weiterbearbeitet.</p>
+    <div class="item"><span class="item-num">16.1</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Zunächst wird Bedauern darüber geäußert, dass der Gast nicht zufrieden ist.</span></div>
+    <div class="item"><span class="item-num">16.2</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Gäste aufmerksam zuhören, nicht unterbrechen.</span></div>
+    <div class="item"><span class="item-num">16.3</span><span class="item-text"><span class="tag tag-entscheidung">Entscheidung</span>Bei einfachen Reklamationen bieten wir eine sofortige Korrektur an.</span></div>
+    <div class="item"><span class="item-num">16.4</span><span class="item-text"><span class="tag tag-entscheidung">Entscheidung</span>Bei schwerwiegenderen Reklamationen ziehen wir die Salonleitung hinzu.</span></div>
+    <div class="item"><span class="item-num">16.5</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Bei telefonischen Reklamationen bitten wir den Gast in den Salon.</span></div>
+    <div class="item"><span class="item-num">16.6</span><span class="item-text"><span class="tag tag-pflicht">Pflicht</span>Alle Reklamationen werden systematisch von derjenigen Person erfasst, bearbeitet und erledigt bzw. weitergeleitet, an die die Reklamation herangetragen wurde.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s15')">← 15</button>
       <div class="btn-spacer"></div>
@@ -1025,6 +1292,16 @@
   <div class="section" id="sec-s17">
     <h2 class="section-h2"><span class="section-num">17</span> Beschwerden</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Zuhören, Bedauern äußern – unabhängig von der Ursache – und ernsthafte Zufriedenstellung versprechen.</p>
+      <ol class="quick-list">
+        <li>Aufmerksam zuhören, alles sagen lassen (17.2).</li>
+        <li>Bedauern äußern, unabhängig von der Ursache (17.3).</li>
+        <li>Weiterleiten an die verursachende Person, die auch den Verbesserungsvorschlag macht (17.4, 17.5).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 17.1–17.7 unten.</p>
+    </div>
     <div class="item"><span class="item-num">17.1</span><span class="item-text">Alle Teammitglieder sehen Beschwerden als aktuelle und konkrete Chance an, die Gästezufriedenheit als wichtiges Ziel zu erhöhen.</span></div>
     <div class="item"><span class="item-num">17.2</span><span class="item-text">Gäste aufmerksam zuhören – alles sagen lassen.</span></div>
     <div class="item"><span class="item-num">17.3</span><span class="item-text">Wenn uns ein Gast sagt, dass er/sie unzufrieden ist, äußern wir – völlig unabhängig von der Ursachenforschung – Bedauern und versprechen, uns ernsthaft zu bemühen, ihn/sie zufrieden zu stellen.</span></div>
@@ -1043,10 +1320,20 @@
   <div class="section" id="sec-s18">
     <h2 class="section-h2"><span class="section-num">18</span> Unser Auftreten – das Äußere</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Sauber, gepflegt, Kleidung schwarz/grau/weiß, Namensschild Pflicht.</p>
+      <ol class="quick-list">
+        <li>Gepflegter Gesamteindruck, Kleidung schwarz/grau/weiß (18.1).</li>
+        <li>Ohrringe/Piercings erlaubt, wenn dezent (18.5).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 18.1–18.5 unten.</p>
+    </div>
     <div class="item"><span class="item-num">18.1</span><span class="item-text">Jedes Teammitglied macht einen sauberen, gepflegten Gesamteindruck. Das Äußere ist dem Stil des Salons angepasst. Bekleidung: schwarz, grau, weiß.</span></div>
     <div class="item"><span class="item-num">18.2</span><span class="item-text">Haarschnitt und Haarfarbe der Teammitglieder sind ansprechend und trendig.</span></div>
     <div class="item"><span class="item-num">18.3</span><span class="item-text">Alle Teammitglieder kommen frisiert und gepflegt ins Geschäft. Make-up wird bei Bedarf untertags aufgefrischt.</span></div>
     <div class="item"><span class="item-num">18.4</span><span class="item-text">Alle Teammitglieder tragen ein Namensschild.</span></div>
+    <div class="item"><span class="item-num">18.5</span><span class="item-text">Ohrringe und Piercings sind erlaubt, solange sie dezent/unauffällig bleiben und zum gepflegten Gesamteindruck (18.1) passen.</span></div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s17')">← 17</button>
       <div class="btn-spacer"></div>
@@ -1058,6 +1345,16 @@
   <div class="section" id="sec-s19">
     <h2 class="section-h2"><span class="section-num">19</span> Unser Auftreten – Limbic Check</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Angenehmer Duft, offene Körpersprache, freundliche Mimik.</p>
+      <ol class="quick-list">
+        <li>Angenehmer oder neutraler Duft (19.1).</li>
+        <li>Offene, einladende Körpersprache (19.3).</li>
+        <li>Freundliche Mienen, sichtlich Spaß an der Arbeit (19.5).</li>
+      </ol>
+      <p class="quick-details">Details: siehe 19.1–19.5 unten.</p>
+    </div>
     <div class="item"><span class="item-num">19.1</span><span class="item-text">Jedes Teammitglied duftet angenehm oder neutral.</span></div>
     <div class="item"><span class="item-num">19.2</span><span class="item-text">Die Sprache ist dem Stil des Salons angepasst.</span></div>
     <div class="item"><span class="item-num">19.3</span><span class="item-text">Die Körpersprache ist offen und einladend.</span></div>
@@ -1074,6 +1371,16 @@
   <div class="section" id="sec-s20">
     <h2 class="section-h2"><span class="section-num">20</span> Unser Teamkodex</h2>
     <div class="section-rule"></div>
+    <div class="quick-box">
+      <div class="quick-label">⚡ Schnellantwort</div>
+      <p class="quick-kern"><b>Kern:</b> Miteinander statt gegeneinander, Neu- wie Stammgäste gleich behandeln, „Einer für alle – alle für einen!"</p>
+      <ol class="quick-list">
+        <li>Streit vor Gästen: sofort unterbrechen, erst unter vier Augen klären.</li>
+        <li>Anderes Fehlverhalten: direkt und kollegial ansprechen, erst bei Wiederholung Salonleitung.</li>
+        <li>Alle 16 Werte darunter gelten unverändert als Grundhaltung.</li>
+      </ol>
+      <p class="quick-details">Details: siehe unten.</p>
+    </div>
     <p style="font-family:'Newsreader',serif; font-style:italic; font-size:16px; color:var(--ink-mid); margin-bottom:20px;">Teil des Teams bei Mirjam Walenta — A Great Hair Day zu sein bedeutet:</p>
     <ul class="plain-list">
       <li>Den Gästen durch angenehme Atmosphäre ein Entspannungs- und Genusserlebnis zu bieten.</li>
@@ -1096,6 +1403,9 @@
     <div class="closing">
       <p>Einer für alle – alle für einen!</p>
     </div>
+    <h3 class="section-h3 section-h3-spacer">Umgang mit Konflikten und Fehlverhalten</h3>
+    <p class="welcome-text">Kommt es zu einem sichtbaren Streit zwischen Kolleginnen/Kollegen vor Gästen: sofort unterbrechen, vor Gästen nicht weiter austragen. Die Klärung erfolgt danach unter vier Augen zwischen den Beteiligten; nur wenn das nicht gelingt, wird die Salonleitung hinzugezogen.</p>
+    <p class="welcome-text">Anderes unangemessenes Verhalten wird zunächst direkt und kollegial angesprochen; erst bei Wiederholung oder größerem Fehlverhalten wird die Salonleitung einbezogen.</p>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('s19')">← 19</button>
       <div class="btn-spacer"></div>
