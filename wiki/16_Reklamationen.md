@@ -4,8 +4,8 @@ titel: Reklamationen
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.3
-letzte_pruefung: 2026-09-11
+version: 1.4
+letzte_pruefung: 2026-09-12
 schlagworte: [Reklamation, Korrektur, Beschwerde, Rabatt, Reaktion]
 ---
 
@@ -30,8 +30,10 @@ Details: siehe 16.1–16.6 unten.
 - Reklamation kam telefonisch rein? → Gast in den Salon bitten (16.5), dann wie oben
   entscheiden.
 
-> OFFEN: Das Kriterium „einfach" vs. „schwerwiegend" ist im Wiki nicht genauer
-> definiert. Im Zweifel: Salonleitung fragen, statt selbst zu entscheiden.
+Als Richtschnur gilt: **einfach** ist z. B. eine kleine Nacharbeit/ein Nachschneiden
+oder eine leichte Farbkorrektur. **Schwerwiegend** ist z. B. wenn der Gast Geld zurück
+oder einen Preisnachlass möchte, deutlich unzufrieden ist, oder sich wiederholt
+beschwert. Im Zweifel weiterhin: Salonleitung fragen, statt selbst zu entscheiden.
 
 **Korrektur ist kein Rabatt.** Eine sofortige Korrektur (16.3) ist eine erneute bzw.
 angepasste Behandlung, kein Preisnachlass. Möchte der Gast zusätzlich oder stattdessen
