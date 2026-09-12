@@ -4,9 +4,9 @@ titel: Kassenabwicklung
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.7
+version: 1.8
 letzte_pruefung: 2026-09-12
-schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass, Kartenlesegerät]
+schlagworte: [Kasse, Rechnung, Zahlung, Rabatt, Preisnachlass, Kartenlesegerät, Preis stimmt nicht]
 ---
 
 # 14 · Kassenabwicklung
@@ -20,7 +20,7 @@ immer Salonleitung fragen.
 2. Rabatt/Preisnachlass gewünscht: nie selbst zusagen, Salonleitung fragen.
 3. Kartenlesegerät defekt: Hotline anrufen, zwischenzeitlich Barzahlung anbieten (14.6).
 
-Details: siehe 14.1–14.6 unten.
+Details: siehe 14.1–14.7 unten.
 
 ---
 
@@ -52,3 +52,10 @@ Firmenname).
 
 14.6 **[PFLICHT]** Funktioniert das Kartenlesegerät nicht: Hotline des Anbieters
 anrufen. In der Zwischenzeit dem Gast Barzahlung anbieten.
+
+14.7 **[PFLICHT]** Findet ein Gast den verrechneten Preis nicht korrekt oder anders
+als erwartet/erinnert (z. B. „das war letztes Mal günstiger"): wie eine Reklamation
+behandeln (MH-16) — zuhören, Bedauern äußern, den Betrag anhand der im Computer
+erfassten Leistungen (14.1) bzw. eines vorab genannten Kostenvoranschlags (MH-02, 2.5)
+freundlich erklären. Das ist keine automatische Rabattfrage — dafür gilt weiterhin die
+Entscheidung oben (immer Salonleitung fragen).

@@ -82,6 +82,7 @@ Volltextsuche).
 | Kartenlesegerät funktioniert nicht | MH-14 | 14.6 |
 | Folgetermin anbieten | MH-14, MH-13 | 14.4 · 13.4 |
 | Preisnachlass / Rabatt (auch Mitarbeiterrabatt) | MH-14 | Entscheidung: Preisnachlass |
+| Gast findet Preis nicht korrekt / anders als erinnert ("letztes Mal günstiger") | MH-14, MH-02, MH-16 | 14.7 |
 | Verabschiedung, Taxi rufen | MH-15 | 15.1–15.6 |
 
 ## Reklamation & Beschwerde

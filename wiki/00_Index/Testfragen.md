@@ -35,7 +35,7 @@ Lücken hat (siehe „Nicht im Wiki" in `Fragen-und-Situationen.md`).
 | Datum | Frage (so wie gestellt) | Gefunden? | Zeit | Quelle | Bemerkung |
 |---|---|---|---|---|---|
 | 2026-09-11 | verkaufen wir gutscheine | Nein (korrekt) | 13s | Fallback | Testrunde 9 |
-| 2026-09-11 | kundin zeitgleich bei zwei stylistinnen | Nein | 14s | – | Testrunde 9, kein Handlungsbedarf |
+| 2026-09-11 | kundin zeitgleich bei zwei stylistinnen | Nein | 14s | – | Testrunde 9, kein Handlungsbedarf, von Mirjam Walenta bestätigt |
 | 2026-09-11 | gast lässt zum 3. mal in folge termin platzen | Teilweise | 10s | MH-13, 13.5 | Testrunde 9, nur Einzelfall geregelt |
 | 2026-09-11 | berechnen wir eine stornogebühr | Nein | 12s | – | Testrunde 9, offen |
 | 2026-09-11 | was ziehe ich privat nach feierabend an | Ja | 4s | MH-18 | Testrunde 9 |
@@ -50,7 +50,7 @@ Lücken hat (siehe „Nicht im Wiki" in `Fragen-und-Situationen.md`).
 | 2026-09-11 | neukundenzettel vergessen auszufüllen | Ja | 8s | Fallback | Testrunde 8 |
 | 2026-09-11 | stammkundin will andere stylistin (unzufrieden) | Ja | 9s | MH-12, 12.4 · MH-17 | Testrunde 8 |
 | 2026-09-11 | kollegin isst heimlich gästekekse | Teilweise | 12s | MH-20 | Testrunde 8, intern |
-| 2026-09-11 | preis war letztes mal günstiger | Teilweise | 10s | MH-02, MH-16 | Testrunde 8 |
+| 2026-09-11 | preis war letztes mal günstiger | Teilweise | 10s | MH-02, MH-16 | Testrunde 8, seither MH-14 14.7 |
 | 2026-09-11 | kundin schläft während behandlung ein | Nein (korrekt) | 13s | Fallback | Testrunde 8 |
 | 2026-09-11 | stylistin 20 min zu spät, was sage ich | Teilweise | 7s | MH-13, 13.7 | Testrunde 8, kein Wortlaut |
 | 2026-09-11 | welches mittel bei läusen zum desinfizieren | Teilweise | 6s | MH-01, 1.14 | Testrunde 8, kein Produkt genannt |
