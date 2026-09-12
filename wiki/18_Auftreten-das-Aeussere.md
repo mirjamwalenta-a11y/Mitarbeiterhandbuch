@@ -16,8 +16,7 @@ schlagworte: [Kleidung, Auftreten, Namensschild, Schmuck, Ohrringe, Piercing]
 **Kern:** Sauber, gepflegt, Kleidung schwarz/grau/weiß, Namensschild Pflicht.
 
 1. Gepflegter Gesamteindruck, Kleidung schwarz/grau/weiß (18.1).
-2. Namensschild tragen (18.4).
-3. Ohrringe/Piercings erlaubt, wenn dezent (18.5).
+2. Ohrringe/Piercings erlaubt, wenn dezent (18.5).
 
 Details: siehe 18.1–18.5 unten.
 
