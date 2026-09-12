@@ -4,12 +4,23 @@ titel: Unser Auftreten – das Äußere
 typ: gaestekontakt
 status: freigegeben
 verantwortlich: Salonleitung
-version: 1.1
-letzte_pruefung: 2026-09-11
+version: 1.2
+letzte_pruefung: 2026-09-12
 schlagworte: [Kleidung, Auftreten, Namensschild, Schmuck, Ohrringe, Piercing]
 ---
 
 # 18 · Unser Auftreten – das Äußere
+
+### ⚡ Schnellantwort
+
+**Kern:** Sauber, gepflegt, Kleidung schwarz/grau/weiß, Namensschild Pflicht.
+
+1. Gepflegter Gesamteindruck, Kleidung schwarz/grau/weiß (18.1).
+2. Ohrringe/Piercings erlaubt, wenn dezent (18.5).
+
+Details: siehe 18.1–18.5 unten.
+
+---
 
 18.1 Jedes Teammitglied macht einen sauberen, gepflegten Gesamteindruck. Das Äußere ist dem Stil des Salons angepasst. Bekleidung: schwarz, grau, weiß.
 
