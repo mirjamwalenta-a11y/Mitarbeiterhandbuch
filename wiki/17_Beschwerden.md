@@ -2,7 +2,7 @@
 id: MH-17
 titel: Beschwerden
 typ: gaestekontakt
-status: entwurf
+status: freigegeben
 verantwortlich: Salonleitung
 version: 1.1
 letzte_pruefung: 2026-09-12
