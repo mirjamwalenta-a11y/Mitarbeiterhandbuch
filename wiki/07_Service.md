@@ -2,14 +2,26 @@
 id: MH-07
 titel: Service
 typ: gaestekontakt
-status: freigegeben
+status: entwurf
 verantwortlich: Salonleitung
-version: 1.3
-letzte_pruefung: 2026-09-11
+version: 1.4
+letzte_pruefung: 2026-09-12
 schlagworte: [Service, Wartezeit, Getränke, Foto, Social Media, Gerätefehler, Katalog, Portfolio, Website]
 ---
 
 # 07 · Service
+
+### ⚡ Schnellantwort
+
+**Kern:** Aufmerksame Betreuung für alle Gäste gleich, Wartezeiten mit Service überbrücken, Fotos nur mit Einwilligung.
+
+1. Serviceleistungen für Warte-/Einwirkzeiten anbieten (7.4).
+2. Fotos/Videos für externe Verwendung: nur mit Einwilligung des Gastes (7.9).
+3. Gerätefehler während der Behandlung: Salonleitung sofort informieren (7.10).
+
+Details: siehe 7.1–7.10 unten.
+
+---
 
 7.1 Mit unserer aufmerksamen Betreuung sichern wir einen hohen Erlebniswert unserer Dienstleistung.
 
