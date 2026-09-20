@@ -1740,7 +1740,10 @@ async function wbLadeListe() {
   el.innerHTML = '<p class="wb-empty">Lade …</p>';
   meineEl.innerHTML = '';
   try {
-    _wbListe = await supaGet('wissensbank_artikel', 'select=*&order=erstellt_am.desc');
+    const filter = _me.rolle === 'inhaberin'
+      ? 'select=*&order=erstellt_am.desc'
+      : `select=*&order=erstellt_am.desc&or=(status.eq.freigegeben,ersteller_email.eq.${encodeURIComponent(_me.email)})`;
+    _wbListe = await supaGet('wissensbank_artikel', filter);
   } catch (e) {
     el.innerHTML = '<p class="wb-empty">Wissensbank konnte nicht geladen werden.</p>';
     return;
