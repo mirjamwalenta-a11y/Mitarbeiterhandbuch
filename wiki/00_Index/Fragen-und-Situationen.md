@@ -138,7 +138,6 @@ Wiki aufgenommen werden kann.
 
 | Situation / Frage | Anmerkung |
 |---|---|
-| Gast kommt zu spät, erscheint aber noch | Kein Kapitel regelt Verspätung; nur das Nichterscheinen (MH-13, 13.5) |
 | Gast kommt deutlich zu früh | Nicht geregelt |
 | Mitarbeiter:in bemerkt einen eigenen Fehler | Nicht als eigenes Thema geregelt |
 | Mitarbeiter:in weiß die Antwort nicht | Kein festgelegter interner Eskalationsweg für Wissenslücken |
