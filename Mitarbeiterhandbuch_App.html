@@ -1952,8 +1952,10 @@ function wbAnwendenFilter() {
   wbBindKarten();
 }
 
-// Die 20 festen Handbuch-Kapitel — damit die Wissensbank-Suche auch sie findet
+// Die 20 festen Handbuch-Kapitel plus die Häufige-Situationen-Ebene —
+// damit die Wissensbank-Suche auch sie findet
 const KAPITEL_INDEX = [
+  { id: 'situationen', num: '⚡', titel: 'Häufige Situationen' },
   { id: 's01', num: '01', titel: 'Kundenempfang' },
   { id: 's02', num: '02', titel: 'Kunden-Einstiegsgespräch' },
   { id: 's03', num: '03', titel: 'Kunden-Beratungsgespräch' },
