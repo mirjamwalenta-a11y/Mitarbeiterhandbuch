@@ -61,3 +61,13 @@ nächsten Besuch vormerken.
 13.14 Lässt ein Gast einen Termin dreimal in Folge ohne Absage platzen, wird der
 nächste Termin für diesen Gast nur noch gegen Anzahlung vergeben (keine Stornogebühr
 im Sinne von 13.11, sondern eine Anzahlung auf die künftige Behandlung).
+
+13.15 Kommt ein Gast verspätet, aber noch zum Termin: Wir versuchen ihn nach
+Möglichkeit trotzdem dranzunehmen. Die Stylistin/der Stylist sucht zuerst selbst eine
+praktikable Teamlösung, damit der Termin stattfinden kann; bei Bedarf übernimmt eine
+Kollegin/ein Kollege einen Teil der Dienstleistung. Dem Gast wird erklärt, dass sich
+der Ablauf durch die Verspätung anpassen kann. Geht sich das auch mit Teamlösung
+zeitlich nicht aus, wird die Dienstleistung gekürzt bzw. auf das Wesentliche
+reduziert; ergibt sich auch daraus keine saubere Lösung, wird ein neuer Termin
+vereinbart. Ist der weitere Tagesplan dadurch stark beeinträchtigt oder ist keine
+faire Lösung mehr möglich, entscheidet Mirjam.
