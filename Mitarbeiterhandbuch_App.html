@@ -1551,6 +1551,7 @@
       <label for="rzNeuBereich">Anwendungsbereich</label>
       <select id="rzNeuBereich">
         <option value="Blondierung">Blondierung</option>
+        <option value="Coloration">Coloration</option>
         <option value="Tönung">Tönung</option>
         <option value="Farbkorrektur">Farbkorrektur</option>
         <option value="Dauerwelle">Dauerwelle</option>
@@ -2024,7 +2025,7 @@ async function wbAblehnen(id) {
 // ══════════════════════════════════════════════════════════
 let _rzListe = [];
 let _rzAktiverBereich = null; // null = "Alle"
-const RZ_BEREICHE = ['Blondierung', 'Tönung', 'Farbkorrektur', 'Dauerwelle', 'Pflege', 'Sonstiges'];
+const RZ_BEREICHE = ['Blondierung', 'Coloration', 'Tönung', 'Farbkorrektur', 'Dauerwelle', 'Pflege', 'Sonstiges'];
 
 async function rzLadeListe() {
   const el = document.getElementById('rzListe');
