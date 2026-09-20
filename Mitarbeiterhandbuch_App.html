@@ -1913,7 +1913,8 @@ async function wbLoescheArtikel(id) {
     await supaDelete('wissensbank_artikel', `id=eq.${id}`);
     goTo('wissensbank');
   } catch (e) {
-    alert('Löschen fehlgeschlagen: ' + e.message);
+    console.error('Löschen fehlgeschlagen:', e.message);
+    alert('Löschen fehlgeschlagen. Bitte nochmal versuchen.');
   }
 }
 
@@ -1945,7 +1946,8 @@ document.getElementById('wbNeuSpeichernBtn').addEventListener('click', async () 
     await supaPost('wissensbank_artikel', body);
     goTo('wissensbank');
   } catch (e) {
-    alert('Speichern fehlgeschlagen: ' + e.message);
+    console.error('Speichern fehlgeschlagen:', e.message);
+    alert('Speichern fehlgeschlagen. Bitte nochmal versuchen.');
   } finally {
     btn.disabled = false; btn.textContent = 'Speichern';
   }
@@ -1992,7 +1994,8 @@ async function wbFreigeben(id) {
     wbLadeReview();
     handbuchOSAktualisieren();
   } catch (e) {
-    alert('Freigeben fehlgeschlagen: ' + e.message);
+    console.error('Freigeben fehlgeschlagen:', e.message);
+    alert('Freigeben fehlgeschlagen. Bitte nochmal versuchen.');
   }
 }
 
@@ -2003,7 +2006,8 @@ async function wbAblehnen(id) {
     wbLadeReview();
     handbuchOSAktualisieren();
   } catch (e) {
-    alert('Ablehnen fehlgeschlagen: ' + e.message);
+    console.error('Ablehnen fehlgeschlagen:', e.message);
+    alert('Ablehnen fehlgeschlagen. Bitte nochmal versuchen.');
   }
 }
 
@@ -2132,7 +2136,8 @@ async function rzLoescheEintrag(id) {
     await supaDelete('wissensbank_rezepturen', `id=eq.${id}`);
     goTo('rezepturen');
   } catch (e) {
-    alert('Löschen fehlgeschlagen: ' + e.message);
+    console.error('Löschen fehlgeschlagen:', e.message);
+    alert('Löschen fehlgeschlagen. Bitte nochmal versuchen.');
   }
 }
 
@@ -2176,7 +2181,8 @@ document.getElementById('rzNeuSpeichernBtn').addEventListener('click', async () 
     await supaPost('wissensbank_rezepturen', body);
     goTo('rezepturen');
   } catch (e) {
-    alert('Speichern fehlgeschlagen: ' + e.message);
+    console.error('Speichern fehlgeschlagen:', e.message);
+    alert('Speichern fehlgeschlagen. Bitte nochmal versuchen.');
   } finally {
     btn.disabled = false; btn.textContent = 'Speichern';
   }
@@ -2229,7 +2235,8 @@ async function rzFreigeben(id) {
     rzLadeReview();
     handbuchOSAktualisieren();
   } catch (e) {
-    alert('Freigeben fehlgeschlagen: ' + e.message);
+    console.error('Freigeben fehlgeschlagen:', e.message);
+    alert('Freigeben fehlgeschlagen. Bitte nochmal versuchen.');
   }
 }
 
@@ -2240,7 +2247,8 @@ async function rzAblehnen(id) {
     rzLadeReview();
     handbuchOSAktualisieren();
   } catch (e) {
-    alert('Ablehnen fehlgeschlagen: ' + e.message);
+    console.error('Ablehnen fehlgeschlagen:', e.message);
+    alert('Ablehnen fehlgeschlagen. Bitte nochmal versuchen.');
   }
 }
 
