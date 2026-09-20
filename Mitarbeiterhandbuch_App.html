@@ -1578,6 +1578,11 @@
       <label for="rzNeuWarnhinweise">Warnhinweise (optional)</label>
       <textarea id="rzNeuWarnhinweise" rows="3" placeholder="z. B. Allergietest, nicht kombinieren mit …"></textarea>
     </div>
+    <div class="wb-form-field">
+      <label for="rzNeuBild">Foto (optional)</label>
+      <input type="file" id="rzNeuBild" accept="image/jpeg,image/png,image/webp">
+      <img id="rzNeuBildVorschau" style="display:none; max-width:100%; margin-top:10px; border-radius:8px">
+    </div>
     <div class="bottom-nav">
       <button class="btn-nav" onclick="goTo('rezepturen')">Abbrechen</button>
       <div class="btn-spacer"></div>
@@ -2098,13 +2103,23 @@ function rzBindKarten() {
 
 document.getElementById('rzSuche').addEventListener('input', rzAnwendenFilter);
 
-function rzOeffneEintrag(id) {
+async function rzOeffneEintrag(id) {
   const a = _rzListe.find(x => x.id === id);
   if (!a) return;
   document.getElementById('rzDetailBereich').textContent = a.anwendungsbereich;
   document.getElementById('rzDetailTitel').textContent = a.titel;
   document.getElementById('rzDetailMeta').textContent =
     `${a.ersteller_name || a.ersteller_email} · ${new Date(a.erstellt_am).toLocaleDateString('de-AT')}`;
+
+  let bildHtml = '';
+  if (a.bild_pfad) {
+    try {
+      const { data } = await sbAuth.storage.from('rezeptur-bilder').createSignedUrl(a.bild_pfad, 3600);
+      if (data?.signedUrl) {
+        bildHtml = `<div style="margin-bottom:14px"><img src="${esc(data.signedUrl)}" alt="Foto zu ${esc(a.titel)}" style="max-width:100%; border-radius:8px"></div>`;
+      }
+    } catch (e) { console.error('Foto konnte nicht geladen werden:', e.message); }
+  }
 
   const felder = [
     ['Produkt / Marke', a.produkt_marke],
@@ -2113,7 +2128,7 @@ function rzOeffneEintrag(id) {
     ['Anleitung', a.anleitung],
     ['Warnhinweise', a.warnhinweise],
   ].filter(([, wert]) => wert);
-  document.getElementById('rzDetailFelder').innerHTML = felder.map(([label, wert]) =>
+  document.getElementById('rzDetailFelder').innerHTML = bildHtml + felder.map(([label, wert]) =>
     `<div style="margin-bottom:14px"><div class="wb-card-kategorie" style="margin-bottom:6px">${esc(label)}</div><div>${esc(wert)}</div></div>`
   ).join('');
 
@@ -2132,8 +2147,12 @@ function rzOeffneEintrag(id) {
 
 async function rzLoescheEintrag(id) {
   if (!confirm('Diese Rezeptur wirklich löschen?')) return;
+  const a = _rzListe.find(x => x.id === id);
   try {
     await supaDelete('wissensbank_rezepturen', `id=eq.${id}`);
+    if (a?.bild_pfad) {
+      try { await sbAuth.storage.from('rezeptur-bilder').remove([a.bild_pfad]); } catch (e) { /* Foto bleibt ggf. verwaist zurück, nicht blockierend */ }
+    }
     goTo('rezepturen');
   } catch (e) {
     console.error('Löschen fehlgeschlagen:', e.message);
@@ -2149,12 +2168,24 @@ function rzNeuFormular() {
   document.getElementById('rzNeuEinwirkzeit').value = '';
   document.getElementById('rzNeuAnleitung').value = '';
   document.getElementById('rzNeuWarnhinweise').value = '';
+  document.getElementById('rzNeuBild').value = '';
+  const vorschau = document.getElementById('rzNeuBildVorschau');
+  vorschau.style.display = 'none';
+  vorschau.src = '';
   document.getElementById('rzNeuHinweis').textContent = _me.rolle === 'inhaberin'
     ? 'Wird sofort für das ganze Team sichtbar.'
     : 'Wird als Vorschlag an Mirjam gesendet — sichtbar wird er erst nach ihrer Freigabe.';
 }
 
 document.getElementById('rzNeuBtn').addEventListener('click', () => goTo('rezeptur-neu'));
+
+document.getElementById('rzNeuBild').addEventListener('change', (e) => {
+  const datei = e.target.files[0];
+  const vorschau = document.getElementById('rzNeuBildVorschau');
+  if (!datei) { vorschau.style.display = 'none'; vorschau.src = ''; return; }
+  vorschau.src = URL.createObjectURL(datei);
+  vorschau.style.display = 'block';
+});
 
 document.getElementById('rzNeuSpeichernBtn').addEventListener('click', async () => {
   const titel = document.getElementById('rzNeuTitel').value.trim();
@@ -2178,7 +2209,20 @@ document.getElementById('rzNeuSpeichernBtn').addEventListener('click', async () 
       ersteller_email: _me.email, ersteller_name: _me.name,
     };
     if (status === 'freigegeben') { body.freigegeben_von = _me.email; body.freigegeben_am = new Date().toISOString(); }
-    await supaPost('wissensbank_rezepturen', body);
+    const [neu] = await supaPost('wissensbank_rezepturen', body);
+    const datei = document.getElementById('rzNeuBild').files[0];
+    if (datei && neu?.id) {
+      try {
+        const endung = (datei.name.split('.').pop() || 'jpg').toLowerCase();
+        const pfad = `${neu.id}/foto.${endung}`;
+        const { error: upErr } = await sbAuth.storage.from('rezeptur-bilder').upload(pfad, datei, { contentType: datei.type });
+        if (upErr) throw upErr;
+        await supaPatch('wissensbank_rezepturen', `id=eq.${neu.id}`, { bild_pfad: pfad });
+      } catch (e) {
+        console.error('Foto-Upload fehlgeschlagen:', e.message);
+        alert('Rezeptur wurde gespeichert, das Foto konnte aber nicht hochgeladen werden.');
+      }
+    }
     goTo('rezepturen');
   } catch (e) {
     console.error('Speichern fehlgeschlagen:', e.message);
@@ -2200,28 +2244,39 @@ async function rzAktualisierePendingBadge() {
   } catch (e) { return 0; }
 }
 
+let _rzReviewListe = [];
+
 async function rzLadeReview() {
   const el = document.getElementById('rzReviewListe');
   el.innerHTML = '<p class="wb-empty">Lade …</p>';
   try {
     const offen = await supaGet('wissensbank_rezepturen', 'select=*&status=eq.eingereicht&order=erstellt_am.asc');
+    _rzReviewListe = offen;
     if (!offen.length) { el.innerHTML = '<p class="wb-empty">Keine offenen Vorschläge — alles erledigt.</p>'; return; }
-    el.innerHTML = offen.map(a => {
+    const karten = await Promise.all(offen.map(async a => {
       const felder = [
         ['Produkt / Marke', a.produkt_marke], ['Mischverhältnis', a.mischverhaeltnis],
         ['Einwirkzeit', a.einwirkzeit], ['Anleitung', a.anleitung], ['Warnhinweise', a.warnhinweise],
       ].filter(([, wert]) => wert);
+      let bildHtml = '';
+      if (a.bild_pfad) {
+        try {
+          const { data } = await sbAuth.storage.from('rezeptur-bilder').createSignedUrl(a.bild_pfad, 3600);
+          if (data?.signedUrl) bildHtml = `<div style="margin-bottom:12px"><img src="${esc(data.signedUrl)}" alt="Foto zu ${esc(a.titel)}" style="max-width:100%; border-radius:8px"></div>`;
+        } catch (e) { /* Foto optional, Anzeige ohne Bild fällt nicht ins Gewicht */ }
+      }
       return `
       <div class="wb-card" style="cursor:default">
         <div class="wb-card-titel">${esc(a.titel)}</div>
         <div class="wb-card-meta"><span class="wb-card-kategorie">${esc(a.anwendungsbereich)}</span>${esc(a.ersteller_name || a.ersteller_email)} · ${new Date(a.erstellt_am).toLocaleDateString('de-AT')}</div>
-        <div class="wb-artikel-inhalt" style="margin:12px 0">${felder.map(([label, wert]) => `<div style="margin-bottom:8px"><strong>${esc(label)}:</strong> ${esc(wert)}</div>`).join('')}</div>
+        <div class="wb-artikel-inhalt" style="margin:12px 0">${bildHtml}${felder.map(([label, wert]) => `<div style="margin-bottom:8px"><strong>${esc(label)}:</strong> ${esc(wert)}</div>`).join('')}</div>
         <div class="wb-review-actions">
           <button class="btn-nav primary" onclick="rzFreigeben('${a.id}')">✓ Freigeben</button>
           <button class="btn-nav" onclick="rzAblehnen('${a.id}')">Ablehnen</button>
         </div>
       </div>`;
-    }).join('');
+    }));
+    el.innerHTML = karten.join('');
   } catch (e) {
     el.innerHTML = '<p class="wb-empty">Vorschläge konnten nicht geladen werden.</p>';
   }
@@ -2242,8 +2297,12 @@ async function rzFreigeben(id) {
 
 async function rzAblehnen(id) {
   if (!confirm('Diesen Vorschlag wirklich ablehnen und löschen?')) return;
+  const a = _rzReviewListe.find(x => x.id === id);
   try {
     await supaDelete('wissensbank_rezepturen', `id=eq.${id}`);
+    if (a?.bild_pfad) {
+      try { await sbAuth.storage.from('rezeptur-bilder').remove([a.bild_pfad]); } catch (e) { /* Foto bleibt ggf. verwaist zurück, nicht blockierend */ }
+    }
     rzLadeReview();
     handbuchOSAktualisieren();
   } catch (e) {
