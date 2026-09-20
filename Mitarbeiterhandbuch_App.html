@@ -2034,8 +2034,8 @@ async function rzLadeListe() {
   meineEl.innerHTML = '';
   try {
     const filter = _me.rolle === 'inhaberin'
-      ? 'select=*&order=erstellt_am.desc'
-      : `select=*&order=erstellt_am.desc&or=(status.eq.freigegeben,ersteller_email.eq.${encodeURIComponent(_me.email)})`;
+      ? 'select=*&order=titel.asc'
+      : `select=*&order=titel.asc&or=(status.eq.freigegeben,ersteller_email.eq.${encodeURIComponent(_me.email)})`;
     _rzListe = await supaGet('wissensbank_rezepturen', filter);
   } catch (e) {
     el.innerHTML = '<p class="wb-empty">Fachwissen Farbe konnte nicht geladen werden.</p>';
