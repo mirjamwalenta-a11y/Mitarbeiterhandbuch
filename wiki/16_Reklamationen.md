@@ -13,27 +13,31 @@ schlagworte: [Reklamation, Korrektur, Beschwerde, Rabatt, Reaktion]
 
 ### ⚡ Schnellantwort
 
-**Kern:** Bedauern äußern, zuhören, bei einfachen Fällen sofort korrigieren — bei
-schwerwiegenden Fällen Salonleitung hinzuziehen.
+**Kern:** Zuständig ist zuerst die Person, an die die Reklamation herangetragen wurde.
+Bedauern äußern, zuhören, einfache Fälle selbst sofort korrigieren. Mirjam ist Joker:
+erst dazuholen, wenn keine Lösung gefunden wird, der Fall eskaliert, oder Geld,
+Rückerstattung oder Preisnachlass im Spiel sind.
 
 1. Zuhören, nicht unterbrechen (16.2).
-2. Einfache Reklamation → sofort korrigieren (16.3).
-3. Schwerwiegend oder telefonisch → Salonleitung hinzuziehen bzw. Gast in den Salon
-   bitten (16.4, 16.5).
+2. Einfache Reklamation → sofort selbst korrigieren (16.3).
+3. Telefonisch ist nur der Kanal, kein eigener Schweregrad: Gast in den Salon bitten
+   (16.5), dann wie gewohnt entscheiden.
 
 Details: siehe 16.1–16.6 unten.
 
-### ⚖ Entscheidung: Selbst korrigieren oder Salonleitung?
+### ⚖ Entscheidung: Selbst korrigieren oder Mirjam als Joker dazuholen?
 
+- Reklamation kam telefonisch rein? → das ist nur der Kanal: Gast in den Salon bitten
+  (16.5), dann wie folgt entscheiden.
 - Einfache Reklamation (z. B. kleine Nacharbeit)? → **Ja:** sofort selbst korrigieren
-  (16.3). → **Nein, schwerwiegender:** Salonleitung hinzuziehen (16.4).
-- Reklamation kam telefonisch rein? → Gast in den Salon bitten (16.5), dann wie oben
-  entscheiden.
+  (16.3), zuständig bleibt, wer die Reklamation entgegengenommen hat. → **Nein:**
+  Mirjam als Joker dazuholen (16.4).
 
 Als Richtschnur gilt: **einfach** ist z. B. eine kleine Nacharbeit/ein Nachschneiden
-oder eine leichte Farbkorrektur. **Schwerwiegend** ist z. B. wenn der Gast Geld zurück
-oder einen Preisnachlass möchte, deutlich unzufrieden ist, oder sich wiederholt
-beschwert. Im Zweifel weiterhin: Salonleitung fragen, statt selbst zu entscheiden.
+oder eine leichte Farbkorrektur. Mirjam kommt als Joker dazu, wenn keine Lösung
+gefunden wird, der Fall eskaliert (z. B. deutliche Unzufriedenheit, wiederholte
+Beschwerde), oder wenn Geld zurück oder ein Preisnachlass gewünscht wird. Im Zweifel
+weiterhin: Mirjam fragen, statt selbst zu entscheiden.
 
 **Korrektur ist kein Rabatt.** Eine sofortige Korrektur (16.3) ist eine erneute bzw.
 angepasste Behandlung, kein Preisnachlass. Möchte der Gast zusätzlich oder stattdessen
