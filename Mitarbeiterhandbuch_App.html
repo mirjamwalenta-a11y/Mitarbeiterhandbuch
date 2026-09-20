@@ -738,6 +738,11 @@
     <div class="section-rule"></div>
     <p class="decision-note">Verdichtete Merkhilfe für den Sofortmoment am Kundenstuhl — ersetzt nicht das jeweilige Kapitel, sondern führt dorthin zurück. Kein Parallelwissen: nichts hier steht, was nicht auch im verlinkten Kapitel steht.</p>
 
+    <div class="wb-toolbar">
+      <input type="text" id="siSuche" placeholder="Situation suchen …">
+    </div>
+    <p class="wb-empty" id="siLeer" style="display:none">Nichts gefunden.</p>
+
     <div class="decision-box">
       <p class="decision-title">Gast ist mit dem Ergebnis nicht zufrieden</p>
       <ul class="decision-list">
@@ -2021,9 +2026,35 @@ function wbBindKarten() {
     card.addEventListener('click', () => wbOeffneArtikel(card.dataset.id));
   });
   document.querySelectorAll('#wbListe .wb-card[data-goto]').forEach(card => {
-    card.addEventListener('click', () => goTo(card.dataset.goto));
+    card.addEventListener('click', () => {
+      const ziel = card.dataset.goto;
+      if (ziel === 'situationen') {
+        document.getElementById('siSuche').value = document.getElementById('wbSuche').value.trim();
+        siAnwendenFilter();
+      }
+      goTo(ziel);
+    });
   });
 }
+
+// Häufige Situationen: eigene Live-Filterung, damit ein Suchtreffer
+// direkt nur die passende(n) Situation(en) zeigt statt aller 13.
+function siAnwendenFilter() {
+  const q = document.getElementById('siSuche').value.trim().toLowerCase();
+  const boxen = document.querySelectorAll('#sec-situationen .decision-box');
+  let treffer = 0;
+  boxen.forEach(box => {
+    const sichtbar = !q || box.textContent.toLowerCase().includes(q);
+    box.style.display = sichtbar ? '' : 'none';
+    if (sichtbar) treffer++;
+  });
+  document.getElementById('siLeer').style.display = treffer ? 'none' : 'block';
+}
+document.getElementById('siSuche').addEventListener('input', siAnwendenFilter);
+document.querySelector('.nav-item[data-section="situationen"]').addEventListener('click', () => {
+  document.getElementById('siSuche').value = '';
+  siAnwendenFilter();
+});
 
 document.getElementById('wbSuche').addEventListener('input', wbAnwendenFilter);
 
