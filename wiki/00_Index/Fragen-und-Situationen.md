@@ -9,6 +9,25 @@ Bei einer Fachfrage zuerst hier nachsehen, ob die Situation schon zugeordnet ist
 sie, gilt weiter der normale Suchweg aus `wiki-skill/SKILL.md` (INDEX → Glossar →
 Volltextsuche).
 
+## Häufige Situationen (Sofort-Übersicht)
+
+Verdichtete Merkhilfe für den Sofortmoment am Kundenstuhl — ersetzt nicht das jeweilige
+Kapitel, sondern führt dorthin zurück. Kein Parallelwissen: nichts hier steht, was nicht
+auch im verlinkten Kapitel steht.
+
+| Situation | Was tun jetzt? | Selbst entscheiden oder Mirjam? | Siehe Kapitel |
+|---|---|---|---|
+| Gast ist mit dem Ergebnis nicht zufrieden | Bedauern äußern, zuhören; einfache Reklamation sofort korrigieren | Einfach: selbst · Schwerwiegend (Geld zurück, Nachlass, deutliche Unzufriedenheit): Mirjam | MH-09 (9.4) · MH-16 (16.1–16.4) |
+| Gast beschwert sich über den Preis | Wie Reklamation behandeln: zuhören, Bedauern äußern, Betrag anhand Leistungen/Kostenvoranschlag erklären | Erklären: selbst · Rabatt/Geld zurück: immer Mirjam | MH-14 (14.7, Entscheidung Preisnachlass) |
+| Termin wurde falsch eingetragen | Eintrag direkt korrigieren; Gast nur informieren, wenn sich Zeit oder zuständige Person ändert; betroffene Stylistin/betroffener Stylist immer informieren | Selbst | MH-13 (13.10) |
+| Gast möchte spontan eine Zusatzleistung | Nur durchführen, wenn zeitlich ohne Verzögerung für den nächsten Gast möglich; sonst höflich ablehnen und für nächsten Besuch vormerken | Selbst | MH-13 (13.13) |
+| Produkt ist nicht lagernd | Selbst über Ersatzlösung entscheiden; fehlendes Produkt notieren, Nachbestellung veranlassen | Selbst | MH-09 (9.6) |
+| Reizung oder allergische Reaktion während der Behandlung | Produkt sofort abwaschen, Behandlung abbrechen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung | Sofortmaßnahme: selbst · danach: immer Mirjam hinzuziehen | MH-10 (10.9) · MH-11 (11.10) |
+| Gast bringt eigenes Produkt mit | Unbedenkliches Pflegeprodukt (z. B. Shampoo): nach eigenem Ermessen möglich · chemisches Produkt (Farbe, Dauerwelle): nicht verwenden | Pflegeprodukt: selbst · Chemisches Produkt: keine Ermessensfrage, Nein | MH-05 (5.5) |
+| Neukund:in ist unsicher und kann den Wunsch nicht gut ausdrücken | Frisurenmappe (zwei Lesezeichen-Farben) zum Aussuchen geben; Wunsch zusätzlich anhand von Bildern abklären, Vorschläge machen | Selbst | MH-06 (6.2) · MH-02 (2.4) |
+| Spannung oder Streit im Team vor Gästen | Sofort unterbrechen, vor Gästen nicht weiter austragen; danach unter vier Augen klären | Erst selbst (vier Augen) · gelingt das nicht: Mirjam | MH-20 (Umgang mit Konflikten und Fehlverhalten) |
+| Gerät fällt während der Behandlung aus | Salonleitung sofort informieren | Mirjam | MH-07 (7.10) |
+
 ## Empfang & Ablauf
 
 | Situation / Frage | Kapitel | Fundstelle |
