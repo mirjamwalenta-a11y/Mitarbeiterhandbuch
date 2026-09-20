@@ -116,6 +116,7 @@
   .nav-item-label {
     font-size: 13px; color: var(--ink); line-height: 1.4;
   }
+  a.nav-item { text-decoration: none; color: inherit; }
 
   .sidebar-footer {
     padding: 14px 20px; border-top: 1px solid var(--rule); flex-shrink: 0;
@@ -623,6 +624,10 @@
       <span class="nav-item-num">·</span>
       <span class="nav-item-label">Salon-Info</span>
     </button>
+    <a class="nav-item" href="https://mirjamwalenta-a11y.github.io/salon-checklist/salon-checklist.html" target="_blank" rel="noopener">
+      <span class="nav-item-num">☑</span>
+      <span class="nav-item-label">Tages-Checkliste &amp; SOPs ↗</span>
+    </a>
     <button class="nav-item" data-section="wissensbank">
       <span class="nav-item-num">✦</span>
       <span class="nav-item-label">Wissensbank</span>
@@ -1544,8 +1549,9 @@ menuBtn.addEventListener('click', () => {
 });
 overlay.addEventListener('click', closeSidebar);
 
-// Nav items
-document.querySelectorAll('.nav-item').forEach(btn => {
+// Nav items (externe Links wie die Checkliste haben kein data-section
+// und sollen normal navigieren, nicht goTo() auslösen)
+document.querySelectorAll('.nav-item[data-section]').forEach(btn => {
   btn.addEventListener('click', () => goTo(btn.dataset.section));
 });
 
