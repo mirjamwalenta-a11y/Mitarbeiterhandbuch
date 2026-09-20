@@ -13,13 +13,17 @@ schlagworte: [Telefon, Begrüßungsformel, Anruf]
 
 ### ⚡ Schnellantwort
 
-**Kern:** „Mirjam Walenta – A Great Hair Day, guten Tag – [Name] am Apparat" — lächeln,
-laut/deutlich/freundlich, vor dem 3. Läuten abheben.
+**Kern:** Wer am nächsten steht und gerade nicht wäscht, schneidet oder Farbe
+aufträgt, hebt vor dem 3. Läuten ab — feste Begrüßungsformel, freundlich und mit
+Namen. Am Ende ist der Termin (was, wann, bei wem) abgesichert; bei Terminänderung
+oder -absage wird die zuständige Stylistin/der zuständige Stylist sofort informiert.
 
-1. Begrüßungsformel verwenden, Gast mit Namen ansprechen (12.1).
+1. Begrüßungsformel verwenden, Wunsch-Stylist:in und Dienstleistung klären, Gast mit
+   Namen ansprechen (12.1–12.3).
 2. Am Ende Termin wiederholen: was, wann, bei wem (12.5).
-3. Bei Terminabsage: Ersatztermin anbieten, sonst Name/Telefonnummer notieren und
-   Stylist:in sofort informieren (12.8).
+3. Bei Terminänderung oder -absage: zuständige Stylistin/zuständigen Stylisten sofort
+   informieren; kommt kein Ersatztermin zustande, Name/Telefonnummer notieren (12.7,
+   12.8).
 
 Details: siehe 12.1–12.13 unten.
 
