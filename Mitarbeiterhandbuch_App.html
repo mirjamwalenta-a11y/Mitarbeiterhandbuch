@@ -441,6 +441,14 @@
     padding: 2px 8px; border-radius: 3px; margin-right: 8px;
   }
   .wb-empty { color: var(--ink-light); font-size: 13.5px; padding: 20px 0; }
+  .wb-filter-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+  .wb-chip {
+    border: 1px solid var(--border); background: #fff; color: var(--ink-mid);
+    font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 600;
+    padding: 5px 12px; border-radius: 14px; cursor: pointer; transition: all .12s;
+  }
+  .wb-chip:hover { border-color: var(--brown); color: var(--brown); }
+  .wb-chip.aktiv { background: var(--brown); border-color: var(--brown); color: #fff; }
   .wb-artikel-inhalt {
     font-size: 14.5px; line-height: 1.75; color: var(--ink); white-space: pre-wrap;
     margin: 18px 0;
@@ -1444,6 +1452,7 @@
       <input type="text" id="wbSuche" placeholder="Suchen …">
       <button class="btn-nav primary" id="wbNeuBtn">+ Neuer Artikel</button>
     </div>
+    <div class="wb-filter-chips" id="wbFilterChips"></div>
     <div id="wbMeineEntwuerfe"></div>
     <div id="wbListe"><p class="wb-empty">Lade …</p></div>
   </div>
@@ -1641,6 +1650,7 @@ document.getElementById('wbLogoutBtn').addEventListener('click', doLogout);
 // WISSENSBANK
 // ══════════════════════════════════════════════════════════
 let _wbListe = [];
+let _wbAktiveKategorie = null; // null = "Alle"
 
 async function wbLadeListe() {
   const el = document.getElementById('wbListe');
@@ -1658,7 +1668,46 @@ async function wbLadeListe() {
     meineEl.innerHTML = '<div class="section-h3 section-h3-spacer">Meine Entwürfe &amp; Vorschläge</div>' +
       eigeneOffen.map(wbKarteHtml).join('');
   }
-  wbRenderListe(_wbListe.filter(a => a.status === 'freigegeben'), []);
+  wbRenderFilterChips();
+  wbAnwendenFilter();
+}
+
+// ── Kategorie-Filter (Chips) + Suche kombiniert ────────────────
+function wbKategorien() {
+  const set = new Set();
+  _wbListe.forEach(a => { if (a.status === 'freigegeben' && a.kategorie) set.add(a.kategorie); });
+  return Array.from(set).sort((a, b) => a.localeCompare(b, 'de'));
+}
+
+function wbRenderFilterChips() {
+  const el = document.getElementById('wbFilterChips');
+  const kategorien = wbKategorien();
+  if (!kategorien.length) { el.innerHTML = ''; return; }
+  el.innerHTML = ['Alle', ...kategorien].map(k => {
+    const istAlle = k === 'Alle';
+    const aktiv = istAlle ? !_wbAktiveKategorie : k === _wbAktiveKategorie;
+    return `<button type="button" class="wb-chip${aktiv ? ' aktiv' : ''}" data-kategorie="${istAlle ? '' : esc(k)}">${esc(k)}</button>`;
+  }).join('');
+  el.querySelectorAll('.wb-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      _wbAktiveKategorie = btn.dataset.kategorie || null;
+      wbRenderFilterChips();
+      wbAnwendenFilter();
+    });
+  });
+}
+
+function wbAnwendenFilter() {
+  const q = document.getElementById('wbSuche').value.trim().toLowerCase();
+  let artikel = _wbListe.filter(a => a.status === 'freigegeben');
+  if (_wbAktiveKategorie) artikel = artikel.filter(a => a.kategorie === _wbAktiveKategorie);
+  let kapitel = [];
+  if (q) {
+    artikel = artikel.filter(a => a.titel.toLowerCase().includes(q) ||
+      (a.kategorie || '').toLowerCase().includes(q) || a.inhalt.toLowerCase().includes(q));
+    if (!_wbAktiveKategorie) kapitel = wbSucheKapitel(q);
+  }
+  wbRenderListe(artikel, kapitel);
   wbBindKarten();
 }
 
@@ -1733,14 +1782,7 @@ function wbBindKarten() {
   });
 }
 
-document.getElementById('wbSuche').addEventListener('input', e => {
-  const q = e.target.value.trim().toLowerCase();
-  if (!q) { wbRenderListe(_wbListe.filter(a => a.status === 'freigegeben'), []); wbBindKarten(); return; }
-  const treffer = _wbListe.filter(a => a.status === 'freigegeben' &&
-    (a.titel.toLowerCase().includes(q) || (a.kategorie || '').toLowerCase().includes(q) || a.inhalt.toLowerCase().includes(q)));
-  wbRenderListe(treffer, wbSucheKapitel(q));
-  wbBindKarten();
-});
+document.getElementById('wbSuche').addEventListener('input', wbAnwendenFilter);
 
 function wbOeffneArtikel(id) {
   const a = _wbListe.find(x => x.id === id);
