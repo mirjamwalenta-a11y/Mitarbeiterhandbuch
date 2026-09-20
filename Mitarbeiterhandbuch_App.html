@@ -1712,9 +1712,8 @@ function nachAnmeldung() {
   document.getElementById('wbUserName').textContent = _me.name || _me.email;
   if (_me.rolle === 'inhaberin') {
     document.getElementById('navWbReview').style.display = 'flex';
-    wbAktualisierePendingBadge();
     document.getElementById('navRzReview').style.display = 'flex';
-    rzAktualisierePendingBadge();
+    handbuchOSAktualisieren();
   }
   goTo('cover');
 }
@@ -1903,13 +1902,14 @@ document.getElementById('wbNeuSpeichernBtn').addEventListener('click', async () 
 
 // ── Review (nur Inhaberin) ──────────────────────────────────
 async function wbAktualisierePendingBadge() {
-  if (_me.rolle !== 'inhaberin') return;
+  if (_me.rolle !== 'inhaberin') return 0;
   try {
     const offen = await supaGet('wissensbank_artikel', 'select=id&status=eq.eingereicht');
     const badge = document.getElementById('wbPendingCount');
     if (offen.length > 0) { badge.textContent = offen.length; badge.style.display = 'inline-flex'; }
     else { badge.style.display = 'none'; }
-  } catch (e) {}
+    return offen.length;
+  } catch (e) { return 0; }
 }
 
 async function wbLadeReview() {
@@ -1939,7 +1939,7 @@ async function wbFreigeben(id) {
       status: 'freigegeben', freigegeben_von: _me.email, freigegeben_am: new Date().toISOString(),
     });
     wbLadeReview();
-    wbAktualisierePendingBadge();
+    handbuchOSAktualisieren();
   } catch (e) {
     alert('Freigeben fehlgeschlagen: ' + e.message);
   }
@@ -1950,7 +1950,7 @@ async function wbAblehnen(id) {
   try {
     await supaDelete('wissensbank_artikel', `id=eq.${id}`);
     wbLadeReview();
-    wbAktualisierePendingBadge();
+    handbuchOSAktualisieren();
   } catch (e) {
     alert('Ablehnen fehlgeschlagen: ' + e.message);
   }
@@ -2133,13 +2133,14 @@ document.getElementById('rzNeuSpeichernBtn').addEventListener('click', async () 
 
 // ── Review (nur Inhaberin) ──────────────────────────────────
 async function rzAktualisierePendingBadge() {
-  if (_me.rolle !== 'inhaberin') return;
+  if (_me.rolle !== 'inhaberin') return 0;
   try {
     const offen = await supaGet('wissensbank_rezepturen', 'select=id&status=eq.eingereicht');
     const badge = document.getElementById('rzPendingCount');
     if (offen.length > 0) { badge.textContent = offen.length; badge.style.display = 'inline-flex'; }
     else { badge.style.display = 'none'; }
-  } catch (e) {}
+    return offen.length;
+  } catch (e) { return 0; }
 }
 
 async function rzLadeReview() {
@@ -2175,7 +2176,7 @@ async function rzFreigeben(id) {
       status: 'freigegeben', freigegeben_von: _me.email, freigegeben_am: new Date().toISOString(),
     });
     rzLadeReview();
-    rzAktualisierePendingBadge();
+    handbuchOSAktualisieren();
   } catch (e) {
     alert('Freigeben fehlgeschlagen: ' + e.message);
   }
@@ -2186,10 +2187,47 @@ async function rzAblehnen(id) {
   try {
     await supaDelete('wissensbank_rezepturen', `id=eq.${id}`);
     rzLadeReview();
-    rzAktualisierePendingBadge();
+    handbuchOSAktualisieren();
   } catch (e) {
     alert('Ablehnen fehlgeschlagen: ' + e.message);
   }
+}
+
+// ── OS-Integration: offene Vorschläge (Wissensbank + Fachwissen
+// Farbe zusammen) ins zentrale "Offene Sachen"-System melden, nach
+// demselben Muster wie syncTeamOS() in team.html ────────────────
+async function syncHandbuchOS(wbAnzahl, rzAnzahl) {
+  try {
+    const BELEGE_URL = 'https://lpuxvvfrrcnbuzafscyk.supabase.co';
+    const BELEGE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxwdXh2dmZycmNuYnV6YWZzY3lrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ2ODIxNDcsImV4cCI6MjEwMDI1ODE0N30.6VZUmmXj_x3Q8J55s_tbOHcW5-U5OXllGoEBhypaVfI';
+    const headers = { 'apikey': BELEGE_KEY, 'Authorization': 'Bearer ' + BELEGE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' };
+    const gesamt = wbAnzahl + rzAnzahl;
+
+    if (gesamt === 0) {
+      await fetch(`${BELEGE_URL}/rest/v1/os_aufgaben?bereich=eq.handbuch&status=eq.offen`, { method: 'PATCH', headers, body: JSON.stringify({ status: 'erledigt', erledigt_am: new Date().toISOString() }) });
+      return;
+    }
+    const teile = [];
+    if (wbAnzahl > 0) teile.push(`${wbAnzahl} Wissensbank`);
+    if (rzAnzahl > 0) teile.push(`${rzAnzahl} Fachwissen Farbe`);
+    const titel = gesamt === 1
+      ? `1 Vorschlag wartet auf Freigabe (${teile.join(', ')})`
+      : `${gesamt} Vorschläge warten auf Freigabe (${teile.join(', ')})`;
+
+    const r = await fetch(`${BELEGE_URL}/rest/v1/os_aufgaben?bereich=eq.handbuch&status=eq.offen&select=id`, { headers: { 'apikey': BELEGE_KEY, 'Authorization': 'Bearer ' + BELEGE_KEY } });
+    const existing = await r.json();
+    if (Array.isArray(existing) && existing.length > 0) {
+      await fetch(`${BELEGE_URL}/rest/v1/os_aufgaben?bereich=eq.handbuch&status=eq.offen`, { method: 'PATCH', headers, body: JSON.stringify({ titel }) });
+    } else {
+      await fetch(`${BELEGE_URL}/rest/v1/os_aufgaben`, { method: 'POST', headers, body: JSON.stringify({ bereich: 'handbuch', titel, status: 'offen', prioritaet: 'grau', quelle: 'app', app_link: 'https://mirjamwalenta-a11y.github.io/Mitarbeiterhandbuch/Mitarbeiterhandbuch_App.html' }) });
+    }
+  } catch (e) { console.warn('OS-Sync Handbuch fehlgeschlagen:', e.message); }
+}
+
+async function handbuchOSAktualisieren() {
+  if (_me.rolle !== 'inhaberin') return;
+  const [wbAnzahl, rzAnzahl] = await Promise.all([wbAktualisierePendingBadge(), rzAktualisierePendingBadge()]);
+  await syncHandbuchOS(wbAnzahl || 0, rzAnzahl || 0);
 }
 
 // ══════════════════════════════════════════════════════════
