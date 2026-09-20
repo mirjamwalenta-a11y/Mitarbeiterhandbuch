@@ -1541,7 +1541,7 @@
   <!-- FACHWISSEN FARBE: Neue Rezeptur -->
   <div class="section" id="sec-rezeptur-neu">
     <div class="section-tag">Fachwissen Farbe</div>
-    <h2 class="section-h2" style="display:block; margin-bottom:5px;">Neue Rezeptur</h2>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;" id="rzNeuUeberschrift">Neue Rezeptur</h2>
     <p class="section-subtitle" id="rzNeuHinweis"></p>
     <div class="wb-form-field">
       <label for="rzNeuTitel">Titel</label>
@@ -2135,6 +2135,14 @@ async function rzOeffneEintrag(id) {
 
   const aktionen = document.getElementById('rzDetailAktionen');
   aktionen.innerHTML = '<button class="btn-nav" onclick="goTo(\'rezepturen\')">← Fachwissen Farbe</button><div class="btn-spacer"></div>';
+  const darfBearbeiten = (a.ersteller_email === _me.email && a.status !== 'freigegeben') || _me.rolle === 'inhaberin';
+  if (darfBearbeiten) {
+    const editBtn = document.createElement('button');
+    editBtn.className = 'btn-nav';
+    editBtn.textContent = '✎ Bearbeiten';
+    editBtn.onclick = () => rzBearbeiteEintrag(a.id);
+    aktionen.appendChild(editBtn);
+  }
   const darfLoeschen = (a.ersteller_email === _me.email && a.status !== 'freigegeben') || _me.rolle === 'inhaberin';
   if (darfLoeschen) {
     const btn = document.createElement('button');
@@ -2161,7 +2169,14 @@ async function rzLoescheEintrag(id) {
   }
 }
 
+let _rzBearbeiteId = null;
+let _rzBearbeiteAltesBild = null;
+let _rzSkipFormReset = false;
+
 function rzNeuFormular() {
+  if (_rzSkipFormReset) { _rzSkipFormReset = false; return; }
+  _rzBearbeiteId = null;
+  document.getElementById('rzNeuUeberschrift').textContent = 'Neue Rezeptur';
   document.getElementById('rzNeuTitel').value = '';
   document.getElementById('rzNeuBereich').value = 'Blondierung';
   document.getElementById('rzNeuProdukt').value = '';
@@ -2176,6 +2191,34 @@ function rzNeuFormular() {
   document.getElementById('rzNeuHinweis').textContent = _me.rolle === 'inhaberin'
     ? 'Wird sofort für das ganze Team sichtbar.'
     : 'Wird als Vorschlag an Mirjam gesendet — sichtbar wird er erst nach ihrer Freigabe.';
+}
+
+async function rzBearbeiteEintrag(id) {
+  const a = _rzListe.find(x => x.id === id);
+  if (!a) return;
+  _rzBearbeiteId = id;
+  _rzBearbeiteAltesBild = a.bild_pfad || null;
+  document.getElementById('rzNeuUeberschrift').textContent = 'Rezeptur bearbeiten';
+  document.getElementById('rzNeuTitel').value = a.titel;
+  document.getElementById('rzNeuBereich').value = a.anwendungsbereich;
+  document.getElementById('rzNeuProdukt').value = a.produkt_marke || '';
+  document.getElementById('rzNeuMischverhaeltnis').value = a.mischverhaeltnis || '';
+  document.getElementById('rzNeuEinwirkzeit').value = a.einwirkzeit || '';
+  document.getElementById('rzNeuAnleitung').value = a.anleitung || '';
+  document.getElementById('rzNeuWarnhinweise').value = a.warnhinweise || '';
+  document.getElementById('rzNeuBild').value = '';
+  const vorschau = document.getElementById('rzNeuBildVorschau');
+  vorschau.style.display = 'none';
+  vorschau.src = '';
+  if (a.bild_pfad) {
+    try {
+      const { data } = await sbAuth.storage.from('rezeptur-bilder').createSignedUrl(a.bild_pfad, 3600);
+      if (data?.signedUrl) { vorschau.src = data.signedUrl; vorschau.style.display = 'block'; }
+    } catch (e) { /* Vorschau optional, kein Blocker */ }
+  }
+  document.getElementById('rzNeuHinweis').textContent = 'Ein neues Foto auswählen ersetzt das vorhandene. Änderungen werden beim Speichern sofort übernommen.';
+  _rzSkipFormReset = true;
+  goTo('rezeptur-neu');
 }
 
 document.getElementById('rzNeuBtn').addEventListener('click', () => goTo('rezeptur-neu'));
@@ -2197,10 +2240,41 @@ document.getElementById('rzNeuSpeichernBtn').addEventListener('click', async () 
   const anleitung = document.getElementById('rzNeuAnleitung').value.trim();
   const warnhinweise = document.getElementById('rzNeuWarnhinweise').value.trim();
   if (!titel || !anleitung) { alert('Bitte mindestens Titel und Anleitung ausfüllen.'); return; }
-  const status = _me.rolle === 'inhaberin' ? 'freigegeben' : 'eingereicht';
   const btn = document.getElementById('rzNeuSpeichernBtn');
   btn.disabled = true; btn.textContent = 'Speichert …';
   try {
+    if (_rzBearbeiteId) {
+      const id = _rzBearbeiteId;
+      const body = {
+        titel, anwendungsbereich, anleitung,
+        produkt_marke: produkt_marke || null,
+        mischverhaeltnis: mischverhaeltnis || null,
+        einwirkzeit: einwirkzeit || null,
+        warnhinweise: warnhinweise || null,
+      };
+      const datei = document.getElementById('rzNeuBild').files[0];
+      if (datei) {
+        try {
+          const endung = (datei.name.split('.').pop() || 'jpg').toLowerCase();
+          const pfad = `${id}/foto-${Date.now()}.${endung}`;
+          const { error: upErr } = await sbAuth.storage.from('rezeptur-bilder').upload(pfad, datei, { contentType: datei.type });
+          if (upErr) throw upErr;
+          body.bild_pfad = pfad;
+        } catch (e) {
+          console.error('Foto-Upload fehlgeschlagen:', e.message);
+          alert('Änderungen werden gespeichert, das neue Foto konnte aber nicht hochgeladen werden.');
+        }
+      }
+      await supaPatch('wissensbank_rezepturen', `id=eq.${id}`, body);
+      if (body.bild_pfad && _rzBearbeiteAltesBild && _rzBearbeiteAltesBild !== body.bild_pfad) {
+        try { await sbAuth.storage.from('rezeptur-bilder').remove([_rzBearbeiteAltesBild]); } catch (e) { /* altes Foto bleibt ggf. verwaist zurück, nicht blockierend */ }
+      }
+      _rzBearbeiteId = null;
+      _rzBearbeiteAltesBild = null;
+      goTo('rezepturen');
+      return;
+    }
+    const status = _me.rolle === 'inhaberin' ? 'freigegeben' : 'eingereicht';
     const body = {
       titel, anwendungsbereich, anleitung, status,
       produkt_marke: produkt_marke || null,
