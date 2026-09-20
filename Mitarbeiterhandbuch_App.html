@@ -631,6 +631,14 @@
       <span class="nav-item-num">✎</span>
       <span class="nav-item-label">Ausstehende Vorschläge<span class="wb-badge-pending" id="wbPendingCount" style="display:none">0</span></span>
     </button>
+    <button class="nav-item" data-section="rezepturen">
+      <span class="nav-item-num">✎</span>
+      <span class="nav-item-label">Fachwissen Farbe</span>
+    </button>
+    <button class="nav-item" data-section="rezeptur-review" id="navRzReview" style="display:none">
+      <span class="nav-item-num">✎</span>
+      <span class="nav-item-label">Rezeptur-Vorschläge<span class="wb-badge-pending" id="rzPendingCount" style="display:none">0</span></span>
+    </button>
   </div>
   <div class="wb-user-info" id="wbUserInfo" style="display:none">
     <span id="wbUserName"></span>
@@ -1491,6 +1499,86 @@
     <div id="wbReviewListe"><p class="wb-empty">Lade …</p></div>
   </div>
 
+  <!-- FACHWISSEN FARBE: Liste -->
+  <div class="section" id="sec-rezepturen">
+    <div class="section-tag">Gemeinsam gepflegt</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;">Fachwissen Farbe</h2>
+    <p class="section-subtitle">Rezepturen, Mischverhältnisse und Einwirkzeiten — strukturiert statt aus dem Kopf.</p>
+    <div class="wb-toolbar">
+      <input type="text" id="rzSuche" placeholder="Suchen …">
+      <button class="btn-nav primary" id="rzNeuBtn">+ Neue Rezeptur</button>
+    </div>
+    <div class="wb-filter-chips" id="rzFilterChips"></div>
+    <div id="rzMeineEntwuerfe"></div>
+    <div id="rzListe"><p class="wb-empty">Lade …</p></div>
+  </div>
+
+  <!-- FACHWISSEN FARBE: Detail -->
+  <div class="section" id="sec-rezeptur-detail">
+    <div class="section-tag" id="rzDetailBereich">Fachwissen Farbe</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;" id="rzDetailTitel"></h2>
+    <p class="section-subtitle" id="rzDetailMeta"></p>
+    <div class="wb-artikel-inhalt" id="rzDetailFelder"></div>
+    <div class="bottom-nav" id="rzDetailAktionen">
+      <button class="btn-nav" onclick="goTo('rezepturen')">← Fachwissen Farbe</button>
+    </div>
+  </div>
+
+  <!-- FACHWISSEN FARBE: Neue Rezeptur -->
+  <div class="section" id="sec-rezeptur-neu">
+    <div class="section-tag">Fachwissen Farbe</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;">Neue Rezeptur</h2>
+    <p class="section-subtitle" id="rzNeuHinweis"></p>
+    <div class="wb-form-field">
+      <label for="rzNeuTitel">Titel</label>
+      <input type="text" id="rzNeuTitel" placeholder="z. B. Ansatzfarbe + Längenausgleich, Balayage-Blondierung …">
+    </div>
+    <div class="wb-form-field">
+      <label for="rzNeuBereich">Anwendungsbereich</label>
+      <select id="rzNeuBereich">
+        <option value="Blondierung">Blondierung</option>
+        <option value="Tönung">Tönung</option>
+        <option value="Farbkorrektur">Farbkorrektur</option>
+        <option value="Dauerwelle">Dauerwelle</option>
+        <option value="Pflege">Pflege</option>
+        <option value="Sonstiges">Sonstiges</option>
+      </select>
+    </div>
+    <div class="wb-form-field">
+      <label for="rzNeuProdukt">Produkt / Marke</label>
+      <input type="text" id="rzNeuProdukt" placeholder="z. B. Wella Koleston Perfect 7/0">
+    </div>
+    <div class="wb-form-field">
+      <label for="rzNeuMischverhaeltnis">Mischverhältnis</label>
+      <input type="text" id="rzNeuMischverhaeltnis" placeholder="z. B. 1:1,5 mit 6% Entwickler">
+    </div>
+    <div class="wb-form-field">
+      <label for="rzNeuEinwirkzeit">Einwirkzeit</label>
+      <input type="text" id="rzNeuEinwirkzeit" placeholder="z. B. 30–35 Minuten bei Zimmertemperatur">
+    </div>
+    <div class="wb-form-field">
+      <label for="rzNeuAnleitung">Anleitung / Vorgehen</label>
+      <textarea id="rzNeuAnleitung" rows="8" placeholder="Schritt für Schritt, was zu tun ist …"></textarea>
+    </div>
+    <div class="wb-form-field">
+      <label for="rzNeuWarnhinweise">Warnhinweise (optional)</label>
+      <textarea id="rzNeuWarnhinweise" rows="3" placeholder="z. B. Allergietest, nicht kombinieren mit …"></textarea>
+    </div>
+    <div class="bottom-nav">
+      <button class="btn-nav" onclick="goTo('rezepturen')">Abbrechen</button>
+      <div class="btn-spacer"></div>
+      <button class="btn-nav primary" id="rzNeuSpeichernBtn">Speichern</button>
+    </div>
+  </div>
+
+  <!-- FACHWISSEN FARBE: Ausstehende Vorschläge (nur Inhaberin) -->
+  <div class="section" id="sec-rezeptur-review">
+    <div class="section-tag">Nur für dich sichtbar</div>
+    <h2 class="section-h2" style="display:block; margin-bottom:5px;">Ausstehende Rezeptur-Vorschläge</h2>
+    <p class="section-subtitle">Rezepturen, die dein Team eingereicht hat und die auf deine Freigabe warten.</p>
+    <div id="rzReviewListe"><p class="wb-empty">Lade …</p></div>
+  </div>
+
 </main>
 
 <script>
@@ -1523,6 +1611,9 @@ function goTo(id) {
   if (id === 'wissensbank') wbLadeListe();
   if (id === 'wb-review') wbLadeReview();
   if (id === 'wb-neu') wbNeuFormular();
+  if (id === 'rezepturen') rzLadeListe();
+  if (id === 'rezeptur-review') rzLadeReview();
+  if (id === 'rezeptur-neu') rzNeuFormular();
 }
 
 // Sidebar
@@ -1622,6 +1713,8 @@ function nachAnmeldung() {
   if (_me.rolle === 'inhaberin') {
     document.getElementById('navWbReview').style.display = 'flex';
     wbAktualisierePendingBadge();
+    document.getElementById('navRzReview').style.display = 'flex';
+    rzAktualisierePendingBadge();
   }
   goTo('cover');
 }
@@ -1858,6 +1951,242 @@ async function wbAblehnen(id) {
     await supaDelete('wissensbank_artikel', `id=eq.${id}`);
     wbLadeReview();
     wbAktualisierePendingBadge();
+  } catch (e) {
+    alert('Ablehnen fehlgeschlagen: ' + e.message);
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+// FACHWISSEN FARBE (Rezepturen) — gleicher Freigabe-Workflow
+// wie die Wissensbank, aber mit strukturierten Feldern statt
+// Freitext, damit Mischverhältnis/Einwirkzeit/Warnhinweise beim
+// Nachschlagen unter Zeitdruck am Stuhl klar getrennt sind.
+// ══════════════════════════════════════════════════════════
+let _rzListe = [];
+let _rzAktiverBereich = null; // null = "Alle"
+const RZ_BEREICHE = ['Blondierung', 'Tönung', 'Farbkorrektur', 'Dauerwelle', 'Pflege', 'Sonstiges'];
+
+async function rzLadeListe() {
+  const el = document.getElementById('rzListe');
+  const meineEl = document.getElementById('rzMeineEntwuerfe');
+  el.innerHTML = '<p class="wb-empty">Lade …</p>';
+  meineEl.innerHTML = '';
+  try {
+    const filter = _me.rolle === 'inhaberin'
+      ? 'select=*&order=erstellt_am.desc'
+      : `select=*&order=erstellt_am.desc&or=(status.eq.freigegeben,ersteller_email.eq.${encodeURIComponent(_me.email)})`;
+    _rzListe = await supaGet('wissensbank_rezepturen', filter);
+  } catch (e) {
+    el.innerHTML = '<p class="wb-empty">Fachwissen Farbe konnte nicht geladen werden.</p>';
+    return;
+  }
+  const eigeneOffen = _rzListe.filter(a => a.status !== 'freigegeben' && a.ersteller_email === _me.email);
+  if (eigeneOffen.length) {
+    meineEl.innerHTML = '<div class="section-h3 section-h3-spacer">Meine Entwürfe &amp; Vorschläge</div>' +
+      eigeneOffen.map(rzKarteHtml).join('');
+  }
+  rzRenderFilterChips();
+  rzAnwendenFilter();
+  rzBindKarten();
+}
+
+function rzRenderFilterChips() {
+  const el = document.getElementById('rzFilterChips');
+  el.innerHTML = ['Alle', ...RZ_BEREICHE].map(k => {
+    const istAlle = k === 'Alle';
+    const aktiv = istAlle ? !_rzAktiverBereich : k === _rzAktiverBereich;
+    return `<button type="button" class="wb-chip${aktiv ? ' aktiv' : ''}" data-bereich="${istAlle ? '' : esc(k)}">${esc(k)}</button>`;
+  }).join('');
+  el.querySelectorAll('.wb-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      _rzAktiverBereich = btn.dataset.bereich || null;
+      rzRenderFilterChips();
+      rzAnwendenFilter();
+    });
+  });
+}
+
+function rzAnwendenFilter() {
+  const q = document.getElementById('rzSuche').value.trim().toLowerCase();
+  let liste = _rzListe.filter(a => a.status === 'freigegeben');
+  if (_rzAktiverBereich) liste = liste.filter(a => a.anwendungsbereich === _rzAktiverBereich);
+  if (q) {
+    liste = liste.filter(a => a.titel.toLowerCase().includes(q) ||
+      (a.produkt_marke || '').toLowerCase().includes(q) ||
+      a.anwendungsbereich.toLowerCase().includes(q) ||
+      a.anleitung.toLowerCase().includes(q));
+  }
+  rzRenderListe(liste);
+  rzBindKarten();
+}
+
+function rzRenderListe(liste) {
+  const el = document.getElementById('rzListe');
+  el.innerHTML = liste.length ? liste.map(rzKarteHtml).join('') : '<p class="wb-empty">Nichts gefunden.</p>';
+}
+
+function rzKarteHtml(a) {
+  const statusTag = a.status === 'eingereicht' ? '<span class="wb-status-tag wb-status-eingereicht">Wartet auf Freigabe</span>'
+    : a.status === 'entwurf' ? '<span class="wb-status-tag wb-status-entwurf">Entwurf</span>' : '';
+  const details = [a.produkt_marke, a.einwirkzeit].filter(Boolean).join(' · ');
+  return `<div class="wb-card" data-id="${esc(a.id)}">
+    <div class="wb-card-titel">${esc(a.titel)}${statusTag}</div>
+    <div class="wb-card-meta"><span class="wb-card-kategorie">${esc(a.anwendungsbereich)}</span>${esc(details)}</div>
+  </div>`;
+}
+
+function rzBindKarten() {
+  document.querySelectorAll('#rzListe .wb-card[data-id], #rzMeineEntwuerfe .wb-card[data-id]').forEach(card => {
+    card.addEventListener('click', () => rzOeffneEintrag(card.dataset.id));
+  });
+}
+
+document.getElementById('rzSuche').addEventListener('input', rzAnwendenFilter);
+
+function rzOeffneEintrag(id) {
+  const a = _rzListe.find(x => x.id === id);
+  if (!a) return;
+  document.getElementById('rzDetailBereich').textContent = a.anwendungsbereich;
+  document.getElementById('rzDetailTitel').textContent = a.titel;
+  document.getElementById('rzDetailMeta').textContent =
+    `${a.ersteller_name || a.ersteller_email} · ${new Date(a.erstellt_am).toLocaleDateString('de-AT')}`;
+
+  const felder = [
+    ['Produkt / Marke', a.produkt_marke],
+    ['Mischverhältnis', a.mischverhaeltnis],
+    ['Einwirkzeit', a.einwirkzeit],
+    ['Anleitung', a.anleitung],
+    ['Warnhinweise', a.warnhinweise],
+  ].filter(([, wert]) => wert);
+  document.getElementById('rzDetailFelder').innerHTML = felder.map(([label, wert]) =>
+    `<div style="margin-bottom:14px"><div class="wb-card-kategorie" style="margin-bottom:6px">${esc(label)}</div><div>${esc(wert)}</div></div>`
+  ).join('');
+
+  const aktionen = document.getElementById('rzDetailAktionen');
+  aktionen.innerHTML = '<button class="btn-nav" onclick="goTo(\'rezepturen\')">← Fachwissen Farbe</button><div class="btn-spacer"></div>';
+  const darfLoeschen = (a.ersteller_email === _me.email && a.status !== 'freigegeben') || _me.rolle === 'inhaberin';
+  if (darfLoeschen) {
+    const btn = document.createElement('button');
+    btn.className = 'btn-nav';
+    btn.textContent = '🗑 Löschen';
+    btn.onclick = () => rzLoescheEintrag(a.id);
+    aktionen.appendChild(btn);
+  }
+  goTo('rezeptur-detail');
+}
+
+async function rzLoescheEintrag(id) {
+  if (!confirm('Diese Rezeptur wirklich löschen?')) return;
+  try {
+    await supaDelete('wissensbank_rezepturen', `id=eq.${id}`);
+    goTo('rezepturen');
+  } catch (e) {
+    alert('Löschen fehlgeschlagen: ' + e.message);
+  }
+}
+
+function rzNeuFormular() {
+  document.getElementById('rzNeuTitel').value = '';
+  document.getElementById('rzNeuBereich').value = 'Blondierung';
+  document.getElementById('rzNeuProdukt').value = '';
+  document.getElementById('rzNeuMischverhaeltnis').value = '';
+  document.getElementById('rzNeuEinwirkzeit').value = '';
+  document.getElementById('rzNeuAnleitung').value = '';
+  document.getElementById('rzNeuWarnhinweise').value = '';
+  document.getElementById('rzNeuHinweis').textContent = _me.rolle === 'inhaberin'
+    ? 'Wird sofort für das ganze Team sichtbar.'
+    : 'Wird als Vorschlag an Mirjam gesendet — sichtbar wird er erst nach ihrer Freigabe.';
+}
+
+document.getElementById('rzNeuBtn').addEventListener('click', () => goTo('rezeptur-neu'));
+
+document.getElementById('rzNeuSpeichernBtn').addEventListener('click', async () => {
+  const titel = document.getElementById('rzNeuTitel').value.trim();
+  const anwendungsbereich = document.getElementById('rzNeuBereich').value;
+  const produkt_marke = document.getElementById('rzNeuProdukt').value.trim();
+  const mischverhaeltnis = document.getElementById('rzNeuMischverhaeltnis').value.trim();
+  const einwirkzeit = document.getElementById('rzNeuEinwirkzeit').value.trim();
+  const anleitung = document.getElementById('rzNeuAnleitung').value.trim();
+  const warnhinweise = document.getElementById('rzNeuWarnhinweise').value.trim();
+  if (!titel || !anleitung) { alert('Bitte mindestens Titel und Anleitung ausfüllen.'); return; }
+  const status = _me.rolle === 'inhaberin' ? 'freigegeben' : 'eingereicht';
+  const btn = document.getElementById('rzNeuSpeichernBtn');
+  btn.disabled = true; btn.textContent = 'Speichert …';
+  try {
+    const body = {
+      titel, anwendungsbereich, anleitung, status,
+      produkt_marke: produkt_marke || null,
+      mischverhaeltnis: mischverhaeltnis || null,
+      einwirkzeit: einwirkzeit || null,
+      warnhinweise: warnhinweise || null,
+      ersteller_email: _me.email, ersteller_name: _me.name,
+    };
+    if (status === 'freigegeben') { body.freigegeben_von = _me.email; body.freigegeben_am = new Date().toISOString(); }
+    await supaPost('wissensbank_rezepturen', body);
+    goTo('rezepturen');
+  } catch (e) {
+    alert('Speichern fehlgeschlagen: ' + e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = 'Speichern';
+  }
+});
+
+// ── Review (nur Inhaberin) ──────────────────────────────────
+async function rzAktualisierePendingBadge() {
+  if (_me.rolle !== 'inhaberin') return;
+  try {
+    const offen = await supaGet('wissensbank_rezepturen', 'select=id&status=eq.eingereicht');
+    const badge = document.getElementById('rzPendingCount');
+    if (offen.length > 0) { badge.textContent = offen.length; badge.style.display = 'inline-flex'; }
+    else { badge.style.display = 'none'; }
+  } catch (e) {}
+}
+
+async function rzLadeReview() {
+  const el = document.getElementById('rzReviewListe');
+  el.innerHTML = '<p class="wb-empty">Lade …</p>';
+  try {
+    const offen = await supaGet('wissensbank_rezepturen', 'select=*&status=eq.eingereicht&order=erstellt_am.asc');
+    if (!offen.length) { el.innerHTML = '<p class="wb-empty">Keine offenen Vorschläge — alles erledigt.</p>'; return; }
+    el.innerHTML = offen.map(a => {
+      const felder = [
+        ['Produkt / Marke', a.produkt_marke], ['Mischverhältnis', a.mischverhaeltnis],
+        ['Einwirkzeit', a.einwirkzeit], ['Anleitung', a.anleitung], ['Warnhinweise', a.warnhinweise],
+      ].filter(([, wert]) => wert);
+      return `
+      <div class="wb-card" style="cursor:default">
+        <div class="wb-card-titel">${esc(a.titel)}</div>
+        <div class="wb-card-meta"><span class="wb-card-kategorie">${esc(a.anwendungsbereich)}</span>${esc(a.ersteller_name || a.ersteller_email)} · ${new Date(a.erstellt_am).toLocaleDateString('de-AT')}</div>
+        <div class="wb-artikel-inhalt" style="margin:12px 0">${felder.map(([label, wert]) => `<div style="margin-bottom:8px"><strong>${esc(label)}:</strong> ${esc(wert)}</div>`).join('')}</div>
+        <div class="wb-review-actions">
+          <button class="btn-nav primary" onclick="rzFreigeben('${a.id}')">✓ Freigeben</button>
+          <button class="btn-nav" onclick="rzAblehnen('${a.id}')">Ablehnen</button>
+        </div>
+      </div>`;
+    }).join('');
+  } catch (e) {
+    el.innerHTML = '<p class="wb-empty">Vorschläge konnten nicht geladen werden.</p>';
+  }
+}
+
+async function rzFreigeben(id) {
+  try {
+    await supaPatch('wissensbank_rezepturen', `id=eq.${id}`, {
+      status: 'freigegeben', freigegeben_von: _me.email, freigegeben_am: new Date().toISOString(),
+    });
+    rzLadeReview();
+    rzAktualisierePendingBadge();
+  } catch (e) {
+    alert('Freigeben fehlgeschlagen: ' + e.message);
+  }
+}
+
+async function rzAblehnen(id) {
+  if (!confirm('Diesen Vorschlag wirklich ablehnen und löschen?')) return;
+  try {
+    await supaDelete('wissensbank_rezepturen', `id=eq.${id}`);
+    rzLadeReview();
+    rzAktualisierePendingBadge();
   } catch (e) {
     alert('Ablehnen fehlgeschlagen: ' + e.message);
   }
