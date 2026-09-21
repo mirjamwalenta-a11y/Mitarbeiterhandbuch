@@ -268,6 +268,12 @@
     border-top: 1px solid var(--rule); padding-top: 10px;
   }
   .decision-note { font-size: 13px; color: var(--ink-mid); line-height: 1.6; margin-bottom: 22px; }
+  .wb-situation-treffer {
+    border: 1px solid var(--border); border-radius: 3px; padding: 16px 20px;
+    margin: 0 0 12px; background: #fff; cursor: pointer; transition: border-color .12s;
+  }
+  .wb-situation-treffer:hover { border-color: var(--brown); }
+  .wb-situation-treffer .decision-open { margin-top: 12px; }
 
   /* Tags */
   .tag {
@@ -1957,8 +1963,20 @@ function wbRenderFilterChips() {
 // Wörtern zu als eine reine Ein-Stück-Teilstring-Suche verlangt. sucheTrifft()
 // zerlegt die Anfrage daher in Wörter und lässt es genügen, wenn ein Großteil
 // davon irgendwo im Text vorkommt — statt die komplette Phrase am Stück.
+// Generische Füll-/Funktionswörter sowie "Gast"/"Kunde" (im Handbuch auf
+// praktisch jeder Seite vorhanden) tragen keine Unterscheidungskraft und
+// würden sonst allein durch Zufalls-Kookkurrenz in fast jedem Kapitel
+// eine Mehrheitsschwelle erreichen.
+const SUCHE_STOPWOERTER = new Set([
+  'der', 'die', 'das', 'den', 'dem', 'des', 'ein', 'eine', 'einen', 'einem', 'einer',
+  'ist', 'sind', 'war', 'waren', 'wird', 'werden', 'hat', 'haben', 'sein', 'sich',
+  'und', 'oder', 'aber', 'wenn', 'dass', 'wie', 'als', 'auch', 'noch', 'nur', 'schon',
+  'für', 'mit', 'auf', 'aus', 'bei', 'nach', 'vor', 'über', 'unter', 'zwischen',
+  'nicht', 'kein', 'keine', 'will', 'wollen', 'möchte', 'kann', 'soll', 'muss',
+  'gast', 'gäste', 'gastes', 'kunde', 'kunden', 'kundin',
+]);
 function sucheWoerter(q) {
-  return q.split(/\s+/).filter(w => w.length >= 3);
+  return q.split(/\s+/).filter(w => w.length >= 3 && !SUCHE_STOPWOERTER.has(w));
 }
 function sucheTrifft(text, q) {
   if (!q) return false;
@@ -1981,12 +1999,25 @@ function wbAnwendenFilter() {
   let artikel = _wbListe.filter(a => a.status === 'freigegeben');
   if (_wbAktiveKategorie) artikel = artikel.filter(a => a.kategorie === _wbAktiveKategorie);
   let kapitel = [];
+  let situationen = [];
   if (q) {
     artikel = artikel.filter(a => sucheTrifft(a.titel + ' ' + (a.kategorie || '') + ' ' + a.inhalt, q));
-    if (!_wbAktiveKategorie) kapitel = wbSucheKapitel(q);
+    if (!_wbAktiveKategorie) {
+      situationen = wbSucheSituationen(q);
+      kapitel = wbSucheKapitel(q);
+    }
   }
-  wbRenderListe(artikel, kapitel);
+  wbRenderListe(artikel, kapitel, situationen);
   wbBindKarten();
+}
+
+// Statt nur auf die Sammelkarte "Häufige Situationen" zu verweisen, wird
+// die tatsächlich passende Situations-Box gesucht, damit die Selbst/
+// Mirjam-Antwort ohne Zwischenschritt im Suchergebnis erscheint.
+function wbSucheSituationen(q) {
+  if (!q) return [];
+  return Array.from(document.querySelectorAll('#sec-situationen .decision-box'))
+    .filter(box => sucheTrifft(box.textContent, q));
 }
 
 // Die 20 festen Handbuch-Kapitel plus die Häufige-Situationen-Ebene —
@@ -2017,30 +2048,40 @@ const KAPITEL_INDEX = [
 
 function wbSucheKapitel(q) {
   if (!q) return [];
-  return KAPITEL_INDEX.filter(k => {
+  // "situationen" wird über wbSucheSituationen() als konkrete Situations-Box
+  // ausgegeben, nicht mehr als eigene Sammelkarte hier.
+  return KAPITEL_INDEX.filter(k => k.id !== 'situationen').filter(k => {
     if (sucheTrifft(k.titel, q)) return true;
     const el = document.getElementById('sec-' + k.id);
     return el && sucheTrifft(el.textContent, q);
   });
 }
 
-function wbRenderListe(artikel, kapitel) {
+function wbRenderListe(artikel, kapitel, situationen) {
   kapitel = kapitel || [];
+  situationen = situationen || [];
   const el = document.getElementById('wbListe');
-  if (!artikel.length && !kapitel.length) {
+  if (!artikel.length && !kapitel.length && !situationen.length) {
     el.innerHTML = '<p class="wb-empty">Nichts gefunden.</p>';
     return;
   }
   let html = '';
+  if (situationen.length) {
+    const ueberschrift = situationen.length > 1 ? 'Passende Situationen' : 'Passende Situation';
+    html += `<div class="section-h3">${ueberschrift}</div>` +
+      situationen.map((box, i) => `<div class="wb-situation-treffer" data-si-index="${i}">${box.innerHTML}</div>`).join('');
+  }
   if (kapitel.length) {
-    html += '<div class="section-h3">Kapitel im Handbuch</div>' + kapitel.map(k => `<div class="wb-card" data-goto="${esc(k.id)}">
+    if (situationen.length) html += '<div class="section-h3 section-h3-spacer">Weitere Kapitel im Handbuch</div>';
+    else html += '<div class="section-h3">Kapitel im Handbuch</div>';
+    html += kapitel.map(k => `<div class="wb-card" data-goto="${esc(k.id)}">
       <div class="wb-card-titel">${esc(k.num)} ${esc(k.titel)}</div>
       <div class="wb-card-meta">Handbuch-Kapitel</div>
     </div>`).join('');
   }
-  if (kapitel.length && artikel.length) html += '<div class="section-h3 section-h3-spacer">Wissensbank-Artikel</div>';
+  if ((kapitel.length || situationen.length) && artikel.length) html += '<div class="section-h3 section-h3-spacer">Wissensbank-Artikel</div>';
   if (artikel.length) html += artikel.map(wbKarteHtml).join('');
-  else if (!kapitel.length) html = '<p class="wb-empty">Noch keine Artikel — sei die/der Erste!</p>';
+  else if (!kapitel.length && !situationen.length) html = '<p class="wb-empty">Noch keine Artikel — sei die/der Erste!</p>';
   el.innerHTML = html;
 }
 
@@ -2056,6 +2097,13 @@ function wbKarteHtml(a) {
 function wbBindKarten() {
   document.querySelectorAll('#wbListe .wb-card[data-id], #wbMeineEntwuerfe .wb-card[data-id]').forEach(card => {
     card.addEventListener('click', () => wbOeffneArtikel(card.dataset.id));
+  });
+  document.querySelectorAll('#wbListe .wb-situation-treffer').forEach(card => {
+    card.addEventListener('click', () => {
+      document.getElementById('siSuche').value = document.getElementById('wbSuche').value.trim();
+      siAnwendenFilter();
+      goTo('situationen');
+    });
   });
   document.querySelectorAll('#wbListe .wb-card[data-goto]').forEach(card => {
     card.addEventListener('click', () => {
