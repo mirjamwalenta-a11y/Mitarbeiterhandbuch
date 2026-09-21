@@ -771,6 +771,15 @@
     </div>
 
     <div class="decision-box">
+      <p class="decision-title">Gast möchte einen Termin absagen</p>
+      <ul class="decision-list">
+        <li>Absage freundlich entgegennehmen, bedauern und für die Rückmeldung bedanken; gleich einen Ersatztermin anbieten und wenn möglich sofort fixieren; ist das nicht möglich, Namen und Telefonnummer notieren; die zuständige Stylistin/den zuständigen Stylisten in jedem Fall informieren. Bei Nichterscheinen oder Absage wird keine Stornogebühr berechnet.</li>
+        <li>Gilt ausnahmslos für alle selbst — das Handbuch sieht dafür keine Eskalation an Mirjam vor.</li>
+      </ul>
+      <p class="decision-open">Siehe Kapitel: MH-12 (12.7, 12.8) · MH-13 (13.5, 13.6, 13.11)</p>
+    </div>
+
+    <div class="decision-box">
       <p class="decision-title">Gast möchte spontan eine Zusatzleistung</p>
       <ul class="decision-list">
         <li>Prüfen, ob sich die Zusatzleistung zeitlich ausgeht, ohne den nächsten wartenden Gast zu verzögern; geht sich das aus: durchführen; geht sich das nicht aus: höflich ablehnen und für den nächsten Besuch vormerken.</li>
@@ -1943,14 +1952,35 @@ function wbRenderFilterChips() {
   });
 }
 
+// Natürlichsprachige Suchanfragen ("Ferndiagnose am Telefon", "Kundin will Geld
+// zurück") treffen im Handbuch oft nur in anderer Wortstellung oder mit anderen
+// Wörtern zu als eine reine Ein-Stück-Teilstring-Suche verlangt. sucheTrifft()
+// zerlegt die Anfrage daher in Wörter und lässt es genügen, wenn ein Großteil
+// davon irgendwo im Text vorkommt — statt die komplette Phrase am Stück.
+function sucheWoerter(q) {
+  return q.split(/\s+/).filter(w => w.length >= 3);
+}
+function sucheTrifft(text, q) {
+  if (!q) return false;
+  text = text.toLowerCase();
+  const woerter = sucheWoerter(q);
+  if (!woerter.length) return text.includes(q);
+  const treffer = woerter.filter(w => text.includes(w)).length;
+  // Bei 1–2 Suchwörtern müssen alle vorkommen (sonst zu viel Streuung),
+  // ab 3 Wörtern genügt die Mehrheit (damit z. B. "Kundin will Geld
+  // zurück" auch dann trifft, wenn nur "Geld" und "zurück" wörtlich
+  // im Handbuch stehen).
+  const schwelle = woerter.length <= 2 ? woerter.length : Math.ceil(woerter.length / 2);
+  return treffer >= schwelle;
+}
+
 function wbAnwendenFilter() {
   const q = document.getElementById('wbSuche').value.trim().toLowerCase();
   let artikel = _wbListe.filter(a => a.status === 'freigegeben');
   if (_wbAktiveKategorie) artikel = artikel.filter(a => a.kategorie === _wbAktiveKategorie);
   let kapitel = [];
   if (q) {
-    artikel = artikel.filter(a => a.titel.toLowerCase().includes(q) ||
-      (a.kategorie || '').toLowerCase().includes(q) || a.inhalt.toLowerCase().includes(q));
+    artikel = artikel.filter(a => sucheTrifft(a.titel + ' ' + (a.kategorie || '') + ' ' + a.inhalt, q));
     if (!_wbAktiveKategorie) kapitel = wbSucheKapitel(q);
   }
   wbRenderListe(artikel, kapitel);
@@ -1986,9 +2016,9 @@ const KAPITEL_INDEX = [
 function wbSucheKapitel(q) {
   if (!q) return [];
   return KAPITEL_INDEX.filter(k => {
-    if (k.titel.toLowerCase().includes(q)) return true;
+    if (sucheTrifft(k.titel, q)) return true;
     const el = document.getElementById('sec-' + k.id);
-    return el && el.textContent.toLowerCase().includes(q);
+    return el && sucheTrifft(el.textContent, q);
   });
 }
 
@@ -2044,7 +2074,7 @@ function siAnwendenFilter() {
   const boxen = document.querySelectorAll('#sec-situationen .decision-box');
   let treffer = 0;
   boxen.forEach(box => {
-    const sichtbar = !q || box.textContent.toLowerCase().includes(q);
+    const sichtbar = !q || sucheTrifft(box.textContent, q);
     box.style.display = sichtbar ? '' : 'none';
     if (sichtbar) treffer++;
   });
