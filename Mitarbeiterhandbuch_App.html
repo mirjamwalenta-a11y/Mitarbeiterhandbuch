@@ -1966,11 +1966,13 @@ function sucheTrifft(text, q) {
   const woerter = sucheWoerter(q);
   if (!woerter.length) return text.includes(q);
   const treffer = woerter.filter(w => text.includes(w)).length;
-  // Bei 1–2 Suchwörtern müssen alle vorkommen (sonst zu viel Streuung),
-  // ab 3 Wörtern genügt die Mehrheit (damit z. B. "Kundin will Geld
-  // zurück" auch dann trifft, wenn nur "Geld" und "zurück" wörtlich
-  // im Handbuch stehen).
-  const schwelle = woerter.length <= 2 ? woerter.length : Math.ceil(woerter.length / 2);
+  // Bei bis zu 3 Suchwörtern müssen alle vorkommen — sonst reißen schon
+  // zwei zufällig im selben (langen) Kapiteltext verstreute Treffer auf
+  // Häufigkeitswörter wie "Gast" oder "kommt" die Schwelle, ganz ohne
+  // inhaltlichen Bezug. Erst ab 4 Wörtern genügt die Mehrheit (damit z. B.
+  // "Kundin will Geld zurück" auch dann trifft, wenn nur "Geld" und
+  // "zurück" wörtlich im Handbuch stehen).
+  const schwelle = woerter.length <= 3 ? woerter.length : Math.ceil(woerter.length / 2);
   return treffer >= schwelle;
 }
 
