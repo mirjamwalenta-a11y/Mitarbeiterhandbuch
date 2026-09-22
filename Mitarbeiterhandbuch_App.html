@@ -2042,12 +2042,38 @@ const SUCHE_STOPWOERTER = new Set([
 function sucheWoerter(q) {
   return q.split(/\s+/).filter(w => w.length >= 3 && !SUCHE_STOPWOERTER.has(w));
 }
+// Fallback für unzertrennte Komposita (z. B. "Preisbeschwerde"): Deutsch
+// schreibt zusammengesetzte Nomen ohne Leerzeichen, was die sonst rein
+// leerzeichenbasierte Wort-Trennung nicht auflösen kann. Trifft das ganze
+// Wort nicht, wird bei ausreichend langer Eingabe jede Trennstelle probiert.
+// Die zwei Teilstücke müssen dabei nah beieinander stehen (wie ein
+// zusammengeschriebenes oder eng verbundenes Wortpaar im selben Satz) —
+// sonst zählen zwei zufällig weit auseinanderliegende Erwähnungen in
+// unterschiedlichen Feldern derselben Situation fälschlich als Treffer
+// (z. B. "Preisnachlass" im einen, "wiederholte Beschwerde" im ganz
+// anderen Feld). Reine Zeichenketten-Zerlegung mit Nähe-Prüfung, kein
+// Wörterbuch, keine Synonyme.
+function sucheWortTrifft(text, w) {
+  if (text.includes(w)) return true;
+  if (w.length < 6) return false;
+  for (let i = 3; i <= w.length - 3; i++) {
+    const links = w.slice(0, i);
+    const rechts = w.slice(i);
+    let pos = text.indexOf(links);
+    while (pos !== -1) {
+      const naehe = text.slice(pos + links.length, pos + links.length + rechts.length + 20);
+      if (naehe.includes(rechts)) return true;
+      pos = text.indexOf(links, pos + 1);
+    }
+  }
+  return false;
+}
 function sucheTrifft(text, q) {
   if (!q) return false;
   text = text.toLowerCase();
   const woerter = sucheWoerter(q);
   if (!woerter.length) return text.includes(q);
-  const treffer = woerter.filter(w => text.includes(w)).length;
+  const treffer = woerter.filter(w => sucheWortTrifft(text, w)).length;
   // Bei bis zu 3 Suchwörtern müssen alle vorkommen — sonst reißen schon
   // zwei zufällig im selben (langen) Kapiteltext verstreute Treffer auf
   // Häufigkeitswörter wie "Gast" oder "kommt" die Schwelle, ganz ohne
