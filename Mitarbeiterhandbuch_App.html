@@ -268,6 +268,19 @@
     border-top: 1px solid var(--rule); padding-top: 10px;
   }
   .decision-note { font-size: 13px; color: var(--ink-mid); line-height: 1.6; margin-bottom: 22px; }
+
+  /* Häufige Situationen: einheitliches Schema (Sofort tun / Nicht tun / Selbst entscheiden / Mirjam holen) */
+  .si-schema { display: flex; flex-direction: column; gap: 9px; }
+  .si-row { font-size: 13.5px; color: var(--ink); line-height: 1.6; }
+  .si-split {
+    display: flex; flex-wrap: wrap; gap: 8px 22px;
+    margin-top: 2px; padding-top: 11px; border-top: 1px dashed var(--rule);
+  }
+  .si-split .si-row { flex: 1 1 220px; }
+  .tag-si-sofort { background: #efe9de; color: var(--ink-mid); }
+  .tag-si-nicht { background: #f6dcd6; color: #a1392a; }
+  .tag-si-selbst { background: #e3ecdf; color: #4d7a4a; }
+  .tag-si-mirjam { background: var(--chip-bg); color: var(--brown-dark); }
   .wb-situation-treffer {
     border: 1px solid var(--border); border-radius: 3px; padding: 16px 20px;
     margin: 0 0 12px; background: #fff; cursor: pointer; transition: border-color .12s;
@@ -374,7 +387,7 @@
 
   /* ── BOTTOM NAV ─────────────────────────────── */
   .bottom-nav {
-    display: flex; gap: 10px; padding: 20px 28px 32px; align-items: center;
+    display: flex; flex-wrap: wrap; gap: 10px; padding: 20px 28px 32px; align-items: center;
   }
   .btn-nav {
     padding: 9px 18px; border-radius: 3px; border: 1px solid var(--rule);
@@ -700,6 +713,7 @@
       </div>
     </div>
     <div class="bottom-nav">
+      <button class="btn-nav" data-section="situationen" onclick="goTo('situationen')">⚡ Häufige Situationen</button>
       <div class="btn-spacer"></div>
       <button class="btn-nav primary" onclick="goTo('toc')">Zum Inhalt →</button>
     </div>
@@ -751,127 +765,176 @@
 
     <div class="decision-box">
       <p class="decision-title">Gast ist mit dem Ergebnis nicht zufrieden</p>
-      <ul class="decision-list">
-        <li>Zuhören, nicht unterbrechen, Bedauern äußern; bei einfacher Reklamation (kleine Nacharbeit, Nachschneiden, leichte Farbkorrektur) sofort selbst korrigieren; bei telefonischer Reklamation den Gast in den Salon bitten; Korrektur ist kein Rabatt — wünscht der Gast zusätzlich Geld zurück oder Preisnachlass, gilt dafür gesondert MH-14.</li>
-        <li>Einfache Korrektur: selbst · schwerwiegend (Geld zurück/Nachlass gewünscht, deutlich unzufrieden, wiederholte Beschwerde) oder im Zweifel: Mirjam.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Zuhören, nicht unterbrechen, Bedauern äußern; bei einfacher Reklamation (kleine Nacharbeit, Nachschneiden, leichte Farbkorrektur) sofort selbst korrigieren; bei telefonischer Reklamation den Gast in den Salon bitten.</p>
+        <p class="si-row"><span class="tag tag-si-nicht">Nicht tun</span>Korrektur ist kein Rabatt — wünscht der Gast zusätzlich Geld zurück oder Preisnachlass, gilt dafür gesondert MH-14.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Einfache Korrektur.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Schwerwiegend (Geld zurück/Nachlass gewünscht, deutlich unzufrieden, wiederholte Beschwerde) oder im Zweifel.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-16 (16.1–16.5) · MH-09 (9.4) · ergänzend MH-14 bei Geldthemen</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Gast beschwert sich über den Preis</p>
-      <ul class="decision-list">
-        <li>Ruhig bleiben, zuhören, Preis nicht spontan rechtfertigen oder reduzieren; verrechnete Leistungen im Computer bzw. einen vorab genannten Kostenvoranschlag freundlich erklären; keine automatische Rabattfrage — nie selbst einen Nachlass oder Geld zurück zusagen.</li>
-        <li>Leistungen erklären: selbst · Preisnachlass oder Geld zurück: immer Mirjam, unabhängig von der Höhe.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Ruhig bleiben, zuhören; verrechnete Leistungen im Computer bzw. einen vorab genannten Kostenvoranschlag freundlich erklären.</p>
+        <p class="si-row"><span class="tag tag-si-nicht">Nicht tun</span>Preis nicht spontan rechtfertigen oder reduzieren; keine automatische Rabattfrage — nie selbst einen Nachlass oder Geld zurück zusagen.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Leistungen erklären.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Preisnachlass oder Geld zurück — immer, unabhängig von der Höhe.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-14 (14.7, Entscheidung Preisnachlass) · ergänzend MH-16</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Termin wurde falsch eingetragen</p>
-      <ul class="decision-list">
-        <li>Eintrag sofort selbst korrigieren; ändert sich dadurch Zeit oder zuständige Person, den Gast direkt informieren; bleibt der Termin selbst unverändert (z. B. reiner Tippfehler), ist keine Gast-Information nötig; betroffene Stylistin/betroffenen Stylisten in jedem Fall informieren.</li>
-        <li>Korrektur: selbst, durch die Person, die den Fehler bemerkt · entsteht daraus ein größerer Konflikt im Ablauf: Mirjam informieren.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Eintrag sofort selbst korrigieren; ändert sich dadurch Zeit oder zuständige Person, den Gast direkt informieren; bleibt der Termin selbst unverändert (z. B. reiner Tippfehler), ist keine Gast-Information nötig; betroffene Stylistin/betroffenen Stylisten in jedem Fall informieren.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Korrektur, durch die Person, die den Fehler bemerkt.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Entsteht daraus ein größerer Konflikt im Ablauf.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-13 (13.10) · ergänzend MH-12 (12.7)</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Gast möchte einen Termin absagen</p>
-      <ul class="decision-list">
-        <li>Absage freundlich entgegennehmen, bedauern und für die Rückmeldung bedanken; gleich einen Ersatztermin anbieten und wenn möglich sofort fixieren; ist das nicht möglich, Namen und Telefonnummer notieren; die zuständige Stylistin/den zuständigen Stylisten in jedem Fall informieren. Bei Nichterscheinen oder Absage wird keine Stornogebühr berechnet.</li>
-        <li>Gilt ausnahmslos für alle selbst — das Handbuch sieht dafür keine Eskalation an Mirjam vor.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Absage freundlich entgegennehmen, bedauern und für die Rückmeldung bedanken; gleich einen Ersatztermin anbieten und wenn möglich sofort fixieren; ist das nicht möglich, Namen und Telefonnummer notieren; die zuständige Stylistin/den zuständigen Stylisten in jedem Fall informieren.</p>
+        <p class="si-row"><span class="tag tag-si-nicht">Nicht tun</span>Bei Nichterscheinen oder Absage wird keine Stornogebühr berechnet.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Gilt ausnahmslos für alle.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Das Handbuch sieht dafür keine Eskalation an Mirjam vor.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-12 (12.7, 12.8) · MH-13 (13.5, 13.6, 13.11)</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Gast möchte spontan eine Zusatzleistung</p>
-      <ul class="decision-list">
-        <li>Prüfen, ob sich die Zusatzleistung zeitlich ausgeht, ohne den nächsten wartenden Gast zu verzögern; geht sich das aus: durchführen; geht sich das nicht aus: höflich ablehnen und für den nächsten Besuch vormerken.</li>
-        <li>Selbst, wenn der weitere Ablauf nicht beeinträchtigt wird · bei Unklarheit, ob andere Termine betroffen sind: Mirjam dazuholen.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Prüfen, ob sich die Zusatzleistung zeitlich ausgeht, ohne den nächsten wartenden Gast zu verzögern; geht sich das aus: durchführen; geht sich das nicht aus: höflich ablehnen und für den nächsten Besuch vormerken.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Wenn der weitere Ablauf nicht beeinträchtigt wird.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Bei Unklarheit, ob andere Termine betroffen sind.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-13 (13.13)</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Produkt ist nicht lagernd</p>
-      <ul class="decision-list">
-        <li>Nicht nur das Fehlen mitteilen; gleichwertiges Salonprodukt anbieten und kurz erklären, warum es passt; wenn passend, das Ersatzprodukt direkt bei der Behandlung anwenden; fehlendes Produkt notieren, Nachbestellung veranlassen.</li>
-        <li>Selbst, wenn ein klar gleichwertiges Produkt vorhanden ist · ohne sichere gleichwertige Alternative: Mirjam fragen.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Gleichwertiges Salonprodukt anbieten und kurz erklären, warum es passt; wenn passend, das Ersatzprodukt direkt bei der Behandlung anwenden; fehlendes Produkt notieren, Nachbestellung veranlassen.</p>
+        <p class="si-row"><span class="tag tag-si-nicht">Nicht tun</span>Nicht nur das Fehlen mitteilen.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Wenn ein klar gleichwertiges Produkt vorhanden ist.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Ohne sichere gleichwertige Alternative.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-09 (9.6) · optional ergänzend MH-05</p>
     </div>
 
     <div class="decision-box">
-      <p class="decision-title">Reizung oder allergische Reaktion während der Behandlung</p>
-      <ul class="decision-list">
-        <li>Tritt die Reaktion während der Behandlung auf: Produkt sofort abwaschen, Behandlung abbrechen, Mirjam sofort dazuholen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung; Reaktion auf der Karteikarte vermerken. Behandlung erst gar nicht durchführen bzw. sofort abbrechen bei: offenen Wunden oder starker Reizung der Kopfhaut, einer bekannten Allergie/Unverträglichkeit auf der Karteikarte, oder stark geschädigtem/kürzlich chemisch vorbehandeltem Haar, wenn die Herstelleranweisung das ausschließt.</li>
-        <li>Sofortmaßnahme (abwaschen, abbrechen): selbst · Mirjam wird in jedem Fall sofort hinzugezogen — sowohl bei einer Reaktion während der Behandlung als auch bei den bekannten Warnzeichen davor · bei starker Reaktion zusätzlich externe Hilfe (Erste Hilfe/Rettung).</li>
-      </ul>
+      <p class="decision-title">⚠ Reizung oder allergische Reaktion während der Behandlung</p>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Tritt die Reaktion während der Behandlung auf: Produkt sofort abwaschen, Behandlung abbrechen; bei sichtbar starker Reaktion zusätzlich Erste Hilfe/Rettung; Reaktion auf der Karteikarte vermerken.</p>
+        <p class="si-row"><span class="tag tag-si-nicht">Nicht tun</span>Behandlung erst gar nicht durchführen bzw. sofort abbrechen bei: offenen Wunden oder starker Reizung der Kopfhaut, einer bekannten Allergie/Unverträglichkeit auf der Karteikarte, oder stark geschädigtem/kürzlich chemisch vorbehandeltem Haar, wenn die Herstelleranweisung das ausschließt.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Sofortmaßnahme (abwaschen, abbrechen).</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>In jedem Fall sofort — sowohl bei einer Reaktion während der Behandlung als auch bei den bekannten Warnzeichen davor; bei starker Reaktion zusätzlich externe Hilfe (Erste Hilfe/Rettung).</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-10 (10.9, 10.12) · MH-11 (11.10, 11.12)</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Gast bringt eigenes Produkt mit</p>
-      <ul class="decision-list">
-        <li>Prüfen, ob es ein unbedenkliches Pflegeprodukt ist; wenn ja, Anwendung im Ermessen möglich; bei chemischem Produkt: nicht verwenden, ausschließlich mit Salonprodukten nach Herstelleranweisung arbeiten.</li>
-        <li>Unbedenkliches Pflegeprodukt: selbst · bei Unsicherheit oder Diskussion mit dem Gast: Mirjam dazuholen · chemische Produkte: keine Ermessensfrage, werden nicht verwendet.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Prüfen, ob es ein unbedenkliches Pflegeprodukt ist; wenn ja, Anwendung im Ermessen möglich.</p>
+        <p class="si-row"><span class="tag tag-si-nicht">Nicht tun</span>Bei chemischem Produkt: nicht verwenden, ausschließlich mit Salonprodukten nach Herstelleranweisung arbeiten.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Unbedenkliches Pflegeprodukt.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Bei Unsicherheit oder Diskussion mit dem Gast.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-05 (5.5) · ergänzend MH-10, MH-11</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Neukund:in ist unsicher und kann den Wunsch nicht gut ausdrücken</p>
-      <ul class="decision-list">
-        <li>Neukundenzettel ausfüllen lassen und aus der Frisurenmappe mit den zwei Lesezeichen-Farben Frisuren auswählen lassen, die gefallen bzw. nicht gefallen; zusätzlich mit W-Fragen führen (Was wollen Sie auf keinen Fall? Was hat Ihnen bisher gefallen/nicht gefallen? Welche Haarlänge? Wie soll die Frisur aussehen?); den Wunsch anhand der ausgewählten Bilder im Detail bestätigen oder Vorschläge machen und über Vor- und Nachteile aufklären.</li>
-        <li>Das Beratungsgespräch führt die Stylistin/der Stylist selbst, nach dem Beratungssystem aus MH-02/MH-03 · entsteht trotz Frisurenmappe, Bildern und W-Fragen kein klares Wunschbild oder steht eine größere Veränderung im Raum: Mirjam dazuholen.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Neukundenzettel ausfüllen lassen und aus der Frisurenmappe mit den zwei Lesezeichen-Farben Frisuren auswählen lassen, die gefallen bzw. nicht gefallen; zusätzlich mit W-Fragen führen (Was wollen Sie auf keinen Fall? Was hat Ihnen bisher gefallen/nicht gefallen? Welche Haarlänge? Wie soll die Frisur aussehen?); den Wunsch anhand der ausgewählten Bilder im Detail bestätigen oder Vorschläge machen und über Vor- und Nachteile aufklären.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Das Beratungsgespräch führt die Stylistin/der Stylist selbst, nach dem Beratungssystem aus MH-02/MH-03.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Entsteht trotz Frisurenmappe, Bildern und W-Fragen kein klares Wunschbild oder steht eine größere Veränderung im Raum.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-06 (6.2, 6.4) · MH-02 (2.3, 2.4) · MH-03 (3/2)</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Spannung oder Streit im Team vor Gästen</p>
-      <ul class="decision-list">
-        <li>Streit sofort unterbrechen, nicht vor Gästen weiterführen; Situation vor dem Gast ruhig halten, später unter vier Augen klären; gelingt die Klärung nicht oder wiederholt sich das Verhalten: Mirjam dazuholen.</li>
-        <li>Beteiligte stoppen die Situation zunächst selbst · gelingt die Klärung nicht oder wird es größer: Mirjam entscheidet mit.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Streit sofort unterbrechen, nicht vor Gästen weiterführen; Situation vor dem Gast ruhig halten, später unter vier Augen klären.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Beteiligte stoppen die Situation zunächst selbst.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Gelingt die Klärung nicht oder wird es größer: Mirjam entscheidet mit.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-20, Abschnitt Umgang mit Konflikten und Fehlverhalten</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Gerät fällt während der Behandlung aus</p>
-      <ul class="decision-list">
-        <li>Ruhe bewahren, lösungsorientiert handeln; wenn vorhanden, sofort auf Ersatzgerät aus dem Lager wechseln; ohne gleiches Ersatzgerät mit passender Alternative weiterarbeiten (z. B. Locken mit Glätteisen/Wicklern statt Lockenstab); Gast kurz und ruhig über die Umstellung informieren; Mirjam informieren, damit das defekte Gerät ersetzt/aus dem Betrieb genommen wird.</li>
-        <li>Behandlung zuerst selbst pragmatisch weiterlösen · Mirjam zusätzlich informieren, sobald die Behandlung gesichert weiterläuft.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Ruhe bewahren, lösungsorientiert handeln; wenn vorhanden, sofort auf Ersatzgerät aus dem Lager wechseln; ohne gleiches Ersatzgerät mit passender Alternative weiterarbeiten (z. B. Locken mit Glätteisen/Wicklern statt Lockenstab); Gast kurz und ruhig über die Umstellung informieren.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Behandlung zuerst selbst pragmatisch weiterlösen.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Informieren, damit das defekte Gerät ersetzt/aus dem Betrieb genommen wird — zusätzlich, sobald die Behandlung gesichert weiterläuft.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-07 (7.10)</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Beschwerde oder heikles Gespräch kommt telefonisch rein</p>
-      <ul class="decision-list">
-        <li>Verständnis zeigen, zuhören, nicht unterbrechen; bei einfachem, sofort lösbarem Anliegen eine faire Lösung anbieten; lässt sich das telefonisch nicht klären, den Gast in den Salon bitten.</li>
-        <li>Die betroffene Stylistin/der betroffene Stylist führt das Gespräch persönlich und entscheidet bei einfachem Fall selbst · bei schwerwiegenderem Fall oder wenn keine Lösung gefunden wird: Mirjam dazuholen.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Verständnis zeigen, zuhören, nicht unterbrechen; bei einfachem, sofort lösbarem Anliegen eine faire Lösung anbieten; lässt sich das telefonisch nicht klären, den Gast in den Salon bitten.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Die betroffene Stylistin/der betroffene Stylist führt das Gespräch persönlich und entscheidet bei einfachem Fall selbst.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Bei schwerwiegenderem Fall oder wenn keine Lösung gefunden wird.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-12 (12.12) · MH-16 (16.1–16.5)</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Gast möchte am Telefon eine fachliche Einschätzung oder Ferndiagnose</p>
-      <ul class="decision-list">
-        <li>Keine Ferndiagnose und keine fachliche Zusage am Telefon geben; freundlich auf eine Beratung vor Ort verweisen.</li>
-        <li>Gilt ausnahmslos für alle selbst — das Handbuch sieht dafür keine Eskalation an Mirjam vor.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Freundlich auf eine Beratung vor Ort verweisen.</p>
+        <p class="si-row"><span class="tag tag-si-nicht">Nicht tun</span>Keine Ferndiagnose und keine fachliche Zusage am Telefon geben.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Gilt ausnahmslos für alle.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Das Handbuch sieht dafür keine Eskalation an Mirjam vor.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-12 (12.13)</p>
     </div>
 
     <div class="decision-box">
       <p class="decision-title">Gast kommt zu spät</p>
-      <ul class="decision-list">
-        <li>Nach Möglichkeit trotzdem dranzunehmen versuchen; zuerst selbst eine praktikable Teamlösung suchen, bei Bedarf übernimmt eine Kollegin/ein Kollege einen Teil der Dienstleistung; Gast informieren, dass sich der Ablauf anpassen kann; geht sich das zeitlich nicht aus, Dienstleistung kürzen bzw. auf das Wesentliche reduzieren; ergibt das keine saubere Lösung, neuen Termin vereinbaren.</li>
-        <li>Team sucht zuerst selbst eine Lösung · ist der weitere Tagesplan stark beeinträchtigt oder keine faire Lösung mehr möglich: Mirjam entscheidet.</li>
-      </ul>
+      <div class="si-schema">
+        <p class="si-row"><span class="tag tag-si-sofort">Sofort tun</span>Nach Möglichkeit trotzdem dranzunehmen versuchen; zuerst selbst eine praktikable Teamlösung suchen, bei Bedarf übernimmt eine Kollegin/ein Kollege einen Teil der Dienstleistung; Gast informieren, dass sich der Ablauf anpassen kann; geht sich das zeitlich nicht aus, Dienstleistung kürzen bzw. auf das Wesentliche reduzieren; ergibt das keine saubere Lösung, neuen Termin vereinbaren.</p>
+        <div class="si-split">
+          <p class="si-row"><span class="tag tag-si-selbst">Selbst entscheiden</span>Team sucht zuerst selbst eine Lösung.</p>
+          <p class="si-row"><span class="tag tag-si-mirjam">Mirjam holen</span>Ist der weitere Tagesplan stark beeinträchtigt oder keine faire Lösung mehr möglich.</p>
+        </div>
+      </div>
       <p class="decision-open">Siehe Kapitel: MH-13 (13.15)</p>
     </div>
 
@@ -2131,9 +2194,11 @@ function siAnwendenFilter() {
   document.getElementById('siLeer').style.display = treffer ? 'none' : 'block';
 }
 document.getElementById('siSuche').addEventListener('input', siAnwendenFilter);
-document.querySelector('.nav-item[data-section="situationen"]').addEventListener('click', () => {
-  document.getElementById('siSuche').value = '';
-  siAnwendenFilter();
+document.querySelectorAll('[data-section="situationen"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('siSuche').value = '';
+    siAnwendenFilter();
+  });
 });
 
 document.getElementById('wbSuche').addEventListener('input', wbAnwendenFilter);
