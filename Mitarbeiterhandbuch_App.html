@@ -2187,6 +2187,10 @@ document.getElementById('wbNeuSpeichernBtn').addEventListener('click', async () 
   const kategorie = document.getElementById('wbNeuKategorie').value.trim();
   const inhalt = document.getElementById('wbNeuInhalt').value.trim();
   if (!titel || !inhalt) { alert('Bitte Titel und Inhalt ausfüllen.'); return; }
+  if (kategorie.toLowerCase() === 'fachwissen farbe') {
+    alert('„Fachwissen Farbe" ist der Name des eigenen Menüpunkts für Rezepturen und sollte hier nicht als Wissensbank-Kategorie verwendet werden — sonst taucht der Artikel nur in der Wissensbank auf, nicht dort. Bitte eine andere Kategorie wählen (z. B. „Farbtheorie" oder „Grundlagen").');
+    return;
+  }
   const status = _me.rolle === 'inhaberin' ? 'freigegeben' : 'eingereicht';
   const btn = document.getElementById('wbNeuSpeichernBtn');
   btn.disabled = true; btn.textContent = 'Speichert …';
