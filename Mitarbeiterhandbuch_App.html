@@ -2080,8 +2080,14 @@ function wbAnwendenFilter() {
 // Mirjam-Antwort ohne Zwischenschritt im Suchergebnis erscheint.
 function wbSucheSituationen(q) {
   if (!q) return [];
+  // Titel-Treffer vor reinen Fließtext-Treffern — bei kurzen Eingaben wie
+  // "Rekla" soll die Situation, die das Wort im Titel trägt, zuerst stehen,
+  // nicht eine, die es nur beiläufig in einem Feld erwähnt. Ändert nur die
+  // Reihenfolge, nicht was als Treffer zählt.
+  const titelTrifft = box => sucheTrifft(box.querySelector('.decision-title').textContent, q);
   return Array.from(document.querySelectorAll('#sec-situationen .decision-box'))
-    .filter(box => sucheTrifft(box.textContent, q));
+    .filter(box => sucheTrifft(box.textContent, q))
+    .sort((a, b) => (titelTrifft(b) ? 1 : 0) - (titelTrifft(a) ? 1 : 0));
 }
 
 // Die 20 festen Handbuch-Kapitel plus die Häufige-Situationen-Ebene —
@@ -2114,11 +2120,12 @@ function wbSucheKapitel(q) {
   if (!q) return [];
   // "situationen" wird über wbSucheSituationen() als konkrete Situations-Box
   // ausgegeben, nicht mehr als eigene Sammelkarte hier.
+  // Titel-Treffer vor reinen Fließtext-Treffern (siehe wbSucheSituationen).
   return KAPITEL_INDEX.filter(k => k.id !== 'situationen').filter(k => {
     if (sucheTrifft(k.titel, q)) return true;
     const el = document.getElementById('sec-' + k.id);
     return el && sucheTrifft(el.textContent, q);
-  });
+  }).sort((a, b) => (sucheTrifft(b.titel, q) ? 1 : 0) - (sucheTrifft(a.titel, q) ? 1 : 0));
 }
 
 function wbRenderListe(artikel, kapitel, situationen) {
