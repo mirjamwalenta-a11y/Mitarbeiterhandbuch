@@ -35,9 +35,6 @@ miteinander verwandte Systeme gegossen:
    digitalen Handbuch zum Nachlesen und zwei gemeinsam gepflegten Wissensbanken:
    einer allgemeinen und „Fachwissen Farbe“ für strukturiertes Coloration-Wissen.
 
-Daneben gibt es für die Inhaberin den **Ansatzfinder**, einen Skill, der bei Problemen
-ohne Lösungsweg zu einer Entscheidung führt (siehe Baustein 3).
-
 Beides ist vollständig im Dialog mit Claude Code entstanden — die Inhaberin hat keine
 Zeile Code selbst geschrieben, sondern beschrieben, was sie braucht.
 
@@ -72,17 +69,6 @@ Zeile Code selbst geschrieben, sondern beschrieben, was sie braucht.
 
 Beide Wissensbanken teilen sich denselben Freigabe-Rhythmus: `entwurf`/`eingereicht`
 → Prüfung durch die Inhaberin → `freigegeben`.
-
-## Baustein 3: Der Ansatzfinder (Problemlöser)
-
-- Liegt in `ansatzfinder-skill/SKILL.md`: ein Claude-Skill für die Inhaberin, kein
-  Nachschlagewerk fürs Team. Er führt von einem Problem ohne Lösungsweg in sechs
-  Schritten zu einer Entscheidung mit Datum, Zahl und erstem Handgriff.
-- Dafür recherchiert er echte Experten im Web und fragt Philipp Maderthaner über
-  Philipp AI; deshalb lebt er als Skill und nicht in der App.
-- Klar getrennt vom Wiki: Das Wiki sagt, wie etwas bei uns geregelt ist; der
-  Ansatzfinder hilft, wenn es noch keine Regel oder keinen Weg gibt. Ändert eine
-  Entscheidung einen Standard, geht sie als Vorschlag nach `wiki/Eingang/`.
 
 ## Ein Praxisbeispiel
 
@@ -122,5 +108,3 @@ Nicht programmiert im klassischen Sinn, sondern im Gespräch mit Claude Code geb
   (im Chat verlinkt) — bei Bedarf danach fragen oder neu erstellen lassen.
 - Für Fachinhalte aus dem Wiki oder eine Recherche darin: den
   wiki-mitarbeiterhandbuch-Skill verwenden, nicht diesen hier.
-- Für ein Problem, zu dem es noch keinen Lösungsweg gibt: den ansatzfinder-Skill
-  verwenden.
