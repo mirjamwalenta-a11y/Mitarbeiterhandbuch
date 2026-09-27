@@ -21,8 +21,10 @@ Sie liest nur die Systemkataloge (`supabase/rls-audit.sql`) und legt bei einem
 Fund ein Issue mit dem Label `rls-audit` an (oder kommentiert das offene):
 
 - **OHNE_RLS** — Tabelle ohne Row Level Security. Sofort beheben.
-- **ANON_OFFEN** — Policy lässt anon ohne Bedingung durch. Kann gewollt sein
-  (z. B. `abw_team_anon_login_view` für die Login-Auswahl), bitte prüfen.
+- **ANON_OFFEN** — Policy lässt anon ohne Bedingung durch. Kann gewollt sein,
+  bitte prüfen. Ist sie gewollt, in `supabase/rls-audit.sql` in die Liste der
+  bewusst offenen Policies eintragen (dort steht schon
+  `abw_team_anon_login_view` für die Login-Auswahl).
 
 ### Einrichtung (einmalig)
 

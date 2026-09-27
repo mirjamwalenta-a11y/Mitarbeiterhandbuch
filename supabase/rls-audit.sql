@@ -16,4 +16,9 @@ where p.schemaname = 'public'
   and p.roles && array['anon', 'public']::name[]
   and coalesce(p.qual, 'true') = 'true'
   and coalesce(p.with_check, 'true') = 'true'
+  -- Bewusst offen und geprüft (sonst käme jede Woche derselbe Hinweis):
+  -- Login-Auswahl der Abwesenheiten-App, zeigt nur id/name/role.
+  and (p.tablename, p.policyname) not in (
+    ('abw_team', 'abw_team_anon_login_view')
+  )
 order by 1, 2;
