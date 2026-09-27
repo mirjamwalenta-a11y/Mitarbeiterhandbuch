@@ -1,0 +1,61 @@
+# Wöchentliche RLS-Prüfung für das gemeinsame Supabase-Projekt (wrxlaltgtgkdomklgrlj).
+# Findet Tabellen im Schema public ohne Row Level Security und Policies, die
+# anon ohne Bedingung durchlassen, und legt dann ein GitHub-Issue an (bzw.
+# kommentiert das offene). Einrichtung: siehe SICHERHEIT-RLS-CHECK.md.
+name: RLS-Audit
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # jeden Montag 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Datenbank prüfen
+        id: pruefen
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ]; then
+            echo "::error::Secret SUPABASE_DB_URL fehlt — siehe SICHERHEIT-RLS-CHECK.md"
+            exit 1
+          fi
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -At -F ' | ' -f supabase/rls-audit.sql > funde.txt
+          echo "Funde:"; cat funde.txt
+          if grep -q '^OHNE_RLS' funde.txt; then echo "ohne_rls=1" >> "$GITHUB_OUTPUT"; fi
+          if [ -s funde.txt ]; then echo "funde=1" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Issue anlegen oder ergänzen
+        if: steps.pruefen.outputs.funde == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "Die wöchentliche RLS-Prüfung hat etwas gefunden ($(date -u +%Y-%m-%d))."
+            echo
+            echo '```'
+            cat funde.txt
+            echo '```'
+            echo
+            echo "- **OHNE_RLS**: Tabelle ohne Row Level Security — über den öffentlichen anon-Key womöglich komplett lesbar/schreibbar. Sofort RLS aktivieren (CLAUDE.md Regel 1)."
+            echo "- **ANON_OFFEN**: Policy lässt anon ohne Bedingung durch. Kann gewollt sein (z. B. Login-Auswahl), bitte prüfen."
+            echo
+            echo "Checkliste: SICHERHEIT-RLS-CHECK.md"
+          } > body.md
+          gh label create rls-audit --color B60205 --description "Fund der wöchentlichen RLS-Prüfung" --force
+          nr=$(gh issue list --label rls-audit --state open --json number --jq '.[0].number')
+          if [ -n "$nr" ]; then
+            gh issue comment "$nr" --body-file body.md
+          else
+            titel="RLS-Prüfung: Fund in der Datenbank"
+            if [ "${{ steps.pruefen.outputs.ohne_rls }}" = "1" ]; then titel="RLS-Prüfung: Tabelle ohne RLS gefunden"; fi
+            gh issue create --title "$titel" --label rls-audit --body-file body.md
+          fi
