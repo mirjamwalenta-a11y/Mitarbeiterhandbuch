@@ -33,24 +33,23 @@ Fund ein Issue mit dem Label `rls-audit` an (oder kommentiert das offene):
    einsetzen (nirgends sonst speichern als im GitHub-Secret):
 
    ```sql
-   create role rls_audit login password 'HIER-EIN-LANGES-ZUFÄLLIGES-PASSWORT';
+   create role rls_audit login password 'HIER-EIN-LANGES-PASSWORT';
    ```
+
+   Passwort nur aus Buchstaben und Zahlen (mindestens 20 Zeichen). Gibt es
+   die Rolle schon: `alter role rls_audit login password '…';`
 
    Die Rolle bekommt keine weiteren Rechte. Die Systemkataloge
    (`pg_class`, `pg_policies`) darf in Postgres jede Rolle lesen, Tabellen nicht.
 
-2. **Verbindungs-URL bauen**: Supabase → Project Settings → Database →
-   Connection string → **Session pooler** (GitHub-Runner können die direkte
-   Verbindung nicht erreichen). Darin den Benutzer durch
-   `rls_audit.wrxlaltgtgkdomklgrlj` und das Passwort durch das aus Schritt 1
-   ersetzen. Ergebnis sieht so aus:
+2. **Passwort als Secret speichern**: GitHub → dieses Repo → Settings →
+   Secrets and variables → Actions → New repository secret, Name
+   `SUPABASE_DB_PASSWORD`, Wert: das Passwort aus Schritt 1 (nur das
+   Passwort, keine Adresse). Benutzer (`rls_audit.wrxlaltgtgkdomklgrlj`),
+   Region (`eu-west-1`) und Pooler-Adresse stehen fest im Workflow.
 
-   ```
-   postgresql://rls_audit.wrxlaltgtgkdomklgrlj:PASSWORT@aws-0-….pooler.supabase.com:5432/postgres
-   ```
-
-3. **Als Secret speichern**: GitHub → dieses Repo → Settings → Secrets and
-   variables → Actions → New repository secret, Name `SUPABASE_DB_URL`.
+3. Ein älteres Secret `SUPABASE_DB_URL` wird nicht mehr gebraucht und kann
+   gelöscht werden.
 
 4. **Testlauf**: Actions → RLS-Audit → Run workflow. Grün ohne Issue heißt:
    nichts gefunden. Ein Issue mit Funden heißt: prüfen.
