@@ -22,13 +22,32 @@ jobs:
       - name: Datenbank prüfen
         id: pruefen
         env:
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          # Nur das Passwort des Prüf-Kontos rls_audit ist geheim. Benutzer, Region
+          # (eu-west-1) und Pooler-Adresse stehen fest hier; siehe SICHERHEIT-RLS-CHECK.md.
+          PGPASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+          PGUSER: rls_audit.wrxlaltgtgkdomklgrlj
+          PGDATABASE: postgres
+          PGPORT: "5432"
+          PGSSLMODE: require
+          PGCONNECT_TIMEOUT: "15"
         run: |
-          if [ -z "$SUPABASE_DB_URL" ]; then
-            echo "::error::Secret SUPABASE_DB_URL fehlt — siehe SICHERHEIT-RLS-CHECK.md"
+          if [ -z "$PGPASSWORD" ]; then
+            echo "::error::Secret SUPABASE_DB_PASSWORD fehlt — siehe SICHERHEIT-RLS-CHECK.md"
             exit 1
           fi
-          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -At -F ' | ' -f supabase/rls-audit.sql > funde.txt
+          # Supabase betreibt je Region zwei Pooler-Cluster; das Projekt liegt auf einem davon.
+          ok=""
+          for host in aws-0-eu-west-1.pooler.supabase.com aws-1-eu-west-1.pooler.supabase.com; do
+            if PGHOST="$host" psql -v ON_ERROR_STOP=1 -At -F ' | ' -f supabase/rls-audit.sql > funde.txt 2> fehler.txt; then
+              ok="$host"; break
+            fi
+            echo "Verbindung über $host nicht möglich:"; cat fehler.txt
+          done
+          if [ -z "$ok" ]; then
+            echo "::error::Keine Verbindung zur Datenbank — Passwort im Secret prüfen (nur Buchstaben und Zahlen, dasselbe wie bei rls_audit)."
+            exit 1
+          fi
+          echo "Verbunden über $ok"
           echo "Funde:"; cat funde.txt
           if grep -q '^OHNE_RLS' funde.txt; then echo "ohne_rls=1" >> "$GITHUB_OUTPUT"; fi
           if [ -s funde.txt ]; then echo "funde=1" >> "$GITHUB_OUTPUT"; fi
