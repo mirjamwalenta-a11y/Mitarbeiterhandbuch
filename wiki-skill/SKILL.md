@@ -10,6 +10,9 @@ description: >-
   einsortiert werden sollen ("räum den Eingang ein", "das gehört ins Wiki"), wenn
   Rohnotizen oder Neuerungen mit dem Wiki abgeglichen werden sollen, oder wenn die
   Testfragen durchgespielt werden sollen. Auch dann, wenn das Wort Wiki nicht fällt.
+  NICHT verwenden, wenn jemand ein Problem ohne Lösungsweg hat und Ansätze oder eine
+  Entscheidung sucht („ich weiß nicht, wie ich das angehen soll“, „welche Möglichkeiten
+  habe ich“): dafür gibt es den Skill ansatzfinder.
 ---
 
 # Wiki-Ordner A Great Hair Day: Wissensdatenbank aus Dateien
