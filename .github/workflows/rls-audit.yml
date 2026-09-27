@@ -35,9 +35,9 @@ jobs:
             echo "::error::Secret SUPABASE_DB_PASSWORD fehlt — siehe SICHERHEIT-RLS-CHECK.md"
             exit 1
           fi
-          # Supabase betreibt je Region zwei Pooler-Cluster; das Projekt liegt auf einem davon.
+          # Session-Pooler des Projekts (Cluster aws-0, per Testlauf am 2026-09-27 ermittelt).
           ok=""
-          for host in aws-0-eu-west-1.pooler.supabase.com aws-1-eu-west-1.pooler.supabase.com; do
+          for host in aws-0-eu-west-1.pooler.supabase.com; do
             if PGHOST="$host" psql -v ON_ERROR_STOP=1 -At -F ' | ' -f supabase/rls-audit.sql > funde.txt 2> fehler.txt; then
               ok="$host"; break
             fi
