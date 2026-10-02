@@ -23,8 +23,11 @@ alter table public.wissensbank_rezepturen
 
 alter table public.wissensbank_rezepturen
   add constraint wissensbank_rezepturen_anwendungsbereich_check
+  -- "Umformung & Glättung" steht schon hier mit drin, damit das Skript
+  -- auch nach 20261001140000 (X-Tenso dort einsortiert) erneut laufen kann.
   check (anwendungsbereich in
-    ('Blondierung', 'Coloration', 'Tönung', 'Farbkorrektur', 'Dauerwelle', 'Pflege', 'Styling', 'Sonstiges'));
+    ('Blondierung', 'Coloration', 'Tönung', 'Farbkorrektur', 'Dauerwelle',
+     'Umformung & Glättung', 'Pflege', 'Styling', 'Sonstiges'));
 
 insert into public.wissensbank_rezepturen
   (titel, anwendungsbereich, produkt_marke, mischverhaeltnis, anleitung, warnhinweise,
