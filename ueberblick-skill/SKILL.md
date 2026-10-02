@@ -63,8 +63,8 @@ Zeile Code selbst geschrieben, sondern beschrieben, was sie braucht.
   und Suche. Team reicht ein, Inhaberin gibt frei.
 - **Fachwissen Farbe** — strukturiertes Rezeptur-Wissen (Produkt/Marke,
   Mischverhältnis, Einwirkzeit, Anleitung, Warnhinweise) statt Freitext, mit
-  Kategorien (Blondierung, Coloration, Tönung, Farbkorrektur, Dauerwelle, Pflege,
-  Sonstiges), optionalem Foto-Anhang, Freigabe-Workflow, Bearbeiten-Funktion und
+  Kategorien (Blondierung, Coloration, Tönung, Farbkorrektur, Dauerwelle,
+  Umformung & Glättung, Pflege, Styling, Sonstiges), optionalem Foto-Anhang, Freigabe-Workflow, Bearbeiten-Funktion und
   alphabetischer Sortierung zum schnellen Nachschlagen am Kundenstuhl.
 
 Beide Wissensbanken teilen sich denselben Freigabe-Rhythmus: `entwurf`/`eingereicht`
