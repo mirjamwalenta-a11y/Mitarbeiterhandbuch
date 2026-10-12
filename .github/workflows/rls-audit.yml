@@ -52,6 +52,16 @@ jobs:
           if grep -q '^OHNE_RLS' funde.txt; then echo "ohne_rls=1" >> "$GITHUB_OUTPUT"; fi
           if [ -s funde.txt ]; then echo "funde=1" >> "$GITHUB_OUTPUT"; fi
 
+      - name: Offenes Issue schließen, wenn nichts mehr gefunden wird
+        if: steps.pruefen.outputs.funde != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          nr=$(gh issue list --label rls-audit --state open --json number --jq '.[0].number')
+          if [ -n "$nr" ]; then
+            gh issue close "$nr" --comment "Die RLS-Prüfung vom $(date -u +%Y-%m-%d) hat nichts mehr gefunden (bewusst offene Regeln stehen als Ausnahme in supabase/rls-audit.sql). Neue Funde öffnen automatisch ein neues Issue."
+          fi
+
       - name: Issue anlegen oder ergänzen
         if: steps.pruefen.outputs.funde == '1'
         env:
