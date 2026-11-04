@@ -1884,6 +1884,23 @@ document.querySelectorAll('.nav-item[data-section]').forEach(btn => {
   btn.addEventListener('click', () => goTo(btn.dataset.section));
 });
 
+// Direkt zu einem Kapitel springen über die Adresse, z. B. …_App.html#s04
+// (genutzt vom App-Verzeichnis). Nur bekannte, für alle lesbare Abschnitte.
+const HASH_ERLAUBT = ORDER.concat(['situationen', 'rezepturen']);
+// Wissensbank und Fachwissen Farbe laden Daten und brauchen die Anmeldung.
+const HASH_NUR_ANGEMELDET = ['wissensbank', 'rezepturen'];
+function hashOeffnen() {
+  let id = '';
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return false; }
+  if (!id || !HASH_ERLAUBT.includes(id)) return false;
+  if (HASH_NUR_ANGEMELDET.includes(id) && !_me) return false;
+  if (!document.getElementById(id === 'cover' ? 'sec-cover' : 'sec-' + id)) return false;
+  goTo(id);
+  return true;
+}
+window.addEventListener('hashchange', hashOeffnen);
+setTimeout(hashOeffnen, 0); // erst wenn das ganze Skript geladen ist
+
 // ══════════════════════════════════════════════════════════
 // ANMELDUNG (gleicher Supabase-Account wie team.html / lernquiz.html)
 // ══════════════════════════════════════════════════════════
@@ -1959,7 +1976,7 @@ function nachAnmeldung() {
     document.getElementById('navRzReview').style.display = 'flex';
     handbuchOSAktualisieren();
   }
-  goTo('cover');
+  if (!hashOeffnen()) goTo('cover'); // ohne Kapitel in der Adresse wie bisher: Cover
 }
 
 async function doLogout() {
@@ -2786,5 +2803,6 @@ window.addEventListener('DOMContentLoaded', async () => {
   sessionStorage.removeItem('mh_person');
 });
 </script>
+<script src="https://mirjamwalenta-a11y.github.io/index.greathairday/ghd-verzeichnis.js" data-links-breit="296" data-breit-ab="900" defer></script>  <!-- Alle Apps: Inhaltsverzeichnis -->
 </body>
 </html>
