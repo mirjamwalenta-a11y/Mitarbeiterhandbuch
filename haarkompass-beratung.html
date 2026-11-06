@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>HaarKompass · Beratung im Salon</title>
+<style>
+:root{
+  --bg:#F5F0E8; --surface:#FDFAF5; --surface-2:#EDE6DA; --ink:#1A1A18; --muted:#66604F; --line:#E2D9CA;
+  --accent:#7A6337; --accent-ink:#FFFFFF; --accent-soft:#EFE6D3; --plum:#6D2E7F; --plum-soft:#F1E4F6;
+  --good:#2F7D55; --good-soft:#E3F2EA; --skip:#8A5A12; --skip-soft:#FBF0DC;
+  --f-display:Georgia,"Times New Roman",serif; --f-body:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ color-scheme:dark;
+    --bg:#17120F; --surface:#221B17; --surface-2:#2D241F; --ink:#F2EAE4; --muted:#B3A499; --line:#3D322B;
+    --accent:#D2BC8E; --accent-ink:#1A1A18; --accent-soft:#3A3122; --plum:#CFA2E0; --plum-soft:#352840;
+    --good:#6CC196; --good-soft:#1D3328; --skip:#E3B45C; --skip-soft:#3A2E16; }
+}
+:root[data-theme="dark"]{ color-scheme:dark;
+  --bg:#17120F; --surface:#221B17; --surface-2:#2D241F; --ink:#F2EAE4; --muted:#B3A499; --line:#3D322B;
+  --accent:#D2BC8E; --accent-ink:#1A1A18; --accent-soft:#3A3122; --plum:#CFA2E0; --plum-soft:#352840;
+  --good:#6CC196; --good-soft:#1D3328; --skip:#E3B45C; --skip-soft:#3A2E16; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--f-body)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+header .wrap{display:flex;align-items:center;gap:12px;min-height:60px;flex-wrap:wrap}
+header h1{font:700 1.15rem var(--f-display);margin:0}
+header small{color:var(--muted);font-size:.8rem}
+.langs{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.langs button{border:0;background:none;padding:6px 14px;font:600 .85rem var(--f-body);color:var(--muted);cursor:pointer;min-height:36px}
+.langs button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+main{padding:20px 0 60px;display:flex;flex-direction:column;gap:18px}
+h2{font:700 1.25rem var(--f-display);margin:0}
+h3{font:600 1.02rem var(--f-display);margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.muted{color:var(--muted)} .small{font-size:.85rem}
+.team{background:var(--accent-soft);border-color:transparent;font-size:.92rem}
+.q{display:flex;flex-direction:column;gap:6px}
+.q-title{font-weight:600;font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:500 .88rem var(--f-body);cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+input[type=text]{flex:1;min-width:0;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit}
+.btn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;font:600 .9rem var(--f-body);cursor:pointer;min-height:40px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.hint{font-size:.88rem;color:var(--muted)}
+.say{border-left:5px solid var(--plum);background:var(--plum-soft)}
+.say p{margin:0;font-size:1.05rem;line-height:1.55}
+.verdict{border-left:5px solid var(--accent)}
+.verdict .tag{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.step{border-left:3px solid var(--accent);padding-left:12px;display:flex;flex-direction:column;gap:6px}
+.step.special{border-color:var(--plum)}
+.step p{margin:0;font-size:.92rem;color:var(--muted)}
+.prods{display:flex;flex-direction:column;gap:6px;margin-top:2px}
+.prod{background:var(--surface-2);border-radius:10px;padding:8px 12px;font-size:.92rem}
+.prod b{display:block}
+.prod .brand{font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.noprod{font-size:.88rem;color:var(--skip);background:var(--skip-soft);border-radius:10px;padding:8px 12px}
+.opt{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--plum);margin-left:6px}
+ul{margin:0;padding-left:20px} li{margin-bottom:4px;font-size:.92rem}
+.skip li b{color:var(--ink)}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:999px;font-weight:600;font-size:.9rem}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media print{ header,.no-print{display:none!important} body{background:#fff;color:#000} .card{break-inside:avoid;border-color:#bbb} }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div><h1>HaarKompass · <span data-de="Beratung im Salon" data-en="In-salon consultation">Beratung im Salon</span></h1>
+      <small data-de="Für das Team: mit der Kundin/dem Kunden gemeinsam ausfüllen" data-en="For the team: fill in together with the client">Für das Team: mit der Kundin/dem Kunden gemeinsam ausfüllen</small></div>
+    <div class="langs" role="group" aria-label="Sprache / Language">
+      <button type="button" data-lang="de" aria-pressed="true">Deutsch</button>
+      <button type="button" data-lang="en" aria-pressed="false" lang="en">English</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="card team no-print" id="team-hinweis">
+    <b>So geht's im Salon</b>
+    <span>1. Die 7 Fragen gemeinsam beantworten, oder den Link einfügen, den die Kundin/der Kunde zu Hause im HaarKompass erstellt hat. 2. Oben die Sprache der Kundin/des Kunden wählen. 3. Den Satz unter <b>„So erklärst du es“</b> sagen, dann die Produkte zeigen. Begründungen stehen jeweils dabei.</span>
+  </div>
+
+  <div class="card no-print">
+    <h2 data-de="Link der Kundin/des Kunden" data-en="Client's link">Link der Kundin/des Kunden</h2>
+    <div class="row">
+      <input type="text" id="link" placeholder="greathairday.at/haarkompass/#r=…" aria-label="HaarKompass-Link">
+      <button class="btn" id="link-ok" data-de="Übernehmen" data-en="Use">Übernehmen</button>
+    </div>
+    <p class="hint" id="link-msg" hidden></p>
+  </div>
+
+  <div class="card no-print">
+    <div class="row" style="justify-content:space-between">
+      <h2 data-de="Die 7 Fragen" data-en="The 7 questions">Die 7 Fragen</h2>
+      <button class="btn" id="reset" data-de="Neu beginnen" data-en="Start over">Neu beginnen</button>
+    </div>
+    <div id="fragen" style="display:flex;flex-direction:column;gap:14px"></div>
+  </div>
+
+  <p class="hint" id="offen"></p>
+
+  <section id="ergebnis" hidden style="display:flex;flex-direction:column;gap:18px">
+    <div class="card say">
+      <h2 data-de="So erklärst du es" data-en="How to explain it">So erklärst du es</h2>
+      <p id="say"></p>
+    </div>
+    <div class="card verdict"><span class="tag" id="v-tag"></span><h2 id="v-title"></h2><p class="muted" id="v-text" style="margin:0"></p></div>
+    <div class="card"><h2 data-de="Die Basis-Routine" data-en="The basic routine">Die Basis-Routine</h2><div id="basis" style="display:flex;flex-direction:column;gap:14px"></div></div>
+    <div class="card"><h2 data-de="Der Spezial-Impuls" data-en="The special boost">Der Spezial-Impuls</h2><div id="special" style="display:flex;flex-direction:column;gap:14px"></div></div>
+    <div class="card" id="wishes-card"><h2 data-de="Ihre Wünsche" data-en="Their goals">Ihre Wünsche</h2><ul id="wishes"></ul></div>
+    <div class="card skip"><h2 data-de="Was weggelassen werden kann" data-en="What can be left out">Was weggelassen werden kann</h2><ul id="skip"></ul></div>
+    <div class="card"><h2 data-de="Tipps für zu Hause" data-en="Tips for home">Tipps für zu Hause</h2><ul id="tips"></ul></div>
+    <div class="row no-print">
+      <button class="btn primary" id="share" data-de="Link für die Kundin/den Kunden kopieren" data-en="Copy link for the client">Link für die Kundin/den Kunden kopieren</button>
+      <button class="btn" id="print" data-de="Drucken" data-en="Print">Drucken</button>
+    </div>
+    <p class="hint no-print" data-de="Der Link öffnet den HaarKompass auf greathairday.at mit genau diesen Antworten, in der gewählten Sprache. Salonprodukte stehen dort nicht, nur hier." data-en="The link opens the HaarKompass on greathairday.at with exactly these answers, in the chosen language. Salon products are only shown here, not there.">Der Link öffnet den HaarKompass auf greathairday.at mit genau diesen Antworten, in der gewählten Sprache. Salonprodukte stehen dort nicht, nur hier.</p>
+  </section>
+
+  <p class="hint" id="ladefehler" hidden>Der HaarKompass konnte nicht geladen werden. Bitte Internetverbindung prüfen und die Seite neu laden.</p>
+</main>
+<div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
+
+<!-- Regelwerk und Übersetzung kommen direkt von der Website: immer dieselbe Empfehlung wie für Kund:innen -->
+<script src="https://www.greathairday.at/haarkompass/engine.js"></script>
+<script src="https://www.greathairday.at/haarkompass/en.js"></script>
+<script src="haarkompass-produkte.js"></script>
+<script>
+"use strict";
+const KUNDE = "https://www.greathairday.at/haarkompass/";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+const store = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+const load = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+
+if (typeof recommend !== "function" || typeof hkT !== "function") {
+  $("#ladefehler").hidden = false;
+  throw new Error("HaarKompass nicht geladen");
+}
+
+let lang = load("haarkompass-beratung.lang") === "en" ? "en" : "de";
+const T = s => lang === "en" ? hkT(s) : s;
+const W = {
+  de:{ q:"Frage", open:n => "Noch " + n + (n === 1 ? " Frage" : " Fragen") + " offen, dann erscheint die Empfehlung.",
+       because:"weil:", how:"So geht's:", salon:"Bei uns im Salon", none:"Dafür führen wir kein passendes Produkt. Ehrlich sagen und die Produktart empfehlen.",
+       noExtra:"Kein Extra nötig: Die Basis-Routine reicht.", opt:"optional", first:"Ersteinschätzung · ",
+       say:{ start:"Meine Empfehlung für dein Haar:", wash:"Zum Waschen", cond:"Danach", heat:"Dazu", extra:"Als Extra", ours:"bei uns", already:"ist schon in deiner Routine dabei" }, noSkip:"Hier gibt es nichts zu streichen.",
+       copied:"Link kopiert", linkBad:"Diesen Link verstehe ich nicht. Er muss „#r=…“ enthalten.", linkOk:"Antworten übernommen.",
+       status:{ covered:"Erfüllt", tip:"So klappt's", honest:"Ehrlich gesagt" }, title:"HaarKompass · Beratung im Salon" },
+  en:{ q:"Question", open:n => n + (n === 1 ? " question" : " questions") + " left, then the recommendation appears.",
+       because:"because:", how:"How to:", salon:"In our salon", none:"We don't carry a suitable product for this. Say so honestly and recommend the product type.",
+       noExtra:"No extra needed: the basic routine is enough.", opt:"optional", first:"First assessment · ",
+       say:{ start:"My recommendation for your hair:", wash:"For washing", cond:"Afterwards", heat:"Plus", extra:"As an extra", ours:"ours", already:"already part of your routine" }, noSkip:"There is nothing to leave out.",
+       copied:"Link copied", linkBad:"I can't read this link. It needs to contain \"#r=…\".", linkOk:"Answers loaded.",
+       status:{ covered:"Covered", tip:"How it works", honest:"To be honest" }, title:"HaarKompass · In-salon consultation" }
+};
+const L = () => W[lang];
+
+/* ---- Antworten ---- */
+const a = {};
+function leer(){ for (const q of QUESTIONS) a[q.id] = q.type === "multi" ? new Set() : undefined; }
+leer();
+const fertig = () => QUESTIONS.filter(q => q.type === "multi" ? a[q.id].size === 0 : !a[q.id]).length;
+
+function code(){ return QUESTIONS.map(q => q.type === "multi" ? [...a[q.id]].join("+") || "-" : a[q.id]).join("."); }
+function decode(str){
+  const parts = String(str || "").split(".");
+  if (parts.length !== QUESTIONS.length) return false;
+  const neu = {};
+  for (let i = 0; i < QUESTIONS.length; i++){
+    const q = QUESTIONS[i], ok = new Set(q.options.map(o => o.v));
+    if (q.type === "multi"){
+      const v = parts[i] === "-" ? [] : parts[i].split("+");
+      if (!v.every(x => ok.has(x))) return false;
+      neu[q.id] = new Set(v.slice(0, q.max || v.length));
+    } else { if (!ok.has(parts[i])) return false; neu[q.id] = parts[i]; }
+  }
+  Object.assign(a, neu); return true;
+}
+
+function renderFragen(){
+  $("#fragen").innerHTML = QUESTIONS.map((q, i) => `<div class="q" role="group" aria-labelledby="qt-${q.id}">
+    <div class="q-title" id="qt-${q.id}">${i + 1}. ${esc(T(q.title))}${q.hint ? ` <span class="muted small">${esc(T(q.hint))}</span>` : ""}</div>
+    <div class="chips">${q.options.map(o => {
+      const on = q.type === "multi" ? a[q.id].has(o.v) : a[q.id] === o.v;
+      return `<button type="button" class="chip" data-q="${q.id}" data-v="${o.v}" aria-pressed="${on}" title="${esc(o.d ? T(o.d) : "")}">${esc(T(o.l))}</button>`;
+    }).join("")}</div>
+    ${q.help ? `<details><summary>${esc(T(q.help.title))}</summary><p class="small">${esc(T(q.help.text))}</p></details>` : ""}</div>`).join("");
+}
+
+$("#fragen").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  const q = QUESTIONS.find(x => x.id === b.dataset.q), v = b.dataset.v;
+  if (q.type === "single") a[q.id] = a[q.id] === v ? undefined : v;
+  else {
+    const s = a[q.id];
+    if (s.has(v)) s.delete(v);
+    else {
+      if (q.none === v) s.clear(); else if (q.none) s.delete(q.none);
+      if (q.max && s.size >= q.max) s.delete([...s][0]);
+      s.add(v);
+    }
+  }
+  renderFragen(); renderErgebnis();
+  const again = $(`.chip[data-q="${q.id}"][data-v="${v}"]`); if (again) again.focus();
+});
+
+/* ---- Ergebnis ---- */
+function produkteHtml(name){
+  const p = hkProdukte(name, a);
+  if (p === null) return "";
+  if (!p.length) return `<div class="noprod">${esc(L().none)}</div>`;
+  return `<div class="prods"><span class="small muted"><b>${esc(L().salon)}:</b></span>${p.map(x =>
+    `<div class="prod"><span class="brand">${esc(x.marke)}</span><b>${esc(x.produkt)}</b>${esc(lang === "en" ? x.en : x.de)}</div>`).join("")}</div>`;
+}
+function stepHtml(x, special){
+  return `<div class="step${special ? " special" : ""}"><h3>${esc(T(x.name))}${x.optional ? `<span class="opt">${esc(L().opt)}</span>` : ""}</h3>
+    <p>${esc(T(x.why))}</p>${x.how ? `<p><b>${esc(L().how)}</b> ${esc(T(x.how))}</p>` : ""}
+    ${x.because && x.because.length ? `<p class="small">${esc(L().because)} ${x.because.map(b => esc(T(b))).join(" · ")}</p>` : ""}
+    ${produkteHtml(x.name)}</div>`;
+}
+
+function satz(r){
+  const S = L().say, schon = new Set();
+  const teil = (label, x) => {
+    if (!x) return "";
+    const p = hkProdukte(x.name, a), art = T(x.name).replace(/[.:]$/, "");
+    let t = " " + label + ": " + art;
+    if (p && p.length){
+      const name = p[0].marke + " " + p[0].produkt;
+      t += schon.has(name) ? " – " + p[0].produkt + ", " + S.already : " – " + S.ours + ": " + name;
+      schon.add(name);
+    }
+    return t + ".";
+  };
+  return S.start + teil(S.wash, r.basis[0]) + teil(S.cond, r.basis[1]) + teil(S.heat, r.basis[2])
+    + teil(S.extra, r.special.find(x => !x.optional)) + " " + T(r.verdict.text);
+}
+
+function renderErgebnis(){
+  const offen = fertig();
+  $("#offen").textContent = offen ? L().open(offen) : "";
+  $("#ergebnis").hidden = offen > 0;
+  if (offen) return;
+  const r = recommend(a);
+  $("#say").textContent = satz(r);
+  $("#v-tag").textContent = L().first + T(r.verdict.tag);
+  $("#v-title").textContent = T(r.verdict.title);
+  $("#v-text").textContent = T(r.verdict.summary);
+  $("#basis").innerHTML = r.basis.map(x => stepHtml(x, false)).join("");
+  $("#special").innerHTML = r.special.length ? r.special.map(x => stepHtml(x, true)).join("") : `<p class="muted">${esc(L().noExtra)}</p>`;
+  $("#wishes-card").hidden = !r.wishes.length;
+  $("#wishes").innerHTML = r.wishes.map(w => `<li><b>${esc(T(w.label))}</b> (${esc(L().status[w.status])}): ${esc(T(w.text))}</li>`).join("");
+  $("#skip").innerHTML = r.skip.length ? r.skip.map(x => `<li><b>${esc(T(x.name))}:</b> ${esc(T(x.why))}</li>`).join("") : `<li>${esc(L().noSkip)}</li>`;
+  $("#tips").innerHTML = r.tips.map(t => `<li>${T(t)}</li>`).join("");
+}
+
+/* ---- Sprache, Link, Knöpfe ---- */
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.title = L().title;
+  for (const el of document.querySelectorAll("[data-de][data-en]")) el.textContent = el.dataset[lang];
+  for (const b of document.querySelectorAll(".langs button")) b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+  renderFragen(); renderErgebnis();
+}
+for (const b of document.querySelectorAll(".langs button")) b.addEventListener("click", () => {
+  lang = b.dataset.lang; store("haarkompass-beratung.lang", lang); applyLang();
+});
+function toast(m){ const t = $("#toast"); t.textContent = m; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => t.hidden = true, 2200); }
+
+$("#link-ok").addEventListener("click", () => {
+  const v = $("#link").value.trim(), m = v.match(/#r=([\w.+\-]+)/) || v.match(/^([\w+\-]+(?:\.[\w+\-]+){6})$/);
+  const msg = $("#link-msg"); msg.hidden = false;
+  if (m && decode(m[1])) {
+    if (/[?&]lang=en/.test(v)) { lang = "en"; store("haarkompass-beratung.lang", lang); }
+    msg.textContent = L().linkOk; applyLang();
+  } else msg.textContent = L().linkBad;
+});
+$("#reset").addEventListener("click", () => { leer(); $("#link").value = ""; $("#link-msg").hidden = true; renderFragen(); renderErgebnis(); window.scrollTo({ top:0 }); });
+$("#print").addEventListener("click", () => window.print());
+$("#share").addEventListener("click", async () => {
+  const url = KUNDE + (lang === "en" ? "?lang=en" : "") + "#r=" + code();
+  try { await navigator.clipboard.writeText(url); toast(L().copied); } catch (e) { prompt("Link:", url); }
+});
+
+// Direkt mit Antworten öffnen: haarkompass-beratung.html#r=…
+const start = location.hash.match(/^#r=([\w.+\-]+)$/);
+if (start) decode(start[1]);
+applyLang();
+</script>
+</body>
+</html>
