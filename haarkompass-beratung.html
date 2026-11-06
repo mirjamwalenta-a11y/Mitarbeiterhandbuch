@@ -59,6 +59,14 @@ input[type=text]{flex:1;min-width:0;padding:9px 12px;border:1.5px solid var(--li
 .prod{background:var(--surface-2);border-radius:10px;padding:8px 12px;font-size:.92rem}
 .prod b{display:block}
 .prod .brand{font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.water-row{display:flex;gap:8px;flex-wrap:wrap}
+.water-row input{max-width:160px}
+.water-val{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.water-val b{font:700 1.4rem var(--f-display)}
+.wchip{padding:2px 10px;border-radius:999px;font-size:.78rem;font-weight:600;background:var(--accent-soft);color:var(--accent)}
+.wchip.hart{background:var(--skip-soft);color:var(--skip)}
+.water-out p{margin:0;font-size:.92rem;color:var(--muted)}
+.water-out a{color:var(--muted);font-size:.8rem}
 .noprod{font-size:.88rem;color:var(--skip);background:var(--skip-soft);border-radius:10px;padding:8px 12px}
 .opt{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--plum);margin-left:6px}
 ul{margin:0;padding-left:20px} li{margin-bottom:4px;font-size:.92rem}
@@ -118,6 +126,14 @@ details summary{cursor:pointer;font-weight:600;color:var(--accent)}
     <div class="card" id="wishes-card"><h2 data-de="Ihre Wünsche" data-en="Their goals">Ihre Wünsche</h2><ul id="wishes"></ul></div>
     <div class="card skip"><h2 data-de="Was weggelassen werden kann" data-en="What can be left out">Was weggelassen werden kann</h2><ul id="skip"></ul></div>
     <div class="card"><h2 data-de="Tipps für zu Hause" data-en="Tips for home">Tipps für zu Hause</h2><ul id="tips"></ul></div>
+    <div class="card" id="water-card">
+      <h2 data-de="Wasserhärte bei ihr/ihm zu Hause" data-en="Water hardness at home">Wasserhärte bei ihr/ihm zu Hause</h2>
+      <form class="water-row no-print" id="water-form" novalidate>
+        <input type="text" id="water-plz" inputmode="numeric" maxlength="4" placeholder="PLZ" aria-label="Postleitzahl">
+        <button class="btn" type="submit" data-de="Anzeigen" data-en="Show">Anzeigen</button>
+      </form>
+      <div class="water-out" id="water-out" style="display:flex;flex-direction:column;gap:6px" hidden></div>
+    </div>
     <div class="row no-print">
       <button class="btn primary" id="share" data-de="Link für die Kundin/den Kunden kopieren" data-en="Copy link for the client">Link für die Kundin/den Kunden kopieren</button>
       <button class="btn" id="print" data-de="Drucken" data-en="Print">Drucken</button>
@@ -132,6 +148,7 @@ details summary{cursor:pointer;font-weight:600;color:var(--accent)}
 <!-- Regelwerk und Übersetzung kommen direkt von der Website: immer dieselbe Empfehlung wie für Kund:innen -->
 <script src="https://www.greathairday.at/haarkompass/engine.js"></script>
 <script src="https://www.greathairday.at/haarkompass/en.js"></script>
+<script src="https://www.greathairday.at/haarkompass/wasser.js"></script>
 <script src="haarkompass-produkte.js"></script>
 <script>
 "use strict";
@@ -261,7 +278,27 @@ function renderErgebnis(){
   $("#wishes").innerHTML = r.wishes.map(w => `<li><b>${esc(T(w.label))}</b> (${esc(L().status[w.status])}): ${esc(T(w.text))}</li>`).join("");
   $("#skip").innerHTML = r.skip.length ? r.skip.map(x => `<li><b>${esc(T(x.name))}:</b> ${esc(T(x.why))}</li>`).join("") : `<li>${esc(L().noSkip)}</li>`;
   $("#tips").innerHTML = r.tips.map(t => `<li>${T(t)}</li>`).join("");
+  renderWater();
 }
+
+/* ---- Wasserhärte (gleiche Daten wie auf greathairday.at; PLZ nur für diese Beratung, nicht gespeichert) ---- */
+let waterPlz = "";
+function renderWater(){
+  const card = $("#water-card"), out = $("#water-out");
+  if (typeof wasserFuerPlz !== "function"){ card.hidden = true; return; }
+  card.hidden = false;
+  if (!waterPlz){ out.hidden = true; return; }
+  const W = WASSER_TEXT[lang], r = wasserFuerPlz(waterPlz);
+  out.hidden = false;
+  if (!r.ok){ out.innerHTML = `<p>${esc(W.falsch)}</p>`; return; }
+  if (!r.bekannt){ out.innerHTML = `<p>${esc(W.keine(r.plz))}</p><p><a href="${WASSER_NACHSCHLAGEN}" target="_blank" rel="noopener">${esc(W.nachschlagen)}</a></p>`; return; }
+  const stufe = r.stufeVon === r.stufeBis ? W.stufe[r.stufeVon] : W.stufe[r.stufeVon] + " – " + W.stufe[r.stufeBis];
+  out.innerHTML = `<div class="water-val"><b>${r.von}–${r.bis} °dH</b><span class="wchip">${esc(stufe)}</span>`
+    + (r.hoch ? `<span class="wchip hart">${esc(lang === "en" ? "at times up to " : "zeitweise bis ") + r.hoch} °dH</span>` : "")
+    + `</div><p class="small">${esc(W.ort(r.bezirk))}</p><p>${esc(r.hoch ? W.hoch(r.hoch) : W.normal)}</p><p>${esc(W.ehrlich)}</p>`
+    + `<p><a href="${WASSER_QUELLE.url}" target="_blank" rel="noopener">${esc(W.quelle)}</a></p>`;
+}
+$("#water-form").addEventListener("submit", e => { e.preventDefault(); waterPlz = $("#water-plz").value.trim(); renderWater(); });
 
 /* ---- Sprache, Link, Knöpfe ---- */
 function applyLang(){
@@ -284,7 +321,7 @@ $("#link-ok").addEventListener("click", () => {
     msg.textContent = L().linkOk; applyLang();
   } else msg.textContent = L().linkBad;
 });
-$("#reset").addEventListener("click", () => { leer(); $("#link").value = ""; $("#link-msg").hidden = true; renderFragen(); renderErgebnis(); window.scrollTo({ top:0 }); });
+$("#reset").addEventListener("click", () => { leer(); waterPlz = ""; $("#water-plz").value = ""; $("#link").value = ""; $("#link-msg").hidden = true; renderFragen(); renderErgebnis(); window.scrollTo({ top:0 }); });
 $("#print").addEventListener("click", () => window.print());
 $("#share").addEventListener("click", async () => {
   const url = KUNDE + (lang === "en" ? "?lang=en" : "") + "#r=" + code();
