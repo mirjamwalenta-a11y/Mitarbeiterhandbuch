@@ -1,0 +1,25 @@
+# Prüft, ob jede Produktart, die der HaarKompass (greathairday.at) empfehlen
+# kann, in haarkompass-produkte.js einem Salonprodukt zugeordnet ist.
+# Läuft bei jeder Änderung an den HaarKompass-Dateien und jeden Montag
+# (falls sich der HaarKompass auf der Website geändert hat).
+name: HaarKompass-Produkte prüfen
+
+on:
+  push:
+    paths: ["haarkompass-*", "tests/haarkompass-produkte.test.js", ".github/workflows/haarkompass-produkte.yml"]
+  pull_request:
+    paths: ["haarkompass-*", "tests/haarkompass-produkte.test.js", ".github/workflows/haarkompass-produkte.yml"]
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Alle Antwort-Kombinationen gegen die Produktliste prüfen
+        run: node tests/haarkompass-produkte.test.js
