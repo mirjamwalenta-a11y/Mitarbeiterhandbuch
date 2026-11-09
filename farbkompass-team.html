@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Farbkompass · Team</title>
+<style>
+:root{
+  --bg:#F5F0E8; --surface:#FDFAF5; --surface-2:#EDE6DA; --ink:#1A1A18; --muted:#66604F; --line:#E2D9CA;
+  --accent:#7A6337; --accent-ink:#FFFFFF; --accent-soft:#EFE6D3; --plum:#6D2E7F; --plum-soft:#F1E4F6;
+  --good:#2F7D55; --good-soft:#E3F2EA; --skip:#8A5A12; --skip-soft:#FBF0DC;
+  --f-display:Georgia,"Times New Roman",serif; --f-body:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ color-scheme:dark;
+    --bg:#17120F; --surface:#221B17; --surface-2:#2D241F; --ink:#F2EAE4; --muted:#B3A499; --line:#3D322B;
+    --accent:#D2BC8E; --accent-ink:#1A1A18; --accent-soft:#3A3122; --plum:#CFA2E0; --plum-soft:#352840;
+    --good:#6CC196; --good-soft:#1D3328; --skip:#E3B45C; --skip-soft:#3A2E16; }
+}
+:root[data-theme="dark"]{ color-scheme:dark;
+  --bg:#17120F; --surface:#221B17; --surface-2:#2D241F; --ink:#F2EAE4; --muted:#B3A499; --line:#3D322B;
+  --accent:#D2BC8E; --accent-ink:#1A1A18; --accent-soft:#3A3122; --plum:#CFA2E0; --plum-soft:#352840;
+  --good:#6CC196; --good-soft:#1D3328; --skip:#E3B45C; --skip-soft:#3A2E16; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--f-body)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+header .wrap{display:flex;align-items:center;gap:12px;min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+header h1{font:700 1.15rem var(--f-display);margin:0}
+header small{color:var(--muted);font-size:.8rem}
+.modi{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.modi button{border:0;background:none;padding:6px 16px;font:600 .9rem var(--f-body);color:var(--muted);cursor:pointer;min-height:38px}
+.modi button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+main{padding:20px 0 60px;display:flex;flex-direction:column;gap:18px}
+h2{font:700 1.25rem var(--f-display);margin:0}
+h3{font:600 1.02rem var(--f-display);margin:0}
+p{margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.team{background:var(--accent-soft);border-color:transparent;font-size:.92rem}
+.muted{color:var(--muted)} .small{font-size:.85rem}
+.q{display:flex;flex-direction:column;gap:6px}
+.q + .q{border-top:1px solid var(--line);padding-top:14px}
+.q-title{font-weight:600}
+.q-say{font-size:.9rem;color:var(--plum)}
+.q-why{font-size:.88rem;color:var(--muted);background:var(--surface-2);border-radius:10px;padding:8px 12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:500 .88rem var(--f-body);cursor:pointer;min-height:36px;text-align:left}
+.chip small{display:block;font-size:.75rem;color:var(--muted);font-weight:400}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.chip[aria-pressed="true"] small{color:var(--accent-ink);opacity:.85}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;font:600 .9rem var(--f-body);cursor:pointer;min-height:40px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.hint{font-size:.88rem;color:var(--muted)}
+.say{border-left:5px solid var(--plum);background:var(--plum-soft)}
+.say p{font-size:1.02rem;line-height:1.55}
+.verdict{border-left:5px solid var(--accent)}
+.tag{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.richtung{font:italic 700 1.6rem var(--f-display);color:var(--accent)}
+.alt{border:1.5px dashed var(--line);border-radius:12px;padding:10px 14px}
+.alt b{font-family:var(--f-display)}
+ul{margin:0;padding-left:20px} li{margin-bottom:4px;font-size:.94rem}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+details[open] summary{margin-bottom:8px}
+/* Punkte-Balken */
+.balken{display:grid;grid-template-columns:minmax(0,11rem) 1fr 1.5rem;gap:6px 10px;align-items:center;font-size:.88rem}
+.balken .bar{height:10px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.balken .bar i{display:block;height:100%;background:var(--muted);border-radius:999px}
+.balken .haupt{font-weight:700}
+.balken .haupt + .bar i{background:var(--accent)}
+.balken .zweit + .bar i{background:var(--plum)}
+.balken b{text-align:right}
+/* Lernen */
+.subtabs{display:flex;gap:6px;flex-wrap:wrap}
+.richtungen{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.rkarte{background:var(--surface-2);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;font-size:.92rem}
+.rkarte h3{color:var(--accent)}
+.zitat{border-left:3px solid var(--accent);padding:4px 0 4px 12px;display:flex;flex-direction:column;gap:2px}
+.zitat small{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.zitat q{font-family:var(--f-display);font-size:1.08rem;font-style:italic}
+.auswahl{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.auswahl .chip{border-radius:12px;padding:10px 12px;font-size:.95rem}
+.chip.richtig{border-color:var(--good);background:var(--good-soft);color:var(--ink)}
+.chip.fast{border-color:var(--plum);background:var(--plum-soft);color:var(--ink)}
+.chip.falsch{border-color:var(--skip);background:var(--skip-soft);color:var(--ink)}
+.feedback{border-radius:12px;padding:12px 14px;font-weight:600}
+.feedback.richtig{background:var(--good-soft);color:var(--good)}
+.feedback.fast{background:var(--plum-soft);color:var(--plum)}
+.feedback.falsch{background:var(--skip-soft);color:var(--skip)}
+.stand{font-size:.85rem;color:var(--muted);margin-left:auto}
+.fehler{background:var(--skip-soft);color:var(--skip);border-radius:12px;padding:12px 14px}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (max-width:520px){ .balken{grid-template-columns:minmax(0,8.5rem) 1fr 1.2rem} .modi{margin-left:0;width:100%} .modi button{flex:1} }
+@media print{ header,.no-print{display:none!important} body{background:#fff;color:#000} .card{break-inside:avoid;border-color:#bbb} }
+</style>
+<script src="https://mirjamwalenta-a11y.github.io/abwesenheiten-ghd/ghd-offline.js"></script>  <!-- offline nutzbar: Service Worker (sw.js) -->
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div><h1>Farbkompass · Team</h1>
+      <small>Gleicher Kern wie die Kund:innen-Version: Wirkung vor Technik, Farbrichtung statt Farbton</small></div>
+    <div class="modi" role="group" aria-label="Modus">
+      <button type="button" data-modus="lernen" aria-pressed="false">Lernen</button>
+      <button type="button" data-modus="beraten" aria-pressed="false">Beraten</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="fehler" id="kern-fehler" hidden>Der Farbkompass-Kern konnte nicht geladen werden. Bitte Internetverbindung prüfen und die Seite neu laden.</p>
+
+  <!-- ═════════════ BERATEN ═════════════ -->
+  <section id="modus-beraten" hidden style="display:flex;flex-direction:column;gap:18px">
+    <div class="card team no-print">
+      <b>So geht's im Salon</b>
+      <span>1. Die drei Fragen mit der Kundin/dem Kunden durchgehen. Der lila Satz hilft dir beim Fragen. 2. Die Farbrichtung mit dem Satz unter <b>„So sagst du es“</b> erklären. 3. Mit den Rückfragen prüfen, ob es sich stimmig anfühlt. Erst danach geht es in deine Fachberatung.</span>
+    </div>
+    <div class="card no-print">
+      <div class="row" style="justify-content:space-between">
+        <h2>Die 3 Fragen</h2>
+        <button class="btn" id="b-reset">Neu beginnen</button>
+      </div>
+      <div id="b-fragen" style="display:flex;flex-direction:column;gap:14px"></div>
+    </div>
+    <p class="hint" id="b-offen"></p>
+    <section id="b-ergebnis" hidden style="display:flex;flex-direction:column;gap:18px"></section>
+  </section>
+
+  <!-- ═════════════ LERNEN ═════════════ -->
+  <section id="modus-lernen" hidden style="display:flex;flex-direction:column;gap:18px">
+    <div class="subtabs no-print" role="group" aria-label="Lernbereich">
+      <button class="chip" data-lern="verstehen" aria-pressed="true">1 · Verstehen</button>
+      <button class="chip" data-lern="ueben" aria-pressed="false">2 · Üben</button>
+    </div>
+
+    <div id="lern-verstehen" style="display:flex;flex-direction:column;gap:18px">
+      <div class="card team">
+        <b>Worum es beim Farbkompass geht</b>
+        <span>Der Farbkompass hilft der Kundin, eine <b>Farbrichtung</b> für ihr Gesicht zu finden, bevor es um Technik geht. Er bestimmt keinen Farbton und keinen Farbtyp, und er beurteilt weder Hautunterton noch Augenfarbe oder Gesichtsform. Die Kundin soll sich verstanden fühlen, nicht analysiert.</span>
+      </div>
+      <div class="card">
+        <h2>Die drei Grundregeln</h2>
+        <ul>
+          <li><b>Wirkung vor Technik:</b> Zuerst fragen wir, wie das Gesicht wirken soll. Die Technik kommt später, in deiner Fachberatung.</li>
+          <li><b>Entscheidungshilfe vor Typisierung:</b> Wir stecken niemanden in eine Schublade. Die Richtung ist eine Orientierung, kein Urteil.</li>
+          <li><b>Farbrichtung statt fixer Farbton:</b> Das Ergebnis ist eine Richtung. Wie wir sie umsetzen, entscheiden wir gemeinsam mit der Kundin.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Die 3 Fragen und warum wir sie stellen</h2>
+        <div id="l-fragen" style="display:flex;flex-direction:column;gap:14px"></div>
+      </div>
+      <div class="card">
+        <h2>So entsteht das Ergebnis</h2>
+        <ul>
+          <li>Jede Antwort gibt <b>1 Punkt</b> auf eine oder zwei passende Richtungen. Die Richtung mit den meisten Punkten ist die Hauptempfehlung.</li>
+          <li><b>Gleichstand?</b> Dann entscheidet zuerst Frage 1 (die Wunschwirkung), danach Frage 3 (was am wichtigsten ist).</li>
+          <li>Eine <b>Zweitempfehlung</b> gibt es nur, wenn alle drei Bedingungen zutreffen: Es ist die erlaubte Partner-Richtung, sie liegt höchstens 1 Punkt dahinter, und Frage 1 und Frage 3 zeigen nicht beide auf die Hauptempfehlung.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Die 6 Farbrichtungen</h2>
+        <div class="richtungen" id="l-richtungen"></div>
+      </div>
+      <div class="row no-print"><button class="btn primary" id="l-zum-ueben">Jetzt üben →</button></div>
+    </div>
+
+    <div id="lern-ueben" hidden style="display:flex;flex-direction:column;gap:18px">
+      <div class="card">
+        <div class="row"><h2>Übungsfall</h2><span class="stand" id="u-stand"></span></div>
+        <p class="muted small">Eine Kundin hat dir diese drei Dinge gesagt. Welche Farbrichtung passt?</p>
+        <div id="u-zitate" style="display:flex;flex-direction:column;gap:10px"></div>
+        <div class="auswahl" id="u-auswahl"></div>
+      </div>
+      <section id="u-aufloesung" hidden style="display:flex;flex-direction:column;gap:18px"></section>
+      <div class="row no-print"><button class="btn primary" id="u-weiter" hidden>Nächster Fall →</button></div>
+    </div>
+  </section>
+</main>
+
+<script src="https://mirjamwalenta-a11y.github.io/index.greathairday/farbkompass-kern.js"></script>
+<script>
+/* ─────────────────────────────────────────────────────────────
+   Farbkompass · Team (Lernen für Lehrlinge, Beraten für Stylist:innen)
+   Fragen, Punkte-Logik und Ergebnistexte kommen aus dem gemeinsamen Kern
+   (index.greathairday/farbkompass-kern.js), damit Team und Kundin immer
+   dasselbe Ergebnis sehen. Hier steht nur, was das Team zusätzlich braucht.
+   Rein clientseitig, es werden keine Kund:innendaten gespeichert oder gesendet.
+   ───────────────────────────────────────────────────────────── */
+(function(){
+'use strict';
+if (!window.FARBKOMPASS) { document.getElementById('kern-fehler').hidden = false; return; }
+const { RICHTUNGEN, FRAGEN, ABSCHLUSS, auswerten, warumText } = window.FARBKOMPASS;
+
+// ── Team-Zusatz: Gesprächsführung ─────────────────────────────
+// fragen: so fragst du im Salon (Beraten) · warum: warum wir das fragen (Lernen)
+// zitate: so könnte es eine Kundin sagen (Übungsfälle), je Antwort in Reihenfolge des Kerns
+const FRAGE_TEAM = [
+  { label: 'Wunschwirkung',
+    fragen: '„Wenn du nach dem Termin in den Spiegel schaust: Wie soll dein Gesicht wirken?“',
+    warum: 'Wir starten mit dem Gefühl, nicht mit Technik. Die Kundin beschreibt die Wirkung, die sie sucht. Daraus entsteht die Richtung, und diese Frage zählt bei Gleichstand am meisten.',
+    zitate: ['Ich schaue oft müde aus. Ich hätte gern wieder mehr Frische.',
+             'Ich wirke manchmal so streng. Das soll weicher werden.',
+             'Es soll nicht gemacht ausschauen, eher harmonisch.',
+             'Ich gehe irgendwie unter. Ich will mehr Präsenz.',
+             'Mir ist alles ein bisschen zu unruhig. Ich will mehr Ausgeglichenheit.',
+             'Ich wünsche mir mehr Licht im Gesicht.'] },
+  { label: 'Vermeiden',
+    fragen: '„Gibt es etwas, das auf keinen Fall passieren soll?“',
+    warum: 'Was jemand vermeiden will, ist oft klarer als das, was er sich wünscht. Die Antwort grenzt die Richtung ab und zeigt dir, wo du später besonders vorsichtig sein musst.',
+    zitate: ['Nur nicht strenger als jetzt.',
+             'Zu dunkel auf keinen Fall, das macht mich schwer.',
+             'Bloß nicht gelblich.',
+             'Man soll nicht sofort sehen, dass es gefärbt ist.',
+             'Ich habe keine Zeit, ständig zu kommen.',
+             'Zu viel Hin und Her mag ich nicht, es soll stimmig sein.'] },
+  { label: 'Besonders wichtig',
+    fragen: '„Und was zählt für dich am Ende am meisten?“',
+    warum: 'Die Priorität zeigt dir, worauf die Kundin nach dem Termin wirklich schaut. Bei Gleichstand entscheidet sie nach Frage 1 mit.',
+    zitate: ['Der Ansatz soll mich nicht stressen.',
+             'Meine Augen sollen mehr strahlen.',
+             'Mein Gesicht soll offener wirken.',
+             'Ich hätte gern mehr Kontur im Gesicht.',
+             'Oben ist es immer so flach.',
+             'Ich will einfach ich bleiben.'] }
+];
+
+// rueck: Rückfragen, um die Richtung mit der Kundin zu prüfen
+// achten: worauf du fachlich achtest (Wirkung, keine Rezeptur)
+const RICHTUNG_TEAM = {
+  WW: { kurz: 'Weichheit und Wärme statt Kontrast.',
+        rueck: ['Gibt es eine Haarfarbe, in der du dich zu streng gefunden hast?', 'Magst du es, wenn dein Haar im Licht warm schimmert?'],
+        achten: ['Wärme dosieren: weich, nicht gelblich oder orange.', 'Keine harten Kontraste oder Kanten ums Gesicht.', 'Glanz mitdenken, damit Wärme nicht flach wirkt.'] },
+  FL: { kurz: 'Licht und Offenheit ums Gesicht.',
+        rueck: ['Wo wünschst du dir mehr Licht: eher ums Gesicht oder insgesamt?', 'Wie viel Veränderung darf man sehen?'],
+        achten: ['Helligkeit gezielt ums Gesicht setzen statt gleichmäßig überall.', 'Übergänge weich halten, damit nichts hart oder streifig wirkt.', 'Ausgangsfarbe und Haarzustand prüfen, bevor du Helligkeit versprichst.'] },
+  RN: { kurz: 'Nah an der Kundin, harmonisch, unaufgeregt.',
+        rueck: ['Soll man die Veränderung eher spüren als sehen?', 'Wie oft möchtest du ungefähr zu uns kommen?'],
+        achten: ['Nah an der eigenen Basis bleiben, damit der Ansatz entspannt herauswächst.', 'Trotzdem Leben hineinbringen: Glanz und feine Dimension statt flacher Fläche.', 'Veränderung lieber in kleinen Schritten.'] },
+  AK: { kurz: 'Gezielte Präsenz: Augen und Kontur.',
+        rueck: ['Was möchtest du stärker betonen: eher die Augen oder die Kontur?', 'Darf es sichtbar mehr Kontrast werden?'],
+        achten: ['Kontur gezielt setzen, nicht überall Kontrast.', 'Augenpartie und Gesichtsrahmen im Blick behalten.', 'Klären, ob Kontrast im Alltag gepflegt werden will.'] },
+  TR: { kurz: 'Ruhige Tiefe, die rahmt.',
+        rueck: ['Fühlst du dich mit etwas mehr Tiefe eher gerahmt oder eher schwerer?', 'Wie wichtig ist dir Glanz?'],
+        achten: ['Tiefe soll rahmen und das Gesicht nicht verschatten.', 'Eine ruhige, gleichmäßige Fläche mit Glanz.', 'Nicht so tief, dass das Gesicht schwer wirkt.'] },
+  LH: { kurz: 'Lebendigkeit und optische Höhe am Oberkopf.',
+        rueck: ['Wo empfindest du dein Haar gerade als zu flach?', 'Wie trägst du dein Haar meistens: mit Scheitel, zurück oder offen?'],
+        achten: ['Licht und Bewegung dorthin, wo Höhe entstehen soll: Oberkopf und Scheitel.', 'Mit Schnitt und Styling zusammen denken.', 'Nicht zu viele helle Akzente, sonst wird es unruhig.'] }
+};
+
+const UEBERGANG = 'Ab hier beginnt deine Fachberatung: Ausgangsfarbe, Haarzustand, Vorbehandlungen und Pflegerhythmus klären und die Richtung dann in eine konkrete Umsetzung übersetzen.';
+
+// ── Hilfen ─────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const name = k => RICHTUNGEN[k].name;
+const optName = (i, a) => FRAGEN[i].optionen[a].t;
+
+// Welche Antworten führen zu einer Richtung (für die Richtungskarten)
+function signale(k){
+  return FRAGEN.map(f => f.optionen.filter(o => o.punkte.includes(k)).map(o => o.t)).flat();
+}
+
+// Punkte als Balken, Hauptrichtung oben
+function balkenHTML(r){
+  const reihe = Object.keys(RICHTUNGEN).sort((a, b) => (b === r.haupt) - (a === r.haupt) || r.punkte[b] - r.punkte[a]);
+  return '<div class="balken">' + reihe.map(k => {
+    const cls = k === r.haupt ? 'haupt' : (r.alternative && k === r.alternative.zu ? 'zweit' : '');
+    return `<span class="${cls}">${esc(name(k))}</span><span class="bar"><i style="width:${r.punkte[k] / 3 * 100}%"></i></span><b>${r.punkte[k]}</b>`;
+  }).join('') + '</div>';
+}
+
+// Warum hat die Hauptrichtung gewonnen, warum (k)eine Zweitempfehlung
+function erklaerung(r, antworten){
+  const s = [];
+  const quellen = antworten.map((a, i) => FRAGEN[i].optionen[a].punkte.includes(r.haupt) ? `„${optName(i, a)}“` : null).filter(Boolean);
+  s.push(`<b>${esc(name(r.haupt))}</b> bekommt ${r.punkte[r.haupt]} ${r.punkte[r.haupt] === 1 ? 'Punkt' : 'Punkte'} (aus ${esc(quellen.join(', '))}).`);
+  if (r.entschieden === 'punkte') s.push('Keine andere Richtung hat so viele Punkte.');
+  else if (r.entschieden === 'frage1') s.push(`Gleichstand mit ${esc(name(r.gleichauf))}. Frage 1, die Wunschwirkung, entscheidet.`);
+  else if (r.entschieden === 'frage3') s.push(`Gleichstand mit ${esc(name(r.gleichauf))}, und Frage 1 stützt beide gleich. Deshalb entscheidet Frage 3.`);
+  else s.push(`Gleichstand mit ${esc(name(r.gleichauf))}, und auch Frage 1 und 3 trennen nicht. Dann gilt die feste Reihenfolge.`);
+  const p = RICHTUNG_ALT(r.haupt);
+  if (r.alternative) s.push(`Zweitempfehlung <b>${esc(name(p))}</b>: Sie ist die erlaubte Partner-Richtung, liegt nur ${r.punkte[r.haupt] - r.punkte[p]} Punkt dahinter, und Frage 1 und 3 zeigen nicht beide auf die Hauptempfehlung.`.replace('nur 0 Punkt dahinter', 'gleichauf'));
+  else if (r.eindeutig) s.push(`Keine Zweitempfehlung: Frage 1 und Frage 3 zeigen beide auf ${esc(name(r.haupt))}. Das Ergebnis ist eindeutig.`);
+  else if (r.punkte[p] === 0) s.push(`Keine Zweitempfehlung: Die Partner-Richtung ${esc(name(p))} hat keinen Punkt.`);
+  else s.push(`Keine Zweitempfehlung: Die Partner-Richtung ${esc(name(p))} liegt mehr als 1 Punkt dahinter.`);
+  return s.map(x => `<p>${x}</p>`).join('');
+}
+const RICHTUNG_ALT = k => window.FARBKOMPASS.ALTERNATIVE[k].zu;
+
+// ── Modus-Umschalter ───────────────────────────────────────────
+function setzeModus(m){
+  document.querySelectorAll('[data-modus]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.modus === m)));
+  $('modus-lernen').hidden = m !== 'lernen';
+  $('modus-beraten').hidden = m !== 'beraten';
+  try { localStorage.setItem('farbkompass_modus', m); } catch (e) {}
+  const u = new URL(location.href); u.searchParams.set('modus', m); history.replaceState(null, '', u);
+}
+document.querySelectorAll('[data-modus]').forEach(b => b.addEventListener('click', () => { setzeModus(b.dataset.modus); scrollTo(0, 0); }));
+
+// ═════════════ BERATEN ═════════════
+let antworten = [null, null, null];
+function zeichneBeratenFragen(){
+  $('b-fragen').innerHTML = FRAGEN.map((f, i) => `
+    <div class="q">
+      <span class="q-title">${i + 1}. ${esc(f.titel)}</span>
+      <span class="q-say">${esc(FRAGE_TEAM[i].fragen)}</span>
+      <div class="chips">${f.optionen.map((o, j) => `
+        <button class="chip" data-f="${i}" data-o="${j}" aria-pressed="${antworten[i] === j}">${esc(o.t)}<small>${esc(o.s)}</small></button>`).join('')}
+      </div>
+    </div>`).join('');
+  $('b-fragen').querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => {
+    const i = +b.dataset.f, j = +b.dataset.o;
+    antworten[i] = antworten[i] === j ? null : j;
+    zeichneBeratenFragen(); zeichneBeratenErgebnis();
+  }));
+}
+function zeichneBeratenErgebnis(){
+  const offen = antworten.filter(a => a === null).length;
+  $('b-offen').textContent = offen ? `Noch ${offen} ${offen === 1 ? 'Frage' : 'Fragen'} offen.` : '';
+  $('b-ergebnis').hidden = !!offen;
+  if (offen) return;
+  const r = auswerten(antworten), R = RICHTUNGEN[r.haupt], T = RICHTUNG_TEAM[r.haupt];
+  $('b-ergebnis').innerHTML = `
+    <div class="card verdict">
+      <span class="tag">Stimmige Farbrichtung</span>
+      <span class="richtung">${esc(R.name)}</span>
+      <p class="muted">${esc(T.kurz)}</p>
+      ${r.alternative ? `<div class="alt"><span class="small muted">Auch gut passen könnte:</span><br><b>${esc(name(r.alternative.zu))}</b><br><span class="small">${esc(r.alternative.wann)}</span></div>` : ''}
+    </div>
+    <div class="card say">
+      <h2>So sagst du es</h2>
+      <p>${esc(R.wirkung)} ${esc(warumText(antworten))}</p>
+      <p class="small muted">Zum Abschluss: „${esc(ABSCHLUSS)}“</p>
+    </div>
+    <div class="card">
+      <h2>Rückfragen</h2>
+      <p class="hint">Damit prüfst du, ob sich die Richtung für die Kundin stimmig anfühlt.</p>
+      <ul>${T.rueck.map(x => `<li>„${esc(x)}“</li>`).join('')}</ul>
+    </div>
+    <div class="card">
+      <h2>Darauf achtest du</h2>
+      <ul><li>${esc(R.salon)}</li>${T.achten.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+      <p class="hint">${esc(UEBERGANG)}</p>
+    </div>
+    <div class="card">
+      <details><summary>Warum dieses Ergebnis?</summary>
+        <div style="display:flex;flex-direction:column;gap:10px">${balkenHTML(r)}${erklaerung(r, antworten)}</div>
+      </details>
+    </div>`;
+}
+$('b-reset').addEventListener('click', () => { antworten = [null, null, null]; zeichneBeratenFragen(); zeichneBeratenErgebnis(); scrollTo(0, 0); });
+
+// ═════════════ LERNEN ═════════════
+function setzeLernbereich(b){
+  document.querySelectorAll('[data-lern]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.lern === b)));
+  $('lern-verstehen').hidden = b !== 'verstehen';
+  $('lern-ueben').hidden = b !== 'ueben';
+  if (b === 'ueben' && !fall) neuerFall();
+  scrollTo(0, 0);
+}
+document.querySelectorAll('[data-lern]').forEach(b => b.addEventListener('click', () => setzeLernbereich(b.dataset.lern)));
+$('l-zum-ueben').addEventListener('click', () => setzeLernbereich('ueben'));
+
+$('l-fragen').innerHTML = FRAGEN.map((f, i) => `
+  <div class="q">
+    <span class="q-title">${i + 1}. ${esc(f.titel)}</span>
+    <span class="q-say">${esc(FRAGE_TEAM[i].fragen)}</span>
+    <span class="q-why">${esc(FRAGE_TEAM[i].warum)}</span>
+  </div>`).join('');
+
+$('l-richtungen').innerHTML = Object.keys(RICHTUNGEN).map(k => `
+  <div class="rkarte">
+    <h3>${esc(name(k))}</h3>
+    <span>${esc(RICHTUNGEN[k].wirkung)}</span>
+    <span class="small muted"><b>Kommt oft bei:</b> ${esc(signale(k).join(', '))}</span>
+    <span class="small muted"><b>Partner-Richtung:</b> ${esc(name(RICHTUNG_ALT(k)))}</span>
+  </div>`).join('');
+
+// Übungsfälle: zuerst eine Richtung zufällig wählen, dann eine Kombination,
+// die genau dort landet. So kommt jede Richtung gleich oft dran.
+const ALLE = [];
+for (let a = 0; a < 6; a++) for (let b = 0; b < 6; b++) for (let c = 0; c < 6; c++) ALLE.push([a, b, c]);
+const NACH_RICHTUNG = {};
+ALLE.forEach(x => (NACH_RICHTUNG[auswerten(x).haupt] ||= []).push(x));
+const zufall = arr => arr[Math.floor(Math.random() * arr.length)];
+
+let fall = null, richtig = 0, gesamt = 0, letzte = null;
+function neuerFall(){
+  let k; do { k = zufall(Object.keys(NACH_RICHTUNG)); } while (k === letzte && Object.keys(NACH_RICHTUNG).length > 1);
+  letzte = k;
+  fall = zufall(NACH_RICHTUNG[k]);
+  $('u-zitate').innerHTML = fall.map((a, i) => `<div class="zitat"><small>${esc(FRAGE_TEAM[i].label)}</small><q>${esc(FRAGE_TEAM[i].zitate[a])}</q></div>`).join('');
+  $('u-auswahl').innerHTML = Object.keys(RICHTUNGEN).map(k => `<button class="chip" data-k="${k}">${esc(name(k))}</button>`).join('');
+  $('u-auswahl').querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => loese(b.dataset.k)));
+  $('u-aufloesung').hidden = true; $('u-weiter').hidden = true;
+  zeigeStand();
+}
+function zeigeStand(){ $('u-stand').textContent = gesamt ? `${richtig} von ${gesamt} richtig` : ''; }
+function loese(wahl){
+  const r = auswerten(fall), alt = r.alternative && r.alternative.zu;
+  const urteil = wahl === r.haupt ? 'richtig' : wahl === alt ? 'fast' : 'falsch';
+  gesamt++; if (urteil === 'richtig') richtig++; zeigeStand();
+  $('u-auswahl').querySelectorAll('.chip').forEach(b => {
+    b.disabled = true;
+    if (b.dataset.k === r.haupt) b.classList.add('richtig');
+    else if (b.dataset.k === alt) b.classList.add('fast');
+    else if (b.dataset.k === wahl) b.classList.add('falsch');
+  });
+  const satz = { richtig: 'Richtig. Genau diese Richtung zeigt der Farbkompass.',
+                 fast: `Fast. ${name(wahl)} ist hier die Zweitempfehlung. Die Hauptrichtung ist ${name(r.haupt)}.`,
+                 falsch: `Nicht ganz. Die Hauptrichtung ist ${name(r.haupt)}.` }[urteil];
+  $('u-aufloesung').innerHTML = `
+    <p class="feedback ${urteil}">${esc(satz)}</p>
+    <div class="card">
+      <h2>So kommt der Kompass darauf</h2>
+      <ul>${fall.map((a, i) => `<li>${esc(FRAGE_TEAM[i].label)}: <b>${esc(optName(i, a))}</b> → ${esc(FRAGEN[i].optionen[a].punkte.map(name).join(' + '))}</li>`).join('')}</ul>
+      ${balkenHTML(r)}
+      ${erklaerung(r, fall)}
+    </div>
+    <div class="card say">
+      <h2>So würdest du es der Kundin sagen</h2>
+      <p>${esc(RICHTUNGEN[r.haupt].wirkung)} ${esc(warumText(fall))}</p>
+    </div>
+    <div class="card">
+      <h2>Darauf achten wir im Salon</h2>
+      <ul><li>${esc(RICHTUNGEN[r.haupt].salon)}</li>${RICHTUNG_TEAM[r.haupt].achten.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+    </div>`;
+  $('u-aufloesung').hidden = false; $('u-weiter').hidden = false;
+  $('u-aufloesung').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+$('u-weiter').addEventListener('click', () => { neuerFall(); scrollTo(0, 0); });
+
+// ── Start ──────────────────────────────────────────────────────
+zeichneBeratenFragen(); zeichneBeratenErgebnis();
+let start = new URL(location.href).searchParams.get('modus');
+if (start !== 'lernen' && start !== 'beraten') { try { start = localStorage.getItem('farbkompass_modus'); } catch (e) { start = null; } }
+setzeModus(start === 'beraten' ? 'beraten' : 'lernen');
+})();
+</script>
+</body>
+</html>
