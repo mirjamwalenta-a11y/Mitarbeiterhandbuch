@@ -157,8 +157,8 @@ details[open] summary{margin-bottom:8px}
         <h2>So entsteht das Ergebnis</h2>
         <ul>
           <li>Jede Antwort gibt <b>1 Punkt</b> auf eine oder zwei passende Richtungen. Die Richtung mit den meisten Punkten ist die Hauptempfehlung.</li>
-          <li><b>Gleichstand?</b> Dann entscheidet zuerst Frage 1 (die Wunschwirkung), danach Frage 3 (was am wichtigsten ist).</li>
-          <li>Eine <b>Zweitempfehlung</b> gibt es nur, wenn alle drei Bedingungen zutreffen: Es ist die erlaubte Partner-Richtung, sie liegt höchstens 1 Punkt dahinter, und Frage 1 und Frage 3 zeigen nicht beide auf die Hauptempfehlung.</li>
+          <li><b>Gleichstand?</b> Dann entscheidet zuerst Frage 1 (die Wunschwirkung), danach Frage 3 (was am wichtigsten ist). Trennt auch das nicht, gilt ein fachlich gesetzter Vorrang: Ruhig und natürlich vor Tiefer und ruhiger, Frisch und lichtvoll vor Mehr Ausdruck und Kontur und vor Lebendig mit mehr Höhe.</li>
+          <li>Eine <b>Zweitempfehlung</b> gibt es nur, wenn alle drei Bedingungen zutreffen: Es ist die erlaubte Partner-Richtung, sie liegt höchstens 1 Punkt dahinter, und das Ergebnis ist nicht eindeutig. Eindeutig heißt: Frage 1 und Frage 3 zeigen beide auf die Hauptempfehlung, aber nicht genauso auf die Partner-Richtung. Liegen erlaubte Nachbarn ganz gleichauf, zeigen wir bewusst beide.</li>
         </ul>
       </div>
       <div class="card">
@@ -281,10 +281,11 @@ function erklaerung(r, antworten){
   if (r.entschieden === 'punkte') s.push('Keine andere Richtung hat so viele Punkte.');
   else if (r.entschieden === 'frage1') s.push(`Gleichstand mit ${esc(name(r.gleichauf))}. Frage 1, die Wunschwirkung, entscheidet.`);
   else if (r.entschieden === 'frage3') s.push(`Gleichstand mit ${esc(name(r.gleichauf))}, und Frage 1 stützt beide gleich. Deshalb entscheidet Frage 3.`);
-  else s.push(`Gleichstand mit ${esc(name(r.gleichauf))}, und auch Frage 1 und 3 trennen nicht. Dann gilt die feste Reihenfolge.`);
+  else if (r.entschieden === 'fachlich') s.push(`Gleichstand mit ${esc(name(r.gleichauf))}, und auch Frage 1 und 3 trennen nicht. Dann gilt der fachliche Vorrang: ${esc(r.vorrang)}`);
+  else s.push(`Gleichstand mit ${esc(name(r.gleichauf))}. Dann gilt die feste Reihenfolge.`);
   const p = RICHTUNG_ALT(r.haupt);
-  if (r.alternative) s.push(`Zweitempfehlung <b>${esc(name(p))}</b>: Sie ist die erlaubte Partner-Richtung, liegt nur ${r.punkte[r.haupt] - r.punkte[p]} Punkt dahinter, und Frage 1 und 3 zeigen nicht beide auf die Hauptempfehlung.`.replace('nur 0 Punkt dahinter', 'gleichauf'));
-  else if (r.eindeutig) s.push(`Keine Zweitempfehlung: Frage 1 und Frage 3 zeigen beide auf ${esc(name(r.haupt))}. Das Ergebnis ist eindeutig.`);
+  if (r.alternative) s.push(`Zweitempfehlung <b>${esc(name(p))}</b>: Sie ist die erlaubte Partner-Richtung, liegt nur ${r.punkte[r.haupt] - r.punkte[p]} Punkt dahinter, und das Ergebnis ist nicht eindeutig.`.replace('nur 0 Punkt dahinter', 'gleichauf'));
+  else if (r.eindeutig) s.push(`Keine Zweitempfehlung: Frage 1 und Frage 3 zeigen beide auf ${esc(name(r.haupt))}, aber nicht genauso auf ${esc(name(p))}. Das Ergebnis ist eindeutig.`);
   else if (r.punkte[p] === 0) s.push(`Keine Zweitempfehlung: Die Partner-Richtung ${esc(name(p))} hat keinen Punkt.`);
   else s.push(`Keine Zweitempfehlung: Die Partner-Richtung ${esc(name(p))} liegt mehr als 1 Punkt dahinter.`);
   return s.map(x => `<p>${x}</p>`).join('');
