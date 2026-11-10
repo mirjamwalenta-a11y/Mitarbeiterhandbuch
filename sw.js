@@ -6,7 +6,7 @@
 // Neue Seiten/Dateien dieser App hier bei `vorab` ergänzen.
 self.GHD_OFFLINE = {
   app: 'handbuch',
-  version: '2026-11-09c',
+  version: '2026-11-10a',
   start: './Mitarbeiterhandbuch_App.html',
   vorab: [
     './',
@@ -14,8 +14,7 @@ self.GHD_OFFLINE = {
     './manifest.json',
     './haarkompass-beratung.html',
     './haarkompass-produkte.js',
-    './farbkompass-team.html',
-    'https://mirjamwalenta-a11y.github.io/index.greathairday/farbkompass-kern.js',
+    'https://mirjamwalenta-a11y.github.io/index.greathairday/gesichtskompass.html',
     'https://mirjamwalenta-a11y.github.io/index.greathairday/ghd-verzeichnis.js',
     'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js',
     'https://mirjamwalenta-a11y.github.io/abwesenheiten-ghd/icon-512.png'
