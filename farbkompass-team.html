@@ -51,6 +51,7 @@ p{margin:0}
 .alt{border:1.5px dashed var(--line);border-radius:12px;padding:10px 14px}
 .alt b{font-family:var(--f-display)}
 ul{margin:0;padding-left:20px} li{margin-bottom:4px;font-size:.94rem}
+.hint a{color:var(--accent);font-weight:600}
 details summary{cursor:pointer;font-weight:600;color:var(--accent)}
 details[open] summary{margin-bottom:8px}
 /* Punkte-Balken */
@@ -129,7 +130,7 @@ details[open] summary{margin-bottom:8px}
     <div id="lern-verstehen" style="display:flex;flex-direction:column;gap:18px">
       <div class="card team">
         <b>Worum es beim Farbkompass geht</b>
-        <span>Der Farbkompass hilft der Kundin, eine <b>Farbrichtung</b> für ihr Gesicht zu finden, bevor es um Technik geht. Er bestimmt keinen Farbton und keinen Farbtyp, und er beurteilt weder Hautunterton noch Augenfarbe oder Gesichtsform. Die Kundin soll sich verstanden fühlen, nicht analysiert.</span>
+        <span>Der Farbkompass hilft der Kundin, eine <b>Farbrichtung</b> für ihr Gesicht zu finden, bevor es um Technik geht. Er bestimmt keinen Farbton und keinen Farbtyp, und er beurteilt weder Hautunterton noch Augenfarbe oder Gesichtsform. Die Kundin soll sich verstanden fühlen, nicht analysiert. Den <b>Farbtyp</b> (Frühling, Sommer, Herbst, Winter) prüfst du danach als zweiten Blick: Er zeigt, ob die Richtung eher warm oder eher kühl umgesetzt wird.</span>
       </div>
       <div class="card">
         <h2>Die drei Grundregeln</h2>
@@ -138,6 +139,16 @@ details[open] summary{margin-bottom:8px}
           <li><b>Entscheidungshilfe vor Typisierung:</b> Wir stecken niemanden in eine Schublade. Die Richtung ist eine Orientierung, kein Urteil.</li>
           <li><b>Farbrichtung statt fixer Farbton:</b> Das Ergebnis ist eine Richtung. Wie wir sie umsetzen, entscheiden wir gemeinsam mit der Kundin.</li>
         </ul>
+      </div>
+      <div class="card">
+        <h2>Zweiter Blick: der Farbtyp</h2>
+        <p>Der Farbkompass fragt nach dem <b>Wunsch</b> der Kundin. Der Farbtyp zeigt, was zu ihrer <b>Haut</b> passt. Zusammen ergibt das die Umsetzung: <b>Die Richtung sagt, wohin – der Farbtyp sagt, ob warm oder kühl.</b></p>
+        <ul>
+          <li><b>Frühling</b> (warm, klar) und <b>Herbst</b> (warm, gedämpft): Reflexe Gold und Kupfer.</li>
+          <li><b>Sommer</b> (kühl, gedämpft) und <b>Winter</b> (kühl, klar): Reflexe Asch und Irisé.</li>
+          <li>Beispiel: „Frisch und lichtvoll“ wird bei einer Frühlings-Kundin ein goldenes, bei einer Sommer-Kundin ein beigeblondes Licht.</li>
+        </ul>
+        <p class="hint">Den Farbtyp prüfst du mit Tüchern – echt oder digital in der <a href="https://mirjamwalenta-a11y.github.io/lernquiz.greathairday/farbtyp.html#tuecher">Farbtyp-Beratung</a>. Auch hier gilt: Orientierung, keine Schublade.</p>
       </div>
       <div class="card">
         <h2>Die 3 Fragen und warum wir sie stellen</h2>
@@ -241,6 +252,40 @@ const RICHTUNG_TEAM = {
         achten: ['Licht und Bewegung dorthin, wo Höhe entstehen soll: Oberkopf und Scheitel.', 'Mit Schnitt und Styling zusammen denken.', 'Nicht zu viele helle Akzente, sonst wird es unruhig.'] }
 };
 
+// ── Zweiter Blick: Farbtyp ────────────────────────────────────
+// Wie die Richtung je Farbtyp umgesetzt wird (Haarfarb-Richtung, keine Rezeptur).
+// Typen wie in der Farbtyp-Beratung (lernquiz.greathairday/farbtyp.html).
+const FARBTYPEN = { fruehling: 'Frühling', sommer: 'Sommer', herbst: 'Herbst', winter: 'Winter' };
+const FARBTYP_KURZ = { fruehling: 'warm · klar', sommer: 'kühl · gedämpft', herbst: 'warm · gedämpft', winter: 'kühl · klar' };
+const UMSETZUNG = {
+  FL: { fruehling: 'Goldene, honigfarbene Lichter ums Gesicht.',
+        sommer: 'Beige- und perlblonde Lichter, kühl und weich.',
+        herbst: 'Warme Karamell- und Honiglichter, nicht zu hell.',
+        winter: 'Kühle, klare Lichter, z. B. kühles Hellbraun; bei starkem Kontrast auch feine Platinsträhnen.' },
+  WW: { fruehling: 'Goldblond bis Honig, weich verlaufen – passt sehr gut.',
+        sommer: 'Wärme nur ganz zart: Beige- und Sandtöne statt Gold, sonst wirkt die Haut fahl.',
+        herbst: 'Kupfer, Kastanie, Goldbraun – passt sehr gut.',
+        winter: 'Wärme vorsichtig: weiche, neutrale Brauntöne statt Gold und Kupfer.' },
+  RN: { fruehling: 'Nah am Naturton, mit feinem Goldglanz.',
+        sommer: 'Nah am Naturton, mit kühlem, seidigem Glanz (Beige, Asch).',
+        herbst: 'Nah am Naturton, mit warmem Glanz (Gold, leichtes Kupfer).',
+        winter: 'Nah am Naturton, mit kühlem, sattem Glanz.' },
+  AK: { fruehling: 'Klare, warme Akzente um die Kontur (Goldblond, helles Kupfer).',
+        sommer: 'Kontur sanft setzen: kühle Akzente mit wenig Kontrast (Asch, Perl).',
+        herbst: 'Warme, tiefe Akzente setzen die Kontur (Kupfer, Schokobraun).',
+        winter: 'Kontrast passt gut: kühles Dunkelbraun bis Schwarz mit klaren Akzenten.' },
+  TR: { fruehling: 'Tiefe vorsichtig: warmes Hellbraun mit Goldglanz, nicht zu dunkel.',
+        sommer: 'Kühles Mittelbraun, gedämpft, nicht zu dunkel.',
+        herbst: 'Schokobraun und Kastanie – passt sehr gut.',
+        winter: 'Kühles Dunkelbraun bis Naturschwarz – passt sehr gut.' },
+  LH: { fruehling: 'Goldene Lichter am Oberkopf.',
+        sommer: 'Feine beige- und aschblonde Lichter am Oberkopf.',
+        herbst: 'Warme Karamell- und Kupferlichter am Oberkopf.',
+        winter: 'Kühle, klare Lichter am Oberkopf, dezent gesetzt.' }
+};
+const FARBTYP_LINK = 'https://mirjamwalenta-a11y.github.io/lernquiz.greathairday/farbtyp.html#tuecher';
+let farbtyp = null;
+
 const UEBERGANG = 'Ab hier beginnt deine Fachberatung: Ausgangsfarbe, Haarzustand, Vorbehandlungen und Pflegerhythmus klären und die Richtung dann in eine konkrete Umsetzung übersetzen.';
 
 // ── Hilfen ─────────────────────────────────────────────────────
@@ -337,13 +382,26 @@ function zeichneBeratenErgebnis(){
       <ul><li>${esc(R.salon)}</li>${T.achten.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
       <p class="hint">${esc(UEBERGANG)}</p>
     </div>
+    <div class="card" id="b-farbtyp">
+      <h2>Zweiter Blick: Farbtyp</h2>
+      <p class="hint">Welcher Farbtyp ist die Kundin? Dann siehst du, ob die Richtung eher warm oder eher kühl umgesetzt wird.</p>
+      <div class="chips">${Object.keys(FARBTYPEN).map(t => `<button class="chip" data-farbtyp="${t}" aria-pressed="${farbtyp === t}">${esc(FARBTYPEN[t])}<small>${esc(FARBTYP_KURZ[t])}</small></button>`).join('')}</div>
+      ${farbtyp ? `<p><b>${esc(R.name)} für ${esc(FARBTYPEN[farbtyp])}:</b> ${esc(UMSETZUNG[r.haupt][farbtyp])}</p>` : ''}
+      <p class="hint">Noch nicht sicher? <a href="${FARBTYP_LINK}">Mit Tüchern prüfen – Farbtyp-Beratung</a>. Der Farbtyp ist eine Orientierung, keine Schublade.</p>
+    </div>
     <div class="card">
       <details><summary>Warum dieses Ergebnis?</summary>
         <div style="display:flex;flex-direction:column;gap:10px">${balkenHTML(r)}${erklaerung(r, antworten)}</div>
       </details>
     </div>`;
 }
-$('b-reset').addEventListener('click', () => { antworten = [null, null, null]; zeichneBeratenFragen(); zeichneBeratenErgebnis(); scrollTo(0, 0); });
+// Farbtyp-Auswahl im Ergebnis (zweiter Blick)
+$('b-ergebnis').addEventListener('click', e => {
+  const b = e.target.closest('[data-farbtyp]'); if (!b) return;
+  farbtyp = farbtyp === b.dataset.farbtyp ? null : b.dataset.farbtyp;
+  zeichneBeratenErgebnis();
+});
+$('b-reset').addEventListener('click', () => { antworten = [null, null, null]; farbtyp = null; zeichneBeratenFragen(); zeichneBeratenErgebnis(); scrollTo(0, 0); });
 
 // ═════════════ LERNEN ═════════════
 function setzeLernbereich(b){
